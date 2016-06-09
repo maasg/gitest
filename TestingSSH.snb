@@ -148,18 +148,18 @@
       "id" : "BE0A1EE6A1B64F2DA7E8989E0FC4C4AA"
     },
     "cell_type" : "code",
-    "source" : "val window = keyedDstream.reduceByKeyAndWindow((x:Int,y:Int) => x, Seconds(4),Seconds(1))",
+    "source" : "val windowed = keyedDstream.reduceByKeyAndWindow((x:Int,y:Int) => x, Seconds(4),Seconds(1))",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "window: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.ShuffledDStream@578d9315\n"
+      "text" : "windowed: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.ShuffledDStream@14e01960\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 49
+      "execution_count" : 51
     } ]
   }, {
     "metadata" : {
@@ -169,18 +169,18 @@
       "id" : "58BE362525E1466F9A6F6477001C0817"
     },
     "cell_type" : "code",
-    "source" : "val notInWindow = keyedDstream.map(e=> (e,e)).cogroup(dw)",
+    "source" : "val notInWindow = keyedDstream.cogroup(windowed)",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "notInWindow: org.apache.spark.streaming.dstream.DStream[(Int, (Iterable[Int], Iterable[Int]))] = org.apache.spark.streaming.dstream.TransformedDStream@cdc3d9f\n"
+      "text" : "notInWindow: org.apache.spark.streaming.dstream.DStream[(Int, (Iterable[Int], Iterable[Int]))] = org.apache.spark.streaming.dstream.TransformedDStream@6773e4d7\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 36
+      "execution_count" : 52
     } ]
   }, {
     "metadata" : {
@@ -194,14 +194,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "li: notebook.front.widgets.HtmlList = <HtmlList widget>\nres45: notebook.front.widgets.HtmlList = <HtmlList widget>\n"
+      "text" : "li: notebook.front.widgets.HtmlList = <HtmlList widget>\nres64: notebook.front.widgets.HtmlList = <HtmlList widget>\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<ul data-bind=\"foreach: value\"><li data-bind=\"html: $data\"></li><script data-this=\"{&quot;valueId&quot;:&quot;anonb43ca4d71b23ab594dee73b2b9b101f0&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId)\n    },\n    this\n  );\n});\n                            /*]]>*/</script></ul>"
+        "text/html" : "<ul data-bind=\"foreach: value\"><li data-bind=\"html: $data\"></li><script data-this=\"{&quot;valueId&quot;:&quot;anon9af704e1aac734160230bb560a2dc6b8&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId)\n    },\n    this\n  );\n});\n                            /*]]>*/</script></ul>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 38
+      "execution_count" : 53
     } ]
   }, {
     "metadata" : {
@@ -211,7 +211,7 @@
       "id" : "EEE6EE21808042CC838D57608A554C1E"
     },
     "cell_type" : "code",
-    "source" : "notInWindow.foreachRDD(rdd => val data = rdd.collect\n                       val pretty = data.map{case (k,(e1,e2)) => \n                       li.append(rdd.collect.mkString(\",\")))",
+    "source" : "notInWindow.foreachRDD{rdd => val data = rdd.collect\n                       val pretty = data.map{case (k,(e1,e2)) => \n                                             s\"$k -> (${e1.mkString})-(${e2.mkString})\"\n                                            }\n                       li.app",
     "outputs" : [ {
       "metadata" : { },
       "data" : {
