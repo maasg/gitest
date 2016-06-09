@@ -81,11 +81,67 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
+      "collapsed" : false,
       "id" : "413F243652174FCB8BFB3599EB684572"
     },
     "cell_type" : "code",
-    "source" : "val ssc = new Stream",
+    "source" : "val ssc = new StreamingContext(sparkContext, Seconds(1))",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "ssc: org.apache.spark.streaming.StreamingContext = org.apache.spark.streaming.StreamingContext@2057accc\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 6
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "F7B03128112941F69556904B3A457A26"
+    },
+    "cell_type" : "code",
+    "source" : "val dstream = new ConstantInputDStream(ssc,rdd)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "dstream: org.apache.spark.streaming.dstream.ConstantInputDStream[Int] = org.apache.spark.streaming.dstream.ConstantInputDStream@1b959aa5\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 7
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "0508C6BB73084802AE0D95F73444B42F"
+    },
+    "cell_type" : "code",
+    "source" : "val t0= new Time(System.currentTimeMillis-1000)\nval d = dstream.slice(Seconds(1000), Seconds(2000))",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "<console>:76: error: type mismatch;\n found   : org.apache.spark.streaming.Duration\n required: org.apache.spark.streaming.Time\n       val d = dstream.slice(Seconds(1000), Seconds(2000))\n                                    ^\n"
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "8918506DD90245FB8F3F42443ECE7F31"
+    },
+    "cell_type" : "code",
+    "source" : "\n",
     "outputs" : [ ]
   } ],
   "nbformat" : 4
