@@ -89,14 +89,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "ssc: org.apache.spark.streaming.StreamingContext = org.apache.spark.streaming.StreamingContext@57d53bac\n"
+      "text" : "ssc: org.apache.spark.streaming.StreamingContext = org.apache.spark.streaming.StreamingContext@12c5bc4c\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 26
+      "execution_count" : 42
     } ]
   }, {
     "metadata" : {
@@ -110,14 +110,35 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dstream: org.apache.spark.streaming.dstream.DStream[Int] = org.apache.spark.streaming.dstream.MappedDStream@7c898f83\n"
+      "text" : "dstream: org.apache.spark.streaming.dstream.DStream[Int] = org.apache.spark.streaming.dstream.MappedDStream@756bf857\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 27
+      "execution_count" : 43
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "D77288C7FAEA430982BB7702ABFD14F0"
+    },
+    "cell_type" : "code",
+    "source" : "val keyedDstream = dstream.map(e => (e,e))",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "keyedDstream: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.MappedDStream@78dcee46\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 48
     } ]
   }, {
     "metadata" : {
@@ -127,39 +148,18 @@
       "id" : "BE0A1EE6A1B64F2DA7E8989E0FC4C4AA"
     },
     "cell_type" : "code",
-    "source" : "val window = dstream.map(e=> (e,e)).reduceByKeyAndwindow(Seconds(5),Seconds(1), (x:Int,y:Int) => x)",
+    "source" : "val window = keyedDstream.reduceByKeyAndWindow((x:Int,y:Int) => x, Seconds(4),Seconds(1))",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "window: org.apache.spark.streaming.dstream.DStream[Int] = org.apache.spark.streaming.dstream.WindowedDStream@7e3c1521\n"
+      "text" : "window: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.ShuffledDStream@578d9315\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 29
-    } ]
-  }, {
-    "metadata" : {
-      "trusted" : true,
-      "input_collapsed" : false,
-      "collapsed" : false,
-      "id" : "4C5E9E17CE2F48A18A2D992C5038BABA"
-    },
-    "cell_type" : "code",
-    "source" : "val dw = window.transform(rdd => rdd.distinct).map(e => (e,e))",
-    "outputs" : [ {
-      "name" : "stdout",
-      "output_type" : "stream",
-      "text" : "dw: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.MappedDStream@43c654e2\n"
-    }, {
-      "metadata" : { },
-      "data" : {
-        "text/html" : ""
-      },
-      "output_type" : "execute_result",
-      "execution_count" : 35
+      "execution_count" : 49
     } ]
   }, {
     "metadata" : {
@@ -169,7 +169,7 @@
       "id" : "58BE362525E1466F9A6F6477001C0817"
     },
     "cell_type" : "code",
-    "source" : "val notInWindow = dstream.map(e=> (e,e)).cogroup(dw)",
+    "source" : "val notInWindow = keyedDstream.map(e=> (e,e)).cogroup(dw)",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
