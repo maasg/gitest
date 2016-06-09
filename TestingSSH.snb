@@ -127,7 +127,7 @@
       "id" : "D77288C7FAEA430982BB7702ABFD14F0"
     },
     "cell_type" : "code",
-    "source" : "val keyedDstream = dstream.map(e => (e,e))",
+    "source" : "val keyedDstream = dstream.transform(rdd=> rdd.distinct).map(e => (e,e))",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
@@ -169,7 +169,7 @@
       "id" : "58BE362525E1466F9A6F6477001C0817"
     },
     "cell_type" : "code",
-    "source" : "val notInWindow = keyedDstream.cogroup(windowed).transform(rdd => rdd.collect{case (k,(",
+    "source" : "val uniqueNotInWindow = keyedDstream.cogroup(windowed).transform(rdd => rdd.collect{case (k,(last, prev)) if (prev.isEmpty) => k}",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
@@ -211,7 +211,7 @@
       "id" : "EEE6EE21808042CC838D57608A554C1E"
     },
     "cell_type" : "code",
-    "source" : "notInWindow.foreachRDD{rdd => val data = rdd.collect\n                       val pretty = data.map{case (k,(e1,e2)) => \n                                             s\"$k -> (${e1.mkString})-(${e2.mkString})\"\n                                            }\n                       pretty.foreach(e=> li.append(e))\n                      }",
+    "source" : "notInWindow.foreachRDD{rdd => val data = rdd.collect\n                       val pretty = data.map{case (k,(e1,e2)) => \n                                             s\"[$k->(${e1.mkString})-(${e2.mkString})]\"\n                                            }\n                       li.append(pretty.mkString)\n                      }",
     "outputs" : [ {
       "metadata" : { },
       "data" : {
