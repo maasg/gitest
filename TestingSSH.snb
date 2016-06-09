@@ -68,14 +68,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "import scala.util.Random\nrdd: org.apache.spark.rdd.RDD[() => Int] = MapPartitionsRDD[2736] at map at <console>:77\n"
+      "text" : "import scala.util.Random\nrdd: org.apache.spark.rdd.RDD[() => Int] = MapPartitionsRDD[2782] at map at <console>:79\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 169
+      "execution_count" : 182
     } ]
   }, {
     "metadata" : {
@@ -89,14 +89,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "ssc: org.apache.spark.streaming.StreamingContext = org.apache.spark.streaming.StreamingContext@2496e57a\n"
+      "text" : "ssc: org.apache.spark.streaming.StreamingContext = org.apache.spark.streaming.StreamingContext@3517ff36\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 170
+      "execution_count" : 183
     } ]
   }, {
     "metadata" : {
@@ -110,14 +110,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dstream: org.apache.spark.streaming.dstream.DStream[Int] = org.apache.spark.streaming.dstream.MappedDStream@1fccf824\n"
+      "text" : "dstream: org.apache.spark.streaming.dstream.DStream[Int] = org.apache.spark.streaming.dstream.MappedDStream@9a59e8c\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 171
+      "execution_count" : 184
     } ]
   }, {
     "metadata" : {
@@ -131,14 +131,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "keyedDstream: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.MappedDStream@4683c7b8\n"
+      "text" : "keyedDstream: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.MappedDStream@67d982a9\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 172
+      "execution_count" : 185
     } ]
   }, {
     "metadata" : {
@@ -152,14 +152,7 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "windowed: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.ShuffledDStream@725e55a0\n"
-    }, {
-      "metadata" : { },
-      "data" : {
-        "text/html" : ""
-      },
-      "output_type" : "execute_result",
-      "execution_count" : 173
+      "text" : "windowed: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.ShuffledDStream@74b6392f\n"
     } ]
   }, {
     "metadata" : {
@@ -169,7 +162,7 @@
       "id" : "58BE362525E1466F9A6F6477001C0817"
     },
     "cell_type" : "code",
-    "source" : "val uniquesThroughWindowNotInWindow = keyedDstream.join(windowed)//.transform(rdd => rdd.collect{case (k,(last, prev)) if (prev.isEmpty) => k}",
+    "source" : "val joined = keyedDstream.join(windowed)",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
@@ -182,6 +175,16 @@
       "output_type" : "execute_result",
       "execution_count" : 174
     } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "91633D86BBD54AF68ED056125D45221E"
+    },
+    "cell_type" : "code",
+    "source" : "val uniquesThroughWindow = joined.transform(rdd => rdd.collect{case (k,(current, prev)) if (prev < 2) => k}",
+    "outputs" : [ ]
   }, {
     "metadata" : {
       "trusted" : true,
