@@ -144,12 +144,23 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
+      "collapsed" : false,
       "id" : "4C5E9E17CE2F48A18A2D992C5038BABA"
     },
     "cell_type" : "code",
-    "source" : "val ",
-    "outputs" : [ ]
+    "source" : "val dw = window.transform(rdd => rdd.distinct).map(identity)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "dw: org.apache.spark.streaming.dstream.DStream[Int] = org.apache.spark.streaming.dstream.MappedDStream@381d4f59\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 32
+    } ]
   }, {
     "metadata" : {
       "trusted" : true,
@@ -158,14 +169,11 @@
       "id" : "58BE362525E1466F9A6F6477001C0817"
     },
     "cell_type" : "code",
-    "source" : "dstream.foreachRDD(rdd => rdd.collect.size)",
+    "source" : "val notInWindow = dstream.map(e=> (e,e)).cogroup(dw)",
     "outputs" : [ {
-      "metadata" : { },
-      "data" : {
-        "text/html" : ""
-      },
-      "output_type" : "execute_result",
-      "execution_count" : 18
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "<console>:80: error: value keyBy is not a member of org.apache.spark.streaming.dstream.DStream[Int]\n       val notInWindow = dstream.keyBy(identity).cogroup(dw)\n                                 ^\n"
     } ]
   }, {
     "metadata" : {
