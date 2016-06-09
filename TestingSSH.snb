@@ -39,11 +39,53 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
+      "collapsed" : false,
       "id" : "D8853EF19DBD461AB4864175484C0442"
     },
     "cell_type" : "code",
-    "source" : "",
+    "source" : "import org.apache.spark.streaming._\nimport org.apache.spark.streaming.dstream._",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import org.apache.spark.streaming._\nimport org.apache.spark.streaming.dstream._\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 4
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "B50B2781ACDB4AE488008741BACABA7C"
+    },
+    "cell_type" : "code",
+    "source" : "val rdd = sparkContext.parallelize(1 to 10)\n",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "rdd: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[0] at parallelize at <console>:69\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 5
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "413F243652174FCB8BFB3599EB684572"
+    },
+    "cell_type" : "code",
+    "source" : "val ssc = new Stream",
     "outputs" : [ ]
   } ],
   "nbformat" : 4
