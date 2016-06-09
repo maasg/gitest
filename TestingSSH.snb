@@ -64,18 +64,18 @@
       "id" : "B50B2781ACDB4AE488008741BACABA7C"
     },
     "cell_type" : "code",
-    "source" : "import scala.util.Random\nval rdd = sparkContext.parallelize(1 to 10).map(_ => () => Random.nextInt(10))\n",
+    "source" : "import scala.util.Random\nval rdd = sparkContext.parallelize(1 to 5).map(_ => () => Random.nextInt(10))\n",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "import scala.util.Random\nrdd: org.apache.spark.rdd.RDD[() => Int] = MapPartitionsRDD[2169] at map at <console>:71\n"
+      "text" : "import scala.util.Random\nrdd: org.apache.spark.rdd.RDD[() => Int] = MapPartitionsRDD[2589] at map at <console>:73\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 93
+      "execution_count" : 143
     } ]
   }, {
     "metadata" : {
@@ -89,14 +89,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "ssc: org.apache.spark.streaming.StreamingContext = org.apache.spark.streaming.StreamingContext@7e8f0a7d\n"
+      "text" : "ssc: org.apache.spark.streaming.StreamingContext = org.apache.spark.streaming.StreamingContext@2fcd0be8\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 133
+      "execution_count" : 144
     } ]
   }, {
     "metadata" : {
@@ -110,14 +110,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dstream: org.apache.spark.streaming.dstream.DStream[Int] = org.apache.spark.streaming.dstream.MappedDStream@6c7a95bc\n"
+      "text" : "dstream: org.apache.spark.streaming.dstream.DStream[Int] = org.apache.spark.streaming.dstream.MappedDStream@3fe3d7c8\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 134
+      "execution_count" : 145
     } ]
   }, {
     "metadata" : {
@@ -131,14 +131,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "keyedDstream: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.MappedDStream@f3abc0c\n"
+      "text" : "keyedDstream: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.MappedDStream@42cd3208\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 135
+      "execution_count" : 146
     } ]
   }, {
     "metadata" : {
@@ -152,14 +152,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "windowed: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.ShuffledDStream@41f73b3e\n"
+      "text" : "windowed: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.ShuffledDStream@13ffbb08\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 136
+      "execution_count" : 147
     } ]
   }, {
     "metadata" : {
@@ -173,14 +173,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "uniqueNotInWindow: org.apache.spark.streaming.dstream.DStream[(Int, (Int, Int))] = org.apache.spark.streaming.dstream.TransformedDStream@5c7aa911\n"
+      "text" : "uniqueNotInWindow: org.apache.spark.streaming.dstream.DStream[(Int, (Int, Int))] = org.apache.spark.streaming.dstream.TransformedDStream@1e37daee\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 137
+      "execution_count" : 148
     } ]
   }, {
     "metadata" : {
@@ -194,14 +194,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "li: notebook.front.widgets.HtmlList = <HtmlList widget>\nres188: notebook.front.widgets.HtmlList = <HtmlList widget>\n"
+      "text" : "li: notebook.front.widgets.HtmlList = <HtmlList widget>\nres204: notebook.front.widgets.HtmlList = <HtmlList widget>\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<ul data-bind=\"foreach: value\"><li data-bind=\"html: $data\"></li><script data-this=\"{&quot;valueId&quot;:&quot;anon88cce5821c3afe060bf0f9b5257979bd&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId)\n    },\n    this\n  );\n});\n                            /*]]>*/</script></ul>"
+        "text/html" : "<ul data-bind=\"foreach: value\"><li data-bind=\"html: $data\"></li><script data-this=\"{&quot;valueId&quot;:&quot;anon60d98d6a69139d1ca85a68479b3a1c14&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId)\n    },\n    this\n  );\n});\n                            /*]]>*/</script></ul>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 138
+      "execution_count" : 149
     } ]
   }, {
     "metadata" : {
@@ -211,14 +211,31 @@
       "id" : "127734FCD1D54AFFACA6CD958283C64E"
     },
     "cell_type" : "code",
-    "source" : "dstream.foreachRDD{rdd => li.append(rdd.collect.mkString(\",\"))}",
+    "source" : "dstream.foreachRDD{rdd => li.append(\"dstream ->\" + rdd.collect.mkString(\",\"))}",
     "outputs" : [ {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 139
+      "execution_count" : 150
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "B2E47C3ED1F348819AAD96F08108BB1A"
+    },
+    "cell_type" : "code",
+    "source" : "windowed.foreachRDD{rdd => li.append(\"window ->\" + rdd.collect.mkString(\",\"))}",
+    "outputs" : [ {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 151
     } ]
   }, {
     "metadata" : {
@@ -235,8 +252,18 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 140
+      "execution_count" : 152
     } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "2FAB5C1BC80247DF8DA8AB386512AD0C"
+    },
+    "cell_type" : "code",
+    "source" : "",
+    "outputs" : [ ]
   }, {
     "metadata" : {
       "trusted" : true,
@@ -252,7 +279,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 141
+      "execution_count" : 153
     } ]
   }, {
     "metadata" : {
@@ -269,7 +296,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 142
+      "execution_count" : 154
     } ]
   }, {
     "metadata" : {
