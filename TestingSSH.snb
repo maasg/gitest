@@ -89,14 +89,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "ssc: org.apache.spark.streaming.StreamingContext = org.apache.spark.streaming.StreamingContext@f0c5155\n"
+      "text" : "ssc: org.apache.spark.streaming.StreamingContext = org.apache.spark.streaming.StreamingContext@7e8f0a7d\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 123
+      "execution_count" : 133
     } ]
   }, {
     "metadata" : {
@@ -110,14 +110,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dstream: org.apache.spark.streaming.dstream.DStream[Int] = org.apache.spark.streaming.dstream.MappedDStream@cf9d13c\n"
+      "text" : "dstream: org.apache.spark.streaming.dstream.DStream[Int] = org.apache.spark.streaming.dstream.MappedDStream@6c7a95bc\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 124
+      "execution_count" : 134
     } ]
   }, {
     "metadata" : {
@@ -131,14 +131,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "keyedDstream: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.MappedDStream@694a8802\n"
+      "text" : "keyedDstream: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.MappedDStream@f3abc0c\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 125
+      "execution_count" : 135
     } ]
   }, {
     "metadata" : {
@@ -152,14 +152,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "windowed: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.ShuffledDStream@311a3d70\n"
+      "text" : "windowed: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.ShuffledDStream@41f73b3e\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 126
+      "execution_count" : 136
     } ]
   }, {
     "metadata" : {
@@ -173,14 +173,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "uniqueNotInWindow: org.apache.spark.streaming.dstream.DStream[(Int, (Int, Int))] = org.apache.spark.streaming.dstream.TransformedDStream@451f2100\n"
+      "text" : "uniqueNotInWindow: org.apache.spark.streaming.dstream.DStream[(Int, (Int, Int))] = org.apache.spark.streaming.dstream.TransformedDStream@5c7aa911\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 127
+      "execution_count" : 137
     } ]
   }, {
     "metadata" : {
@@ -190,18 +190,18 @@
       "id" : "9EAA80DEB2FB42DF95CCE819D0281A62"
     },
     "cell_type" : "code",
-    "source" : "val li = ul(10)\nli",
+    "source" : "val li = ul(20)\nli",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "li: notebook.front.widgets.HtmlList = <HtmlList widget>\nres173: notebook.front.widgets.HtmlList = <HtmlList widget>\n"
+      "text" : "li: notebook.front.widgets.HtmlList = <HtmlList widget>\nres188: notebook.front.widgets.HtmlList = <HtmlList widget>\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<ul data-bind=\"foreach: value\"><li data-bind=\"html: $data\"></li><script data-this=\"{&quot;valueId&quot;:&quot;anon329a810c675fd9563ee87097bae87155&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId)\n    },\n    this\n  );\n});\n                            /*]]>*/</script></ul>"
+        "text/html" : "<ul data-bind=\"foreach: value\"><li data-bind=\"html: $data\"></li><script data-this=\"{&quot;valueId&quot;:&quot;anon88cce5821c3afe060bf0f9b5257979bd&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId)\n    },\n    this\n  );\n});\n                            /*]]>*/</script></ul>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 128
+      "execution_count" : 138
     } ]
   }, {
     "metadata" : {
@@ -218,7 +218,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 129
+      "execution_count" : 139
     } ]
   }, {
     "metadata" : {
@@ -235,7 +235,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 130
+      "execution_count" : 140
     } ]
   }, {
     "metadata" : {
@@ -252,7 +252,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 131
+      "execution_count" : 141
     } ]
   }, {
     "metadata" : {
@@ -269,7 +269,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 132
+      "execution_count" : 142
     } ]
   }, {
     "metadata" : {
