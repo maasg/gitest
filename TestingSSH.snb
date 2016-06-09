@@ -68,14 +68,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "import scala.util.Random\nrdd: org.apache.spark.rdd.RDD[() => Int] = MapPartitionsRDD[2589] at map at <console>:73\n"
+      "text" : "import scala.util.Random\nrdd: org.apache.spark.rdd.RDD[() => Int] = MapPartitionsRDD[2679] at map at <console>:75\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 143
+      "execution_count" : 155
     } ]
   }, {
     "metadata" : {
@@ -89,14 +89,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "ssc: org.apache.spark.streaming.StreamingContext = org.apache.spark.streaming.StreamingContext@2fcd0be8\n"
+      "text" : "ssc: org.apache.spark.streaming.StreamingContext = org.apache.spark.streaming.StreamingContext@2536d1f4\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 144
+      "execution_count" : 156
     } ]
   }, {
     "metadata" : {
@@ -110,14 +110,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dstream: org.apache.spark.streaming.dstream.DStream[Int] = org.apache.spark.streaming.dstream.MappedDStream@3fe3d7c8\n"
+      "text" : "dstream: org.apache.spark.streaming.dstream.DStream[Int] = org.apache.spark.streaming.dstream.MappedDStream@67be3ac\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 145
+      "execution_count" : 157
     } ]
   }, {
     "metadata" : {
@@ -131,14 +131,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "keyedDstream: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.MappedDStream@42cd3208\n"
+      "text" : "keyedDstream: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.MappedDStream@ec2ccff\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 146
+      "execution_count" : 158
     } ]
   }, {
     "metadata" : {
@@ -152,14 +152,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "windowed: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.ShuffledDStream@13ffbb08\n"
+      "text" : "windowed: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.ShuffledDStream@2105bb78\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 147
+      "execution_count" : 159
     } ]
   }, {
     "metadata" : {
@@ -173,14 +173,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "uniqueNotInWindow: org.apache.spark.streaming.dstream.DStream[(Int, (Int, Int))] = org.apache.spark.streaming.dstream.TransformedDStream@1e37daee\n"
+      "text" : "uniqueNotInWindow: org.apache.spark.streaming.dstream.DStream[(Int, (Int, Int))] = org.apache.spark.streaming.dstream.TransformedDStream@8266e05\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 148
+      "execution_count" : 160
     } ]
   }, {
     "metadata" : {
@@ -190,18 +190,18 @@
       "id" : "9EAA80DEB2FB42DF95CCE819D0281A62"
     },
     "cell_type" : "code",
-    "source" : "val li = ul(20)\nli",
+    "source" : "val li = ul(25)\nli",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "li: notebook.front.widgets.HtmlList = <HtmlList widget>\nres204: notebook.front.widgets.HtmlList = <HtmlList widget>\n"
+      "text" : "li: notebook.front.widgets.HtmlList = <HtmlList widget>\nres224: notebook.front.widgets.HtmlList = <HtmlList widget>\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<ul data-bind=\"foreach: value\"><li data-bind=\"html: $data\"></li><script data-this=\"{&quot;valueId&quot;:&quot;anon60d98d6a69139d1ca85a68479b3a1c14&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId)\n    },\n    this\n  );\n});\n                            /*]]>*/</script></ul>"
+        "text/html" : "<ul data-bind=\"foreach: value\"><li data-bind=\"html: $data\"></li><script data-this=\"{&quot;valueId&quot;:&quot;anon4cc3d776e8fb682cdd4d3590e562c372&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId)\n    },\n    this\n  );\n});\n                            /*]]>*/</script></ul>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 149
+      "execution_count" : 162
     } ]
   }, {
     "metadata" : {
@@ -218,7 +218,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 150
+      "execution_count" : 163
     } ]
   }, {
     "metadata" : {
@@ -235,7 +235,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 151
+      "execution_count" : 164
     } ]
   }, {
     "metadata" : {
@@ -252,18 +252,25 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 152
+      "execution_count" : 165
     } ]
   }, {
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
+      "collapsed" : false,
       "id" : "2FAB5C1BC80247DF8DA8AB386512AD0C"
     },
     "cell_type" : "code",
-    "source" : "",
-    "outputs" : [ ]
+    "source" : "dstream.foreachRDD{rdd => li.append(\"-----\" )}",
+    "outputs" : [ {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 166
+    } ]
   }, {
     "metadata" : {
       "trusted" : true,
@@ -279,7 +286,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 153
+      "execution_count" : 167
     } ]
   }, {
     "metadata" : {
@@ -296,7 +303,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 154
+      "execution_count" : 168
     } ]
   }, {
     "metadata" : {
