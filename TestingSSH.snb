@@ -127,7 +127,7 @@
       "id" : "BE0A1EE6A1B64F2DA7E8989E0FC4C4AA"
     },
     "cell_type" : "code",
-    "source" : "val window = dstream.window(Seconds(5),Seconds(1))",
+    "source" : "val window = dstream.map(e=> (e,e)).reduceByKeyAndwindow(Seconds(5),Seconds(1), (x:Int,y:Int) => x)",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
@@ -211,7 +211,7 @@
       "id" : "EEE6EE21808042CC838D57608A554C1E"
     },
     "cell_type" : "code",
-    "source" : "notInWindow.foreachRDD(rdd => li.append(rdd.collect.mkString(\",\")))",
+    "source" : "notInWindow.foreachRDD(rdd => val data = rdd.collect\n                       val pretty = data.map{case (k,(e1,e2)) => \n                       li.append(rdd.collect.mkString(\",\")))",
     "outputs" : [ {
       "metadata" : { },
       "data" : {
