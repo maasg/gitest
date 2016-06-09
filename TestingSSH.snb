@@ -169,7 +169,7 @@
       "id" : "58BE362525E1466F9A6F6477001C0817"
     },
     "cell_type" : "code",
-    "source" : "val notInWindow = keyedDstream.cogroup(windowed)",
+    "source" : "val notInWindow = keyedDstream.cogroup(windowed).transform(rdd => rdd.collect{case (k,(",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
@@ -211,14 +211,14 @@
       "id" : "EEE6EE21808042CC838D57608A554C1E"
     },
     "cell_type" : "code",
-    "source" : "notInWindow.foreachRDD{rdd => val data = rdd.collect\n                       val pretty = data.map{case (k,(e1,e2)) => \n                                             s\"$k -> (${e1.mkString})-(${e2.mkString})\"\n                                            }\n                       li.app",
+    "source" : "notInWindow.foreachRDD{rdd => val data = rdd.collect\n                       val pretty = data.map{case (k,(e1,e2)) => \n                                             s\"$k -> (${e1.mkString})-(${e2.mkString})\"\n                                            }\n                       pretty.foreach(e=> li.append(e))\n                      }",
     "outputs" : [ {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 39
+      "execution_count" : 55
     } ]
   }, {
     "metadata" : {
@@ -235,7 +235,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 40
+      "execution_count" : 56
     } ]
   }, {
     "metadata" : {
