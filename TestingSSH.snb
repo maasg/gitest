@@ -89,14 +89,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "ssc: org.apache.spark.streaming.StreamingContext = org.apache.spark.streaming.StreamingContext@12c5bc4c\n"
+      "text" : "ssc: org.apache.spark.streaming.StreamingContext = org.apache.spark.streaming.StreamingContext@4fff46ba\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 42
+      "execution_count" : 66
     } ]
   }, {
     "metadata" : {
@@ -110,14 +110,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dstream: org.apache.spark.streaming.dstream.DStream[Int] = org.apache.spark.streaming.dstream.MappedDStream@756bf857\n"
+      "text" : "dstream: org.apache.spark.streaming.dstream.DStream[Int] = org.apache.spark.streaming.dstream.MappedDStream@4e556200\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 43
+      "execution_count" : 67
     } ]
   }, {
     "metadata" : {
@@ -131,14 +131,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "keyedDstream: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.MappedDStream@78dcee46\n"
+      "text" : "keyedDstream: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.MappedDStream@176aeea8\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 48
+      "execution_count" : 68
     } ]
   }, {
     "metadata" : {
@@ -152,14 +152,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "windowed: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.ShuffledDStream@14e01960\n"
+      "text" : "windowed: org.apache.spark.streaming.dstream.DStream[(Int, Int)] = org.apache.spark.streaming.dstream.ShuffledDStream@356698ae\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 51
+      "execution_count" : 69
     } ]
   }, {
     "metadata" : {
@@ -169,18 +169,18 @@
       "id" : "58BE362525E1466F9A6F6477001C0817"
     },
     "cell_type" : "code",
-    "source" : "val uniqueNotInWindow = keyedDstream.cogroup(windowed).transform(rdd => rdd.collect{case (k,(last, prev)) if (prev.isEmpty) => k}",
+    "source" : "val uniqueNotInWindow = keyedDstream.cogroup(windowed)//.transform(rdd => rdd.collect{case (k,(last, prev)) if (prev.isEmpty) => k}",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "notInWindow: org.apache.spark.streaming.dstream.DStream[(Int, (Iterable[Int], Iterable[Int]))] = org.apache.spark.streaming.dstream.TransformedDStream@6773e4d7\n"
+      "text" : "uniqueNotInWindow: org.apache.spark.streaming.dstream.DStream[(Int, (Iterable[Int], Iterable[Int]))] = org.apache.spark.streaming.dstream.TransformedDStream@3b86a7c3\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 52
+      "execution_count" : 70
     } ]
   }, {
     "metadata" : {
@@ -194,14 +194,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "li: notebook.front.widgets.HtmlList = <HtmlList widget>\nres64: notebook.front.widgets.HtmlList = <HtmlList widget>\n"
+      "text" : "li: notebook.front.widgets.HtmlList = <HtmlList widget>\nres90: notebook.front.widgets.HtmlList = <HtmlList widget>\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<ul data-bind=\"foreach: value\"><li data-bind=\"html: $data\"></li><script data-this=\"{&quot;valueId&quot;:&quot;anon9af704e1aac734160230bb560a2dc6b8&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId)\n    },\n    this\n  );\n});\n                            /*]]>*/</script></ul>"
+        "text/html" : "<ul data-bind=\"foreach: value\"><li data-bind=\"html: $data\"></li><script data-this=\"{&quot;valueId&quot;:&quot;anon862ae6fa067d46c52c65ef270014d828&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId)\n    },\n    this\n  );\n});\n                            /*]]>*/</script></ul>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 53
+      "execution_count" : 71
     } ]
   }, {
     "metadata" : {
@@ -211,14 +211,14 @@
       "id" : "EEE6EE21808042CC838D57608A554C1E"
     },
     "cell_type" : "code",
-    "source" : "notInWindow.foreachRDD{rdd => val data = rdd.collect\n                       val pretty = data.map{case (k,(e1,e2)) => \n                                             s\"[$k->(${e1.mkString})-(${e2.mkString})]\"\n                                            }\n                       li.append(pretty.mkString)\n                      }",
+    "source" : "uniqueNotInWindow.foreachRDD{rdd => val data = rdd.collect\n                       val pretty = data.map{case (k,(e1,e2)) => \n                                             s\"[$k->(${e1.mkString})-(${e2.mkString})]\"\n                                            }\n                       li.append(pretty.mkString(\",\"))\n                      }",
     "outputs" : [ {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 55
+      "execution_count" : 73
     } ]
   }, {
     "metadata" : {
@@ -235,7 +235,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 56
+      "execution_count" : 74
     } ]
   }, {
     "metadata" : {
@@ -252,7 +252,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 41
+      "execution_count" : 75
     } ]
   }, {
     "metadata" : {
