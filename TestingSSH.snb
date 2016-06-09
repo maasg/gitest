@@ -127,7 +127,7 @@
       "id" : "D77288C7FAEA430982BB7702ABFD14F0"
     },
     "cell_type" : "code",
-    "source" : "val keyedDstream = dstream.transform(rdd=> rdd.distinct).map(e => (e,e))",
+    "source" : "val keyedDstream = dstream.transform(rdd=> rdd.distinct).map(e => (e,1))",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
@@ -148,7 +148,7 @@
       "id" : "BE0A1EE6A1B64F2DA7E8989E0FC4C4AA"
     },
     "cell_type" : "code",
-    "source" : "val windowed = keyedDstream.reduceByKeyAndWindow((x:Int,y:Int) => x, Seconds(4),Seconds(1))",
+    "source" : "val windowed = keyedDstream.reduceByKeyAndWindow((x:Int,y:Int) => x+y, Seconds(4),Seconds(1))",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
