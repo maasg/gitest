@@ -37,18 +37,88 @@
       "id" : "A83FA95CEB5345578AA71DC2FF4DFFDE"
     },
     "cell_type" : "code",
-    "source" : "val v=sparkContext.range(1 to 100)",
+    "source" : "val v=sparkContext.range(1L, 1000L, 10)",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "<console>:60: error: not enough arguments for method range: (start: Long, end: Long, step: Long, numSlices: Int)org.apache.spark.rdd.RDD[Long].\nUnspecified value parameter end.\n       val v=sparkContext.range(1 to 100)\n                               ^\n"
+      "text" : "v: org.apache.spark.rdd.RDD[Long] = MapPartitionsRDD[3] at range at <console>:60\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 5
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "BE09518B7C26458E8E7EC4DF4FC38596"
+    },
+    "cell_type" : "code",
+    "source" : "import scala.util.Random\nval rdd = v.map(e => Random.nextLong())",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import scala.util.Random\nrdd: org.apache.spark.rdd.RDD[Long] = MapPartitionsRDD[4] at map at <console>:63\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 8
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "ED671E39045C4DBB82551E1E5D725044"
+    },
+    "cell_type" : "code",
+    "source" : "rdd.reduce(_ max _)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "res10: Long = 8969308519403593642\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "8969308519403593642"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 9
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "E8F4CC3BDB1A401288A9A71740F1FBB4"
+    },
+    "cell_type" : "code",
+    "source" : "rdd.reduce(_ min _)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "res12: Long = -9175124922231662058\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "-9175124922231662058"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 10
     } ]
   }, {
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
       "collapsed" : true,
-      "id" : "BE09518B7C26458E8E7EC4DF4FC38596"
+      "id" : "87F6E075876C4B6681457D0F02571467"
     },
     "cell_type" : "code",
     "source" : "",
