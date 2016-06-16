@@ -29,5 +29,30 @@
     "customArgs" : null,
     "customSparkConf" : null
   },
-  "cells" : [ ]
+  "cells" : [ {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "A83FA95CEB5345578AA71DC2FF4DFFDE"
+    },
+    "cell_type" : "code",
+    "source" : "val v=sparkContext.range(1 to 100)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "<console>:60: error: not enough arguments for method range: (start: Long, end: Long, step: Long, numSlices: Int)org.apache.spark.rdd.RDD[Long].\nUnspecified value parameter end.\n       val v=sparkContext.range(1 to 100)\n                               ^\n"
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "BE09518B7C26458E8E7EC4DF4FC38596"
+    },
+    "cell_type" : "code",
+    "source" : "",
+    "outputs" : [ ]
+  } ],
+  "nbformat" : 4
 }
