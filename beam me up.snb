@@ -58,18 +58,18 @@
       "id" : "BE09518B7C26458E8E7EC4DF4FC38596"
     },
     "cell_type" : "code",
-    "source" : "import scala.util.Random\nval rdd = v.map(e => Random.nextLong())",
+    "source" : "import scala.util.Random\nval rdd = v.map(e => Random.nextInt())",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "import scala.util.Random\nrdd: org.apache.spark.rdd.RDD[Long] = MapPartitionsRDD[4] at map at <console>:63\n"
+      "text" : "import scala.util.Random\nrdd: org.apache.spark.rdd.RDD[Int] = MapPartitionsRDD[6] at map at <console>:64\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 8
+      "execution_count" : 13
     } ]
   }, {
     "metadata" : {
@@ -83,14 +83,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "res10: Long = 8969308519403593642\n"
+      "text" : "res19: Int = 2091149276\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "8969308519403593642"
+        "text/html" : "2091149276"
       },
       "output_type" : "execute_result",
-      "execution_count" : 9
+      "execution_count" : 14
     } ]
   }, {
     "metadata" : {
@@ -104,21 +104,42 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "res12: Long = -9175124922231662058\n"
+      "text" : "res21: Int = -2097664524\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "-9175124922231662058"
+        "text/html" : "-2097664524"
       },
       "output_type" : "execute_result",
-      "execution_count" : 10
+      "execution_count" : 15
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "87F6E075876C4B6681457D0F02571467"
+    },
+    "cell_type" : "code",
+    "source" : "rdd.sum / rdd.count",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "res23: Double = 6.089028649E7\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "6.089028649E7"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 16
     } ]
   }, {
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
       "collapsed" : true,
-      "id" : "87F6E075876C4B6681457D0F02571467"
+      "id" : "4C7AAEDD4ACE40008CF40AC53C1A1233"
     },
     "cell_type" : "code",
     "source" : "",
