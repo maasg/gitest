@@ -1,0 +1,1 @@
+{"schedule":"R/2016-07-26T09:47Z/PT5M","name":"beam-me-up -- job","cpus":"2","mem":"2048","uris":[],"shell":false,"command":"","container":{"type":"DOCKER","forcePullImage":true,"image":"docker-repo:5000/beam-me-up:0.0.1","network":"HOST"}}
