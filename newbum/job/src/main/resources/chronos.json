@@ -1,0 +1,1 @@
+{"schedule":"R/2016-07-26T07:53Z/PT5M","name":"newbum -- job","cpus":"2","mem":"2048","uris":[],"shell":false,"command":"","container":{"type":"DOCKER","forcePullImage":true,"image":"docker-repo:5000/newbum:0.0.1","network":"HOST"}}

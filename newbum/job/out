@@ -1,0 +1,30 @@
+Start job/gen.sh
+Die Jul 26 09:53:49 CEST 2016
+Folder /tmp/adastyx-projects/newbum/jdk doesn't exist
+Folder /tmp/adastyx-projects/newbum/sbt doesn't exist
+enter /tmp/adastyx-projects/newbum/job
+publishing project
+building docker
+pushing docker
+The push refers to a repository [docker-repo:5000/newbum]
+showing docker images
+REPOSITORY                                       TAG                 IMAGE ID            CREATED             SIZE
+docker-repo:5000/test-git                        0.0.1               e5d80b965bc4        2 weeks ago         831 MB
+<none>                                           <none>              4bb02ba5e480        2 weeks ago         831 MB
+<none>                                           <none>              0a79ce341e30        2 weeks ago         831 MB
+docker-repo:5000/customenv                       0.0.1               e74777fde476        2 weeks ago         831 MB
+virdata/precise-zookeeper-3.4.6                  1.0.1               ccbe3621efd0        9 weeks ago         816.3 MB
+virdata/precise-kafka-0.8.1                      1.0.0               8413058c19e8        9 weeks ago         767.5 MB
+virdata/precise-oracle-jdk-7                     1.0.0               4847dbf0edda        9 weeks ago         720.9 MB
+kafka                                            0.8.2.1             ce54c848e139        9 weeks ago         422.1 MB
+datafellas/distributed-pipeline-quotes           1.0.0               f0723487a8dd        10 weeks ago        1.131 GB
+java                                             openjdk-8-jre       18552cb9affb        11 weeks ago        311 MB
+cassandra                                        latest              77d2bd38e2e5        11 weeks ago        388.8 MB
+ubuntu                                           precise             2bffcdf4b693        11 weeks ago        138.5 MB
+mesosphere/marathon                              latest              ff59ee911533        12 weeks ago        830.2 MB
+hello-world                                      latest              94df4f0ce8a4        3 months ago        967 B
+data-fellas-docker-public.bintray.io/base-adst   0.0.1               bfbfec431922        3 months ago        509.6 MB
+cloudera/quickstart                              latest              4239cd2958c6        3 months ago        6.336 GB
+posting marathon
+End job/gen.sh
+Die Jul 26 09:53:49 CEST 2016
