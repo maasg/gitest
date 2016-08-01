@@ -67,3 +67,42 @@ gliderlabs/registrator                           v6                  52cf0f3bb1e
 posting marathon
 End job/gen.sh
 Mon Aug 1 16:55:50 CEST 2016
+Start job/gen.sh
+Mon Aug 1 17:05:17 CEST 2016
+Folder /tmp/adastyx-new-projects/newbum/jdk doesn't exist
+Folder /tmp/adastyx-new-projects/newbum/sbt doesn't exist
+enter /tmp/adastyx-new-projects/newbum/job
+publishing project
+building docker
+pushing docker
+The push refers to a repository [docker-repo:5000/newbum]
+showing docker images
+REPOSITORY                                       TAG                 IMAGE ID            CREATED             SIZE
+containersol/minimesos-cli                       0.9.1               3368e4c7ad8d        11 days ago         133.7 MB
+containersol/mesos-master                        0.25.0-0.1.0        ac5a6d9c33c9        3 weeks ago         569.6 MB
+containersol/mesos-agent                         0.25.0-0.1.0        b4f7aca2151f        3 weeks ago         569.6 MB
+docker-repo:5000/test-git                        0.0.1               e5d80b965bc4        3 weeks ago         831 MB
+<none>                                           <none>              4bb02ba5e480        3 weeks ago         831 MB
+<none>                                           <none>              0a79ce341e30        3 weeks ago         831 MB
+docker-repo:5000/customenv                       0.0.1               e74777fde476        3 weeks ago         831 MB
+virdata/precise-zookeeper-3.4.6                  1.0.1               ccbe3621efd0        10 weeks ago        816.3 MB
+virdata/precise-kafka-0.8.1                      1.0.0               8413058c19e8        10 weeks ago        767.5 MB
+virdata/precise-oracle-jdk-7                     1.0.0               4847dbf0edda        10 weeks ago        720.9 MB
+kafka                                            0.8.2.1             ce54c848e139        10 weeks ago        422.1 MB
+datafellas/distributed-pipeline-quotes           1.0.0               f0723487a8dd        11 weeks ago        1.131 GB
+java                                             openjdk-8-jre       18552cb9affb        12 weeks ago        311 MB
+cassandra                                        latest              77d2bd38e2e5        12 weeks ago        388.8 MB
+ubuntu                                           precise             2bffcdf4b693        12 weeks ago        138.5 MB
+mesosphere/marathon                              latest              ff59ee911533        3 months ago        830.2 MB
+containersol/consul-server                       0.6-1               3e27f63d1da2        3 months ago        37.77 MB
+hello-world                                      latest              94df4f0ce8a4        3 months ago        967 B
+data-fellas-docker-public.bintray.io/base-adst   0.0.1               bfbfec431922        3 months ago        509.6 MB
+cloudera/quickstart                              latest              4239cd2958c6        3 months ago        6.336 GB
+weaveworks/scope                                 0.13.1              d721bbaaca35        5 months ago        83.88 MB
+weaveworks/weaveexec                             1.4.5               e566e11c8087        5 months ago        60.67 MB
+mesosphere/marathon                              v0.15.3             cb206b7716b0        5 months ago        818.4 MB
+jplock/zookeeper                                 3.4.6               66b763a96616        5 months ago        163.2 MB
+gliderlabs/registrator                           v6                  52cf0f3bb1e9        11 months ago       20.96 MB
+posting marathon
+End job/gen.sh
+Mon Aug 1 17:05:18 CEST 2016
