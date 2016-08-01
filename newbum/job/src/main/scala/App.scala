@@ -30,7 +30,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "newbum"))
 // Set project Jars
 
 val libDir = new java.io.File(".", "lib")
-val currentProjectJars = Array[String]( "com.example-newbum.newbum-0.0.1.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array[String]( "com.example-newbum.newbum-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(".", "spark-lib")
 val fromProjectJars = Array[String]().map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
@@ -53,8 +53,23 @@ val sc = sparkContext
 
 val adalogUrl:Option[String] = None
 
+val adalogUser:Option[String] = None
+val adalogPassword:Option[String] = None
+
 
 // no custom variables 
+/* -- Code Cell: Some(A3F5EC37A1EC48A58084F2D58EFB6BF0) -- */ 
 
+  val rdd = sparkContext.parallelize(1 to 100)
+/****************/
+
+
+  /* -- Code Cell: Some(ACCFAE7A462B49FD8C975A7F7262BDE4) -- */ 
+
+  rdd.sum
+/****************/
+
+
+  /* -- Code Cell: Some(2FC76FA0178C4C638A125AE4F4370086) -- */
 
 }

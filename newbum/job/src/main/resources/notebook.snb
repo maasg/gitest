@@ -1,5 +1,6 @@
 {
   "metadata" : {
+    "id" : "7C821975-1565-4307-8172-2C1BF44CAF65",
     "name" : "newbum",
     "user_save_timestamp" : "2016-07-05T19:42:46.638Z",
     "auto_save_timestamp" : "2016-07-05T19:42:46.638Z",
@@ -30,5 +31,58 @@
     "customSparkConf" : null,
     "customVars" : null
   },
-  "cells" : [ ]
+  "cells" : [ {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "A3F5EC37A1EC48A58084F2D58EFB6BF0"
+    },
+    "cell_type" : "code",
+    "source" : "val rdd = sparkContext.parallelize(1 to 100)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "rdd: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[0] at parallelize at <console>:60\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 2
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "ACCFAE7A462B49FD8C975A7F7262BDE4"
+    },
+    "cell_type" : "code",
+    "source" : "rdd.sum",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "res4: Double = 5050.0\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "5050.0"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 3
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "2FC76FA0178C4C638A125AE4F4370086"
+    },
+    "cell_type" : "code",
+    "source" : "",
+    "outputs" : [ ]
+  } ],
+  "nbformat" : 4
 }
