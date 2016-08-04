@@ -1,8 +1,8 @@
 {
   "metadata" : {
-    "id" : "54f4006d-dfcb-48b7-af11-f39111e4cda0",
-    "name" : "serTest",
-    "user_save_timestamp" : "2016-07-28T14:06:01.166Z",
+    "id" : "1e95944d-cc5d-4f9c-86f2-5f6e5cea991a",
+    "name" : "serMovedTest.snb",
+    "user_save_timestamp" : "2016-08-04T17:43:08.061Z",
     "auto_save_timestamp" : "2016-07-28T14:06:01.166Z",
     "language_info" : {
       "name" : "scala",
