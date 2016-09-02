@@ -6,7 +6,7 @@ echo $(date)
 if [ ! -d "/tmp/adastyx-new-projects/newbum/jdk" ]; then
   echo "Folder /tmp/adastyx-new-projects/newbum/jdk doesn't exist"
   cd /tmp/adastyx-new-projects/newbum
-  wget http://repo-node/jdk-7u79-linux-x64.tar.gz
+  wget http://localhost:8000/jdk-8u20-linux-x64.tar.gz
   tar xvzf jdk-7u79-linux-x64.tar.gz
   mv jdk1.7.0_79 jdk
   rm jdk-7u79-linux-x64.tar.gz
@@ -15,7 +15,7 @@ fi
 if [ ! -d "/tmp/adastyx-new-projects/newbum/sbt" ]; then
   echo "Folder /tmp/adastyx-new-projects/newbum/sbt doesn't exist"
   cd /tmp/adastyx-new-projects/newbum
-  wget http://repo-node/sbt-0.13.9.tgz
+  wget http://localhost:8000/sbt-0.13.12.tgz
   tar xvzf sbt-0.13.9.tgz
   rm sbt-0.13.9.tgz
 fi
