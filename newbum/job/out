@@ -1,259 +1,6 @@
 Start job/gen.sh
-Die Jul 26 09:53:49 CEST 2016
-Folder /tmp/adastyx-projects/newbum/jdk doesn't exist
-Folder /tmp/adastyx-projects/newbum/sbt doesn't exist
-enter /tmp/adastyx-projects/newbum/job
-publishing project
-building docker
-pushing docker
-The push refers to a repository [docker-repo:5000/newbum]
-showing docker images
-REPOSITORY                                       TAG                 IMAGE ID            CREATED             SIZE
-docker-repo:5000/test-git                        0.0.1               e5d80b965bc4        2 weeks ago         831 MB
-<none>                                           <none>              4bb02ba5e480        2 weeks ago         831 MB
-<none>                                           <none>              0a79ce341e30        2 weeks ago         831 MB
-docker-repo:5000/customenv                       0.0.1               e74777fde476        2 weeks ago         831 MB
-virdata/precise-zookeeper-3.4.6                  1.0.1               ccbe3621efd0        9 weeks ago         816.3 MB
-virdata/precise-kafka-0.8.1                      1.0.0               8413058c19e8        9 weeks ago         767.5 MB
-virdata/precise-oracle-jdk-7                     1.0.0               4847dbf0edda        9 weeks ago         720.9 MB
-kafka                                            0.8.2.1             ce54c848e139        9 weeks ago         422.1 MB
-datafellas/distributed-pipeline-quotes           1.0.0               f0723487a8dd        10 weeks ago        1.131 GB
-java                                             openjdk-8-jre       18552cb9affb        11 weeks ago        311 MB
-cassandra                                        latest              77d2bd38e2e5        11 weeks ago        388.8 MB
-ubuntu                                           precise             2bffcdf4b693        11 weeks ago        138.5 MB
-mesosphere/marathon                              latest              ff59ee911533        12 weeks ago        830.2 MB
-hello-world                                      latest              94df4f0ce8a4        3 months ago        967 B
-data-fellas-docker-public.bintray.io/base-adst   0.0.1               bfbfec431922        3 months ago        509.6 MB
-cloudera/quickstart                              latest              4239cd2958c6        3 months ago        6.336 GB
-posting marathon
-End job/gen.sh
-Die Jul 26 09:53:49 CEST 2016
-Start job/gen.sh
-Mon Aug 1 16:55:48 CEST 2016
-Folder /tmp/adastyx-new-projects/newbum/jdk doesn't exist
-Folder /tmp/adastyx-new-projects/newbum/sbt doesn't exist
-enter /tmp/adastyx-new-projects/newbum/job
-publishing project
-building docker
-pushing docker
-The push refers to a repository [docker-repo:5000/newbum]
-showing docker images
-REPOSITORY                                       TAG                 IMAGE ID            CREATED             SIZE
-containersol/minimesos-cli                       0.9.1               3368e4c7ad8d        11 days ago         133.7 MB
-containersol/mesos-master                        0.25.0-0.1.0        ac5a6d9c33c9        3 weeks ago         569.6 MB
-containersol/mesos-agent                         0.25.0-0.1.0        b4f7aca2151f        3 weeks ago         569.6 MB
-docker-repo:5000/test-git                        0.0.1               e5d80b965bc4        3 weeks ago         831 MB
-<none>                                           <none>              4bb02ba5e480        3 weeks ago         831 MB
-<none>                                           <none>              0a79ce341e30        3 weeks ago         831 MB
-docker-repo:5000/customenv                       0.0.1               e74777fde476        3 weeks ago         831 MB
-virdata/precise-zookeeper-3.4.6                  1.0.1               ccbe3621efd0        10 weeks ago        816.3 MB
-virdata/precise-kafka-0.8.1                      1.0.0               8413058c19e8        10 weeks ago        767.5 MB
-virdata/precise-oracle-jdk-7                     1.0.0               4847dbf0edda        10 weeks ago        720.9 MB
-kafka                                            0.8.2.1             ce54c848e139        10 weeks ago        422.1 MB
-datafellas/distributed-pipeline-quotes           1.0.0               f0723487a8dd        11 weeks ago        1.131 GB
-java                                             openjdk-8-jre       18552cb9affb        12 weeks ago        311 MB
-cassandra                                        latest              77d2bd38e2e5        12 weeks ago        388.8 MB
-ubuntu                                           precise             2bffcdf4b693        12 weeks ago        138.5 MB
-mesosphere/marathon                              latest              ff59ee911533        3 months ago        830.2 MB
-containersol/consul-server                       0.6-1               3e27f63d1da2        3 months ago        37.77 MB
-hello-world                                      latest              94df4f0ce8a4        3 months ago        967 B
-data-fellas-docker-public.bintray.io/base-adst   0.0.1               bfbfec431922        3 months ago        509.6 MB
-cloudera/quickstart                              latest              4239cd2958c6        3 months ago        6.336 GB
-weaveworks/scope                                 0.13.1              d721bbaaca35        5 months ago        83.88 MB
-weaveworks/weaveexec                             1.4.5               e566e11c8087        5 months ago        60.67 MB
-mesosphere/marathon                              v0.15.3             cb206b7716b0        5 months ago        818.4 MB
-jplock/zookeeper                                 3.4.6               66b763a96616        5 months ago        163.2 MB
-gliderlabs/registrator                           v6                  52cf0f3bb1e9        11 months ago       20.96 MB
-posting marathon
-End job/gen.sh
-Mon Aug 1 16:55:50 CEST 2016
-Start job/gen.sh
-Mon Aug 1 17:05:17 CEST 2016
-Folder /tmp/adastyx-new-projects/newbum/jdk doesn't exist
-Folder /tmp/adastyx-new-projects/newbum/sbt doesn't exist
-enter /tmp/adastyx-new-projects/newbum/job
-publishing project
-building docker
-pushing docker
-The push refers to a repository [docker-repo:5000/newbum]
-showing docker images
-REPOSITORY                                       TAG                 IMAGE ID            CREATED             SIZE
-containersol/minimesos-cli                       0.9.1               3368e4c7ad8d        11 days ago         133.7 MB
-containersol/mesos-master                        0.25.0-0.1.0        ac5a6d9c33c9        3 weeks ago         569.6 MB
-containersol/mesos-agent                         0.25.0-0.1.0        b4f7aca2151f        3 weeks ago         569.6 MB
-docker-repo:5000/test-git                        0.0.1               e5d80b965bc4        3 weeks ago         831 MB
-<none>                                           <none>              4bb02ba5e480        3 weeks ago         831 MB
-<none>                                           <none>              0a79ce341e30        3 weeks ago         831 MB
-docker-repo:5000/customenv                       0.0.1               e74777fde476        3 weeks ago         831 MB
-virdata/precise-zookeeper-3.4.6                  1.0.1               ccbe3621efd0        10 weeks ago        816.3 MB
-virdata/precise-kafka-0.8.1                      1.0.0               8413058c19e8        10 weeks ago        767.5 MB
-virdata/precise-oracle-jdk-7                     1.0.0               4847dbf0edda        10 weeks ago        720.9 MB
-kafka                                            0.8.2.1             ce54c848e139        10 weeks ago        422.1 MB
-datafellas/distributed-pipeline-quotes           1.0.0               f0723487a8dd        11 weeks ago        1.131 GB
-java                                             openjdk-8-jre       18552cb9affb        12 weeks ago        311 MB
-cassandra                                        latest              77d2bd38e2e5        12 weeks ago        388.8 MB
-ubuntu                                           precise             2bffcdf4b693        12 weeks ago        138.5 MB
-mesosphere/marathon                              latest              ff59ee911533        3 months ago        830.2 MB
-containersol/consul-server                       0.6-1               3e27f63d1da2        3 months ago        37.77 MB
-hello-world                                      latest              94df4f0ce8a4        3 months ago        967 B
-data-fellas-docker-public.bintray.io/base-adst   0.0.1               bfbfec431922        3 months ago        509.6 MB
-cloudera/quickstart                              latest              4239cd2958c6        3 months ago        6.336 GB
-weaveworks/scope                                 0.13.1              d721bbaaca35        5 months ago        83.88 MB
-weaveworks/weaveexec                             1.4.5               e566e11c8087        5 months ago        60.67 MB
-mesosphere/marathon                              v0.15.3             cb206b7716b0        5 months ago        818.4 MB
-jplock/zookeeper                                 3.4.6               66b763a96616        5 months ago        163.2 MB
-gliderlabs/registrator                           v6                  52cf0f3bb1e9        11 months ago       20.96 MB
-posting marathon
-End job/gen.sh
-Mon Aug 1 17:05:18 CEST 2016
-Start job/gen.sh
-Fre Sep 2 16:09:47 CEST 2016
-Folder /tmp/adastyx-new-projects/newbum/jdk doesn't exist
-Folder /tmp/adastyx-new-projects/newbum/sbt doesn't exist
-enter /tmp/adastyx-new-projects/newbum/job
-publishing project
-building docker
-pushing docker
-The push refers to a repository [docker-repo:5000/newbum]
-showing docker images
-REPOSITORY                                       TAG                 IMAGE ID            CREATED             SIZE
-containersol/minimesos-cli                       0.10.2              0f8fd0fee007        4 weeks ago         133.7 MB
-containersol/minimesos-cli                       0.9.1               3368e4c7ad8d        6 weeks ago         133.7 MB
-containersol/mesos-agent                         0.25.0-0.1.0        b4f7aca2151f        8 weeks ago         569.6 MB
-containersol/mesos-master                        0.25.0-0.1.0        ac5a6d9c33c9        8 weeks ago         569.6 MB
-docker-repo:5000/test-git                        0.0.1               e5d80b965bc4        8 weeks ago         831 MB
-<none>                                           <none>              4bb02ba5e480        8 weeks ago         831 MB
-docker-repo:5000/customenv                       0.0.1               e74777fde476        8 weeks ago         831 MB
-<none>                                           <none>              0a79ce341e30        8 weeks ago         831 MB
-virdata/precise-zookeeper-3.4.6                  1.0.1               ccbe3621efd0        3 months ago        816.3 MB
-virdata/precise-kafka-0.8.1                      1.0.0               8413058c19e8        3 months ago        767.5 MB
-virdata/precise-oracle-jdk-7                     1.0.0               4847dbf0edda        3 months ago        720.9 MB
-kafka                                            0.8.2.1             ce54c848e139        3 months ago        422.1 MB
-datafellas/distributed-pipeline-quotes           1.0.0               f0723487a8dd        3 months ago        1.131 GB
-java                                             openjdk-8-jre       18552cb9affb        4 months ago        311 MB
-cassandra                                        latest              77d2bd38e2e5        4 months ago        388.8 MB
-ubuntu                                           precise             2bffcdf4b693        4 months ago        138.5 MB
-mesosphere/marathon                              latest              ff59ee911533        4 months ago        830.2 MB
-containersol/consul-server                       0.6-1               3e27f63d1da2        4 months ago        37.77 MB
-hello-world                                      latest              94df4f0ce8a4        4 months ago        967 B
-data-fellas-docker-public.bintray.io/base-adst   0.0.1               bfbfec431922        4 months ago        509.6 MB
-cloudera/quickstart                              latest              4239cd2958c6        4 months ago        6.336 GB
-weaveworks/scope                                 0.13.1              d721bbaaca35        6 months ago        83.88 MB
-weaveworks/weaveexec                             1.4.5               e566e11c8087        6 months ago        60.67 MB
-mesosphere/marathon                              v0.15.3             cb206b7716b0        6 months ago        818.4 MB
-jplock/zookeeper                                 3.4.6               66b763a96616        6 months ago        163.2 MB
-mesosphere/chronos                               latest              7594654c6147        12 months ago       604.9 MB
-gliderlabs/registrator                           v6                  52cf0f3bb1e9        12 months ago       20.96 MB
-posting marathon
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"/>
-<title>Error 404 Not Found</title>
-</head>
-<body>
-<h2>HTTP ERROR: 404</h2>
-<p>Problem accessing //scheduler/iso8601. Reason:
-<pre>    Not Found</pre></p>
-<hr /><i><small>Powered by Jetty://</small></i>
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-</body>
-</html>
-End job/gen.sh
-Fre Sep 2 16:09:48 CEST 2016
-Start job/gen.sh
-Fre Sep 2 16:41:27 CEST 2016
-Folder /tmp/adastyx-new-projects/newbum/jdk doesn't exist
-Folder /tmp/adastyx-new-projects/newbum/sbt doesn't exist
-enter /tmp/adastyx-new-projects/newbum/job
-publishing project
-building docker
-pushing docker
-The push refers to a repository [docker-repo:5000/newbum]
-showing docker images
-REPOSITORY                                       TAG                 IMAGE ID            CREATED             SIZE
-containersol/minimesos-cli                       0.10.2              0f8fd0fee007        4 weeks ago         133.7 MB
-containersol/minimesos-cli                       0.9.1               3368e4c7ad8d        6 weeks ago         133.7 MB
-containersol/mesos-agent                         0.25.0-0.1.0        b4f7aca2151f        8 weeks ago         569.6 MB
-containersol/mesos-master                        0.25.0-0.1.0        ac5a6d9c33c9        8 weeks ago         569.6 MB
-docker-repo:5000/test-git                        0.0.1               e5d80b965bc4        8 weeks ago         831 MB
-<none>                                           <none>              4bb02ba5e480        8 weeks ago         831 MB
-<none>                                           <none>              0a79ce341e30        8 weeks ago         831 MB
-docker-repo:5000/customenv                       0.0.1               e74777fde476        8 weeks ago         831 MB
-virdata/precise-zookeeper-3.4.6                  1.0.1               ccbe3621efd0        3 months ago        816.3 MB
-virdata/precise-kafka-0.8.1                      1.0.0               8413058c19e8        3 months ago        767.5 MB
-virdata/precise-oracle-jdk-7                     1.0.0               4847dbf0edda        3 months ago        720.9 MB
-kafka                                            0.8.2.1             ce54c848e139        3 months ago        422.1 MB
-datafellas/distributed-pipeline-quotes           1.0.0               f0723487a8dd        3 months ago        1.131 GB
-java                                             openjdk-8-jre       18552cb9affb        4 months ago        311 MB
-cassandra                                        latest              77d2bd38e2e5        4 months ago        388.8 MB
-ubuntu                                           precise             2bffcdf4b693        4 months ago        138.5 MB
-mesosphere/marathon                              latest              ff59ee911533        4 months ago        830.2 MB
-containersol/consul-server                       0.6-1               3e27f63d1da2        4 months ago        37.77 MB
-hello-world                                      latest              94df4f0ce8a4        4 months ago        967 B
-data-fellas-docker-public.bintray.io/base-adst   0.0.1               bfbfec431922        4 months ago        509.6 MB
-cloudera/quickstart                              latest              4239cd2958c6        4 months ago        6.336 GB
-weaveworks/scope                                 0.13.1              d721bbaaca35        6 months ago        83.88 MB
-weaveworks/weaveexec                             1.4.5               e566e11c8087        6 months ago        60.67 MB
-mesosphere/marathon                              v0.15.3             cb206b7716b0        6 months ago        818.4 MB
-jplock/zookeeper                                 3.4.6               66b763a96616        6 months ago        163.2 MB
-mesosphere/chronos                               latest              7594654c6147        12 months ago       604.9 MB
-gliderlabs/registrator                           v6                  52cf0f3bb1e9        12 months ago       20.96 MB
-posting marathon
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"/>
-<title>Error 404 Not Found</title>
-</head>
-<body>
-<h2>HTTP ERROR: 404</h2>
-<p>Problem accessing //scheduler/iso8601. Reason:
-<pre>    Not Found</pre></p>
-<hr /><i><small>Powered by Jetty://</small></i>
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-</body>
-</html>
-End job/gen.sh
-Fre Sep 2 16:41:28 CEST 2016
-Start job/gen.sh
-Fre Sep 2 19:25:55 CEST 2016
+Fre Sep 2 19:43:11 CEST 2016
+At directory /home/maasg/projects/data-fellas/spark-notebook-entreprise/target/universal/spark-notebook-enterprise-0.7.0-SNAPSHOT-scala-2.10.5-spark-1.6.1-hadoop-2.2.0
 Folder /tmp/adastyx-new-projects/newbum/jdk doesn't exist
 jdk1.8.0_20/
 jdk1.8.0_20/javafx-src.zip
@@ -2087,8 +1834,8 @@ publishing project
 [A[2K[0m[[0minfo[0m] [0mResolving org.fusesource.jansi#jansi;1.4 ...[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
 [0m[[0minfo[0m] [0mSet current project to newbum (in build file:/tmp/adastyx-new-projects/newbum/job/)[0m
-[0m[[0minfo[0m] [0mUpdating {file:/tmp/adastyx-new-projects/newbum/job/}job...[0m
 [0m[[0minfo[0m] [0mPackaging /tmp/adastyx-new-projects/newbum/job/target/scala-2.10/newbum_2.10-0.0.1-SNAPSHOT-sources.jar ...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/tmp/adastyx-new-projects/newbum/job/}job...[0m
 [0m[[0minfo[0m] [0mDone packaging.[0m
 [0m[[33mwarn[0m] [0mSkipped generating '<exclusion/>' for org.apache.hadoop#*. Dependency exclusion should have both 'org' and 'module' to comply with Maven POM's schema.[0m
 [0m[[33mwarn[0m] [0mSkipped generating '<exclusion/>' for org.apache.spark#*. Dependency exclusion should have both 'org' and 'module' to comply with Maven POM's schema.[0m
@@ -2369,262 +2116,244 @@ publishing project
 [A[2K[0m[[0minfo[0m] [0mResolving net.java.dev.jets3t#jets3t;0.9.0 ...[0m
 [A[2K[0m[[0minfo[0m] [0mResolving com.jamesmurty.utils#java-xmlbuilder;0.4 ...[0m
 [A[2K[0m[[0minfo[0m] [0mResolving org.scalaj#scalaj-http_2.10;2.3.0 ...[0m
-[A[2K[0m[[0minfo[0m] [0mResolving org.scalaj#scalaj-http_2.10;2.3.0 ...[0m
 [A[2K[0m[[0minfo[0m] [0mResolving org.apache.hadoop#hadoop-yarn-server-nodemanager;2.6.0 ...[0m
 [A[2K[0m[[0minfo[0m] [0mResolving org.scala-lang#jline;2.10.5 ...[0m
 [A[2K[0m[[0minfo[0m] [0mResolving org.fusesource.jansi#jansi;1.4 ...[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/scalaj/scalaj-http_2.10/2.3.0/scalaj-http_2.10-2.3.0.jar ...[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scalaj#scalaj-http_2.10;2.3.0!scalaj-http_2.10.jar (179ms)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
 [0m[[33mwarn[0m] [0mThere may be incompatibilities among your library dependencies.[0m
 [0m[[33mwarn[0m] [0mHere are some of the libraries that were evicted:[0m
 [0m[[33mwarn[0m] [0m	* net.java.dev.jets3t:jets3t:0.7.1 -> 0.9.0[0m
 [0m[[33mwarn[0m] [0m	* com.google.guava:guava:14.0.1 -> 16.0.1[0m
 [0m[[33mwarn[0m] [0mRun 'evicted' to see detailed eviction warnings[0m
-[0m[[0minfo[0m] [0m:: delivering :: com.example-newbum#newbum_2.10;0.0.1-SNAPSHOT :: 0.0.1-SNAPSHOT :: integration :: Fri Sep 02 19:26:17 CEST 2016[0m
+[0m[[0minfo[0m] [0m:: delivering :: com.example-newbum#newbum_2.10;0.0.1-SNAPSHOT :: 0.0.1-SNAPSHOT :: integration :: Fri Sep 02 19:43:31 CEST 2016[0m
 [0m[[0minfo[0m] [0m	delivering ivy file to /tmp/adastyx-new-projects/newbum/job/target/scala-2.10/ivy-0.0.1-SNAPSHOT.xml[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source to /tmp/adastyx-new-projects/newbum/job/target/scala-2.10/classes...[0m
 [0m[[0minfo[0m] [0mMain Scala API documentation to /tmp/adastyx-new-projects/newbum/job/target/scala-2.10/api...[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to /tmp/adastyx-new-projects/newbum/job/target/scala-2.10/classes...[0m
 model contains 5 documentable templates
 [0m[[0minfo[0m] [0mMain Scala API documentation successful.[0m
 [0m[[0minfo[0m] [0mPackaging /tmp/adastyx-new-projects/newbum/job/target/scala-2.10/newbum_2.10-0.0.1-SNAPSHOT-javadoc.jar ...[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m
 [0m[[0minfo[0m] [0mPackaging /tmp/adastyx-new-projects/newbum/job/target/scala-2.10/newbum_2.10-0.0.1-SNAPSHOT.jar ...[0m
 [0m[[0minfo[0m] [0mDone packaging.[0m
-[0m[[0minfo[0m] [0mDone packaging.[0m
-[0m[[0minfo[0m] [0mIncluding: serialization_2.10-0.1.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: test-interface-1.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: logback-classic-1.1.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: rxjava-1.0.0-rc.5.jar[0m
+[0m[[0minfo[0m] [0mIncluding: asm-3.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding: chill_2.10-0.5.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: bokeh_2.10-0.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: main-settings-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jackson-annotations-2.4.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding: serialization_2.10-0.1.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: api-util-1.0.0-M20.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jersey-core-1.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: commons-math3-3.4.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: curator-framework-2.6.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jackson-core-2.4.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding: curator-client-2.6.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding: scala-pickling_2.10-0.10.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: mesos-0.21.1-shaded-protobuf.jar[0m
+[0m[[0minfo[0m] [0mIncluding: spark-unsafe_2.10-1.6.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding: chill-java-0.5.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: commons-codec-1.10.jar[0m
 [0m[[0minfo[0m] [0mIncluding: scala-library.jar[0m
+[0m[[0minfo[0m] [0mIncluding: java-xmlbuilder-0.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding: slf4j-log4j12-1.7.10.jar[0m
 [0m[[0minfo[0m] [0mIncluding: kryo-2.21.jar[0m
-[0m[[0minfo[0m] [0mIncluding: apply-macro-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: zookeeper-3.4.6.jar[0m
+[0m[[0minfo[0m] [0mIncluding: breeze_2.10-0.11.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: javax.servlet-3.0.0.v201112011016.jar[0m
 [0m[[0minfo[0m] [0mIncluding: reflectasm-1.07-shaded.jar[0m
+[0m[[0minfo[0m] [0mIncluding: commons-lang3-3.3.2.jar[0m
 [0m[[0minfo[0m] [0mIncluding: minlog-1.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: command-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding: objenesis-1.2.jar[0m
 [0m[[0minfo[0m] [0mIncluding: xbean-asm5-shaded-4.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding: xercesImpl-2.11.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: spark-launcher_2.10-1.6.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: logic-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: unused-1.0.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: compiler-interface-src-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: dependency-utils_2.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding: compiler-interface-bin-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: sbt-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: spark-network-common_2.10-1.6.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: main-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: quasiquotes_2.10-2.0.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: compiler-interface-bin-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: compiler-interface-bin-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: json4s-core_2.10-3.2.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding: xml-apis-1.4.01.jar[0m
-[0m[[0minfo[0m] [0mIncluding: compiler-interface-bin-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: fm-sbt-s3-resolver-0.5.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: aws-java-sdk-s3-1.9.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jta-1.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: json4s-ast_2.10-3.2.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding: core_2.10-0.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: paranamer-2.6.jar[0m
-[0m[[0minfo[0m] [0mIncluding: play-json_2.10-2.4.0-M1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jawn-parser_2.10-0.6.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: akka-actor_2.10-2.3.11.jar[0m
-[0m[[0minfo[0m] [0mIncluding: json4s-support_2.10-0.6.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: run-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: task-system-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: actions-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: aws-java-sdk-core-1.9.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: tasks-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: tracking-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: cache-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: testing-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: joda-time-2.9.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding: netty-all-4.0.29.Final.jar[0m
-[0m[[0minfo[0m] [0mIncluding: play-iteratees_2.10-2.4.0-M1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: test-agent-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: classpath-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: slf4j-api-1.7.12.jar[0m
-[0m[[0minfo[0m] [0mIncluding: javassist-3.18.2-GA.jar[0m
-[0m[[0minfo[0m] [0mIncluding: play-functional_2.10-2.4.0-M1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: spire_2.10-0.7.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding: scala-stm_2.10-0.7.jar[0m
-[0m[[0minfo[0m] [0mIncluding: play-datacommons_2.10-2.4.0-M1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: scala-compiler.jar[0m
-[0m[[0minfo[0m] [0mIncluding: bokehjs_2.10-0.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: config-1.2.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: akka-remote_2.10-2.3.11.jar[0m
-[0m[[0minfo[0m] [0mIncluding: joda-convert-1.6.jar[0m
-[0m[[0minfo[0m] [0mIncluding: twirl-api_2.10-1.0.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jsr305-1.3.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: spark-network-shuffle_2.10-1.6.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: netty-3.9.9.Final.jar[0m
-[0m[[0minfo[0m] [0mIncluding: leveldbjni-all-1.8.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jackson-databind-2.4.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding: protobuf-java-2.5.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: scala-io-core_2.10-0.4.3.jar[0m
-[0m[[0minfo[0m] [0mIncluding: netty-http-pipelining-1.1.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: uncommons-maths-1.2.2a.jar[0m
-[0m[[0minfo[0m] [0mIncluding: common_2.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding: logback-core-1.1.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: akka-slf4j_2.10-2.3.11.jar[0m
-[0m[[0minfo[0m] [0mIncluding: commons-io-1.3.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: commons-exec-1.3.jar[0m
-[0m[[0minfo[0m] [0mIncluding: log4j-1.2.17.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jackson-annotations-2.4.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jackson-core-2.4.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding: subprocess_2.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding: spark-unsafe_2.10-1.6.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: java-xmlbuilder-0.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding: observable_2.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding: scala-arm_2.10-1.3.jar[0m
-[0m[[0minfo[0m] [0mIncluding: slf4j-log4j12-1.7.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding: scala-io-file_2.10-0.4.3.jar[0m
-[0m[[0minfo[0m] [0mIncluding: guava-16.0.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: javax.servlet-3.0.0.v201112011016.jar[0m
-[0m[[0minfo[0m] [0mIncluding: play_2.10-2.3.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding: commons-lang3-3.3.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: core-1.1.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: arpack_combined_all-0.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: commons-math3-3.4.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: opencsv-2.3.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jtransforms-2.4.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: rxscala_2.10-0.22.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jul-to-slf4j-1.7.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jcl-over-slf4j-1.7.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding: compress-lzf-1.0.3.jar[0m
-[0m[[0minfo[0m] [0mIncluding: lz4-1.3.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: spire-macros_2.10-0.7.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding: RoaringBitmap-0.5.11.jar[0m
-[0m[[0minfo[0m] [0mIncluding: sumac_2.10-0.3.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: junit-4.8.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: json4s-jackson_2.10-3.2.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jts2geojson-0.7.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jersey-server-1.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: avro-ipc-1.7.7-tests.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jts-1.13.jar[0m
-[0m[[0minfo[0m] [0mIncluding: build-link-2.3.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding: play-exceptions-2.3.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding: api-util-1.0.0-M20.jar[0m
-[0m[[0minfo[0m] [0mIncluding: api-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: asm-3.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: curator-framework-2.6.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: avro-ipc-1.7.7.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jersey-core-1.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: compiler-integration-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: curator-client-2.6.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: breeze_2.10-0.11.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: incremental-compiler-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: avro-1.7.7.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jets3t-0.9.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: zookeeper-3.4.6.jar[0m
-[0m[[0minfo[0m] [0mIncluding: mesos-0.21.1-shaded-protobuf.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jackson-core-asl-1.9.13.jar[0m
-[0m[[0minfo[0m] [0mIncluding: logging-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jackson-mapper-asl-1.9.13.jar[0m
-[0m[[0minfo[0m] [0mIncluding: process-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding: curator-recipes-2.6.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: relation-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: htrace-core-3.0.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding: compile-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding: stream-2.7.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: lz4-1.3.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: quasiquotes_2.10-2.0.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding: metrics-core-3.1.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: spark-launcher_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: unused-1.0.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: htrace-core-3.0.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding: RoaringBitmap-0.5.11.jar[0m
 [0m[[0minfo[0m] [0mIncluding: metrics-jvm-3.1.2.jar[0m
 [0m[[0minfo[0m] [0mIncluding: metrics-json-3.1.2.jar[0m
 [0m[[0minfo[0m] [0mIncluding: metrics-graphite-3.1.2.jar[0m
 [0m[[0minfo[0m] [0mIncluding: jackson-module-scala_2.10-2.4.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding: classfile-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: persist-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: snappy-java-1.1.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: oro-2.0.8.jar[0m
-[0m[[0minfo[0m] [0mIncluding: sbinary_2.10-0.4.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: spark-core_2.10-1.6.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: compiler-ivy-integration-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: tachyon-client-0.8.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: commons-compress-1.4.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: json4s-jackson_2.10-3.2.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jul-to-slf4j-1.7.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jcl-over-slf4j-1.7.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding: spark-network-common_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: compress-lzf-1.0.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jersey-server-1.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-hdfs-2.6.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: ivy-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: xz-1.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: cross-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: json4s-core_2.10-3.2.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding: oro-2.0.8.jar[0m
+[0m[[0minfo[0m] [0mIncluding: rxjava-1.0.0-rc.5.jar[0m
+[0m[[0minfo[0m] [0mIncluding: tachyon-client-0.8.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: json4s-ast_2.10-3.2.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding: logback-classic-1.1.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: paranamer-2.6.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jawn-parser_2.10-0.6.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: commons-codec-1.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding: json4s-support_2.10-0.6.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: run-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: task-system-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: tasks-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: dependency-utils_2.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding: sbt-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: tracking-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: cache-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: testing-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: xercesImpl-2.11.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: test-agent-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: main-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: netty-all-4.0.29.Final.jar[0m
+[0m[[0minfo[0m] [0mIncluding: test-interface-1.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: main-settings-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding: commons-io-2.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding: ivy-2.3.0-sbt-c5d1b95fdcc1e1007740ffbecf4eb07abc51ec93.jar[0m
 [0m[[0minfo[0m] [0mIncluding: tachyon-underfs-hdfs-0.8.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: apply-macro-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding: tachyon-underfs-s3-0.8.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: scala-reflect.jar[0m
+[0m[[0minfo[0m] [0mIncluding: command-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: logic-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: xml-apis-1.4.01.jar[0m
 [0m[[0minfo[0m] [0mIncluding: tachyon-underfs-local-0.8.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: compiler-interface-src-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding: pyrolite-4.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: compiler-interface-bin-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding: py4j-0.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jsch-0.1.46.jar[0m
+[0m[[0minfo[0m] [0mIncluding: compiler-interface-bin-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jta-1.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding: spark-mllib_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: akka-actor_2.10-2.3.11.jar[0m
+[0m[[0minfo[0m] [0mIncluding: compiler-interface-bin-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jsr305-1.3.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: spark-network-shuffle_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: compiler-interface-bin-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: leveldbjni-all-1.8.jar[0m
+[0m[[0minfo[0m] [0mIncluding: fm-sbt-s3-resolver-0.5.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: aws-java-sdk-s3-1.9.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jackson-databind-2.4.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding: actions-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: common_2.10.jar[0m
 [0m[[0minfo[0m] [0mIncluding: jetty-util-6.1.26.jar[0m
+[0m[[0minfo[0m] [0mIncluding: aws-java-sdk-core-1.9.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-mapreduce-client-app-2.6.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: classpath-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: joda-time-2.9.4.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-mapreduce-client-common-2.6.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: interface-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: akka-remote_2.10-2.3.11.jar[0m
+[0m[[0minfo[0m] [0mIncluding: observable_2.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding: subprocess_2.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding: slf4j-api-1.7.12.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-yarn-common-2.6.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: io-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: control-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: launcher-interface-1.0.0-M1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: completion-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: collections-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: breeze-macros_2.10-0.11.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: pmml-model-1.1.15.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jline-2.11.jar[0m
+[0m[[0minfo[0m] [0mIncluding: bokeh_2.10-0.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: play_2.10-2.3.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding: scala-compiler.jar[0m
+[0m[[0minfo[0m] [0mIncluding: protobuf-java-2.5.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-yarn-api-2.6.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: guice-3.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: pmml-agent-1.1.15.jar[0m
-[0m[[0minfo[0m] [0mIncluding: pmml-schema-1.1.15.jar[0m
+[0m[[0minfo[0m] [0mIncluding: uncommons-maths-1.2.2a.jar[0m
+[0m[[0minfo[0m] [0mIncluding: akka-slf4j_2.10-2.3.11.jar[0m
+[0m[[0minfo[0m] [0mIncluding: commons-io-1.3.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: commons-exec-1.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding: log4j-1.2.17.jar[0m
+[0m[[0minfo[0m] [0mIncluding: guava-16.0.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding: spark-streaming_2.10-1.6.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jaxb-impl-2.2.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jersey-client-1.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jackson-jaxrs-1.9.13.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jackson-xc-1.9.13.jar[0m
+[0m[[0minfo[0m] [0mIncluding: core_2.10-0.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: guice-3.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: play-json_2.10-2.4.0-M1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: play-iteratees_2.10-2.4.0-M1.jar[0m
 [0m[[0minfo[0m] [0mIncluding: javax.inject-1.jar[0m
 [0m[[0minfo[0m] [0mIncluding: aopalliance-1.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding: cglib-2.2.1-v20090111.jar[0m
+[0m[[0minfo[0m] [0mIncluding: build-link-2.3.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding: play-exceptions-2.3.10.jar[0m
 [0m[[0minfo[0m] [0mIncluding: jersey-json-1.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: javassist-3.18.2-GA.jar[0m
+[0m[[0minfo[0m] [0mIncluding: play-functional_2.10-2.4.0-M1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: breeze-macros_2.10-0.11.2.jar[0m
 [0m[[0minfo[0m] [0mIncluding: jettison-1.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: avro-mapred-1.7.7-hadoop2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jaxb-core-2.2.7.jar[0m
 [0m[[0minfo[0m] [0mIncluding: jersey-guice-1.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: pmml-model-1.1.15.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-yarn-client-2.6.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jersey-client-1.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: commons-logging-1.1.3.jar[0m
-[0m[[0minfo[0m] [0mIncluding: servlet-api-2.5.jar[0m
-[0m[[0minfo[0m] [0mIncluding: commons-net-3.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jackson-jaxrs-1.9.13.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jackson-xc-1.9.13.jar[0m
-[0m[[0minfo[0m] [0mIncluding: hadoop-yarn-server-web-proxy-2.6.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jaxb-api-2.2.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding: play-datacommons_2.10-2.4.0-M1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: rxscala_2.10-0.22.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: bokehjs_2.10-0.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: scala-stm_2.10-0.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding: pmml-agent-1.1.15.jar[0m
+[0m[[0minfo[0m] [0mIncluding: pmml-schema-1.1.15.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-mapreduce-client-core-2.6.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: jetty-6.1.26.jar[0m
-[0m[[0minfo[0m] [0mIncluding: spark-yarn_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jaxb-impl-2.2.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding: commons-logging-1.1.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding: commons-net-3.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: config-1.2.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding: commons-collections-3.2.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: scalaj-http_2.10-2.3.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: hadoop-client-2.6.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: commons-lang-2.6.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jaxb-core-2.2.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding: joda-convert-1.6.jar[0m
 [0m[[0minfo[0m] [0mIncluding: spark-sql_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: twirl-api_2.10-1.0.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jaxb-api-2.2.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding: netty-3.9.9.Final.jar[0m
+[0m[[0minfo[0m] [0mIncluding: spark-yarn_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: commons-lang-2.6.jar[0m
+[0m[[0minfo[0m] [0mIncluding: hadoop-yarn-server-common-2.6.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: scala-io-core_2.10-0.4.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding: hadoop-client-2.6.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-common-2.6.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding: commons-configuration-1.6.jar[0m
-[0m[[0minfo[0m] [0mIncluding: hadoop-yarn-server-common-2.6.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: hadoop-mapreduce-client-shuffle-2.6.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: hadoop-mapreduce-client-jobclient-2.6.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: servlet-api-2.5.jar[0m
 [0m[[0minfo[0m] [0mIncluding: commons-digester-1.8.jar[0m
 [0m[[0minfo[0m] [0mIncluding: commons-beanutils-1.7.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: hadoop-mapreduce-client-shuffle-2.6.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: scala-arm_2.10-1.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding: hadoop-yarn-server-web-proxy-2.6.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jetty-6.1.26.jar[0m
+[0m[[0minfo[0m] [0mIncluding: scala-io-file_2.10-0.4.3.jar[0m
 [0m[[0minfo[0m] [0mIncluding: commons-beanutils-core-1.8.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: hadoop-mapreduce-client-jobclient-2.6.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: core-1.1.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: netty-http-pipelining-1.1.2.jar[0m
 [0m[[0minfo[0m] [0mIncluding: gson-2.2.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding: scalaj-http_2.10-2.3.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: arpack_combined_all-0.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: logback-core-1.1.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: api-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-auth-2.6.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding: httpclient-4.2.5.jar[0m
+[0m[[0minfo[0m] [0mIncluding: spark-catalyst_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: compiler-integration-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding: httpcore-4.2.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding: apacheds-kerberos-codec-2.0.0-M15.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-annotations-2.6.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding: commons-cli-1.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: apacheds-i18n-2.0.0-M15.jar[0m
 [0m[[0minfo[0m] [0mIncluding: xmlenc-0.52.jar[0m
-[0m[[0minfo[0m] [0mIncluding: api-asn1-api-1.0.0-M20.jar[0m
+[0m[[0minfo[0m] [0mIncluding: apacheds-kerberos-codec-2.0.0-M15.jar[0m
 [0m[[0minfo[0m] [0mIncluding: commons-httpclient-3.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: spark-catalyst_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: incremental-compiler-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: scala-reflect.jar[0m
+[0m[[0minfo[0m] [0mIncluding: logging-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: process-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: relation-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: compile-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: apacheds-i18n-2.0.0-M15.jar[0m
+[0m[[0minfo[0m] [0mIncluding: classfile-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: api-asn1-api-1.0.0-M20.jar[0m
+[0m[[0minfo[0m] [0mIncluding: persist-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: opencsv-2.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding: launcher-interface-1.0.0-M1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: completion-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: sbinary_2.10-0.4.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jtransforms-2.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: compiler-ivy-integration-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: ivy-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: collections-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: junit-4.8.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jline-2.11.jar[0m
+[0m[[0minfo[0m] [0mIncluding: interface-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: spire_2.10-0.7.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding: io-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: control-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: cross-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding: ivy-2.3.0-sbt-c5d1b95fdcc1e1007740ffbecf4eb07abc51ec93.jar[0m
 [0m[[0minfo[0m] [0mIncluding: janino-2.7.8.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jsch-0.1.46.jar[0m
 [0m[[0minfo[0m] [0mIncluding: commons-compiler-2.7.8.jar[0m
 [0m[[0minfo[0m] [0mIncluding: parquet-column-1.7.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding: parquet-common-1.7.0.jar[0m
@@ -2634,6 +2363,21 @@ model contains 5 documentable templates
 [0m[[0minfo[0m] [0mIncluding: parquet-format-2.3.0-incubating.jar[0m
 [0m[[0minfo[0m] [0mIncluding: parquet-jackson-1.7.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding: spark-graphx_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: spire-macros_2.10-0.7.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding: sumac_2.10-0.3.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jts2geojson-0.7.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jts-1.13.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jets3t-0.9.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: spark-core_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: avro-mapred-1.7.7-hadoop2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: avro-ipc-1.7.7-tests.jar[0m
+[0m[[0minfo[0m] [0mIncluding: avro-ipc-1.7.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding: avro-1.7.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jackson-core-asl-1.9.13.jar[0m
+[0m[[0minfo[0m] [0mIncluding: jackson-mapper-asl-1.9.13.jar[0m
+[0m[[0minfo[0m] [0mIncluding: snappy-java-1.1.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: commons-compress-1.4.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: xz-1.0.jar[0m
 [0m[[0minfo[0m] [0mChecking every *.class/*.jar file's SHA-1.[0m
 [0m[[0minfo[0m] [0mMerging files...[0m
 [0m[[33mwarn[0m] [0mMerging 'NOTICE' with strategy 'rename'[0m
@@ -3147,7 +2891,7 @@ model contains 5 documentable templates
 [0m[[33mwarn[0m] [0mStrategy 'discard' was applied to a file[0m
 [0m[[33mwarn[0m] [0mStrategy 'first' was applied to 480 files[0m
 [0m[[33mwarn[0m] [0mStrategy 'rename' was applied to 23 files[0m
-[0m[[0minfo[0m] [0mSHA-1: cd79ac271aa95e3cb1e44d54cf11fc79d91c76fd[0m
+[0m[[0minfo[0m] [0mSHA-1: e2022343757d02fd30e294364dad3c9053660ab0[0m
 [0m[[0minfo[0m] [0mPackaging /tmp/adastyx-new-projects/newbum/job/target/scala-2.10/newbum-assembly-0.0.1-SNAPSHOT.jar ...[0m
 [0m[[0minfo[0m] [0mDone packaging.[0m
 java.net.UnknownHostException: artifactory-node
@@ -3239,18 +2983,11 @@ java.net.UnknownHostException: artifactory-node
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
 [0m[[31merror[0m] [0m(*:[31mpublish[0m) java.net.UnknownHostException: artifactory-node[0m
-[0m[[31merror[0m] [0mTotal time: 38 s, completed Sep 2, 2016 7:26:49 PM[0m
+[0m[[31merror[0m] [0mTotal time: 38 s, completed Sep 2, 2016 7:44:03 PM[0m
 building docker
 [0m[[0minfo[0m] [0mLoading project definition from /tmp/adastyx-new-projects/newbum/job/project[0m
 [0m[[0minfo[0m] [0mSet current project to newbum (in build file:/tmp/adastyx-new-projects/newbum/job/)[0m
 [0m[[0minfo[0m] [0mUpdating {file:/tmp/adastyx-new-projects/newbum/job/}job...[0m
-[0m[[33mwarn[0m] [0mSkipped generating '<exclusion/>' for org.apache.hadoop#*. Dependency exclusion should have both 'org' and 'module' to comply with Maven POM's schema.[0m
-[0m[[33mwarn[0m] [0mSkipped generating '<exclusion/>' for org.apache.spark#*. Dependency exclusion should have both 'org' and 'module' to comply with Maven POM's schema.[0m
-[0m[[33mwarn[0m] [0mSkipped generating '<exclusion/>' for org.apache.hadoop#*. Dependency exclusion should have both 'org' and 'module' to comply with Maven POM's schema.[0m
-[0m[[33mwarn[0m] [0mSkipped generating '<exclusion/>' for org.apache.hadoop#*. Dependency exclusion should have both 'org' and 'module' to comply with Maven POM's schema.[0m
-[0m[[33mwarn[0m] [0mSkipped generating '<exclusion/>' for org.apache.hadoop#*. Dependency exclusion should have both 'org' and 'module' to comply with Maven POM's schema.[0m
-[0m[[33mwarn[0m] [0mSkipped generating '<exclusion/>' for org.apache.hadoop#*. Dependency exclusion should have both 'org' and 'module' to comply with Maven POM's schema.[0m
-[0m[[0minfo[0m] [0mWrote /tmp/adastyx-new-projects/newbum/job/target/scala-2.10/newbum_2.10-0.0.1-SNAPSHOT.pom[0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.5 ...[0m
 [A[2K[0m[[0minfo[0m] [0mResolving guru.data-fellas#common_2.10;0.7.0-SNAPSHOT_1.6.1 ...[0m
 [A[2K[0m[[0minfo[0m] [0mResolving guru.data-fellas#observable_2.10;0.7.0-SNAPSHOT ...[0m
@@ -3516,259 +3253,266 @@ building docker
 [A[2K[0m[[0minfo[0m] [0mResolving org.scala-lang#jline;2.10.5 ...[0m
 [A[2K[0m[[0minfo[0m] [0mResolving org.fusesource.jansi#jansi;1.4 ...[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
+[0m[[33mwarn[0m] [0mSkipped generating '<exclusion/>' for org.apache.hadoop#*. Dependency exclusion should have both 'org' and 'module' to comply with Maven POM's schema.[0m
+[0m[[33mwarn[0m] [0mSkipped generating '<exclusion/>' for org.apache.spark#*. Dependency exclusion should have both 'org' and 'module' to comply with Maven POM's schema.[0m
+[0m[[33mwarn[0m] [0mSkipped generating '<exclusion/>' for org.apache.hadoop#*. Dependency exclusion should have both 'org' and 'module' to comply with Maven POM's schema.[0m
+[0m[[33mwarn[0m] [0mSkipped generating '<exclusion/>' for org.apache.hadoop#*. Dependency exclusion should have both 'org' and 'module' to comply with Maven POM's schema.[0m
+[0m[[33mwarn[0m] [0mSkipped generating '<exclusion/>' for org.apache.hadoop#*. Dependency exclusion should have both 'org' and 'module' to comply with Maven POM's schema.[0m
+[0m[[33mwarn[0m] [0mSkipped generating '<exclusion/>' for org.apache.hadoop#*. Dependency exclusion should have both 'org' and 'module' to comply with Maven POM's schema.[0m
 [0m[[33mwarn[0m] [0mThere may be incompatibilities among your library dependencies.[0m
 [0m[[33mwarn[0m] [0mHere are some of the libraries that were evicted:[0m
 [0m[[33mwarn[0m] [0m	* net.java.dev.jets3t:jets3t:0.7.1 -> 0.9.0[0m
 [0m[[33mwarn[0m] [0m	* com.google.guava:guava:14.0.1 -> 16.0.1[0m
 [0m[[33mwarn[0m] [0mRun 'evicted' to see detailed eviction warnings[0m
+[0m[[0minfo[0m] [0mWrote /tmp/adastyx-new-projects/newbum/job/target/scala-2.10/newbum_2.10-0.0.1-SNAPSHOT.pom[0m
 [0m[[0minfo[0m] [0mMain Scala API documentation to /tmp/adastyx-new-projects/newbum/job/target/scala-2.10/api...[0m
-[0m[[0minfo[0m] [0mIncluding: httpclient-4.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jackson-core-asl-1.9.13.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: commons-lang3-3.3.2.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: rxscala_2.10-0.22.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: arpack_combined_all-0.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: opencsv-2.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jline-2.11.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: rxjava-1.0.0-rc.5.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jsch-0.1.46.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: dependency-utils_2.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: compile-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: classfile-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jackson-core-asl-1.9.13.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jsch-0.1.46.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: api-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: janino-2.7.8.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: logback-core-1.1.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: commons-compiler-2.7.8.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: serialization_2.10-0.1.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jackson-mapper-asl-1.9.13.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: compiler-integration-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: logback-classic-1.1.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: incremental-compiler-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: sbt-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: commons-math3-3.4.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jul-to-slf4j-1.7.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: parquet-column-1.7.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: scala-pickling_2.10-0.10.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jcl-over-slf4j-1.7.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jackson-mapper-asl-1.9.13.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: serialization_2.10-0.1.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: snappy-java-1.1.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: parquet-common-1.7.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: commons-compress-1.4.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jtransforms-2.4.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: xz-1.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: parquet-encoding-1.7.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: junit-4.8.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: parquet-generator-1.7.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: chill_2.10-0.5.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: quasiquotes_2.10-2.0.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: compress-lzf-1.0.3.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: lz4-1.3.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: chill-java-0.5.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: json4s-core_2.10-3.2.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: parquet-hadoop-1.7.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: RoaringBitmap-0.5.11.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: json4s-jackson_2.10-3.2.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: kryo-2.21.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: parquet-format-2.3.0-incubating.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: reflectasm-1.07-shaded.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jersey-server-1.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: asm-3.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: minlog-1.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: objenesis-1.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jersey-core-1.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: xbean-asm5-shaded-4.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: spark-launcher_2.10-1.6.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: unused-1.0.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: parquet-column-1.7.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-codec-1.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: persist-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: logging-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: sbinary_2.10-0.4.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: process-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: relation-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: main-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: parquet-jackson-1.7.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: scala-library.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: mesos-0.21.1-shaded-protobuf.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: scala-pickling_2.10-0.10.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: common_2.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: observable_2.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: subprocess_2.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: quasiquotes_2.10-2.0.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-compress-1.4.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: xz-1.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: json4s-core_2.10-3.2.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: chill_2.10-0.5.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: json4s-ast_2.10-3.2.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: stream-2.7.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: chill-java-0.5.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: paranamer-2.6.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: spark-graphx_2.10-1.6.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: metrics-core-3.1.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: actions-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: metrics-jvm-3.1.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: metrics-json-3.1.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: classpath-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: metrics-graphite-3.1.2.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: jawn-parser_2.10-0.6.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: spark-network-common_2.10-1.6.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: json4s-support_2.10-0.6.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: compiler-ivy-integration-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: parquet-common-1.7.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: parquet-encoding-1.7.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: parquet-generator-1.7.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: parquet-hadoop-1.7.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: parquet-format-2.3.0-incubating.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: run-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: task-system-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: kryo-2.21.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: reflectasm-1.07-shaded.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: minlog-1.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: xercesImpl-2.11.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: objenesis-1.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: xml-apis-1.4.01.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: xbean-asm5-shaded-4.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jta-1.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: ivy-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: cross-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: actions-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-launcher_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: unused-1.0.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: classpath-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: tasks-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: parquet-jackson-1.7.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: tracking-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: cache-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: testing-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: common_2.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jackson-module-scala_2.10-2.4.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: observable_2.10.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: test-agent-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: subprocess_2.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: oro-2.0.8.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: test-interface-1.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: httpcore-4.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: netty-all-4.0.29.Final.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: spire_2.10-0.7.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: spire-macros_2.10-0.7.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: sumac_2.10-0.3.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jts2geojson-0.7.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-graphx_2.10-1.6.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: main-settings-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jsr305-1.3.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: spark-network-shuffle_2.10-1.6.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: apply-macro-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: ivy-2.3.0-sbt-c5d1b95fdcc1e1007740ffbecf4eb07abc51ec93.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: play_2.10-2.3.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: build-link-2.3.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: play-exceptions-2.3.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: joda-convert-1.6.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-lang3-3.3.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-network-common_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: akka-actor_2.10-2.3.11.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: command-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: logic-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: compiler-interface-src-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: tachyon-client-0.8.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: leveldbjni-all-1.8.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-math3-3.4.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jul-to-slf4j-1.7.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jcl-over-slf4j-1.7.10.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: compiler-interface-bin-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jts-1.13.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: compiler-interface-bin-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: compiler-interface-bin-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: commons-io-2.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: tachyon-underfs-hdfs-0.8.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: compiler-interface-bin-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jackson-databind-2.4.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jackson-annotations-2.4.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: play_2.10-2.3.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: tachyon-underfs-s3-0.8.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: build-link-2.3.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: play-exceptions-2.3.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: tachyon-underfs-local-0.8.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: pyrolite-4.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: py4j-0.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jets3t-0.9.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: javassist-3.18.2-GA.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jackson-core-2.4.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: spark-unsafe_2.10-1.6.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: java-xmlbuilder-0.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: fm-sbt-s3-resolver-0.5.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: aws-java-sdk-s3-1.9.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: aws-java-sdk-core-1.9.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: scala-stm_2.10-0.7.jar[0m
-[0m[[0minfo[0m] [0mIncluding: curator-recipes-2.4.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: commons-logging-1.1.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: config-1.2.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: joda-time-2.9.4.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: slf4j-api-1.7.12.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: joda-convert-1.6.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: twirl-api_2.10-1.0.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: play-iteratees_2.10-2.4.0-M1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: play-functional_2.10-2.4.0-M1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: play-datacommons_2.10-2.4.0-M1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: breeze_2.10-0.11.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: breeze-macros_2.10-0.11.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: compiler-interface-bin-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: compiler-interface-bin-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: compiler-interface-bin-0.13.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: fm-sbt-s3-resolver-0.5.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: netty-3.9.9.Final.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: netty-http-pipelining-1.1.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: pmml-model-1.1.15.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: pmml-agent-1.1.15.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: pmml-schema-1.1.15.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: logback-core-1.1.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: spark-mllib_2.10-1.6.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jaxb-impl-2.2.7.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: logback-classic-1.1.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: curator-framework-2.4.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jaxb-core-2.2.7.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jaxb-api-2.2.7.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: commons-codec-1.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: bokehjs_2.10-0.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: spark-yarn_2.10-1.6.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: hadoop-client-2.2.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: bokeh_2.10-0.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: core_2.10-0.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: curator-client-2.4.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: xercesImpl-2.11.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: xml-apis-1.4.01.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: scala-io-core_2.10-0.4.3.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: scala-compiler.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: scala-arm_2.10-1.3.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: play-json_2.10-2.4.0-M1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: spark-streaming_2.10-1.6.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: scala-io-file_2.10-0.4.3.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: core-1.1.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jta-1.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: hadoop-common-2.2.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: akka-actor_2.10-2.3.11.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: javassist-3.18.2-GA.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: aws-java-sdk-s3-1.9.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: akka-remote_2.10-2.3.11.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: scala-stm_2.10-0.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: aws-java-sdk-core-1.9.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: config-1.2.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: compress-lzf-1.0.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: lz4-1.3.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: protobuf-java-2.5.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: RoaringBitmap-0.5.11.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: json4s-jackson_2.10-3.2.10.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: uncommons-maths-1.2.2a.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: akka-slf4j_2.10-2.3.11.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: commons-io-1.3.2.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: commons-exec-1.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jersey-server-1.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: netty-all-4.0.29.Final.jar[0m
+[0m[[0minfo[0m] [0mIncluding: commons-logging-1.1.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: netty-http-pipelining-1.1.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jsr305-1.3.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-network-shuffle_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: asm-3.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-digester-1.8.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: log4j-1.2.17.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-beanutils-1.7.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jersey-core-1.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-beanutils-core-1.8.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: hadoop-auth-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: mesos-0.21.1-shaded-protobuf.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: leveldbjni-all-1.8.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: stream-2.7.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: metrics-core-3.1.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: guava-16.0.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: metrics-jvm-3.1.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: metrics-json-3.1.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: metrics-graphite-3.1.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: httpclient-4.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jaxb-impl-2.2.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jackson-databind-2.4.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jackson-module-scala_2.10-2.4.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jaxb-core-2.2.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jackson-annotations-2.4.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: oro-2.0.8.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jaxb-api-2.2.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jackson-core-2.4.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-unsafe_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: java-xmlbuilder-0.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-yarn_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: hadoop-client-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: curator-recipes-2.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: hadoop-common-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: tachyon-client-0.8.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-io-2.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: tachyon-underfs-hdfs-0.8.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: tachyon-underfs-s3-0.8.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: tachyon-underfs-local-0.8.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: pyrolite-4.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: py4j-0.9.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: breeze_2.10-0.11.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: breeze-macros_2.10-0.11.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: hadoop-hdfs-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: curator-framework-2.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: httpcore-4.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: pmml-model-1.1.15.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: pmml-agent-1.1.15.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: pmml-schema-1.1.15.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-cli-1.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding: commons-math-2.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: scala-compiler.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-mllib_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: curator-client-2.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-streaming_2.10-1.6.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: scala-reflect.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: interface-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: log4j-1.2.17.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: io-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: spark-core_2.10-1.6.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: avro-mapred-1.7.7-hadoop2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: zookeeper-3.4.5.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: control-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: launcher-interface-1.0.0-M1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: spark-sql_2.10-1.6.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: completion-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: avro-ipc-1.7.7-tests.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: avro-ipc-1.7.7.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: collections-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: jline-2.11.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: avro-1.7.7.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: api-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: jersey-json-1.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: jettison-1.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding: stax-api-1.0.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-sql_2.10-1.6.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding: jackson-jaxrs-1.8.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding: zookeeper-3.4.5.jar[0m
 [0m[[0minfo[0m] [0mIncluding: jackson-xc-1.8.3.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: compiler-integration-0.13.9.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: jersey-guice-1.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: guava-16.0.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: incremental-compiler-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: logging-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: process-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: commons-digester-1.8.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: commons-beanutils-1.7.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: commons-beanutils-core-1.8.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: hadoop-auth-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: joda-time-2.9.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: slf4j-api-1.7.12.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-yarn-client-2.2.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: relation-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding: hadoop-mapreduce-client-common-2.2.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: compile-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: classfile-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: persist-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: slf4j-log4j12-1.7.10.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: sbinary_2.10-0.4.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: compiler-ivy-integration-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: javax.servlet-3.0.0.v201112011016.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: spark-catalyst_2.10-1.6.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-mapreduce-client-core-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: bokeh_2.10-0.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: core_2.10-0.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-catalyst_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-net-3.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: commons-lang-2.5.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: play-json_2.10-2.4.0-M1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: xmlenc-0.52.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: play-iteratees_2.10-2.4.0-M1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-httpclient-3.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: play-functional_2.10-2.4.0-M1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: play-datacommons_2.10-2.4.0-M1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: slf4j-log4j12-1.7.10.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: javax.servlet-3.0.0.v201112011016.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-configuration-1.6.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: bokehjs_2.10-0.2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: commons-collections-3.2.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: hadoop-mapreduce-client-common-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: hadoop-annotations-2.2.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: javax.inject-1.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: aopalliance-1.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: cglib-2.2.1-v20090111.jar[0m
 [0m[[0minfo[0m] [0mIncluding: jersey-test-framework-grizzly2-1.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: ivy-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: cross-0.13.9.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: ivy-2.3.0-sbt-c5d1b95fdcc1e1007740ffbecf4eb07abc51ec93.jar[0m
-[0m[[0minfo[0m] [0mIncluding: hadoop-yarn-common-2.2.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: hadoop-hdfs-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: scala-io-core_2.10-0.4.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: scala-arm_2.10-1.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: scala-io-file_2.10-0.4.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: core-1.1.2.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-yarn-server-common-2.2.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding: hadoop-yarn-api-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: arpack_combined_all-0.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: opencsv-2.3.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jtransforms-2.4.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: junit-4.8.2.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-mapreduce-client-shuffle-2.2.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-mapreduce-client-jobclient-2.2.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-yarn-server-web-proxy-2.2.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: servlet-api-2.5.jar[0m
-[0m[[0minfo[0m] [0mIncluding: hadoop-annotations-2.2.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding: guice-servlet-3.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: commons-cli-1.2.jar[0m
-[0m[[0minfo[0m] [0mIncluding: commons-math-2.1.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: scalaj-http_2.10-2.3.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: xmlenc-0.52.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: commons-httpclient-3.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: commons-net-3.1.jar[0m
-[0m[[0minfo[0m] [0mIncluding: commons-lang-2.5.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: guice-3.0.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: commons-configuration-1.6.jar[0m
-[0m[[0minfo[0m] [0mIncluding from cache: commons-collections-3.2.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding: hadoop-yarn-common-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spire_2.10-0.7.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spire-macros_2.10-0.7.4.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: sumac_2.10-0.3.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jts2geojson-0.7.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jts-1.13.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: jets3t-0.9.0.jar[0m
 [0m[[0minfo[0m] [0mIncluding from cache: jetty-util-6.1.26.jar[0m
 [0m[[0minfo[0m] [0mIncluding: hadoop-mapreduce-client-app-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding: hadoop-yarn-api-2.2.0.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: spark-core_2.10-1.6.1.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: avro-mapred-1.7.7-hadoop2.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: avro-ipc-1.7.7-tests.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: avro-ipc-1.7.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: avro-1.7.7.jar[0m
+[0m[[0minfo[0m] [0mIncluding from cache: guice-3.0.jar[0m
 [0m[[0minfo[0m] [0mChecking every *.class/*.jar file's SHA-1.[0m
 [0m[[0minfo[0m] [0mMerging files...[0m
 model contains 5 documentable templates
 [0m[[33mwarn[0m] [0mMerging 'license_xml-apis-1.4.01/LICENSE' with strategy 'rename'[0m
 [0m[[0minfo[0m] [0mMain Scala API documentation successful.[0m
 [0m[[0minfo[0m] [0mPackaging /tmp/adastyx-new-projects/newbum/job/target/scala-2.10/newbum_2.10-0.0.1-SNAPSHOT-javadoc.jar ...[0m
-[0m[[0minfo[0m] [0mDone packaging.[0m
 [0m[[33mwarn[0m] [0mMerging 'LICENSE.txt' with strategy 'rename'[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m
 [0m[[33mwarn[0m] [0mMerging 'META-INF/ASL2.0' with strategy 'first'[0m
 [0m[[33mwarn[0m] [0mMerging 'META-INF/DEPENDENCIES' with strategy 'first'[0m
 [0m[[33mwarn[0m] [0mMerging 'META-INF/DUMMY.DSA' with strategy 'first'[0m
@@ -4292,7 +4036,7 @@ model contains 5 documentable templates
 [0m[[33mwarn[0m] [0mStrategy 'discard' was applied to a file[0m
 [0m[[33mwarn[0m] [0mStrategy 'first' was applied to 515 files[0m
 [0m[[33mwarn[0m] [0mStrategy 'rename' was applied to 2 files[0m
-[0m[[0minfo[0m] [0mSHA-1: 7dd62245eee9a678e7d34096ffcf99cc240b20ed[0m
+[0m[[0minfo[0m] [0mSHA-1: b8eb98a9097e128c5999a4f7807ef52cfff2cb84[0m
 [0m[[0minfo[0m] [0mPackaging /tmp/adastyx-new-projects/newbum/job/target/scala-2.10/newbum-assembly-0.0.1-SNAPSHOT.jar ...[0m
 [0m[[0minfo[0m] [0mDone packaging.[0m
 [0m[[0minfo[0m] [0mSending build context to Docker daemon 557.1 kB[0m
@@ -4604,52 +4348,51 @@ model contains 5 documentable templates
 [0m[[0minfo[0m] [0mStep 1 : FROM data-fellas-docker-public.bintray.io/base-adst:0.0.1[0m
 [0m[[0minfo[0m] [0m ---> bfbfec431922[0m
 [0m[[0minfo[0m] [0mStep 2 : MAINTAINER DF[0m
-[0m[[0minfo[0m] [0m ---> Running in 75432134a1d7[0m
+[0m[[0minfo[0m] [0m ---> Using cache[0m
 [0m[[0minfo[0m] [0m ---> c6d87db247e6[0m
-[0m[[0minfo[0m] [0mRemoving intermediate container 75432134a1d7[0m
 [0m[[0minfo[0m] [0mStep 3 : WORKDIR /opt/docker[0m
-[0m[[0minfo[0m] [0m ---> Running in 1d664997faae[0m
+[0m[[0minfo[0m] [0m ---> Using cache[0m
 [0m[[0minfo[0m] [0m ---> cc720208d777[0m
-[0m[[0minfo[0m] [0mRemoving intermediate container 1d664997faae[0m
 [0m[[0minfo[0m] [0mStep 4 : ADD opt /opt[0m
-[0m[[0minfo[0m] [0m ---> 8934a8fc4a5e[0m
-[0m[[0minfo[0m] [0mRemoving intermediate container 84e6fb1bc6f3[0m
+[0m[[0minfo[0m] [0m ---> f1222402b23f[0m
+[0m[[0minfo[0m] [0mRemoving intermediate container 6585cb413999[0m
 [0m[[0minfo[0m] [0mStep 5 : RUN chown -R root:root .[0m
-[0m[[0minfo[0m] [0m ---> Running in a49b4b741d84[0m
-[0m[[0minfo[0m] [0m ---> 1a407cfdcfd7[0m
-[0m[[0minfo[0m] [0mRemoving intermediate container a49b4b741d84[0m
+[0m[[0minfo[0m] [0m ---> Running in 90cecb5f501c[0m
+[0m[[0minfo[0m] [0m ---> c907d88e955b[0m
+[0m[[0minfo[0m] [0mRemoving intermediate container 90cecb5f501c[0m
 [0m[[0minfo[0m] [0mStep 6 : EXPOSE 9000 9443[0m
-[0m[[0minfo[0m] [0m ---> Running in 80bf524a11a5[0m
-[0m[[0minfo[0m] [0m ---> d0cf0e4f1993[0m
-[0m[[0minfo[0m] [0mRemoving intermediate container 80bf524a11a5[0m
+[0m[[0minfo[0m] [0m ---> Running in 315930ad1d2d[0m
+[0m[[0minfo[0m] [0m ---> e680b75b20e3[0m
+[0m[[0minfo[0m] [0mRemoving intermediate container 315930ad1d2d[0m
 [0m[[0minfo[0m] [0mStep 7 : USER root[0m
-[0m[[0minfo[0m] [0m ---> Running in 28cde0cc182f[0m
-[0m[[0minfo[0m] [0m ---> 93974d72b754[0m
-[0m[[0minfo[0m] [0mRemoving intermediate container 28cde0cc182f[0m
+[0m[[0minfo[0m] [0m ---> Running in 4f060ca4fe33[0m
+[0m[[0minfo[0m] [0m ---> 737b1bbb796a[0m
+[0m[[0minfo[0m] [0mRemoving intermediate container 4f060ca4fe33[0m
 [0m[[0minfo[0m] [0mStep 8 : ENTRYPOINT bin/newbum[0m
-[0m[[0minfo[0m] [0m ---> Running in 3bdd33cb7494[0m
-[0m[[0minfo[0m] [0m ---> b49d16e7b791[0m
-[0m[[0minfo[0m] [0mRemoving intermediate container 3bdd33cb7494[0m
+[0m[[0minfo[0m] [0m ---> Running in 7febf3966be3[0m
+[0m[[0minfo[0m] [0m ---> 6da229b5f97d[0m
+[0m[[0minfo[0m] [0mRemoving intermediate container 7febf3966be3[0m
 [0m[[0minfo[0m] [0mStep 9 : CMD [0m
-[0m[[0minfo[0m] [0m ---> Running in edbfaf69dfbd[0m
-[0m[[0minfo[0m] [0m ---> a91f605d104b[0m
-[0m[[0minfo[0m] [0mRemoving intermediate container edbfaf69dfbd[0m
+[0m[[0minfo[0m] [0m ---> Running in a41f6e855b51[0m
+[0m[[0minfo[0m] [0m ---> f0b4d97fa8b5[0m
+[0m[[0minfo[0m] [0mRemoving intermediate container a41f6e855b51[0m
 [0m[[0minfo[0m] [0mStep 10 : ENV SPARK_HOME ""[0m
-[0m[[0minfo[0m] [0m ---> Running in 44d115d1c585[0m
-[0m[[0minfo[0m] [0m ---> f5cd36a5af13[0m
-[0m[[0minfo[0m] [0mRemoving intermediate container 44d115d1c585[0m
-[0m[[0minfo[0m] [0mSuccessfully built f5cd36a5af13[0m
+[0m[[0minfo[0m] [0m ---> Running in 978b5959fb19[0m
+[0m[[0minfo[0m] [0m ---> b09313572f65[0m
+[0m[[0minfo[0m] [0mRemoving intermediate container 978b5959fb19[0m
+[0m[[0minfo[0m] [0mSuccessfully built b09313572f65[0m
 [0m[[0minfo[0m] [0mBuilt image docker-repo:5000/newbum:0.0.1-SNAPSHOT[0m
-[0m[[32msuccess[0m] [0mTotal time: 40 s, completed Sep 2, 2016 7:27:33 PM[0m
+[0m[[32msuccess[0m] [0mTotal time: 39 s, completed Sep 2, 2016 7:44:47 PM[0m
 pushing docker
 The push refers to a repository [docker-repo:5000/newbum]
 showing docker images
 REPOSITORY                                       TAG                 IMAGE ID            CREATED                  SIZE
-docker-repo:5000/newbum                          0.0.1-SNAPSHOT      f5cd36a5af13        Less than a second ago   849.8 MB
+docker-repo:5000/newbum                          0.0.1-SNAPSHOT      b09313572f65        Less than a second ago   849.8 MB
+<none>                                           <none>              f5cd36a5af13        17 minutes ago           849.8 MB
 containersol/minimesos-cli                       0.10.2              0f8fd0fee007        4 weeks ago              133.7 MB
 containersol/minimesos-cli                       0.9.1               3368e4c7ad8d        6 weeks ago              133.7 MB
-containersol/mesos-master                        0.25.0-0.1.0        ac5a6d9c33c9        8 weeks ago              569.6 MB
 containersol/mesos-agent                         0.25.0-0.1.0        b4f7aca2151f        8 weeks ago              569.6 MB
+containersol/mesos-master                        0.25.0-0.1.0        ac5a6d9c33c9        8 weeks ago              569.6 MB
 docker-repo:5000/test-git                        0.0.1               e5d80b965bc4        8 weeks ago              831 MB
 <none>                                           <none>              4bb02ba5e480        8 weeks ago              831 MB
 <none>                                           <none>              0a79ce341e30        8 weeks ago              831 MB
@@ -4707,4 +4450,4 @@ posting marathon
 </body>
 </html>
 End job/gen.sh
-Fre Sep 2 19:27:33 CEST 2016
+Fre Sep 2 19:44:47 CEST 2016

@@ -2,13 +2,13 @@
 
 echo "Start job/gen.sh"
 echo $(date)
-
+echo "At directory `pwd`"
 if [ ! -d "/tmp/adastyx-new-projects/newbum/jdk" ]; then
   echo "Folder /tmp/adastyx-new-projects/newbum/jdk doesn't exist"
   cd /tmp/adastyx-new-projects/newbum
   wget http://localhost:8000/jdk-8u20-linux-x64.tar.gz
-  tar xvzf jdk-8u20-linux-x64.tar.gz
-  mv jdk* jdk
+  tar xvzf jdk-8u20-linux-x64.tar.gz*
+  mv jdk-8u20-linux-x64.tar.gz* jdk
   rm jdk-8u20-linux-x64.tar.gz
 fi
 
@@ -16,8 +16,8 @@ if [ ! -d "/tmp/adastyx-new-projects/newbum/sbt" ]; then
   echo "Folder /tmp/adastyx-new-projects/newbum/sbt doesn't exist"
   cd /tmp/adastyx-new-projects/newbum
   wget http://localhost:8000/sbt-0.13.12.tgz
-  tar xvzf sbt-0.13.12.tgz
-  rm sbt-0.13.12.tgz
+  tar xvzf sbt-0.13.12.tgz*
+  rm sbt-0.13.12.tgz*
 fi
 
 export JAVA_HOME=/tmp/adastyx-new-projects/newbum/jdk
