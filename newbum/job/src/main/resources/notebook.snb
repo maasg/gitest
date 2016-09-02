@@ -39,18 +39,18 @@
       "id" : "A3F5EC37A1EC48A58084F2D58EFB6BF0"
     },
     "cell_type" : "code",
-    "source" : "val rdd = sparkContext.parallelize(1 to 100)",
+    "source" : "val rdd = sparkContext.parallelize(1 to 1000)",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "rdd: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[0] at parallelize at <console>:60\n"
+      "text" : "rdd: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[3] at parallelize at <console>:60\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 2
+      "execution_count" : 5
     } ]
   }, {
     "metadata" : {
@@ -64,25 +64,53 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "res4: Double = 5050.0\n"
+      "text" : "res10: Double = 500500.0\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "5050.0"
+        "text/html" : "500500.0"
       },
       "output_type" : "execute_result",
-      "execution_count" : 3
+      "execution_count" : 6
     } ]
   }, {
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
+      "collapsed" : false,
+      "id" : "EAE05D512F744BE58A557DD4AB4B9233"
+    },
+    "cell_type" : "code",
+    "source" : "val nr = System.currentTimeMillis % (24*60*60)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "nr: Long = 5752\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 13
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
       "id" : "2FC76FA0178C4C638A125AE4F4370086"
     },
     "cell_type" : "code",
-    "source" : "",
-    "outputs" : [ ]
+    "source" : "rdd.saveAsTextFile(s\"/tmp/newbum.rdd-$nr.txt\")",
+    "outputs" : [ {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 14
+    } ]
   } ],
   "nbformat" : 4
 }

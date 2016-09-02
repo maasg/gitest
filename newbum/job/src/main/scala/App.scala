@@ -60,7 +60,7 @@ val adalogPassword:Option[String] = None
 // no custom variables 
 /* -- Code Cell: Some(A3F5EC37A1EC48A58084F2D58EFB6BF0) -- */ 
 
-  val rdd = sparkContext.parallelize(1 to 100)
+  val rdd = sparkContext.parallelize(1 to 1000)
 /****************/
 
 
@@ -70,6 +70,14 @@ val adalogPassword:Option[String] = None
 /****************/
 
 
-  /* -- Code Cell: Some(2FC76FA0178C4C638A125AE4F4370086) -- */
+  /* -- Code Cell: Some(EAE05D512F744BE58A557DD4AB4B9233) -- */ 
+
+  val nr = System.currentTimeMillis % (24*60*60)
+/****************/
+
+
+  /* -- Code Cell: Some(2FC76FA0178C4C638A125AE4F4370086) -- */ 
+
+  rdd.saveAsTextFile(s"/tmp/newbum.rdd-$nr.txt")
 
 }
