@@ -99,6 +99,90 @@
       "trusted" : true,
       "input_collapsed" : false,
       "collapsed" : false,
+      "id" : "BFCA31A274DA4ABC809D231596C76C10"
+    },
+    "cell_type" : "code",
+    "source" : "import java.net.URL",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import java.net.URL\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 2
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "33589624650C4A679136EA371FDC7B8D"
+    },
+    "cell_type" : "code",
+    "source" : "val base = new URL(\"http://server/base/dir/\")",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "base: java.net.URL = http://server/base/dir/\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 3
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "3FEDBF33C1644091822DFC623A035B81"
+    },
+    "cell_type" : "code",
+    "source" : "val doc= new URL(base, \"file.txt\")",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "doc: java.net.URL = http://server/base/dir/file.txt\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 4
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "773DC23ED0F146E18917C7FF7BA1DA70"
+    },
+    "cell_type" : "code",
+    "source" : "val doc= new URL(base, \"/file.txt\")",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "doc: java.net.URL = http://server/file.txt\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 5
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
       "id" : "2FC76FA0178C4C638A125AE4F4370086"
     },
     "cell_type" : "code",

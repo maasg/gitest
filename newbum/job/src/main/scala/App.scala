@@ -76,6 +76,30 @@ val adalogPassword:Option[String] = None
 /****************/
 
 
+  /* -- Code Cell: Some(BFCA31A274DA4ABC809D231596C76C10) -- */ 
+
+  import java.net.URL
+/****************/
+
+
+  /* -- Code Cell: Some(33589624650C4A679136EA371FDC7B8D) -- */ 
+
+  val base = new URL("http://server/base/dir/")
+/****************/
+
+
+  /* -- Code Cell: Some(3FEDBF33C1644091822DFC623A035B81) -- */ 
+
+  val doc= new URL(base, "file.txt")
+/****************/
+
+
+  /* -- Code Cell: Some(773DC23ED0F146E18917C7FF7BA1DA70) -- */ 
+
+  val doc= new URL(base, "/file.txt")
+/****************/
+
+
   /* -- Code Cell: Some(2FC76FA0178C4C638A125AE4F4370086) -- */ 
 
   rdd.saveAsTextFile(s"/tmp/newbum.rdd-$nr.txt")
