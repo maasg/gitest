@@ -108,7 +108,7 @@ val adalogPassword:Option[String] = None
 
   /* -- Code Cell: Some(3F7DD103D6614D408A6D34676BE10B43) -- */ 
 
-  val localRanTable = ranTable.collect
+  val localRanTable = ranTable.collect.take(100)
   localRanTable
 /****************/
 
@@ -119,6 +119,8 @@ val adalogPassword:Option[String] = None
 /****************/
 
 
-  /* -- Code Cell: Some(D07EFC328BE14C34A5CE3D6217AD1129) -- */
+  /* -- Code Cell: Some(D07EFC328BE14C34A5CE3D6217AD1129) -- */ 
+
+  sc.stop
 
 }
