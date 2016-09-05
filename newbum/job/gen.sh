@@ -8,7 +8,7 @@ if [ ! -d "/tmp/adastyx-new-projects/newbum/jdk" ]; then
   cd /tmp/adastyx-new-projects/newbum
   wget http://localhost:8000/jdk-8u20-linux-x64.tar.gz
   tar xvzf jdk-8u20-linux-x64.tar.gz*
-  mv jdk-8u20-linux-x64.tar.gz* jdk
+  find . -type d -maxdepth 1 -name "jdk" -exec mv "{}" jdk \;
   rm jdk-8u20-linux-x64.tar.gz
 fi
 
@@ -48,8 +48,8 @@ docker images
 echo "posting marathon"
 
 
-curl -X POST -H "Content-type: application/json" http://172.17.0.2:4400//scheduler/iso8601 -d @/tmp/adastyx-new-projects/newbum/job/src/main/resources/chronos.json
-                    
+curl -X POST -H "Content-type: application/json" http://172.17.0.2:4400/scheduler/iso8601 -d @/tmp/adastyx-new-projects/newbum/job/src/main/resources/chronos.json
+           
 
 echo "End job/gen.sh"
 echo $(date)

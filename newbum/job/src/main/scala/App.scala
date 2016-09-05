@@ -94,12 +94,6 @@ val adalogPassword:Option[String] = None
 /****************/
 
 
-  /* -- Code Cell: Some(773DC23ED0F146E18917C7FF7BA1DA70) -- */ 
-
-  val doc= new URL(base, "/file.txt")
-/****************/
-
-
   /* -- Code Cell: Some(2FC76FA0178C4C638A125AE4F4370086) -- */ 
 
   rdd.saveAsTextFile(s"/tmp/newbum.rdd-$nr.txt")

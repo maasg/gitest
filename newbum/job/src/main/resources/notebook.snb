@@ -162,27 +162,6 @@
       "trusted" : true,
       "input_collapsed" : false,
       "collapsed" : false,
-      "id" : "773DC23ED0F146E18917C7FF7BA1DA70"
-    },
-    "cell_type" : "code",
-    "source" : "val doc= new URL(base, \"/file.txt\")",
-    "outputs" : [ {
-      "name" : "stdout",
-      "output_type" : "stream",
-      "text" : "doc: java.net.URL = http://server/file.txt\n"
-    }, {
-      "metadata" : { },
-      "data" : {
-        "text/html" : ""
-      },
-      "output_type" : "execute_result",
-      "execution_count" : 5
-    } ]
-  }, {
-    "metadata" : {
-      "trusted" : true,
-      "input_collapsed" : false,
-      "collapsed" : false,
       "id" : "2FC76FA0178C4C638A125AE4F4370086"
     },
     "cell_type" : "code",
