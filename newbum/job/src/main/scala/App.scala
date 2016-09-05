@@ -97,5 +97,28 @@ val adalogPassword:Option[String] = None
   /* -- Code Cell: Some(2FC76FA0178C4C638A125AE4F4370086) -- */ 
 
   rdd.saveAsTextFile(s"/tmp/newbum.rdd-$nr.txt")
+/****************/
+
+
+  /* -- Code Cell: Some(781AAC4B3CDF4CA697F9B24E4B69570D) -- */ 
+
+  val ranTable = rdd.map(e => (e, scala.util.Random.nextInt(100)))
+/****************/
+
+
+  /* -- Code Cell: Some(3F7DD103D6614D408A6D34676BE10B43) -- */ 
+
+  val localRanTable = ranTable.collect
+  localRanTable
+/****************/
+
+
+  /* -- Code Cell: Some(DAC8B24B6EF34912ACA275C92B02AF22) -- */ 
+
+   localRanTable.foreach(e=> println(e))
+/****************/
+
+
+  /* -- Code Cell: Some(D07EFC328BE14C34A5CE3D6217AD1129) -- */
 
 }

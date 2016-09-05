@@ -1,1 +1,1 @@
-{"schedule":"R/2016-09-05T15:34Z/PT5M","name":"newbum -- job","cpus":"1","mem":"1024","uris":[],"shell":false,"command":"","container":{"type":"DOCKER","forcePullImage":true,"image":"docker-repo:5000/newbum:0.0.1-SNAPSHOT","network":"HOST"}}
+{"schedule":"R/2016-09-05T15:51Z/PT5M","name":"newbum -- job","cpus":"1","mem":"1024","uris":[],"shell":false,"command":"","container":{"type":"DOCKER","forcePullImage":true,"image":"docker-repo:5000/newbum:0.0.1-SNAPSHOT","network":"HOST"}}
