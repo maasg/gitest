@@ -242,7 +242,7 @@
       "id" : "D07EFC328BE14C34A5CE3D6217AD1129"
     },
     "cell_type" : "code",
-    "source" : "",
+    "source" : "sc.stop",
     "outputs" : [ ]
   } ],
   "nbformat" : 4
