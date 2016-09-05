@@ -37,7 +37,7 @@ echo "building docker"
 
 
 echo "pushing docker"
-docker push docker-repo:5000/newbum:0.0.1-SNAPSHOT
+docker push localhost:5000/newbum:0.0.1-SNAPSHOT
 
 
 

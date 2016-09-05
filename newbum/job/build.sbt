@@ -59,7 +59,7 @@ resolvers += Resolver.url("bintray-data-fellas-maven", url("http://dl.bintray.co
 
 dockerCommands ++= Seq(Cmd("ENV", "SPARK_HOME \"\""))
 
-dockerRepository := Some("docker-repo:5000") //Docker
+dockerRepository := Some("localhost:5000") //Docker
 
 bashScriptExtraDefines += """addJava "-Djava.io.tmpdir=/tmp/""""
 
