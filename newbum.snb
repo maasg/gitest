@@ -70,18 +70,18 @@
       "id" : "080CAF0F2C2145B1841BF0EB93E64AAC"
     },
     "cell_type" : "code",
-    "source" : "val tgz = sparkContext.textFile(\"/tmp/sometar.tgz\")\n",
+    "source" : "val tgz = sparkContext.textFile(\"/tmp/untar/newbum.rdd-72402.txt/tared/tared.tgz\")\n",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "tgz: org.apache.spark.rdd.RDD[String] = /tmp/sometar.tgz MapPartitionsRDD[2] at textFile at <console>:60\n"
+      "text" : "tgz: org.apache.spark.rdd.RDD[String] = /tmp/untar/newbum.rdd-72402.txt/tared/tared.tgz MapPartitionsRDD[4] at textFile at <console>:60\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 2
+      "execution_count" : 4
     } ]
   }, {
     "metadata" : {
