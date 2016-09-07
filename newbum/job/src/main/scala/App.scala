@@ -53,8 +53,8 @@ val sc = sparkContext
 
 val adalogUrl:Option[String] = Some(config.getString("adastyx.adalog.url"))
 
-val adalogUser:Option[String] = Some(config.getString("adastyx.adalog.auth.user"))
-val adalogPassword:Option[String] = Some(config.getString("adastyx.adalog.auth.password"))
+val adalogUser:Option[String] = None
+val adalogPassword:Option[String] = None
 
 
 // no custom variables 

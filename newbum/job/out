@@ -1,5 +1,5 @@
 Start job/gen.sh
-Mit Sep 7 15:58:16 CEST 2016
+Mit Sep 7 16:27:32 CEST 2016
 At directory /home/maasg/projects/data-fellas/spark-notebook-entreprise/target/universal/spark-notebook-enterprise-0.7.0-SNAPSHOT-scala-2.10.5-spark-1.6.1-hadoop-2.2.0
 Folder /tmp/adastyx-new-projects/newbum/jdk doesn't exist
 Folder /tmp/adastyx-new-projects/newbum/sbt doesn't exist
@@ -41,4 +41,4 @@ mesosphere/chronos                               latest              7594654c614
 gliderlabs/registrator                           v6                  52cf0f3bb1e9        13 months ago       20.96 MB
 posting marathon
 End job/gen.sh
-Mit Sep 7 15:58:17 CEST 2016
+Mit Sep 7 16:27:32 CEST 2016
