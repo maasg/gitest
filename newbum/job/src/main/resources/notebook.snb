@@ -56,6 +56,63 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "CA50026255FE4043804070007A03409E"
+    },
+    "cell_type" : "code",
+    "source" : "",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "080CAF0F2C2145B1841BF0EB93E64AAC"
+    },
+    "cell_type" : "code",
+    "source" : "val tgz = sparkContext.textFile(\"/tmp/untar/newbum.rdd-72402.txt/tared/part-00001.gz\")\n",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "tgz: org.apache.spark.rdd.RDD[String] = /tmp/untar/newbum.rdd-72402.txt/tared/part-00001.gz MapPartitionsRDD[6] at textFile at <console>:60\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 6
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "presentation" : {
+        "tabs_state" : "{\n  \"tab_id\": \"#tab932301721-0\"\n}",
+        "pivot_chart_state" : "{\n  \"hiddenAttributes\": [],\n  \"menuLimit\": 200,\n  \"cols\": [],\n  \"rows\": [],\n  \"vals\": [],\n  \"exclusions\": {},\n  \"inclusions\": {},\n  \"unusedAttrsVertical\": 85,\n  \"autoSortUnusedAttrs\": false,\n  \"inclusionsInfo\": {},\n  \"aggregatorName\": \"Count\",\n  \"rendererName\": \"Table\"\n}"
+      },
+      "id" : "0D8B0A5FE0714FD78C366BF85C80E93B"
+    },
+    "cell_type" : "code",
+    "source" : "tgz.take(10)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "res10: Array[String] = Array(251, 252, 253, 254, 255, 256, 257, 258, 259, 260)\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "<div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon5d29e10b84cd894657ba436bcd3ee3ca&quot;,&quot;dataInit&quot;:[],&quot;genId&quot;:&quot;932301721&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/tabs'], \n      function(playground, _magictabs) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magictabs,\n    \"o\": {}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <div>\n        <ul class=\"nav nav-tabs\" id=\"ul932301721\"><li>\n              <a href=\"#tab932301721-0\"><i class=\"fa fa-table\"/></a>\n            </li><li>\n              <a href=\"#tab932301721-1\"><i class=\"fa fa-cubes\"/></a>\n            </li></ul>\n\n        <div class=\"tab-content\" id=\"tab932301721\"><div class=\"tab-pane\" id=\"tab932301721-0\">\n            <div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon07794f0c9fc0325749cd88816556ee5a&quot;,&quot;dataInit&quot;:[{&quot;string value&quot;:&quot;251&quot;},{&quot;string value&quot;:&quot;252&quot;},{&quot;string value&quot;:&quot;253&quot;},{&quot;string value&quot;:&quot;254&quot;},{&quot;string value&quot;:&quot;255&quot;},{&quot;string value&quot;:&quot;256&quot;},{&quot;string value&quot;:&quot;257&quot;},{&quot;string value&quot;:&quot;258&quot;},{&quot;string value&quot;:&quot;259&quot;},{&quot;string value&quot;:&quot;260&quot;}],&quot;genId&quot;:&quot;516223375&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/tableChart'], \n      function(playground, _magictableChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magictableChart,\n    \"o\": {\"headers\":[\"string value\"],\"width\":600,\"height\":400}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon94ea9871539cbbe217aa9bb0b780496d&quot;,&quot;initialValue&quot;:&quot;10&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon2ebb14c8b0c4660f67a2061f8ca2c3ee&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>\n            </div><div class=\"tab-pane\" id=\"tab932301721-1\">\n            <div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon8b940f30b310cd545a569470b4f518bc&quot;,&quot;dataInit&quot;:[{&quot;string value&quot;:&quot;251&quot;},{&quot;string value&quot;:&quot;252&quot;},{&quot;string value&quot;:&quot;253&quot;},{&quot;string value&quot;:&quot;254&quot;},{&quot;string value&quot;:&quot;255&quot;},{&quot;string value&quot;:&quot;256&quot;},{&quot;string value&quot;:&quot;257&quot;},{&quot;string value&quot;:&quot;258&quot;},{&quot;string value&quot;:&quot;259&quot;},{&quot;string value&quot;:&quot;260&quot;}],&quot;genId&quot;:&quot;2121837557&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/pivotChart'], \n      function(playground, _magicpivotChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magicpivotChart,\n    \"o\": {\"width\":600,\"height\":400,\"derivedAttributes\":{},\"extraOptions\":{}}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon49dcced78127783831955a1372ec3f95&quot;,&quot;initialValue&quot;:&quot;10&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon31b7cb57f61222aeb5cf3da6db487622&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>\n            </div></div>\n      </div>\n    </div></div>"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 7
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "output_stream_collapsed" : true,
       "collapsed" : false,
       "id" : "ACCFAE7A462B49FD8C975A7F7262BDE4"
     },

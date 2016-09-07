@@ -48,7 +48,7 @@ docker images
 echo "posting marathon"
 
 
-curl -X POST -H "Content-type: application/json" http://172.17.0.2:4400/scheduler/iso8601 -d @/tmp/adastyx-new-projects/newbum/job/src/main/resources/chronos.json
+curl -X POST -H "Content-type: application/json" http://172.17.0.8:4400/scheduler/iso8601 -d @/tmp/adastyx-new-projects/newbum/job/src/main/resources/chronos.json
            
 
 echo "End job/gen.sh"

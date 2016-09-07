@@ -51,16 +51,34 @@ val sc = sparkContext
 
 
 
-val adalogUrl:Option[String] = None
+val adalogUrl:Option[String] = Some(config.getString("adastyx.adalog.url"))
 
-val adalogUser:Option[String] = None
-val adalogPassword:Option[String] = None
+val adalogUser:Option[String] = Some(config.getString("adastyx.adalog.auth.user"))
+val adalogPassword:Option[String] = Some(config.getString("adastyx.adalog.auth.password"))
 
 
 // no custom variables 
 /* -- Code Cell: Some(A3F5EC37A1EC48A58084F2D58EFB6BF0) -- */ 
 
   val rdd = sparkContext.parallelize(1 to 1000)
+/****************/
+
+
+  /* -- Code Cell: Some(CA50026255FE4043804070007A03409E) -- */ 
+
+  
+/****************/
+
+
+  /* -- Code Cell: Some(080CAF0F2C2145B1841BF0EB93E64AAC) -- */ 
+
+  val tgz = sparkContext.textFile("/tmp/untar/newbum.rdd-72402.txt/tared/part-00001.gz")
+/****************/
+
+
+  /* -- Code Cell: Some(0D8B0A5FE0714FD78C366BF85C80E93B) -- */ 
+
+  tgz.take(10)
 /****************/
 
 
