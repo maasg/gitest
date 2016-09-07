@@ -64,24 +64,6 @@ val adalogPassword:Option[String] = None
 /****************/
 
 
-  /* -- Code Cell: Some(CA50026255FE4043804070007A03409E) -- */ 
-
-  
-/****************/
-
-
-  /* -- Code Cell: Some(080CAF0F2C2145B1841BF0EB93E64AAC) -- */ 
-
-  val tgz = sparkContext.textFile("/tmp/untar/newbum.rdd-72402.txt/tared/part-00001.gz")
-/****************/
-
-
-  /* -- Code Cell: Some(0D8B0A5FE0714FD78C366BF85C80E93B) -- */ 
-
-  tgz.take(10)
-/****************/
-
-
   /* -- Code Cell: Some(ACCFAE7A462B49FD8C975A7F7262BDE4) -- */ 
 
   rdd.sum
@@ -91,24 +73,6 @@ val adalogPassword:Option[String] = None
   /* -- Code Cell: Some(EAE05D512F744BE58A557DD4AB4B9233) -- */ 
 
   val nr = System.currentTimeMillis % (24*60*60)
-/****************/
-
-
-  /* -- Code Cell: Some(BFCA31A274DA4ABC809D231596C76C10) -- */ 
-
-  import java.net.URL
-/****************/
-
-
-  /* -- Code Cell: Some(33589624650C4A679136EA371FDC7B8D) -- */ 
-
-  val base = new URL("http://server/base/dir/")
-/****************/
-
-
-  /* -- Code Cell: Some(3FEDBF33C1644091822DFC623A035B81) -- */ 
-
-  val doc= new URL(base, "file.txt")
 /****************/
 
 
