@@ -1,5 +1,5 @@
 Start job/gen.sh
-Mit Sep 7 12:40:20 CEST 2016
+Mit Sep 7 15:58:16 CEST 2016
 At directory /home/maasg/projects/data-fellas/spark-notebook-entreprise/target/universal/spark-notebook-enterprise-0.7.0-SNAPSHOT-scala-2.10.5-spark-1.6.1-hadoop-2.2.0
 Folder /tmp/adastyx-new-projects/newbum/jdk doesn't exist
 Folder /tmp/adastyx-new-projects/newbum/sbt doesn't exist
@@ -11,13 +11,13 @@ The push refers to a repository [localhost:5000/newbum]
 showing docker images
 REPOSITORY                                       TAG                 IMAGE ID            CREATED             SIZE
 containersol/minimesos-cli                       0.10.2              0f8fd0fee007        4 weeks ago         133.7 MB
-containersol/mesos-master                        1.0.0-0.1.0         87a25ed66681        4 weeks ago         537.9 MB
-containersol/mesos-agent                         1.0.0-0.1.0         a0dd6385c5da        4 weeks ago         537.9 MB
+containersol/mesos-master                        1.0.0-0.1.0         87a25ed66681        5 weeks ago         537.9 MB
+containersol/mesos-agent                         1.0.0-0.1.0         a0dd6385c5da        5 weeks ago         537.9 MB
 registry                                         2                   c6c14b3960bd        5 weeks ago         33.31 MB
 registry                                         latest              c6c14b3960bd        5 weeks ago         33.31 MB
 containersol/minimesos-cli                       0.9.1               3368e4c7ad8d        6 weeks ago         133.7 MB
-containersol/mesos-agent                         0.25.0-0.1.0        b4f7aca2151f        8 weeks ago         569.6 MB
-containersol/mesos-master                        0.25.0-0.1.0        ac5a6d9c33c9        8 weeks ago         569.6 MB
+containersol/mesos-master                        0.25.0-0.1.0        ac5a6d9c33c9        9 weeks ago         569.6 MB
+containersol/mesos-agent                         0.25.0-0.1.0        b4f7aca2151f        9 weeks ago         569.6 MB
 docker-repo:5000/customenv                       0.0.1               e74777fde476        9 weeks ago         831 MB
 virdata/precise-zookeeper-3.4.6                  1.0.1               ccbe3621efd0        3 months ago        816.3 MB
 virdata/precise-kafka-0.8.1                      1.0.0               8413058c19e8        3 months ago        767.5 MB
@@ -38,7 +38,7 @@ weaveworks/weaveexec                             1.4.5               e566e11c808
 mesosphere/marathon                              v0.15.3             cb206b7716b0        6 months ago        818.4 MB
 jplock/zookeeper                                 3.4.6               66b763a96616        6 months ago        163.2 MB
 mesosphere/chronos                               latest              7594654c6147        12 months ago       604.9 MB
-gliderlabs/registrator                           v6                  52cf0f3bb1e9        12 months ago       20.96 MB
+gliderlabs/registrator                           v6                  52cf0f3bb1e9        13 months ago       20.96 MB
 posting marathon
 End job/gen.sh
-Mit Sep 7 12:40:20 CEST 2016
+Mit Sep 7 15:58:17 CEST 2016
