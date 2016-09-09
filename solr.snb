@@ -41,7 +41,7 @@
       "id" : "523454B521C645A184873E88FF330D67"
     },
     "cell_type" : "code",
-    "source" : "import com.github.takezoe.solr.scala._",
+    "source" : "import ",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
@@ -62,7 +62,7 @@
       "id" : "B588C27BF71E4AF68381BAABB82EFC03"
     },
     "cell_type" : "code",
-    "source" : "val client = new SolrClient(\"http://localhost:8983/solr/sne\")",
+    "source" : "",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
@@ -83,7 +83,7 @@
       "id" : "66D732B42B1D45C4BFBFF5FB0F45D91D"
     },
     "cell_type" : "code",
-    "source" : "client\n  .add(Map(\"id\"->\"001\", \"manu\" -> \"Lenovo\", \"name\" -> \"ThinkPad X201s\"))\n  .add(Map(\"id\"->\"002\", \"manu\" -> \"Lenovo\", \"name\" -> \"ThinkPad X220\"))\n  .add(Map(\"id\"->\"003\", \"manu\" -> \"Lenovo\", \"name\" -> \"ThinkPad X121e\"))\n  .commit",
+    "source" : "",
     "outputs" : [ {
       "metadata" : { },
       "data" : {
