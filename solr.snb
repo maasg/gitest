@@ -58,8 +58,46 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
+      "collapsed" : false,
       "id" : "B588C27BF71E4AF68381BAABB82EFC03"
+    },
+    "cell_type" : "code",
+    "source" : "val client = new SolrClient(\"http://localhost:8983/solr/sne\")",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "client: com.github.takezoe.solr.scala.SolrClient = com.github.takezoe.solr.scala.SolrClient@3b2e8118\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 4
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "66D732B42B1D45C4BFBFF5FB0F45D91D"
+    },
+    "cell_type" : "code",
+    "source" : "client\n  .add(Map(\"id\"->\"001\", \"manu\" -> \"Lenovo\", \"name\" -> \"ThinkPad X201s\"))\n  .add(Map(\"id\"->\"002\", \"manu\" -> \"Lenovo\", \"name\" -> \"ThinkPad X220\"))\n  .add(Map(\"id\"->\"003\", \"manu\" -> \"Lenovo\", \"name\" -> \"ThinkPad X121e\"))\n  .commit",
+    "outputs" : [ {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 5
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "DBC157D5CF004F9C90C45A5BA8CF92C1"
     },
     "cell_type" : "code",
     "source" : "",
