@@ -37,12 +37,44 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
+      "collapsed" : false,
       "id" : "82CB6707F2784F898E94D51CE107CC77"
     },
     "cell_type" : "code",
-    "source" : "",
-    "outputs" : [ ]
+    "source" : "val bum = sc.range(1,1000)\n",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "bum: org.apache.spark.rdd.RDD[Long] = MapPartitionsRDD[1] at range at <console>:60\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 1
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "462DA32E4E69414787438D07893BD912"
+    },
+    "cell_type" : "code",
+    "source" : "bum.sum",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "res3: Double = 499500.0\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "499500.0"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 2
+    } ]
   } ],
   "nbformat" : 4
 }
