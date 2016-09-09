@@ -59,6 +59,27 @@
       "trusted" : true,
       "input_collapsed" : false,
       "collapsed" : false,
+      "id" : "5E0A812609624EA8AB12197BED269A5E"
+    },
+    "cell_type" : "code",
+    "source" : "import play.api.test._",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import play.api.test._\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 6
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
       "id" : "0ED5A5694269403A8EF280F616F5AAE4"
     },
     "cell_type" : "code",
@@ -83,11 +104,11 @@
       "id" : "0F770F55204D45D3824FF5756A29DDCA"
     },
     "cell_type" : "code",
-    "source" : "val app = new Application",
+    "source" : "val app = FakeApplication",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "<console>:65: error: trait Application is abstract; cannot be instantiated\n       val app = new Application\n                 ^\n"
+      "text" : "<console>:68: error: not found: value FakeApplication\n       val app = FakeApplication\n                 ^\n"
     } ]
   }, {
     "metadata" : {
