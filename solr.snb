@@ -80,6 +80,20 @@
       "trusted" : true,
       "input_collapsed" : false,
       "collapsed" : false,
+      "id" : "0F770F55204D45D3824FF5756A29DDCA"
+    },
+    "cell_type" : "code",
+    "source" : "val app = new Application",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "<console>:65: error: trait Application is abstract; cannot be instantiated\n       val app = new Application\n                 ^\n"
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
       "id" : "66D732B42B1D45C4BFBFF5FB0F45D91D"
     },
     "cell_type" : "code",
