@@ -25,7 +25,7 @@
     },
     "customLocalRepo" : "/tmp/localrepo",
     "customRepos" : null,
-    "customDeps" : null,
+    "customDeps" : [ "com.github.takezoe % solr-scala-client_2.11 % 0.0.14" ],
     "customImports" : null,
     "customArgs" : null,
     "customSparkConf" : {
@@ -33,5 +33,16 @@
     },
     "customVars" : null
   },
-  "cells" : [ ]
+  "cells" : [ {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "82CB6707F2784F898E94D51CE107CC77"
+    },
+    "cell_type" : "code",
+    "source" : "",
+    "outputs" : [ ]
+  } ],
+  "nbformat" : 4
 }
