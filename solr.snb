@@ -59,31 +59,10 @@
       "trusted" : true,
       "input_collapsed" : false,
       "collapsed" : false,
-      "id" : "B588C27BF71E4AF68381BAABB82EFC03"
-    },
-    "cell_type" : "code",
-    "source" : "",
-    "outputs" : [ {
-      "name" : "stdout",
-      "output_type" : "stream",
-      "text" : "client: com.github.takezoe.solr.scala.SolrClient = com.github.takezoe.solr.scala.SolrClient@3b2e8118\n"
-    }, {
-      "metadata" : { },
-      "data" : {
-        "text/html" : ""
-      },
-      "output_type" : "execute_result",
-      "execution_count" : 4
-    } ]
-  }, {
-    "metadata" : {
-      "trusted" : true,
-      "input_collapsed" : false,
-      "collapsed" : false,
       "id" : "66D732B42B1D45C4BFBFF5FB0F45D91D"
     },
     "cell_type" : "code",
-    "source" : "",
+    "source" : "val url = WS.url((config.url / \"adalog\").toString)",
     "outputs" : [ {
       "metadata" : { },
       "data" : {
