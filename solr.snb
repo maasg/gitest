@@ -37,8 +37,29 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
+      "collapsed" : false,
       "id" : "523454B521C645A184873E88FF330D67"
+    },
+    "cell_type" : "code",
+    "source" : "import com.github.takezoe.solr.scala._",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import com.github.takezoe.solr.scala._\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 3
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "B588C27BF71E4AF68381BAABB82EFC03"
     },
     "cell_type" : "code",
     "source" : "",
