@@ -25,7 +25,7 @@
     },
     "customLocalRepo" : "/tmp/localrepo",
     "customRepos" : null,
-    "customDeps" : [ "com.github.takezoe % solr-scala-client_2.11 % 0.0.14" ],
+    "customDeps" : [ ],
     "customImports" : null,
     "customArgs" : null,
     "customSparkConf" : {
