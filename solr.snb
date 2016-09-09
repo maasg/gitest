@@ -59,62 +59,6 @@
       "trusted" : true,
       "input_collapsed" : false,
       "collapsed" : false,
-      "id" : "5E0A812609624EA8AB12197BED269A5E"
-    },
-    "cell_type" : "code",
-    "source" : "import play.api.test._",
-    "outputs" : [ {
-      "name" : "stdout",
-      "output_type" : "stream",
-      "text" : "import play.api.test._\n"
-    }, {
-      "metadata" : { },
-      "data" : {
-        "text/html" : ""
-      },
-      "output_type" : "execute_result",
-      "execution_count" : 6
-    } ]
-  }, {
-    "metadata" : {
-      "trusted" : true,
-      "input_collapsed" : false,
-      "collapsed" : false,
-      "id" : "0ED5A5694269403A8EF280F616F5AAE4"
-    },
-    "cell_type" : "code",
-    "source" : "import play.api.Play.current",
-    "outputs" : [ {
-      "name" : "stdout",
-      "output_type" : "stream",
-      "text" : "import play.api.Play.current\n"
-    }, {
-      "metadata" : { },
-      "data" : {
-        "text/html" : ""
-      },
-      "output_type" : "execute_result",
-      "execution_count" : 3
-    } ]
-  }, {
-    "metadata" : {
-      "trusted" : true,
-      "input_collapsed" : false,
-      "collapsed" : false,
-      "id" : "0F770F55204D45D3824FF5756A29DDCA"
-    },
-    "cell_type" : "code",
-    "source" : "val app = FakeApplication",
-    "outputs" : [ {
-      "name" : "stdout",
-      "output_type" : "stream",
-      "text" : "<console>:68: error: not found: value FakeApplication\n       val app = FakeApplication\n                 ^\n"
-    } ]
-  }, {
-    "metadata" : {
-      "trusted" : true,
-      "input_collapsed" : false,
-      "collapsed" : false,
       "id" : "66D732B42B1D45C4BFBFF5FB0F45D91D"
     },
     "cell_type" : "code",
