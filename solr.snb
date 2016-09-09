@@ -41,18 +41,18 @@
       "id" : "523454B521C645A184873E88FF330D67"
     },
     "cell_type" : "code",
-    "source" : "import ",
+    "source" : "import play.api.libs.json._\nimport play.api.libs.ws.WS",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "import com.github.takezoe.solr.scala._\n"
+      "text" : "import play.api.libs.json._\nimport play.api.libs.ws.WS\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 3
+      "execution_count" : 1
     } ]
   }, {
     "metadata" : {
