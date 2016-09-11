@@ -126,7 +126,18 @@
     },
     "cell_type" : "code",
     "source" : "val f1 = Future[Int]{Thread.sleep(2000); throw new Exception(\"boom\")}\nval f2 = Future[Int]{Thread.sleep(5000); 42}\nval f3 = Future[Int]{Thread.sleep(10000); 101}\nval seq = Seq(f3,f2,f1)\n\nresilientTime(Await.result(Future.sequence(seq), 10.seconds))",
-    "outputs" : [ ]
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "f1: scala.concurrent.Future[Int] = scala.concurrent.impl.Promise$DefaultPromise@2eb8a74\nf2: scala.concurrent.Future[Int] = scala.concurrent.impl.Promise$DefaultPromise@51b6dcfb\nf3: scala.concurrent.Future[Int] = scala.concurrent.impl.Promise$DefaultPromise@7804129a\nseq: Seq[scala.concurrent.Future[Int]] = List(scala.concurrent.impl.Promise$DefaultPromise@7804129a, scala.concurrent.impl.Promise$DefaultPromise@51b6dcfb, scala.concurrent.impl.Promise$DefaultPromise@2eb8a74)\nres29: (scala.util.Try[Seq[Int]], Long) = (Failure(java.lang.Exception: boom),10000)\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "(Failure(java.lang.Exception: boom),10000)"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 20
+    } ]
   }, {
     "metadata" : {
       "trusted" : true,
