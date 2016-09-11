@@ -41,7 +41,7 @@
       "id" : "1AB2D9728880468D9A4B22C9B7F24232"
     },
     "cell_type" : "code",
-    "source" : "import scala.concurrent.{Future, Promise, Success, Failure}\ndef failFast[T](futures: Seq[Future[T]]): Future[Seq[T]] = {\n  val promise = Promise[Seq[T]]\n  futures.foreach{f => f.onFailure(ex => promise.fail(ex))}\n  \n  \n  \n  ",
+    "source" : "import scala.concurrent.{Future, Promise, Success, Failure}\ndef failFast[T](futures: Seq[Future[T]]): Future[Seq[T]] = {\n  val promise = Promise[Seq[T]]\n  futures.foreach{f => f.onFailure(ex => promise.fail(ex))}\n  val res = Future.sequence(futures)\n  \n  \n  res.onCompletion{\n    case Success(seq) => promise.success(seq)\n    case Failure\n  \n  \n  ",
     "outputs" : [ ]
   } ],
   "nbformat" : 4
