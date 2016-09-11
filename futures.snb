@@ -58,6 +58,16 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "76C6E224537A43B484A0C9D1A345DE38"
+    },
+    "cell_type" : "code",
+    "source" : "def time(t: =>T):(T, Long) = {\n  val t0 = System.currentTimeMillis\n  t\n  (t, \n  \n  ",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
       "collapsed" : false,
       "id" : "F12302858350471B9A429A58FE06BDC4"
     },
@@ -68,6 +78,16 @@
       "output_type" : "stream",
       "text" : "java.lang.Exception: boom\n\tat $iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$anonfun$3.apply(<console>:67)\n\tat $iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$iwC$$anonfun$3.apply(<console>:67)\n\tat scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)\n\tat scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)\n\tat scala.concurrent.impl.ExecutionContextImpl$$anon$3.exec(ExecutionContextImpl.scala:107)\n\tat scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)\n\tat scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)\n\tat scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)\n\tat scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)\n\n"
     } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "772BF75E32BD412D8793E697906B3460"
+    },
+    "cell_type" : "code",
+    "source" : "import scala.concurrent.duration._\nimport scala.concurrent.Await\nval f1 = Future[Int]{Thread.sleep(2000); throw new Exception(\"boom\")}\nval f2 = Future[Int]{Thread.sleep(5000); 42}\nval f3 = Future[Int]{Thread.sleep(10000); 101}\nval res = failFast(Seq(f3,f2,f1))\n\n\nAwait.result(res, 10.seconds)",
+    "outputs" : [ ]
   }, {
     "metadata" : {
       "trusted" : true,
