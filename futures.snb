@@ -41,11 +41,11 @@
       "id" : "1AB2D9728880468D9A4B22C9B7F24232"
     },
     "cell_type" : "code",
-    "source" : "import scala.concurrent.{Future, Promise}\nimport scala.util.{Success, Failure}\nimport scala.concurrent.ExecutionContext.Implicits.global\ndef failFast[T](futures: Seq[Future[T]]): Future[Seq[T]] = {\n  val promise = Promise[Seq[T]]\n  futures.foreach{f => f.onFailure(ex => promise.fail(ex))}\n  val res = Future.sequence(futures)\n  promise.completeWith(res)\n}\n  \n  ",
+    "source" : "import scala.concurrent.{Future, Promise}\nimport scala.util.{Success, Failure}\nimport scala.concurrent.ExecutionContext.Implicits.global\ndef failFast[T](futures: Seq[Future[T]]): Future[Seq[T]] = {\n  val promise = Promise[Seq[T]]\n  futures.foreach{f => f.onFailure{case ex => promise.failure(ex)}}\n  val res = Future.sequence(futures)\n  promise.completeWith(res)\n}\n  \n  ",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "<console>:65: error: missing parameter type\n         futures.foreach{f => f.onFailure(ex => promise.fail(ex))}\n                                          ^\n<console>:67: error: type mismatch;\n found   : promise.type (with underlying type scala.concurrent.Promise[Seq[T]])\n required: scala.concurrent.Future[Seq[T]]\n         promise.completeWith(res)\n                             ^\n"
+      "text" : "<console>:67: error: type mismatch;\n found   : promise.type (with underlying type scala.concurrent.Promise[Seq[T]])\n required: scala.concurrent.Future[Seq[T]]\n         promise.completeWith(res)\n                             ^\n"
     } ]
   }, {
     "metadata" : {
