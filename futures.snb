@@ -100,11 +100,32 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
+      "collapsed" : false,
       "id" : "772BF75E32BD412D8793E697906B3460"
     },
     "cell_type" : "code",
     "source" : "import scala.concurrent.duration._\nimport scala.concurrent.Await\nval f1 = Future[Int]{Thread.sleep(2000); throw new Exception(\"boom\")}\nval f2 = Future[Int]{Thread.sleep(5000); 42}\nval f3 = Future[Int]{Thread.sleep(10000); 101}\nval res = failFast(Seq(f3,f2,f1))\n\n\nresilientTime(Await.result(res, 10.seconds))",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import scala.concurrent.duration._\nimport scala.concurrent.Await\nf1: scala.concurrent.Future[Int] = scala.concurrent.impl.Promise$DefaultPromise@35a7cb38\nf2: scala.concurrent.Future[Int] = scala.concurrent.impl.Promise$DefaultPromise@131394d8\nf3: scala.concurrent.Future[Int] = scala.concurrent.impl.Promise$DefaultPromise@24b91d37\nres: scala.concurrent.Future[Seq[Int]] = scala.concurrent.impl.Promise$DefaultPromise@798cbceb\nres25: (scala.util.Try[Seq[Int]], Long) = (Failure(java.lang.Exception: boom),1998)\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "(Failure(java.lang.Exception: boom),1998)"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 18
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "7DF5D329882F4DBE9E390FD40B0C7196"
+    },
+    "cell_type" : "code",
+    "source" : "val f1 = Future[Int]{Thread.sleep(2000); throw new Exception(\"boom\")}\nval f2 = Future[Int]{Thread.sleep(5000); 42}\nval f3 = Future[Int]{Thread.sleep(10000); 101}\nval seq = Seq(f3,f2,f1)\n\nresilientTime(Await.result(Future.sequence(seq), 10.seconds))",
     "outputs" : [ ]
   }, {
     "metadata" : {
