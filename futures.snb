@@ -41,11 +41,18 @@
       "id" : "1AB2D9728880468D9A4B22C9B7F24232"
     },
     "cell_type" : "code",
-    "source" : "import scala.concurrent.{Future, Promise}\nimport scala.util.{Success, Failure}\nimport scala.concurrent.ExecutionContext.Implicits.global\ndef failFast[T](futures: Seq[Future[T]]): Future[Seq[T]] = {\n  val promise = Promise[Seq[T]]\n  futures.foreach{f => f.onFailure{case ex => promise.failure(ex)}}\n  val res = Future.sequence(futures)\n  promise.completeWith(res)\n}\n  \n  ",
+    "source" : "import scala.concurrent.{Future, Promise}\nimport scala.util.{Success, Failure}\nimport scala.concurrent.ExecutionContext.Implicits.global\ndef failFast[T](futures: Seq[Future[T]]): Future[Seq[T]] = {\n  val promise = Promise[Seq[T]]\n  futures.foreach{f => f.onFailure{case ex => promise.failure(ex)}}\n  val res = Future.sequence(futures)\n  promise.completeWith(res).future\n}\n  \n  ",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "<console>:67: error: type mismatch;\n found   : promise.type (with underlying type scala.concurrent.Promise[Seq[T]])\n required: scala.concurrent.Future[Seq[T]]\n         promise.completeWith(res)\n                             ^\n"
+      "text" : "import scala.concurrent.{Future, Promise}\nimport scala.util.{Success, Failure}\nimport scala.concurrent.ExecutionContext.Implicits.global\nfailFast: [T](futures: Seq[scala.concurrent.Future[T]])scala.concurrent.Future[Seq[T]]\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 7
     } ]
   }, {
     "metadata" : {
@@ -55,7 +62,7 @@
       "id" : "F12302858350471B9A429A58FE06BDC4"
     },
     "cell_type" : "code",
-    "source" : "",
+    "source" : "val f1 = Future[Int]{Thread.sleep(2000); throw Exception(\"boom\")}\nval f2 = Future[Int]{Thread.sleep(5000); 42}\nval f3 = Future[Int]{Thread.sleep(10000); 101}\nval seq",
     "outputs" : [ ]
   } ],
   "nbformat" : 4
