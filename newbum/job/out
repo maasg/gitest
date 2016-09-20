@@ -32392,3 +32392,51 @@ gliderlabs/registrator                           v6                  52cf0f3bb1e
 posting marathon
 End job/gen.sh
 Mon Sep 12 16:04:48 CEST 2016
+Start job/gen.sh
+Die Sep 20 18:22:51 CEST 2016
+At directory /home/maasg/projects/data-fellas/spark-notebook-entreprise/target/universal/spark-notebook-enterprise-0.7.0-SNAPSHOT-scala-2.10.5-spark-1.6.1-hadoop-2.2.0
+Folder /tmp/adastyx-new-projects/newbum/jdk doesn't exist
+Folder /tmp/adastyx-new-projects/newbum/sbt doesn't exist
+enter /tmp/adastyx-new-projects/newbum/job
+publishing project
+building docker
+pushing docker
+The push refers to a repository [localhost:5000/newbum]
+showing docker images
+REPOSITORY                                       TAG                 IMAGE ID            CREATED             SIZE
+maasg/pipeline                                   2.0                 b9910a42c247        6 days ago          1.165 GB
+localhost:5000/newbum                            0.0.1-SNAPSHOT      d2c4be0072af        8 days ago          849.8 MB
+elasticsearch                                    latest              31347bae83b8        2 weeks ago         344.9 MB
+ubuntu                                           14.04               4a725d3b3b1c        3 weeks ago         188 MB
+containersol/minimesos-cli                       0.10.2              0f8fd0fee007        6 weeks ago         133.7 MB
+containersol/mesos-master                        1.0.0-0.1.0         87a25ed66681        6 weeks ago         537.9 MB
+containersol/mesos-agent                         1.0.0-0.1.0         a0dd6385c5da        6 weeks ago         537.9 MB
+registry                                         2                   c6c14b3960bd        7 weeks ago         33.31 MB
+registry                                         latest              c6c14b3960bd        7 weeks ago         33.31 MB
+containersol/minimesos-cli                       0.9.1               3368e4c7ad8d        8 weeks ago         133.7 MB
+containersol/mesos-agent                         0.25.0-0.1.0        b4f7aca2151f        10 weeks ago        569.6 MB
+containersol/mesos-master                        0.25.0-0.1.0        ac5a6d9c33c9        10 weeks ago        569.6 MB
+docker-repo:5000/customenv                       0.0.1               e74777fde476        11 weeks ago        831 MB
+virdata/precise-zookeeper-3.4.6                  1.0.1               ccbe3621efd0        4 months ago        816.3 MB
+virdata/precise-kafka-0.8.1                      1.0.0               8413058c19e8        4 months ago        767.5 MB
+virdata/precise-oracle-jdk-7                     1.0.0               4847dbf0edda        4 months ago        720.9 MB
+kafka                                            0.8.2.1             ce54c848e139        4 months ago        422.1 MB
+datafellas/distributed-pipeline-quotes           1.0.0               f0723487a8dd        4 months ago        1.131 GB
+java                                             openjdk-8-jre       18552cb9affb        4 months ago        311 MB
+cassandra                                        latest              77d2bd38e2e5        4 months ago        388.8 MB
+ubuntu                                           precise             2bffcdf4b693        4 months ago        138.5 MB
+mesosphere/marathon                              latest              ff59ee911533        4 months ago        830.2 MB
+containersol/consul-server                       0.6-1               3e27f63d1da2        4 months ago        37.77 MB
+hello-world                                      latest              94df4f0ce8a4        4 months ago        967 B
+data-fellas-docker-public.bintray.io/base-adst   0.0.1               bfbfec431922        5 months ago        509.6 MB
+cloudera/quickstart                              latest              4239cd2958c6        5 months ago        6.336 GB
+containersol/alpine3.3-java8-jre                 v1                  989b0817c702        6 months ago        109 MB
+weaveworks/scope                                 0.13.1              d721bbaaca35        6 months ago        83.88 MB
+weaveworks/weaveexec                             1.4.5               e566e11c8087        6 months ago        60.67 MB
+mesosphere/marathon                              v0.15.3             cb206b7716b0        7 months ago        818.4 MB
+jplock/zookeeper                                 3.4.6               66b763a96616        7 months ago        163.2 MB
+mesosphere/chronos                               latest              7594654c6147        12 months ago       604.9 MB
+gliderlabs/registrator                           v6                  52cf0f3bb1e9        13 months ago       20.96 MB
+posting marathon
+End job/gen.sh
+Die Sep 20 18:22:54 CEST 2016
