@@ -1,1 +1,0 @@
-{"schedule":"R/2016-09-20T16:22Z/PT5M","name":"newbum -- job","cpus":"1","mem":"1024","uris":[],"shell":false,"command":"","container":{"type":"DOCKER","forcePullImage":true,"image":"localhost:5000/newbum:0.0.1-SNAPSHOT","network":"HOST"}}
