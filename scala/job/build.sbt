@@ -1,5 +1,5 @@
 
-organization := "com.maasg-scala"
+organization := "com.example-scala"
 
 name := "scala"
 
@@ -7,7 +7,7 @@ version := "0.0.1-SNAPSHOT"
 
 scalaVersion := "2.10.5"
 
-maintainer := "gerard" //Docker
+maintainer := "DF" //Docker
 
 resolvers ++= Seq( "Maven2 Local" at "file:/home/maasg/.m2/repository/" ,
  "public" at "https://repo1.maven.org/maven2/" ,
@@ -118,7 +118,7 @@ libraryDependencies +=  "org.scalaj" %% "scalaj-http" % "2.3.0"
 test in assembly := {}
 
 //main class
-mainClass in assembly := Some("com.maasg.Main")
+mainClass in assembly := Some("com.example.Main")
 
 artifact in (Compile, assembly) ~= { art =>
   art.copy(`classifier` = Some("assembly"))

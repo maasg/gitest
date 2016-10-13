@@ -1,5 +1,5 @@
 
-package com.maasg
+package com.example
 /**
   Outputs
   -------
@@ -30,7 +30,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "scala"))
 // Set project Jars
 
 val libDir = new java.io.File(".", "lib")
-val currentProjectJars = Array[String]( "com.maasg-scala.scala-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array[String]( "com.example-scala.scala-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(".", "spark-lib")
 val fromProjectJars = Array[String]().map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
@@ -66,6 +66,12 @@ val adalogPassword:Option[String] = None
 /****************/
 
 
-  /* -- Code Cell: Some(F1E517EEEEC1455D8F02899661A42BE6) -- */
+  /* -- Code Cell: Some(F1E517EEEEC1455D8F02899661A42BE6) -- */ 
+
+  (1 to 100).foreach(println(_))
+/****************/
+
+
+  /* -- Code Cell: Some(74DE5179010A47BAB539C8988DF16A58) -- */
 
 }
