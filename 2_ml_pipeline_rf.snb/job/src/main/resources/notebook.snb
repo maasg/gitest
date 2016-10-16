@@ -11,7 +11,7 @@
     },
     "trusted" : true,
     "sparkNotebook" : {
-      "xSparkVersion" : "1.6.2",
+      "xSparkVersion" : "1.6.1",
       "xWithParquet" : "true",
       "buildTime" : "Mon Aug 08 17:38:15 CEST 2016",
       "sparkNotebookVersion" : "0.7.0-SNAPSHOT",

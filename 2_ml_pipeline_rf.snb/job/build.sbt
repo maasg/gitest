@@ -1,5 +1,5 @@
 
-organization := "com.churn-2_ml_pipeline_rf.snb"
+organization := "com.example-2_ml_pipeline_rf.snb"
 
 name := "2_ml_pipeline_rf.snb"
 
@@ -7,7 +7,7 @@ version := "0.0.1-SNAPSHOT"
 
 scalaVersion := "2.10.5"
 
-maintainer := "maasg" //Docker
+maintainer := "DF" //Docker
 
 resolvers ++= Seq( "Maven2 Local" at "file:/home/maasg/.m2/repository/" ,
  "public" at "https://repo1.maven.org/maven2/" ,
@@ -63,7 +63,7 @@ dockerRepository := Some("localhost:5000") //Docker
 
 bashScriptExtraDefines += """addJava "-Djava.io.tmpdir=/tmp/""""
 
-val sparkVersion  = sys.env.get("SPARK_VERSION") .orElse(sys.props.get("spark.version")) .getOrElse("1.6.2")
+val sparkVersion  = sys.env.get("SPARK_VERSION") .orElse(sys.props.get("spark.version")) .getOrElse("1.6.1")
 
 val hadoopVersion = sys.env.get("HADOOP_VERSION").orElse(sys.props.get("hadoop.version")).getOrElse("2.7.2")
 
@@ -118,7 +118,7 @@ libraryDependencies +=  "org.scalaj" %% "scalaj-http" % "2.3.0"
 test in assembly := {}
 
 //main class
-mainClass in assembly := Some("com.churn.Main")
+mainClass in assembly := Some("com.example.Main")
 
 artifact in (Compile, assembly) ~= { art =>
   art.copy(`classifier` = Some("assembly"))

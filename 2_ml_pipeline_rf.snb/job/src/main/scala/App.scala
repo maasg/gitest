@@ -1,5 +1,5 @@
 
-package com.churn
+package com.example
 /**
   Outputs
   -------
@@ -30,7 +30,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "2_ml_pipeline_r
 // Set project Jars
 
 val libDir = new java.io.File(".", "lib")
-val currentProjectJars = Array[String]( "com.churn-2_ml_pipeline_rf.snb.2_ml_pipeline_rf.snb-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array[String]( "com.example-2_ml_pipeline_rf.snb.2_ml_pipeline_rf.snb-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(".", "spark-lib")
 val fromProjectJars = Array[String]().map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
