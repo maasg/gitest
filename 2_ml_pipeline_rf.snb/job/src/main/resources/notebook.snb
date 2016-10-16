@@ -1,0 +1,473 @@
+{
+  "metadata" : {
+    "id" : "3782f5cd-fccd-4833-a00f-0086a9b7f0cb",
+    "name" : "2_ml_pipeline_rf.snb",
+    "user_save_timestamp" : "2016-10-12T09:25:31.792Z",
+    "auto_save_timestamp" : "2016-10-06T10:19:30.013Z",
+    "language_info" : {
+      "name" : "scala",
+      "file_extension" : "scala",
+      "codemirror_mode" : "text/x-scala"
+    },
+    "trusted" : true,
+    "sparkNotebook" : {
+      "xSparkVersion" : "1.6.2",
+      "xWithParquet" : "true",
+      "buildTime" : "Mon Aug 08 17:38:15 CEST 2016",
+      "sparkNotebookVersion" : "0.7.0-SNAPSHOT",
+      "xJlineDef" : "(org.scala-lang,2.10.5)",
+      "scalaVersion" : "2.10.5",
+      "sbtVersion" : "0.13.9",
+      "formattedShaVersion" : "Some(8395c2e6a7b313bfb33e349e16012c10d52ec13e-SNAPSHOT)",
+      "xJets3tVersion" : "0.9.4",
+      "xWithHive" : "true",
+      "xHadoopVersion" : "2.7.2"
+    },
+    "customLocalRepo" : "/srv/tmp/localrepo",
+    "customRepos" : null,
+    "customDeps" : null,
+    "customImports" : null,
+    "customArgs" : null,
+    "customSparkConf" : {
+      "spark.cores.max" : "8",
+      "spark.executor.memory" : "12G",
+      "spark.mesos.coarse" : "true",
+      "spark.default.parallelism" : "32",
+      "spark.sql.parquet.compression.codec" : "snappy",
+      "spark.sql.shuffle.partitions" : "64"
+    },
+    "customVars" : null
+  },
+  "cells" : [ {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "A0B79C1E9ADE4E1F89022CAB6A0297F0"
+    },
+    "cell_type" : "code",
+    "source" : "val sqlContext = new org.apache.spark.sql.SQLContext(sc)\nimport sqlContext.implicits._\n\nimport org.apache.spark.sql.types._",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@480b08b9\nimport sqlContext.implicits._\nimport org.apache.spark.sql.types._\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 1
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "9A7C4B1B2CC74CC588A355344AD4CFB2"
+    },
+    "cell_type" : "code",
+    "source" : "val model_matrix_uri = \"hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/modelMatrix/\"\nval model_matrix_uri_output = \"hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/modelMatrix/\"\n\nval matrixDF = sqlContext.read\n                   .format(\"parquet\")\n                   .load(model_matrix_uri)\n                   .persist(org.apache.spark.storage.StorageLevel.MEMORY_AND_DISK_SER)\n                   .repartition(32)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "model_matrix_uri: String = hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/modelMatrix/\nmodel_matrix_uri_output: String = hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/modelMatrix/\nmatrixDF: org.apache.spark.sql.DataFrame = [id: int, any_churn_target: boolean, full_churn_target: boolean, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, A_4_count_last: int, A_5_count_last: int, A_6_count_last: int, A_7_count_last: int, A_8_count_last: int, A_AUM_Amt_last: double, A_Account_FirstContact_Date: int, A_Balance_Amt_last: double, A_Balance_Loan_Amt_last: double, A_Capital_Death_Amt_last: double, A_Capital_Life_Amt_last: double, A_Dubious_Payment_Bank_Ind_last: string, A_Dubious_Payment_PC_Ind_last: string, A_Lpp_Id: int, A_Original_..."
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 2
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "CE0477855D3741E5924933D8FD31BA86"
+    },
+    "cell_type" : "code",
+    "source" : "matrixDF.describe()",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "presentation" : {
+        "tabs_state" : "{\n  \"tab_id\": \"#tab767710127-0\"\n}",
+        "pivot_chart_state" : "{\n  \"hiddenAttributes\": [],\n  \"menuLimit\": 200,\n  \"cols\": [],\n  \"rows\": [],\n  \"vals\": [],\n  \"exclusions\": {},\n  \"inclusions\": {},\n  \"unusedAttrsVertical\": 85,\n  \"autoSortUnusedAttrs\": false,\n  \"inclusionsInfo\": {},\n  \"aggregatorName\": \"Count\",\n  \"rendererName\": \"Table\"\n}"
+      },
+      "id" : "8C1F13860F174AF88CAA9DC08100070C"
+    },
+    "cell_type" : "code",
+    "source" : "matrixDF.take(50)",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "045E46A55615443B85869C46E7134013"
+    },
+    "cell_type" : "code",
+    "source" : "import org.apache.spark.sql.functions._\n\nval churnedDF_tmp = matrixDF.withColumn(\"churned\", when($\"any_churn_target\" === false , 0.0).otherwise(1.0)) // any_churn_target => churned, not_churned\n                        .drop(\"any_churn_target\")\n                        .drop(\"full_churn_target\")\n                        .drop(\"cs_k\") \n                        .drop(\"Neighbourhood_Code\")\n                        .drop(\"Postal_Code\")\n\n\n//TODO Deal with these features : either by augmenting the number of categoricals",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "32D320FCD4504224824094B70A3B370B"
+    },
+    "cell_type" : "code",
+    "source" : "val stringedColumns = churnedDF_tmp.schema.toSeq.filter(col => (col.dataType == StringType) ).map(_.name)   \n\nval numCols = churnedDF_tmp.schema.toSeq.filter(col => ( (col.name != \"churned\") && ((col.dataType == DoubleType) || (col.dataType == IntegerType)) || (col.dataType == LongType))) \n                               .map (_.name)  \n\n\n(stringedColumns.length + numCols.length)  == (churnedDF_tmp.schema.toSeq.length -1)",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "503EAE0B270B4AA383A13BC37AB6E508"
+    },
+    "cell_type" : "code",
+    "source" : "val fillStrMap = stringedColumns.map (s => ( s, \"unknown\")).toMap   //Replace empty strings with a full string so Encoders and Indexers don't explode\nval fillNumMap = numCols.map ( s => (s, 0)).toMap                   // TODO ==> compute averages instead of zeros",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "B028D7AF5FB845698678874090D9EBF8"
+    },
+    "cell_type" : "code",
+    "source" : "val churnedDF = churnedDF_tmp.na.fill(fillStrMap)\n                             .na.fill(fillNumMap)",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "presentation" : {
+        "tabs_state" : "{\n  \"tab_id\": \"#tab1215894341-0\"\n}",
+        "pivot_chart_state" : "{\n  \"hiddenAttributes\": [],\n  \"menuLimit\": 200,\n  \"cols\": [],\n  \"rows\": [],\n  \"vals\": [],\n  \"exclusions\": {},\n  \"inclusions\": {},\n  \"unusedAttrsVertical\": 85,\n  \"autoSortUnusedAttrs\": false,\n  \"inclusionsInfo\": {},\n  \"aggregatorName\": \"Count\",\n  \"rendererName\": \"Table\"\n}"
+      },
+      "id" : "5BBFBEB658DC4A529A441409124FA1D9"
+    },
+    "cell_type" : "code",
+    "source" : "churnedDF.take(50)",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "92612E5FBA084F7589906D6EE8BAEE65"
+    },
+    "cell_type" : "code",
+    "source" : "import org.apache.spark.ml.feature.{StringIndexer, IndexToString, VectorIndexer, VectorSlicer, StandardScaler, VectorAssembler, OneHotEncoder}\nimport org.apache.spark.ml.{Pipeline, PipelineStage}\nimport org.apache.spark.mllib.util.MLUtils\nimport org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "490EB66BE7A0411285629874B6BD1EEB"
+    },
+    "cell_type" : "code",
+    "source" : "import org.apache.spark.ml.attribute.NominalAttribute\n\nval meta = NominalAttribute\n  .defaultAttr\n  .withName(\"churned\")\n  .withValues(\"0.0\", \"1.0\")\n  .toMetadata\n\n//Manually adds metadata to the label columns \nval churnedWithMetadata = churnedDF.withColumn(\"label\", $\"churned\".as(\"label\", meta)).drop(\"churned\")",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "presentation" : {
+        "tabs_state" : "{\n  \"tab_id\": \"#tab2045443752-0\"\n}",
+        "pivot_chart_state" : "{\n  \"hiddenAttributes\": [],\n  \"menuLimit\": 200,\n  \"cols\": [],\n  \"rows\": [],\n  \"vals\": [],\n  \"exclusions\": {},\n  \"inclusions\": {},\n  \"unusedAttrsVertical\": 85,\n  \"autoSortUnusedAttrs\": false,\n  \"inclusionsInfo\": {},\n  \"aggregatorName\": \"Count\",\n  \"rendererName\": \"Table\"\n}"
+      },
+      "id" : "3576D11CD45A476692EB73459760D951"
+    },
+    "cell_type" : "code",
+    "source" : "churnedWithMetadata.take(50)",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "id" : "BAD5EDB2D2A242218532265392267DCF"
+    },
+    "cell_type" : "markdown",
+    "source" : "## Stages for features preparation"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "56BD6B71E1DD4543826A81E51FD73101"
+    },
+    "cell_type" : "code",
+    "source" : "val catIndexer: Array[org.apache.spark.ml.PipelineStage] = stringedColumns.map(\n  cname => new StringIndexer()\n    .setInputCol(cname)\n    .setOutputCol(s\"${cname}_index\")\n    .setHandleInvalid(\"skip\")\n).toArray\n\nval vectorCols = (stringedColumns.map(cname => s\"${cname}_index\") ++ numCols).toArray\n\nval vectorAssembler = new VectorAssembler()\n                           .setInputCols(vectorCols)\n                           .setOutputCol(\"features\")\n\nval vectorIndexer = new VectorIndexer()\n                           .setInputCol(\"features\")\n                           .setOutputCol(\"indexedFeatures\")\n                           .setMaxCategories(10)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "catIndexer: Array[org.apache.spark.ml.PipelineStage] = Array(strIdx_6f0b4b071eb0, strIdx_f40f64d62e47, strIdx_ca2beee428b0, strIdx_6594f158f8d8, strIdx_12ced899ad20, strIdx_7e1d5b515bd0, strIdx_8effc13e52df, strIdx_99b4d6fc9018, strIdx_97b58c1772dd, strIdx_dff18dcacb7a, strIdx_5d5e81a4517a, strIdx_57f9f52fc24e, strIdx_e98b85f5f04b, strIdx_ee13e926ad9b, strIdx_6742d0ff49ca, strIdx_ddf9e6f7fe05)\nvectorCols: Array[String] = Array(A_Dubious_Payment_Bank_Ind_last_index, A_Dubious_Payment_PC_Ind_last_index, A_Owner_Ind_last_index, A_Tenant_Ind_index, Bank_Insurance_Ind_index, Convinced_Client_Ind_index, CreditCard_Ind_index, DebetCard_Ind_index, Deceased_Liquidated_Ind_index, Gender_index, Individual_Organization_Code_index, Snapshot_Date_index, Social_Class_Code_index, EVO_A_Dubious_Payment_..."
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 24
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "ADF3163DA6E54E4A8CA1CDCDBF59AD34"
+    },
+    "cell_type" : "code",
+    "source" : "vectorIndexer",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "res33: org.apache.spark.ml.feature.VectorIndexer = vecIdx_9516c647a38a\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "vecIdx_9516c647a38a"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 25
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "A443CDE48DB445DA9FB945382800C79C"
+    },
+    "cell_type" : "code",
+    "source" : "import org.apache.spark.ml.classification.{RandomForestClassifier, RandomForestClassificationModel}\nimport scala.util.Random\n\nval classifier = new RandomForestClassifier()\n         .setSeed(Random.nextLong())\n         .setFeaturesCol(\"features\")\n         .setLabelCol(\"label\")\n         .setPredictionCol(\"prediction\")\n         .setNumTrees(48)\n         .setImpurity(\"entropy\")\n         .setFeatureSubsetStrategy(\"auto\")\n                  \nval rfPipeline = new Pipeline().setStages(catIndexer ++ Array(vectorAssembler, classifier))",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import org.apache.spark.ml.classification.{RandomForestClassifier, RandomForestClassificationModel}\nimport scala.util.Random\nclassifier: org.apache.spark.ml.classification.RandomForestClassifier = rfc_9a9830c0ade2\nrfPipeline: org.apache.spark.ml.Pipeline = pipeline_6a98540ddf0f\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 87
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "A145EF3CD68148FD95084B2B2819641B"
+    },
+    "cell_type" : "code",
+    "source" : "import org.apache.spark.ml.tuning.{CrossValidator, ParamGridBuilder}\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\n\n// We use a ParamGridBuilder to construct a grid of parameters to search over\nval paramGrid = new ParamGridBuilder()\n  .addGrid(rf.maxBins, Array(25, 28, 32))\n  .addGrid(rf.maxDepth, Array(4, 8, 16))\n  .addGrid(rf.impurity, Array(\"entropy\", \"gini\"))\n  .build()\n\nval evaluator = new BinaryClassificationEvaluator()\n  .setLabelCol(\"label\")\n  //.setMetricName(\"areaUnderPR\")",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import org.apache.spark.ml.tuning.{CrossValidator, ParamGridBuilder}\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\nparamGrid: Array[org.apache.spark.ml.param.ParamMap] = \nArray({\n\trfc_fcd6f70a536f-impurity: entropy,\n\trfc_fcd6f70a536f-maxBins: 25,\n\trfc_fcd6f70a536f-maxDepth: 4\n}, {\n\trfc_fcd6f70a536f-impurity: entropy,\n\trfc_fcd6f70a536f-maxBins: 28,\n\trfc_fcd6f70a536f-maxDepth: 4\n}, {\n\trfc_fcd6f70a536f-impurity: entropy,\n\trfc_fcd6f70a536f-maxBins: 32,\n\trfc_fcd6f70a536f-maxDepth: 4\n}, {\n\trfc_fcd6f70a536f-impurity: gini,\n\trfc_fcd6f70a536f-maxBins: 25,\n\trfc_fcd6f70a536f-maxDepth: 4\n}, {\n\trfc_fcd6f70a536f-impurity: gini,\n\trfc_fcd6f70a536f-maxBins: 28,\n\trfc_fcd6f70a536f-maxDepth: 4\n}, {\n\trfc_fcd6f70a536f-impurity: gini,\n\trfc_fcd6f70a536f-maxBins: 32,\n\trfc_fcd6f70a536f-maxD..."
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 88
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "4A68D670F4484C8F81856ABF8ED6099F"
+    },
+    "cell_type" : "code",
+    "source" : "val cv = new CrossValidator().setEstimator(rfPipeline)\n                             .setEvaluator(evaluator)\n                             .setEstimatorParamMaps(paramGrid)\n                             .setNumFolds(10)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "cv: org.apache.spark.ml.tuning.CrossValidator = cv_bfc6f6ccae1e\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 74
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "C8180A0CB4674200B05573B9B6C9037D"
+    },
+    "cell_type" : "code",
+    "source" : "val Array(trainingSet, testSet) = churnedWithMetadata.randomSplit(Array(0.8, 0.2))",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "trainingSet: org.apache.spark.sql.DataFrame = [id: int, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, A_4_count_last: int, A_5_count_last: int, A_6_count_last: int, A_7_count_last: int, A_8_count_last: int, A_AUM_Amt_last: double, A_Account_FirstContact_Date: int, A_Balance_Amt_last: double, A_Balance_Loan_Amt_last: double, A_Capital_Death_Amt_last: double, A_Capital_Life_Amt_last: double, A_Dubious_Payment_Bank_Ind_last: string, A_Dubious_Payment_PC_Ind_last: string, A_Lpp_Id: int, A_Original_Loan_Amt_last: double, A_Owner_Ind_last: string, A_Point_Of_Sales: int, A_Premium_Amt_last: double, A_Reserve_Amt_last: double, A_Tenant_Ind: string, A_count: int, Apartment_Owner_Nbr_last: int, Apartment_Tenants_Nbr_last: int, Apartment_Unknown_Nbr: int, Bank_Insurance_Ind: strin..."
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 75
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "9C4AB4C606E64008BAF8DA881668559E"
+    },
+    "cell_type" : "code",
+    "source" : "val fittedPipeline = cv.fit(trainingSet)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "fittedPipeline: org.apache.spark.ml.tuning.CrossValidatorModel = cv_bfc6f6ccae1e\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 76
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "28CCCDABAB404C009593C7AAB73F20F7"
+    },
+    "cell_type" : "code",
+    "source" : "val model_output = \"hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/trained_model/rf/12_10_2016/\"\nsparkContext.parallelize(Seq(fittedPipeline), 1).saveAsObjectFile(model_output)\n\n//Note : to reload the model : sparkContext.objectFile[org.apache.spark.ml.classification.CrossValidatorModel](model_output).first\n// Then predict using : dtree.predict( model.predict( ... ))",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "model_output: String = hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/trained_model/rf/12_10_2016/\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 21
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "5171E353D9AA495197AD1AF3F013DAB5"
+    },
+    "cell_type" : "markdown",
+    "source" : "## Metrics Evaluation"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "CC4E5A07AE9A4C5D8916109B2F8A3D4D"
+    },
+    "cell_type" : "code",
+    "source" : "val predictions = fittedPipeline.transform(testSet)\nval accuracy = evaluator.evaluate(predictions)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "predictions: org.apache.spark.sql.DataFrame = [id: int, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, A_4_count_last: int, A_5_count_last: int, A_6_count_last: int, A_7_count_last: int, A_8_count_last: int, A_AUM_Amt_last: double, A_Account_FirstContact_Date: int, A_Balance_Amt_last: double, A_Balance_Loan_Amt_last: double, A_Capital_Death_Amt_last: double, A_Capital_Life_Amt_last: double, A_Dubious_Payment_Bank_Ind_last: string, A_Dubious_Payment_PC_Ind_last: string, A_Lpp_Id: int, A_Original_Loan_Amt_last: double, A_Owner_Ind_last: string, A_Point_Of_Sales: int, A_Premium_Amt_last: double, A_Reserve_Amt_last: double, A_Tenant_Ind: string, A_count: int, Apartment_Owner_Nbr_last: int, Apartment_Tenants_Nbr_last: int, Apartment_Unknown_Nbr: int, Bank_Insurance_Ind: strin..."
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 77
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "FD3A048F937640B4922A8880F6D8E8EC"
+    },
+    "cell_type" : "code",
+    "source" : "println (\"accuracy : \" + accuracy)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "accuracy : 0.6188089883234505\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 78
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "792366F9B03F45FB80332BD19945935A"
+    },
+    "cell_type" : "markdown",
+    "source" : "## Bin class metrics"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "40F206F6FB73480880AA3AC6EE57BB20"
+    },
+    "cell_type" : "code",
+    "source" : "import org.apache.spark.mllib.evaluation.BinaryClassificationMetrics\n\nval predictionsAndLabels = predictions.select($\"prediction\", $\"label\").rdd.map( k => (k.getDouble(0), k.getDouble(1)))\nval metrics_rdd = new BinaryClassificationMetrics(predictionsAndLabels)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import org.apache.spark.mllib.evaluation.BinaryClassificationMetrics\npredictionsAndLabels: org.apache.spark.rdd.RDD[(Double, Double)] = MapPartitionsRDD[21361] at map at <console>:160\nmetrics_rdd: org.apache.spark.mllib.evaluation.BinaryClassificationMetrics = org.apache.spark.mllib.evaluation.BinaryClassificationMetrics@4c25e18d\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 83
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "B7B92E9C0714404C83AEE313D4B33892"
+    },
+    "cell_type" : "markdown",
+    "source" : "## Precision Recall Curve plots"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "F7305C927E1E4F0688E361B2B1B0F282"
+    },
+    "cell_type" : "code",
+    "source" : "println ( \"ROC under PR : \" + metrics_rdd.areaUnderPR)\nprintln (\"ROC Curve : \" + metrics_rdd.areaUnderROC)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "ROC under PR : 0.5160802051428164\nROC Curve : 0.5\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 85
+    } ]
+  } ],
+  "nbformat" : 4
+}
