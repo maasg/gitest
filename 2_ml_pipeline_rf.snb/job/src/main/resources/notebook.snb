@@ -349,23 +349,38 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "5EC36BC6FF6B4052898873585B40451D"
+    },
+    "cell_type" : "code",
+    "source" : "val model_output = \"hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/trained_model/rf/12_10_2016/\"",
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
       "collapsed" : false,
       "id" : "28CCCDABAB404C009593C7AAB73F20F7"
     },
-    "cell_type" : "code",
-    "source" : "val model_output = \"hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/trained_model/rf/12_10_2016/\"\nsparkContext.parallelize(Seq(fittedPipeline), 1).saveAsObjectFile(model_output)\n\n//Note : to reload the model : sparkContext.objectFile[org.apache.spark.ml.classification.CrossValidatorModel](model_output).first\n// Then predict using : dtree.predict( model.predict( ... ))",
-    "outputs" : [ {
-      "name" : "stdout",
-      "output_type" : "stream",
-      "text" : "model_output: String = hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/trained_model/rf/12_10_2016/\n"
-    }, {
-      "metadata" : { },
-      "data" : {
-        "text/html" : ""
-      },
-      "output_type" : "execute_result",
-      "execution_count" : 21
-    } ]
+    "cell_type" : "markdown",
+    "source" : "sparkContext.parallelize(Seq(fittedPipeline), 1).saveAsObjectFile(model_output)\n\n//Note : to reload the model : sparkContext.objectFile[org.apache.spark.ml.classification.CrossValidatorModel](model_output).first\n// Then predict using : dtree.predict( model.predict( ... ))"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "8018A45B21564247B501733A718D5370"
+    },
+    "cell_type" : "output",
+    "source" : "model_output",
+    "output" : {
+      "type" : "model",
+      "var" : "fittedPipeline",
+      "extra" : {
+        "value" : "org.apache.spark.ml.tuning.CrossValidatorModel"
+      }
+    },
+    "outputs" : [ ]
   }, {
     "metadata" : {
       "id" : "5171E353D9AA495197AD1AF3F013DAB5"

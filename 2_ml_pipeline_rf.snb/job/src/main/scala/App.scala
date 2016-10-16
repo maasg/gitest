@@ -256,13 +256,9 @@ val adalogPassword:Option[String] = None
 /****************/
 
 
-  /* -- Code Cell: Some(28CCCDABAB404C009593C7AAB73F20F7) -- */ 
+  /* -- Code Cell: Some(5EC36BC6FF6B4052898873585B40451D) -- */ 
 
   val model_output = "hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/trained_model/rf/12_10_2016/"
-  sparkContext.parallelize(Seq(fittedPipeline), 1).saveAsObjectFile(model_output)
-  
-  //Note : to reload the model : sparkContext.objectFile[org.apache.spark.ml.classification.CrossValidatorModel](model_output).first
-  // Then predict using : dtree.predict( model.predict( ... ))
 /****************/
 
 
