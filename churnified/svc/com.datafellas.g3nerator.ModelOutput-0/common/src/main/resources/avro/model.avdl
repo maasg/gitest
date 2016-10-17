@@ -1,0 +1,10 @@
+@namespace("com.example.churnified_com.datafellas.g3nerator.modeloutput_0.model")
+
+protocol Model {
+
+  record Domain {
+    double output;
+
+  }
+
+}
