@@ -15,7 +15,7 @@ import com.example.churnified_com.datafellas.g3nerator.modeloutput_0.server._
 object Server extends Methods {
   private [this] val _ipc = new NettyServer(
                                              new SpecificResponder(classOf[Methods], this),
-                                             new InetSocketAddress(42906)
+                                             new InetSocketAddress(46718)
                                            )
   
 import com.typesafe.config._
@@ -60,7 +60,7 @@ def tellCatalog():Unit = new Thread { override def run:Unit = {
   h match {
     case Some(host) =>
       // publishing current host and port to adalog
-      val ch = Http(adalogUrl.get + s"/adalog/output/service?uuid=6797f88d-19bd-45c7-89d2-631e0df7b717&tpe=model&variable=fittedPipeline&host=${host}&port=42906")
+      val ch = Http(adalogUrl.get + s"/adalog/output/service?uuid=6797f88d-19bd-45c7-89d2-631e0df7b717&tpe=model&variable=fittedPipeline&host=${host}&port=46718")
       val ach = adalogUser.map { _ => ch.auth(adalogUser.get, adalogPassword.get) }.getOrElse(ch)
       ach.postForm(Nil).asString.body
       catalogTold = true
@@ -91,9 +91,9 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "churnified"))
 
 
 val libDir = new java.io.File(".", "lib")
-val currentProjectJars = Array[String]( "com.example.churnified_com.datafellas.g3nerator.modeloutput_0.common-0.0.2-SNAPSHOT.jar" , "com.example.churnified_com.datafellas.g3nerator.modeloutput_0.server-0.0.2-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array[String]( "com.example.churnified_com.datafellas.g3nerator.modeloutput_0.common-0.0.1-SNAPSHOT.jar" , "com.example.churnified_com.datafellas.g3nerator.modeloutput_0.server-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(".", "spark-lib")
-val fromProjectJars = Array[String]( "commons-compress-1.4.1.jar" , "commons-collections-3.2.1.jar" , "xz-1.0.jar" , "avro-1.7.7.jar" , "jackson-core-asl-1.9.13.jar" , "commons-lang-2.6.jar" , "avro-ipc-1.7.7.jar" , "netty-3.4.0.Final.jar" , "avro-compiler-1.7.7.jar" , "jackson-mapper-asl-1.9.13.jar" , "paranamer-2.3.jar" , "velocity-1.7.jar" , "slf4j-api-1.6.4.jar" , "snappy-java-1.0.5.jar" ).map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
+val fromProjectJars = Array[String]( "commons-collections-3.2.1.jar" , "velocity-1.7.jar" , "slf4j-api-1.6.4.jar" , "jackson-core-asl-1.9.13.jar" , "commons-lang-2.6.jar" , "avro-ipc-1.7.7.jar" , "paranamer-2.3.jar" , "avro-compiler-1.7.7.jar" , "snappy-java-1.0.5.jar" , "jackson-mapper-asl-1.9.13.jar" , "netty-3.4.0.Final.jar" , "commons-compress-1.4.1.jar" , "avro-1.7.7.jar" , "xz-1.0.jar" ).map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
 println("Add Jars: \n" + jarsArray.mkString("\n"))
 sparkConf.setJars(jarsArray)

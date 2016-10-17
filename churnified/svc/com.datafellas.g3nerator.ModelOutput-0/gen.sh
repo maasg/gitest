@@ -35,8 +35,8 @@ echo "building project"
 
 
 
-echo "Telling catalog which client library to use (com.example.churnified_com.datafellas.g3nerator.modeloutput_0:client:0.0.2-SNAPSHOT)"
-curl  -X POST "http://localhost:9001/adalog/output/service/library?uuid=6797f88d-19bd-45c7-89d2-631e0df7b717&tpe=model&variable=fittedPipeline&groupId=com.example.churnified_com.datafellas.g3nerator.modeloutput_0&artifactId=client_2.10&version=0.0.2-SNAPSHOT&pck=com.example.churnified_com.datafellas.g3nerator.modeloutput_0"
+echo "Telling catalog which client library to use (com.example.churnified_com.datafellas.g3nerator.modeloutput_0:client:0.0.1-SNAPSHOT)"
+curl  -X POST "http://localhost:9001/adalog/output/service/library?uuid=6797f88d-19bd-45c7-89d2-631e0df7b717&tpe=model&variable=fittedPipeline&groupId=com.example.churnified_com.datafellas.g3nerator.modeloutput_0&artifactId=client_2.10&version=0.0.1-SNAPSHOT&pck=com.example.churnified_com.datafellas.g3nerator.modeloutput_0"
 
 
 
@@ -46,7 +46,7 @@ echo "building docker"
 
 
 echo "pushing docker"
-docker push localhost:5000/churnified-com.datafellas.g3nerator.modeloutput-0:0.0.2-SNAPSHOT
+docker push localhost:5000/churnified-com.datafellas.g3nerator.modeloutput-0:0.0.1-SNAPSHOT
 
 
 

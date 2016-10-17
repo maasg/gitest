@@ -37,7 +37,7 @@ echo "building docker"
 
 
 echo "pushing docker"
-docker push localhost:5000/churnified:0.0.2-SNAPSHOT
+docker push localhost:5000/churnified:0.0.1-SNAPSHOT
 
 
 
