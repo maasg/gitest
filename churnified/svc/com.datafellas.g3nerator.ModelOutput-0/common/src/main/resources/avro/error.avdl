@@ -1,0 +1,10 @@
+
+@namespace("com.example.churnified_com.datafellas.g3nerator.modeloutput_0.rpc")
+protocol RPC {
+
+  error ServiceException {
+    string message;
+  }
+
+}
+
