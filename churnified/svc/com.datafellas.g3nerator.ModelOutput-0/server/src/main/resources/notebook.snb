@@ -242,20 +242,8 @@
       },
       "id" : "5BBFBEB658DC4A529A441409124FA1D9"
     },
-    "cell_type" : "code",
-    "source" : "churnedDF",
-    "outputs" : [ {
-      "name" : "stdout",
-      "output_type" : "stream",
-      "text" : "res19: org.apache.spark.sql.DataFrame = [id_int: int,  A_1_count_last_int: double,  A_2_count_last_int: double,  A_3_count_last_int: double, churned: double]\n"
-    }, {
-      "metadata" : { },
-      "data" : {
-        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon0bb408f7b013eb4310f8fcd6d0e804cc&quot;,&quot;partitionIndexId&quot;:&quot;anonfa4ecd1705a068c57e319a1cf5b550a0&quot;,&quot;numPartitions&quot;:1,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id_int&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot; A_1_count_last_int&quot;,&quot;type&quot;:&quot;double&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot; A_2_count_last_int&quot;,&quot;type&quot;:&quot;double&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot; A_3_count_last_int&quot;,&quot;type&quot;:&quot;double&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;churned&quot;,&quot;type&quot;:&quot;double&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
-      },
-      "output_type" : "execute_result",
-      "execution_count" : 13
-    } ]
+    "cell_type" : "markdown",
+    "source" : "churnedDF"
   }, {
     "metadata" : {
       "trusted" : true,
@@ -539,7 +527,7 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : false,
+      "collapsed" : true,
       "id" : "CC4E5A07AE9A4C5D8916109B2F8A3D4D"
     },
     "cell_type" : "code",
@@ -549,7 +537,7 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : false,
+      "collapsed" : true,
       "id" : "FD3A048F937640B4922A8880F6D8E8EC"
     },
     "cell_type" : "code",
@@ -565,7 +553,7 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : false,
+      "collapsed" : true,
       "id" : "40F206F6FB73480880AA3AC6EE57BB20"
     },
     "cell_type" : "code",
@@ -581,7 +569,7 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : false,
+      "collapsed" : true,
       "id" : "F7305C927E1E4F0688E361B2B1B0F282"
     },
     "cell_type" : "code",

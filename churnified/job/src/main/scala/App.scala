@@ -16,7 +16,7 @@ res36: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget
         modelOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,27)))),model_output+(System.currentTimeMillis.toString.drop(5)),model_output+(System.currentTimeMillis.toString.drop(5)),fittedPipeline,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$3@4d975cf6,0)
+    </div>),execute_result,27)))),model_output+(System.currentTimeMillis.toString.drop(5)),model_output+(System.currentTimeMillis.toString.drop(5)),fittedPipeline,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$3@3ba85bd0,0)
 
  */
 object Main extends App {
@@ -152,12 +152,6 @@ val adalogPassword:Option[String] = None
 
   val churnedDF = churnedDF_tmp.na.fill(fillStrMap)
                                .na.fill(fillNumMap)
-/****************/
-
-
-  /* -- Code Cell: Some(5BBFBEB658DC4A529A441409124FA1D9) -- */ 
-
-  churnedDF
 /****************/
 
 
@@ -339,5 +333,8 @@ val `output-8018A45B21564247B501733A718D5370` = {
 
 
   /* -- Code Cell: Some(729BF461A09047C0A130D5DEE6177BC3) -- */
+
+sparkContext.stop
+
 
 }
