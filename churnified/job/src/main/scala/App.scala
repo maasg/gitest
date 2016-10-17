@@ -213,12 +213,6 @@ val adalogPassword:Option[String] = None
 /****************/
 
 
-  /* -- Code Cell: Some(ADF3163DA6E54E4A8CA1CDCDBF59AD34) -- */ 
-
-  vectorIndexer
-/****************/
-
-
   /* -- Code Cell: Some(A443CDE48DB445DA9FB945382800C79C) -- */ 
 
   import org.apache.spark.ml.classification.{RandomForestClassifier, RandomForestClassificationModel}
@@ -274,12 +268,6 @@ val adalogPassword:Option[String] = None
   /* -- Code Cell: Some(9C4AB4C606E64008BAF8DA881668559E) -- */ 
 
   val fittedPipeline = cv.fit(trainingSet)
-/****************/
-
-
-  /* -- Code Cell: Some(5EC36BC6FF6B4052898873585B40451D) -- */ 
-
-  val model_output = "/tmp/data/churn_"
 /****************/
 
 

@@ -357,20 +357,8 @@
       "collapsed" : false,
       "id" : "ADF3163DA6E54E4A8CA1CDCDBF59AD34"
     },
-    "cell_type" : "code",
-    "source" : "vectorIndexer",
-    "outputs" : [ {
-      "name" : "stdout",
-      "output_type" : "stream",
-      "text" : "res26: org.apache.spark.ml.feature.VectorIndexer = vecIdx_8c1a5e73a7d3\n"
-    }, {
-      "metadata" : { },
-      "data" : {
-        "text/html" : "vecIdx_8c1a5e73a7d3"
-      },
-      "output_type" : "execute_result",
-      "execution_count" : 18
-    } ]
+    "cell_type" : "markdown",
+    "source" : "vectorIndexer"
   }, {
     "metadata" : {
       "trusted" : true,
@@ -475,27 +463,6 @@
       },
       "output_type" : "execute_result",
       "execution_count" : 23
-    } ]
-  }, {
-    "metadata" : {
-      "trusted" : true,
-      "input_collapsed" : false,
-      "collapsed" : false,
-      "id" : "5EC36BC6FF6B4052898873585B40451D"
-    },
-    "cell_type" : "code",
-    "source" : "val model_output = \"/tmp/data/churn_\"",
-    "outputs" : [ {
-      "name" : "stdout",
-      "output_type" : "stream",
-      "text" : "model_output: String = /tmp/data/churn_\n"
-    }, {
-      "metadata" : { },
-      "data" : {
-        "text/html" : ""
-      },
-      "output_type" : "execute_result",
-      "execution_count" : 25
     } ]
   }, {
     "metadata" : {
