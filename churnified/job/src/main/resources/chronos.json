@@ -1,1 +1,1 @@
-{"schedule":"R/2016-10-17T14:19Z/PT5M","name":"churnified -- job","cpus":"1","mem":"5000","uris":[],"shell":false,"command":"","container":{"type":"DOCKER","forcePullImage":true,"image":"localhost:5000/churnified:0.0.1-SNAPSHOT","network":"HOST"}}
+{"schedule":"R/2016-10-17T14:53Z/PT5M","name":"churnified -- job","cpus":"1","mem":"5000","uris":[],"shell":false,"command":"","container":{"type":"DOCKER","forcePullImage":true,"image":"localhost:5000/churnified:0.0.2-SNAPSHOT","network":"HOST"}}
