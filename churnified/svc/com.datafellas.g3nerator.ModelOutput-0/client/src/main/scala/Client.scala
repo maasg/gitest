@@ -37,7 +37,7 @@ askDeployedInfoToCatalog()
 
   }
 
-  def from(host:String, port:Int=5735) = {
+  def from(host:String, port:Int=42906) = {
     val transport = new NettyTransceiver(new InetSocketAddress(host, port))
     val client = SpecificRequestor.getClient(classOf[com.example.churnified_com.datafellas.g3nerator.modeloutput_0.server.Methods], transport)
     transport -> client

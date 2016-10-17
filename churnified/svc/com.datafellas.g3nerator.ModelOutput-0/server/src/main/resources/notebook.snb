@@ -29,7 +29,7 @@
     "customImports" : null,
     "customArgs" : null,
     "customSparkConf" : {
-      "spark.cores.max" : "3",
+      "spark.cores.max" : "2",
       "spark.executor.memory" : "2G",
       "spark.mesos.coarse" : "true",
       "spark.default.parallelism" : "2",
