@@ -1,0 +1,1 @@
+{"schedule":"R/2016-10-18T15:55Z/PT5M","name":"churnified2.snb -- job","cpus":"1","mem":"5000","uris":[],"shell":false,"command":"","container":{"type":"DOCKER","forcePullImage":true,"image":"localhost:5000/churnified2.snb:0.0.1-SNAPSHOT","network":"HOST"}}
