@@ -69,7 +69,7 @@ lazy val server = Project(id="server", base = file("server"))
   )
   .settings(
     dockerBaseImage := "data-fellas-docker-public.bintray.io/base-adst:0.0.1",
-    dockerExposedPorts := Seq(43892),
+    dockerExposedPorts := Seq(25474),
     daemonUser in Docker := "root",
     mappings in Docker ++= directory("spark-lib"),
     mappings in Universal ++= directory("spark-lib"),
