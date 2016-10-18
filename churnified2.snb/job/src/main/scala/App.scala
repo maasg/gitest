@@ -16,7 +16,7 @@ res26: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget
         modelOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,20)))),model_output+(System.currentTimeMillis.toString.drop(5)),model_output+(System.currentTimeMillis.toString.drop(5)),fittedPipeline,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$3@442d9efb,0)
+    </div>),execute_result,20)))),model_output+(System.currentTimeMillis.toString.drop(5)),model_output+(System.currentTimeMillis.toString.drop(5)),fittedPipeline,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$3@5f34168a,0)
 
  */
 object Main extends App {
@@ -297,10 +297,19 @@ val `output-8018A45B21564247B501733A718D5370` = {
   {
     // adding output instance information into catalog
     import scalaj.http._
-  
-    val h = Http(adalogUrl.get + "/adalog/output?uuid=399f473c-4c02-460d-a96f-f11a3093d599&tpe=model&variable=fittedPipeline&location="+`output-8018A45B21564247B501733A718D5370`)
-    val ah = adalogUser.map { _ => h.auth(adalogUser.get, adalogPassword.get) }.getOrElse(h)
-    ah.postForm(Nil).asString.body
+    def joinUrl(base:String, path:String):String = {
+      (base.last, path.head) match {
+        case ('/','/') => base + path.drop(1)
+        case ('/', _) | (_, '/') => base + path
+        case _ => base +"/"+path
+      }
+    }
+    val path = "/adalog/output?uuid=399f473c-4c02-460d-a96f-f11a3093d599&tpe=model&variable=fittedPipeline&location=`output-8018A45B21564247B501733A718D5370`"
+    val httpReq = adalogUrl.map(url => Http(joinUrl(url, path)))
+    val credentials = for (u <-adalogUser; p <- adalogPassword ) yield (u,p)
+    val authReq = credentials.foldLeft(httpReq){case (req, (u,p)) =>  req.map(_.auth(u, p))}
+    val res = authReq.map(_.postForm(Nil).asString.body)
+    println(res)
   }
   
   
