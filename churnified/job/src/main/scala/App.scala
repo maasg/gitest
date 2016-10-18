@@ -3,20 +3,7 @@ package com.example
 /**
   Outputs
   -------
-  > ModelOutput(CodeCell(CellMetadata(Some(true),Some(false),None,Some(false),None,Some(8018A45B21564247B501733A718D5370),Some({"fittedPipeline":"org.apache.spark.ml.tuning.CrossValidatorModel","inputs":{"resolved":[],"unresolved":[]}})),output,model_output+(System.currentTimeMillis.toString.drop(5)),None,None,Some({"type":"model","var":"fittedPipeline","extra":{"value":"org.apache.spark.ml.tuning.CrossValidatorModel"}}),Some(List(ScalaStream(stdout,stream,Model
-Located: /tmp/adalog/modelout08860961
-Model:  fittedPipeline (org.apache.spark.ml.tuning.CrossValidatorModel)
-{"type":"model","var":"fittedPipeline","extra":{"value":"org.apache.spark.ml.tuning.CrossValidatorModel"}}
-None
-output-8018A45B21564247B501733A718D5370: String = /tmp/adalog/modelout08860961
-res36: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>
-), ScalaExecuteResult(ExecuteResultMetadata(None),Map(text/html -> <div>
-      <script data-this="{&quot;modelVar&quot;:&quot;fittedPipeline&quot;,&quot;inputs&quot;:{&quot;resolved&quot;:[],&quot;unresolved&quot;:[]},&quot;modelName&quot;:&quot;org.apache.spark.ml.tuning.CrossValidatorModel&quot;}" type="text/x-scoped-javascript">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/modelOutput'], 
-      function(modelOutput) {
-        modelOutput.call(data, this);
-      }
-    );/*]]>*/</script>
-    </div>),execute_result,27)))),model_output+(System.currentTimeMillis.toString.drop(5)),model_output+(System.currentTimeMillis.toString.drop(5)),fittedPipeline,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$3@536f5243,0)
+  > 
 
  */
 object Main extends App {
@@ -64,10 +51,17 @@ val sc = sparkContext
 
 
 
-val adalogUrl:Option[String] = Some(config.getString("adastyx.adalog.url"))
+  def getStringConfig(path: String) : Option[String] = {
+    if (config.hasPath(path)) {
+      Some(config.getString(path))
+    } else {
+      None
+    }
+  }
 
-val adalogUser:Option[String] = None
-val adalogPassword:Option[String] = None
+  val adalogUrl: Option[String] = getStringConfig("adastyx.adalog.url")
+  val adalogUser: Option[String] = getStringConfig("adastyx.adalog.auth.user")
+  val adalogPassword: Option[String] = getStringConfig("adastyx.adalog.auth.password")
 
 
 // no custom variables 
@@ -271,38 +265,6 @@ val adalogPassword:Option[String] = None
 /****************/
 
 
-  /* -- Code Cell: Some(8018A45B21564247B501733A718D5370) -- */ 
-
-  
-val `output-8018A45B21564247B501733A718D5370` = {
-  model_output+(System.currentTimeMillis.toString.drop(5))
-  }
-  
-
-
-  
-  org.apache.spark.SparkContext.getOrCreate.parallelize(Seq(fittedPipeline), 1).saveAsObjectFile(`output-8018A45B21564247B501733A718D5370`)
-  
-  
-
-
-  
-  {
-    // adding output instance information into catalog
-    import scalaj.http._
-  
-    val h = Http(adalogUrl.get + "/adalog/output?uuid=6797f88d-19bd-45c7-89d2-631e0df7b717&tpe=model&variable=fittedPipeline&location="+`output-8018A45B21564247B501733A718D5370`)
-    val ah = adalogUser.map { _ => h.auth(adalogUser.get, adalogPassword.get) }.getOrElse(h)
-    ah.postForm(Nil).asString.body
-  }
-  
-  
-
-
-   // Output without variable
-/****************/
-
-
   /* -- Code Cell: Some(CC4E5A07AE9A4C5D8916109B2F8A3D4D) -- */ 
 
   val predictions = fittedPipeline.transform(testSet)
@@ -333,8 +295,5 @@ val `output-8018A45B21564247B501733A718D5370` = {
 
 
   /* -- Code Cell: Some(729BF461A09047C0A130D5DEE6177BC3) -- */
-
-sparkContext.stop
-
 
 }
