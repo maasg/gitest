@@ -59,9 +59,9 @@ val sc = sparkContext
     }
   }
 
-  val adalogUrl: Option[String] = getStringConfig("adastyx.adalog.url")
-  val adalogUser: Option[String] = getStringConfig("adastyx.adalog.auth.user")
-  val adalogPassword: Option[String] = getStringConfig("adastyx.adalog.auth.password")
+  val adalogUrl: Option[String] = getStringConfig("adalog.url")
+  val adalogUser: Option[String] = getStringConfig("adalog.authentication.username")
+  val adalogPassword: Option[String] = getStringConfig("adalog.authentication.password")
 
 
 // no custom variables 
@@ -295,5 +295,8 @@ val sc = sparkContext
 
 
   /* -- Code Cell: Some(729BF461A09047C0A130D5DEE6177BC3) -- */
+
+sparkContext.stop
+
 
 }
