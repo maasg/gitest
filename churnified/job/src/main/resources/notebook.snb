@@ -50,7 +50,7 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@d007658\nimport sqlContext.implicits._\nimport org.apache.spark.sql.types._\n"
+      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@1869de67\nimport sqlContext.implicits._\nimport org.apache.spark.sql.types._\n"
     }, {
       "metadata" : { },
       "data" : {
@@ -107,7 +107,7 @@
       "input_collapsed" : false,
       "collapsed" : false,
       "presentation" : {
-        "tabs_state" : "{\n  \"tab_id\": \"#tab30666566-0\"\n}",
+        "tabs_state" : "{\n  \"tab_id\": \"#tab164084249-0\"\n}",
         "pivot_chart_state" : "{\n  \"hiddenAttributes\": [],\n  \"menuLimit\": 200,\n  \"cols\": [],\n  \"rows\": [],\n  \"vals\": [],\n  \"exclusions\": {},\n  \"inclusions\": {},\n  \"unusedAttrsVertical\": 85,\n  \"autoSortUnusedAttrs\": false,\n  \"inclusionsInfo\": {},\n  \"aggregatorName\": \"Count\",\n  \"rendererName\": \"Table\"\n}"
       },
       "id" : "CDD53E52F14C4E62BA50847F9094F1B6"
@@ -121,7 +121,7 @@
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon18f625ae2d69c0e024e800b918f0fd9a&quot;,&quot;dataInit&quot;:[],&quot;genId&quot;:&quot;30666566&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/tabs'], \n      function(playground, _magictabs) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magictabs,\n    \"o\": {}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <div>\n        <ul class=\"nav nav-tabs\" id=\"ul30666566\"><li>\n              <a href=\"#tab30666566-0\"><i class=\"fa fa-table\"/></a>\n            </li><li>\n              <a href=\"#tab30666566-1\"><i class=\"fa fa-cubes\"/></a>\n            </li></ul>\n\n        <div class=\"tab-content\" id=\"tab30666566\"><div class=\"tab-pane\" id=\"tab30666566-0\">\n            <div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon2170c08f7ea9480521ef4ebc80b96608&quot;,&quot;dataInit&quot;:[{&quot;name&quot;:&quot;id_int&quot;,&quot;dataType&quot;:&quot;IntegerType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; any_churn_target_boolean&quot;,&quot;dataType&quot;:&quot;StringType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; full_churn_target_boolean&quot;,&quot;dataType&quot;:&quot;StringType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; A_1_count_last_int&quot;,&quot;dataType&quot;:&quot;DoubleType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; A_2_count_last_int&quot;,&quot;dataType&quot;:&quot;DoubleType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; A_3_count_last_int&quot;,&quot;dataType&quot;:&quot;DoubleType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;}],&quot;genId&quot;:&quot;347442894&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/tableChart'], \n      function(playground, _magictableChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magictableChart,\n    \"o\": {\"headers\":[\"name\",\"dataType\",\"nullable\",\"metadata\"],\"width\":600,\"height\":400}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon922f5f4f9b11010c696f92a8490c5123&quot;,&quot;initialValue&quot;:&quot;6&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anonf35b980ce902ec4f6352b6cfc5a28c7f&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>\n            </div><div class=\"tab-pane\" id=\"tab30666566-1\">\n            <div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon058bdfd26a66c7f55524cef5f559cb5f&quot;,&quot;dataInit&quot;:[{&quot;name&quot;:&quot;id_int&quot;,&quot;dataType&quot;:&quot;IntegerType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; any_churn_target_boolean&quot;,&quot;dataType&quot;:&quot;StringType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; full_churn_target_boolean&quot;,&quot;dataType&quot;:&quot;StringType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; A_1_count_last_int&quot;,&quot;dataType&quot;:&quot;DoubleType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; A_2_count_last_int&quot;,&quot;dataType&quot;:&quot;DoubleType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; A_3_count_last_int&quot;,&quot;dataType&quot;:&quot;DoubleType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;}],&quot;genId&quot;:&quot;1582082323&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/pivotChart'], \n      function(playground, _magicpivotChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magicpivotChart,\n    \"o\": {\"width\":600,\"height\":400,\"derivedAttributes\":{},\"extraOptions\":{}}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anonadd98bf119e964bcad1c94373e39a9d7&quot;,&quot;initialValue&quot;:&quot;6&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon984ba2c25513d383d16cb003a8b91046&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>\n            </div></div>\n      </div>\n    </div></div>"
+        "text/html" : "<div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon4dd57664540d4c95e7e65b085df6dce1&quot;,&quot;dataInit&quot;:[],&quot;genId&quot;:&quot;164084249&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/tabs'], \n      function(playground, _magictabs) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magictabs,\n    \"o\": {}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <div>\n        <ul class=\"nav nav-tabs\" id=\"ul164084249\"><li>\n              <a href=\"#tab164084249-0\"><i class=\"fa fa-table\"/></a>\n            </li><li>\n              <a href=\"#tab164084249-1\"><i class=\"fa fa-cubes\"/></a>\n            </li></ul>\n\n        <div class=\"tab-content\" id=\"tab164084249\"><div class=\"tab-pane\" id=\"tab164084249-0\">\n            <div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon4a4d40dc54b7e353b480df7c014d5860&quot;,&quot;dataInit&quot;:[{&quot;name&quot;:&quot;id_int&quot;,&quot;dataType&quot;:&quot;IntegerType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; any_churn_target_boolean&quot;,&quot;dataType&quot;:&quot;StringType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; full_churn_target_boolean&quot;,&quot;dataType&quot;:&quot;StringType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; A_1_count_last_int&quot;,&quot;dataType&quot;:&quot;DoubleType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; A_2_count_last_int&quot;,&quot;dataType&quot;:&quot;DoubleType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; A_3_count_last_int&quot;,&quot;dataType&quot;:&quot;DoubleType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;}],&quot;genId&quot;:&quot;2056012565&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/tableChart'], \n      function(playground, _magictableChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magictableChart,\n    \"o\": {\"headers\":[\"name\",\"dataType\",\"nullable\",\"metadata\"],\"width\":600,\"height\":400}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon7ac24bcc516bdb6a2339cdfe9c3eab9c&quot;,&quot;initialValue&quot;:&quot;6&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon6fd615fb7719c3393d7269e5dd6cbafc&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>\n            </div><div class=\"tab-pane\" id=\"tab164084249-1\">\n            <div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon0be028d95060bed02b1de2e6d4e49854&quot;,&quot;dataInit&quot;:[{&quot;name&quot;:&quot;id_int&quot;,&quot;dataType&quot;:&quot;IntegerType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; any_churn_target_boolean&quot;,&quot;dataType&quot;:&quot;StringType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; full_churn_target_boolean&quot;,&quot;dataType&quot;:&quot;StringType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; A_1_count_last_int&quot;,&quot;dataType&quot;:&quot;DoubleType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; A_2_count_last_int&quot;,&quot;dataType&quot;:&quot;DoubleType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;},{&quot;name&quot;:&quot; A_3_count_last_int&quot;,&quot;dataType&quot;:&quot;DoubleType&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:&quot;{}&quot;}],&quot;genId&quot;:&quot;1678484994&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/pivotChart'], \n      function(playground, _magicpivotChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magicpivotChart,\n    \"o\": {\"width\":600,\"height\":400,\"derivedAttributes\":{},\"extraOptions\":{}}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon02852f7f3d508ddfd977273c27f8917f&quot;,&quot;initialValue&quot;:&quot;6&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anoncf89b5fa4d29dc5f1106a61e3852fdb0&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>\n            </div></div>\n      </div>\n    </div></div>"
       },
       "output_type" : "execute_result",
       "execution_count" : 4
@@ -145,7 +145,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 8
+      "execution_count" : 5
     } ]
   }, {
     "metadata" : {
@@ -166,7 +166,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 9
+      "execution_count" : 6
     } ]
   }, {
     "metadata" : {
@@ -180,14 +180,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "stringedColumns: Seq[String] = List()\nnumCols: Seq[String] = List(id_int, \" A_1_count_last_int\", \" A_2_count_last_int\", \" A_3_count_last_int\")\nres15: Boolean = true\n"
+      "text" : "stringedColumns: Seq[String] = List()\nnumCols: Seq[String] = List(id_int, \" A_1_count_last_int\", \" A_2_count_last_int\", \" A_3_count_last_int\")\nres11: Boolean = true\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : "true"
       },
       "output_type" : "execute_result",
-      "execution_count" : 10
+      "execution_count" : 7
     } ]
   }, {
     "metadata" : {
@@ -208,7 +208,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 11
+      "execution_count" : 8
     } ]
   }, {
     "metadata" : {
@@ -229,7 +229,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 12
+      "execution_count" : 9
     } ]
   }, {
     "metadata" : {
@@ -263,7 +263,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 14
+      "execution_count" : 10
     } ]
   }, {
     "metadata" : {
@@ -284,7 +284,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 15
+      "execution_count" : 11
     } ]
   }, {
     "metadata" : {
@@ -292,7 +292,7 @@
       "input_collapsed" : false,
       "collapsed" : false,
       "presentation" : {
-        "tabs_state" : "{\n  \"tab_id\": \"#tab2102262676-0\"\n}",
+        "tabs_state" : "{\n  \"tab_id\": \"#tab1705166912-0\"\n}",
         "pivot_chart_state" : "{\n  \"hiddenAttributes\": [],\n  \"menuLimit\": 200,\n  \"cols\": [],\n  \"rows\": [],\n  \"vals\": [],\n  \"exclusions\": {},\n  \"inclusions\": {},\n  \"unusedAttrsVertical\": 85,\n  \"autoSortUnusedAttrs\": false,\n  \"inclusionsInfo\": {},\n  \"aggregatorName\": \"Count\",\n  \"rendererName\": \"Table\"\n}"
       },
       "id" : "3576D11CD45A476692EB73459760D951"
@@ -302,14 +302,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "res23: Array[org.apache.spark.sql.Row] = Array([12,20.0,45.0,115.0,1.0], [14,10.0,2.0,111.0,1.0], [15,22.0,4.0,110.0,1.0], [16,5.0,5.0,113.0,1.0], [11,20.0,45.0,111.0,1.0], [13,20.0,15.0,118.0,1.0], [17,2.0,45.0,116.0,1.0])\n"
+      "text" : "res17: Array[org.apache.spark.sql.Row] = Array([12,20.0,45.0,115.0,1.0], [14,10.0,2.0,111.0,1.0], [15,22.0,4.0,110.0,1.0], [16,5.0,5.0,113.0,1.0], [11,20.0,45.0,111.0,1.0], [13,20.0,15.0,118.0,1.0], [17,2.0,45.0,116.0,1.0])\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anonc1ab93e75f76cee6c2ba78cff063ffc6&quot;,&quot;dataInit&quot;:[],&quot;genId&quot;:&quot;2102262676&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/tabs'], \n      function(playground, _magictabs) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magictabs,\n    \"o\": {}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <div>\n        <ul class=\"nav nav-tabs\" id=\"ul2102262676\"><li>\n              <a href=\"#tab2102262676-0\"><i class=\"fa fa-table\"/></a>\n            </li><li>\n              <a href=\"#tab2102262676-1\"><i class=\"fa fa-cubes\"/></a>\n            </li></ul>\n\n        <div class=\"tab-content\" id=\"tab2102262676\"><div class=\"tab-pane\" id=\"tab2102262676-0\">\n            <div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anone7c7030bc855318e834aa39c00adfe1c&quot;,&quot;dataInit&quot;:[{&quot;id_int&quot;:12,&quot;A_1_count_last_int&quot;:20.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:115.0,&quot;A_2_count_last_int&quot;:45.0},{&quot;id_int&quot;:14,&quot;A_1_count_last_int&quot;:10.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:111.0,&quot;A_2_count_last_int&quot;:2.0},{&quot;id_int&quot;:15,&quot;A_1_count_last_int&quot;:22.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:110.0,&quot;A_2_count_last_int&quot;:4.0},{&quot;id_int&quot;:16,&quot;A_1_count_last_int&quot;:5.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:113.0,&quot;A_2_count_last_int&quot;:5.0},{&quot;id_int&quot;:11,&quot;A_1_count_last_int&quot;:20.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:111.0,&quot;A_2_count_last_int&quot;:45.0},{&quot;id_int&quot;:13,&quot;A_1_count_last_int&quot;:20.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:118.0,&quot;A_2_count_last_int&quot;:15.0},{&quot;id_int&quot;:17,&quot;A_1_count_last_int&quot;:2.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:116.0,&quot;A_2_count_last_int&quot;:45.0}],&quot;genId&quot;:&quot;1542172871&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/tableChart'], \n      function(playground, _magictableChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magictableChart,\n    \"o\": {\"headers\":[\"id_int\",\" A_1_count_last_int\",\" A_2_count_last_int\",\" A_3_count_last_int\",\"label\"],\"width\":600,\"height\":400}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anonf1bd442cda9bfaa1920bc00482847e74&quot;,&quot;initialValue&quot;:&quot;7&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anona06cdd5cc2e6fe669f4e4b6f36de94c1&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>\n            </div><div class=\"tab-pane\" id=\"tab2102262676-1\">\n            <div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon2c1d0642037662ea0d087e88f7a85a7d&quot;,&quot;dataInit&quot;:[{&quot;id_int&quot;:12,&quot;A_1_count_last_int&quot;:20.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:115.0,&quot;A_2_count_last_int&quot;:45.0},{&quot;id_int&quot;:14,&quot;A_1_count_last_int&quot;:10.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:111.0,&quot;A_2_count_last_int&quot;:2.0},{&quot;id_int&quot;:15,&quot;A_1_count_last_int&quot;:22.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:110.0,&quot;A_2_count_last_int&quot;:4.0},{&quot;id_int&quot;:16,&quot;A_1_count_last_int&quot;:5.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:113.0,&quot;A_2_count_last_int&quot;:5.0},{&quot;id_int&quot;:11,&quot;A_1_count_last_int&quot;:20.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:111.0,&quot;A_2_count_last_int&quot;:45.0},{&quot;id_int&quot;:13,&quot;A_1_count_last_int&quot;:20.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:118.0,&quot;A_2_count_last_int&quot;:15.0},{&quot;id_int&quot;:17,&quot;A_1_count_last_int&quot;:2.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:116.0,&quot;A_2_count_last_int&quot;:45.0}],&quot;genId&quot;:&quot;1569142274&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/pivotChart'], \n      function(playground, _magicpivotChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magicpivotChart,\n    \"o\": {\"width\":600,\"height\":400,\"derivedAttributes\":{},\"extraOptions\":{}}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon033c87f95b6dc2ea43739b06bcd9b47c&quot;,&quot;initialValue&quot;:&quot;7&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon53b4a0798b5e2ed16c8c291be9e5af31&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>\n            </div></div>\n      </div>\n    </div></div>"
+        "text/html" : "<div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon575906a9906a13301e9adac5c2533a11&quot;,&quot;dataInit&quot;:[],&quot;genId&quot;:&quot;1705166912&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/tabs'], \n      function(playground, _magictabs) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magictabs,\n    \"o\": {}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <div>\n        <ul class=\"nav nav-tabs\" id=\"ul1705166912\"><li>\n              <a href=\"#tab1705166912-0\"><i class=\"fa fa-table\"/></a>\n            </li><li>\n              <a href=\"#tab1705166912-1\"><i class=\"fa fa-cubes\"/></a>\n            </li></ul>\n\n        <div class=\"tab-content\" id=\"tab1705166912\"><div class=\"tab-pane\" id=\"tab1705166912-0\">\n            <div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anond12d3f28949c774353cde53cb3d96cad&quot;,&quot;dataInit&quot;:[{&quot;id_int&quot;:12,&quot;A_1_count_last_int&quot;:20.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:115.0,&quot;A_2_count_last_int&quot;:45.0},{&quot;id_int&quot;:14,&quot;A_1_count_last_int&quot;:10.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:111.0,&quot;A_2_count_last_int&quot;:2.0},{&quot;id_int&quot;:15,&quot;A_1_count_last_int&quot;:22.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:110.0,&quot;A_2_count_last_int&quot;:4.0},{&quot;id_int&quot;:16,&quot;A_1_count_last_int&quot;:5.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:113.0,&quot;A_2_count_last_int&quot;:5.0},{&quot;id_int&quot;:11,&quot;A_1_count_last_int&quot;:20.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:111.0,&quot;A_2_count_last_int&quot;:45.0},{&quot;id_int&quot;:13,&quot;A_1_count_last_int&quot;:20.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:118.0,&quot;A_2_count_last_int&quot;:15.0},{&quot;id_int&quot;:17,&quot;A_1_count_last_int&quot;:2.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:116.0,&quot;A_2_count_last_int&quot;:45.0}],&quot;genId&quot;:&quot;1466015387&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/tableChart'], \n      function(playground, _magictableChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magictableChart,\n    \"o\": {\"headers\":[\"id_int\",\" A_1_count_last_int\",\" A_2_count_last_int\",\" A_3_count_last_int\",\"label\"],\"width\":600,\"height\":400}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon9369d45e206e570500c384e2476136ce&quot;,&quot;initialValue&quot;:&quot;7&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon13696828643fc88338086807ffde0599&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>\n            </div><div class=\"tab-pane\" id=\"tab1705166912-1\">\n            <div>\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon24bc57f00b6d11e1b606f2358fe3c8ed&quot;,&quot;dataInit&quot;:[{&quot;id_int&quot;:12,&quot;A_1_count_last_int&quot;:20.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:115.0,&quot;A_2_count_last_int&quot;:45.0},{&quot;id_int&quot;:14,&quot;A_1_count_last_int&quot;:10.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:111.0,&quot;A_2_count_last_int&quot;:2.0},{&quot;id_int&quot;:15,&quot;A_1_count_last_int&quot;:22.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:110.0,&quot;A_2_count_last_int&quot;:4.0},{&quot;id_int&quot;:16,&quot;A_1_count_last_int&quot;:5.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:113.0,&quot;A_2_count_last_int&quot;:5.0},{&quot;id_int&quot;:11,&quot;A_1_count_last_int&quot;:20.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:111.0,&quot;A_2_count_last_int&quot;:45.0},{&quot;id_int&quot;:13,&quot;A_1_count_last_int&quot;:20.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:118.0,&quot;A_2_count_last_int&quot;:15.0},{&quot;id_int&quot;:17,&quot;A_1_count_last_int&quot;:2.0,&quot;label&quot;:1.0,&quot;A_3_count_last_int&quot;:116.0,&quot;A_2_count_last_int&quot;:45.0}],&quot;genId&quot;:&quot;116076957&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/playground','../javascripts/notebook/magic/pivotChart'], \n      function(playground, _magicpivotChart) {\n        // data ==> data-this (in observable.js's scopedEval) ==> this in JS => { dataId, dataInit, ... }\n        // this ==> scope (in observable.js's scopedEval) ==> this.parentElement ==> div.container below (toHtml)\n\n        playground.call(data,\n                        this\n                        ,\n                        {\n    \"f\": _magicpivotChart,\n    \"o\": {\"width\":600,\"height\":400,\"derivedAttributes\":{},\"extraOptions\":{}}\n  }\n  \n                        \n                        \n                      );\n      }\n    );/*]]>*/</script>\n    <div>\n      <span class=\"chart-total-item-count\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon0778fcb544a80e073ff7983a068f59de&quot;,&quot;initialValue&quot;:&quot;7&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p> entries total</span>\n      <span class=\"chart-sampling-warning\"><p data-bind=\"text: value\"><script data-this=\"{&quot;valueId&quot;:&quot;anon81edcb7679a5e54d5e9bfc06c50f0a10&quot;,&quot;initialValue&quot;:&quot;&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/\nreq(\n['observable', 'knockout'],\nfunction (O, ko) {\n  ko.applyBindings({\n      value: O.makeObservable(valueId, initialValue)\n    },\n    this\n  );\n});\n        /*]]>*/</script></p></span>\n      <div>\n      </div>\n    </div></div>\n            </div></div>\n      </div>\n    </div></div>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 16
+      "execution_count" : 12
     } ]
   }, {
     "metadata" : {
@@ -329,14 +329,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "catIndexer: Array[org.apache.spark.ml.PipelineStage] = Array()\nvectorCols: Array[String] = Array(id_int, \" A_1_count_last_int\", \" A_2_count_last_int\", \" A_3_count_last_int\")\nvectorAssembler: org.apache.spark.ml.feature.VectorAssembler = vecAssembler_32a44f76b72f\nvectorIndexer: org.apache.spark.ml.feature.VectorIndexer = vecIdx_8c1a5e73a7d3\n"
+      "text" : "catIndexer: Array[org.apache.spark.ml.PipelineStage] = Array()\nvectorCols: Array[String] = Array(id_int, \" A_1_count_last_int\", \" A_2_count_last_int\", \" A_3_count_last_int\")\nvectorAssembler: org.apache.spark.ml.feature.VectorAssembler = vecAssembler_c794f47936f2\nvectorIndexer: org.apache.spark.ml.feature.VectorIndexer = vecIdx_c1842608b318\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 17
+      "execution_count" : 13
     } ]
   }, {
     "metadata" : {
@@ -359,14 +359,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "import org.apache.spark.ml.classification.{RandomForestClassifier, RandomForestClassificationModel}\nimport scala.util.Random\nclassifier: org.apache.spark.ml.classification.RandomForestClassifier = rfc_e0d083e95f76\nrfPipeline: org.apache.spark.ml.Pipeline = pipeline_462b5a2a0542\n"
+      "text" : "import org.apache.spark.ml.classification.{RandomForestClassifier, RandomForestClassificationModel}\nimport scala.util.Random\nclassifier: org.apache.spark.ml.classification.RandomForestClassifier = rfc_d42061d1135c\nrfPipeline: org.apache.spark.ml.Pipeline = pipeline_583736ec30f1\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 19
+      "execution_count" : 14
     } ]
   }, {
     "metadata" : {
@@ -380,14 +380,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "import org.apache.spark.ml.tuning.{CrossValidator, ParamGridBuilder}\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\nparamGrid: Array[org.apache.spark.ml.param.ParamMap] = \nArray({\n\trfc_e0d083e95f76-impurity: entropy,\n\trfc_e0d083e95f76-maxBins: 25,\n\trfc_e0d083e95f76-maxDepth: 4\n}, {\n\trfc_e0d083e95f76-impurity: entropy,\n\trfc_e0d083e95f76-maxBins: 28,\n\trfc_e0d083e95f76-maxDepth: 4\n}, {\n\trfc_e0d083e95f76-impurity: entropy,\n\trfc_e0d083e95f76-maxBins: 32,\n\trfc_e0d083e95f76-maxDepth: 4\n}, {\n\trfc_e0d083e95f76-impurity: gini,\n\trfc_e0d083e95f76-maxBins: 25,\n\trfc_e0d083e95f76-maxDepth: 4\n}, {\n\trfc_e0d083e95f76-impurity: gini,\n\trfc_e0d083e95f76-maxBins: 28,\n\trfc_e0d083e95f76-maxDepth: 4\n}, {\n\trfc_e0d083e95f76-impurity: gini,\n\trfc_e0d083e95f76-maxBins: 32,\n\trfc_e0d083e95f76-maxD..."
+      "text" : "import org.apache.spark.ml.tuning.{CrossValidator, ParamGridBuilder}\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\nparamGrid: Array[org.apache.spark.ml.param.ParamMap] = \nArray({\n\trfc_d42061d1135c-impurity: entropy,\n\trfc_d42061d1135c-maxBins: 25,\n\trfc_d42061d1135c-maxDepth: 4\n}, {\n\trfc_d42061d1135c-impurity: entropy,\n\trfc_d42061d1135c-maxBins: 28,\n\trfc_d42061d1135c-maxDepth: 4\n}, {\n\trfc_d42061d1135c-impurity: entropy,\n\trfc_d42061d1135c-maxBins: 32,\n\trfc_d42061d1135c-maxDepth: 4\n}, {\n\trfc_d42061d1135c-impurity: gini,\n\trfc_d42061d1135c-maxBins: 25,\n\trfc_d42061d1135c-maxDepth: 4\n}, {\n\trfc_d42061d1135c-impurity: gini,\n\trfc_d42061d1135c-maxBins: 28,\n\trfc_d42061d1135c-maxDepth: 4\n}, {\n\trfc_d42061d1135c-impurity: gini,\n\trfc_d42061d1135c-maxBins: 32,\n\trfc_d42061d1135c-maxD..."
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 20
+      "execution_count" : 15
     } ]
   }, {
     "metadata" : {
@@ -401,14 +401,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "cv: org.apache.spark.ml.tuning.CrossValidator = cv_fc90c7c73602\n"
+      "text" : "cv: org.apache.spark.ml.tuning.CrossValidator = cv_9f28e5dda98b\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 21
+      "execution_count" : 16
     } ]
   }, {
     "metadata" : {
@@ -429,7 +429,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 22
+      "execution_count" : 17
     } ]
   }, {
     "metadata" : {
@@ -443,14 +443,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "fittedPipeline: org.apache.spark.ml.tuning.CrossValidatorModel = cv_fc90c7c73602\n"
+      "text" : "fittedPipeline: org.apache.spark.ml.tuning.CrossValidatorModel = cv_9f28e5dda98b\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 23
+      "execution_count" : 18
     } ]
   }, {
     "metadata" : {
@@ -480,7 +480,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 26
+      "execution_count" : 19
     } ]
   }, {
     "metadata" : {
@@ -508,14 +508,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "Model\nLocated: /tmp/adalog/modelout08860961\nModel:  fittedPipeline (org.apache.spark.ml.tuning.CrossValidatorModel)\n{\"type\":\"model\",\"var\":\"fittedPipeline\",\"extra\":{\"value\":\"org.apache.spark.ml.tuning.CrossValidatorModel\"}}\nNone\noutput-8018A45B21564247B501733A718D5370: String = /tmp/adalog/modelout08860961\nres36: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>\n"
+      "text" : "Model\nLocated: /tmp/adalog/modelout70836819\nModel:  fittedPipeline (org.apache.spark.ml.tuning.CrossValidatorModel)\n{\"type\":\"model\",\"var\":\"fittedPipeline\",\"extra\":{\"value\":\"org.apache.spark.ml.tuning.CrossValidatorModel\"}}\nNone\noutput-8018A45B21564247B501733A718D5370: String = /tmp/adalog/modelout70836819\nres26: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : "<div>\n      <script data-this=\"{&quot;modelVar&quot;:&quot;fittedPipeline&quot;,&quot;inputs&quot;:{&quot;resolved&quot;:[],&quot;unresolved&quot;:[]},&quot;modelName&quot;:&quot;org.apache.spark.ml.tuning.CrossValidatorModel&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/modelOutput'], \n      function(modelOutput) {\n        modelOutput.call(data, this);\n      }\n    );/*]]>*/</script>\n    </div>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 27
+      "execution_count" : 20
     } ]
   }, {
     "metadata" : {
@@ -527,22 +527,44 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
+      "collapsed" : false,
       "id" : "CC4E5A07AE9A4C5D8916109B2F8A3D4D"
     },
     "cell_type" : "code",
     "source" : "val predictions = fittedPipeline.transform(testSet)\nval accuracy = evaluator.evaluate(predictions)",
-    "outputs" : [ ]
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "predictions: org.apache.spark.sql.DataFrame = [id_int: int,  A_1_count_last_int: double,  A_2_count_last_int: double,  A_3_count_last_int: double, label: double, features: vector, rawPrediction: vector, probability: vector, prediction: double]\naccuracy: Double = 1.0\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 21
+    } ]
   }, {
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
+      "collapsed" : false,
       "id" : "FD3A048F937640B4922A8880F6D8E8EC"
     },
     "cell_type" : "code",
     "source" : "println (\"accuracy : \" + accuracy)",
-    "outputs" : [ ]
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "accuracy : 1.0\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 22
+    } ]
   }, {
     "metadata" : {
       "id" : "792366F9B03F45FB80332BD19945935A"
@@ -553,12 +575,23 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
+      "collapsed" : false,
       "id" : "40F206F6FB73480880AA3AC6EE57BB20"
     },
     "cell_type" : "code",
     "source" : "import org.apache.spark.mllib.evaluation.BinaryClassificationMetrics\n\nval predictionsAndLabels = predictions.select($\"prediction\", $\"label\").rdd.map( k => (k.getDouble(0), k.getDouble(1)))\nval metrics_rdd = new BinaryClassificationMetrics(predictionsAndLabels)",
-    "outputs" : [ ]
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import org.apache.spark.mllib.evaluation.BinaryClassificationMetrics\npredictionsAndLabels: org.apache.spark.rdd.RDD[(Double, Double)] = MapPartitionsRDD[5562] at map at <console>:116\nmetrics_rdd: org.apache.spark.mllib.evaluation.BinaryClassificationMetrics = org.apache.spark.mllib.evaluation.BinaryClassificationMetrics@5ee2d69b\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 23
+    } ]
   }, {
     "metadata" : {
       "id" : "B7B92E9C0714404C83AEE313D4B33892"
@@ -569,12 +602,23 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
+      "collapsed" : false,
       "id" : "F7305C927E1E4F0688E361B2B1B0F282"
     },
     "cell_type" : "code",
     "source" : "println ( \"ROC under PR : \" + metrics_rdd.areaUnderPR)\nprintln (\"ROC Curve : \" + metrics_rdd.areaUnderROC)",
-    "outputs" : [ ]
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "ROC under PR : 1.0\nROC Curve : 1.0\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 24
+    } ]
   }, {
     "metadata" : {
       "trusted" : true,

@@ -17,8 +17,8 @@ val config = ConfigFactory.load()
 
 val adalogUrl:Option[String] = Some(config.getString("adastyx.adalog.url"))
 
-val adalogUser:Option[String] = None
-val adalogPassword:Option[String] = None
+val adalogUser:Option[String] = Some(config.getString("adastyx.adalog.auth.user"))
+val adalogPassword:Option[String] = Some(config.getString("adastyx.adalog.auth.password"))
 
 
 
@@ -37,7 +37,7 @@ askDeployedInfoToCatalog()
 
   }
 
-  def from(host:String, port:Int=46718) = {
+  def from(host:String, port:Int=57445) = {
     val transport = new NettyTransceiver(new InetSocketAddress(host, port))
     val client = SpecificRequestor.getClient(classOf[com.example.churnified_com.datafellas.g3nerator.modeloutput_0.server.Methods], transport)
     transport -> client
