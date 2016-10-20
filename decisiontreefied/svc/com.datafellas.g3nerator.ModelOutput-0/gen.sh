@@ -6,7 +6,7 @@ echo $(date)
 if [ ! -d "/tmp/adastyx-new-projects/decisiontreefied/jdk" ]; then
   echo "Folder /tmp/adastyx-new-projects/decisiontreefied/jdk doesn't exist"
   cd /tmp/adastyx-new-projects/decisiontreefied
-  wget http://localhost:8000/jdk-8u20-linux-x64.tar.gz
+  wget http://localhost:8000/jdk-7u79-linux-x64.tar.gz
   tar xvzf jdk-7u79-linux-x64.tar.gz
   mv jdk1.7.0_79 jdk
   rm jdk-7u79-linux-x64.tar.gz
