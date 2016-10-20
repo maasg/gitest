@@ -15,10 +15,17 @@ val config = ConfigFactory.load()
 
   
 
-val adalogUrl:Option[String] = Some(config.getString("adastyx.adalog.url"))
+  def getStringConfig(path: String) : Option[String] = {
+    if (config.hasPath(path)) {
+      Some(config.getString(path))
+    } else {
+      None
+    }
+  }
 
-val adalogUser:Option[String] = Some(config.getString("adastyx.adalog.auth.user"))
-val adalogPassword:Option[String] = Some(config.getString("adastyx.adalog.auth.password"))
+  val adalogUrl: Option[String] = getStringConfig("adalog.url")
+  val adalogUser: Option[String] = getStringConfig("adalog.authentication.username")
+  val adalogPassword: Option[String] = getStringConfig("adalog.authentication.password")
 
 
 
@@ -37,7 +44,7 @@ askDeployedInfoToCatalog()
 
   }
 
-  def from(host:String, port:Int=27760) = {
+  def from(host:String, port:Int=42861) = {
     val transport = new NettyTransceiver(new InetSocketAddress(host, port))
     val client = SpecificRequestor.getClient(classOf[com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.server.Methods], transport)
     transport -> client
