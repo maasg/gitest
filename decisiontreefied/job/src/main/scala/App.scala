@@ -16,7 +16,7 @@ res32: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget
         modelOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,24)))), modelOutput + (System.currentTimeMillis.toString.drop(5)), modelOutput + (System.currentTimeMillis.toString.drop(5)),model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@6b62e9b8,0)
+    </div>),execute_result,24)))), modelOutput + (System.currentTimeMillis.toString.drop(5)), modelOutput + (System.currentTimeMillis.toString.drop(5)),model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@290c181c,0)
 
  */
 object Main extends App {
