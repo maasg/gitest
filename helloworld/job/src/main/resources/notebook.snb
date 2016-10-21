@@ -51,7 +51,7 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "salutation: Seq[String] = List(hello, hi, hola, bonjour, hallo, ciao)\nsubjects: Seq[String] = List(world, mundo, mundi, monde, wereld)\n"
+      "text" : "salutation: Seq[String] = List(hello, hi, hola, bonjour, hallo, ciao, saluton, hei, hoi, kaixo, zdravo)\nsubjects: Seq[String] = List(world, mundo, mundi, monde, wereld)\n"
     }, {
       "metadata" : { },
       "data" : {
@@ -79,7 +79,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 6
+      "execution_count" : 3
     } ]
   }, {
     "metadata" : {
@@ -100,7 +100,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 3
+      "execution_count" : 4
     } ]
   }, {
     "metadata" : {
@@ -125,6 +125,27 @@
     } ]
   }, {
     "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "359C42C4B9774EAF9AC40D0889A929C7"
+    },
+    "cell_type" : "code",
+    "source" : "println(\"=== Combinations ===\")\nprintln(combs.toDebugString)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "=== Combinations ===\n(16) CartesianRDD[2] at cartesian at <console>:68 []\n |   ParallelCollectionRDD[0] at parallelize at <console>:64 []\n |   ParallelCollectionRDD[1] at parallelize at <console>:65 []\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 12
+    } ]
+  }, {
+    "metadata" : {
       "id" : "2721567D133644BFBB404B2A9FC7D381"
     },
     "cell_type" : "markdown",
@@ -141,28 +162,7 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "frenchCombo: org.apache.spark.rdd.RDD[(String, String)] = MapPartitionsRDD[3] at filter at <console>:72\n"
-    }, {
-      "metadata" : { },
-      "data" : {
-        "text/html" : ""
-      },
-      "output_type" : "execute_result",
-      "execution_count" : 7
-    } ]
-  }, {
-    "metadata" : {
-      "trusted" : true,
-      "input_collapsed" : false,
-      "collapsed" : false,
-      "id" : "E44B742ED3824E158F54E370571F6375"
-    },
-    "cell_type" : "code",
-    "source" : "frenchCombo.collect.foreach(println)",
-    "outputs" : [ {
-      "name" : "stdout",
-      "output_type" : "stream",
-      "text" : "(bonjour,monde)\n"
+      "text" : "frenchCombo: org.apache.spark.rdd.RDD[(String, String)] = MapPartitionsRDD[4] at filter at <console>:72\n"
     }, {
       "metadata" : { },
       "data" : {
@@ -175,12 +175,65 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
+      "collapsed" : false,
+      "id" : "B905F6D0CB4A40EABB23E190B077C44E"
+    },
+    "cell_type" : "code",
+    "source" : "println(\"=== French Combo ===\")\nprintln(frenchCombo.toDebugString)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "=== French Combo ===\n(16) MapPartitionsRDD[4] at filter at <console>:72 []\n |   CartesianRDD[2] at cartesian at <console>:68 []\n |   ParallelCollectionRDD[0] at parallelize at <console>:64 []\n |   ParallelCollectionRDD[1] at parallelize at <console>:65 []\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 13
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "E44B742ED3824E158F54E370571F6375"
+    },
+    "cell_type" : "code",
+    "source" : "val result = frenchCombo.collect",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "result: Array[(String, String)] = Array((bonjour,monde))\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 14
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
       "id" : "84613BE29C2D4BB397C45313D0D0A502"
     },
     "cell_type" : "code",
-    "source" : "",
-    "outputs" : [ ]
+    "source" : "println(\"Result\")\nprintln(result.mkString(\",\"))",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "Result\n(bonjour,monde)\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 15
+    } ]
   } ],
   "nbformat" : 4
 }

@@ -91,19 +91,36 @@ val sc = sparkContext
 /****************/
 
 
+  /* -- Code Cell: Some(359C42C4B9774EAF9AC40D0889A929C7) -- */ 
+
+  println("=== Combinations ===")
+  println(combs.toDebugString)
+/****************/
+
+
   /* -- Code Cell: Some(A5737A7CF8524978933D129311CEF302) -- */ 
 
   val frenchCombo = combs.filter{case (sal,sub) => isFrench(sal) && isFrench(sub)}
 /****************/
 
 
-  /* -- Code Cell: Some(E44B742ED3824E158F54E370571F6375) -- */ 
+  /* -- Code Cell: Some(B905F6D0CB4A40EABB23E190B077C44E) -- */ 
 
-  frenchCombo.collect.foreach(println)
+  println("=== French Combo ===")
+  println(frenchCombo.toDebugString)
 /****************/
 
 
-  /* -- Code Cell: Some(84613BE29C2D4BB397C45313D0D0A502) -- */
+  /* -- Code Cell: Some(E44B742ED3824E158F54E370571F6375) -- */ 
+
+  val result = frenchCombo.collect
+/****************/
+
+
+  /* -- Code Cell: Some(84613BE29C2D4BB397C45313D0D0A502) -- */ 
+
+  println("Result")
+  println(result.mkString(","))
 
 sparkContext.stop
 
