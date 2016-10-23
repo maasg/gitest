@@ -1,1 +1,1 @@
-{"schedule":"R/2016-10-21T14:09Z/PT5M","name":"helloworld-shortcut -- job","cpus":"1","mem":"5000","uris":[],"shell":false,"command":"","container":{"type":"DOCKER","forcePullImage":true,"image":"localhost:5000/helloworld-shortcut:0.0.1-SNAPSHOT","network":"HOST"}}
+{"schedule":"R/2016-10-23T11:46Z/PT5M","name":"helloworld-shortcut -- job","cpus":"1","mem":"5000","uris":[],"shell":false,"command":"","container":{"type":"DOCKER","forcePullImage":true,"image":"localhost:5000/helloworld-shortcut:0.0.1-SNAPSHOT","network":"HOST"}}

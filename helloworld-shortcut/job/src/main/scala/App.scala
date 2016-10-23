@@ -6,7 +6,9 @@ package com.example
   > 
 
  */
-object Main extends App {
+object Main {
+
+def main(args:Array[String]):Unit = {
 
 import org.apache.spark.{SparkContext, SparkConf}
 import org.apache.spark.SparkContext._
@@ -134,4 +136,5 @@ val sc = sparkContext
 sparkContext.stop
 
 
+}
 }
