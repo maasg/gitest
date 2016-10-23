@@ -61,6 +61,27 @@ dockerCommands ++= Seq(Cmd("ENV", "SPARK_HOME \"\""))
 
 dockerRepository := Some("localhost:5000") //Docker
 
+enablePlugins(DebianPlugin)
+
+name in Debian := "helloworld-shortcut"
+
+maintainer in Debian := "Data Fellas"
+
+packageSummary in Debian := "Data Fellas Generated Job"
+
+packageDescription := "Generated Job by Adalog Deploy"
+
+debianPackageDependencies in Debian += "java8-runtime-headless"
+
+serverLoading in Debian := com.typesafe.sbt.packager.archetypes.ServerLoader.Upstart
+
+daemonUser in Linux := "root"
+
+daemonGroup in Linux := "root"
+
+bashScriptExtraDefines += "export SPARK_HOME=\"\""
+
+
 bashScriptExtraDefines += """addJava "-Djava.io.tmpdir=/tmp/""""
 
 val sparkVersion  = sys.env.get("SPARK_VERSION") .orElse(sys.props.get("spark.version")) .getOrElse("1.6.1")

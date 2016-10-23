@@ -31,7 +31,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "helloworld-shor
 
 // Set project Jars
 
-val libDir = new java.io.File(".", "lib")
+val libDir = new java.io.File(s"/usr/share/helloworld-shortcut", "lib")
 val currentProjectJars = Array[String]( "com.example-helloworld-shortcut.helloworld-shortcut-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(".", "spark-lib")
 val fromProjectJars = Array[String]().map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
