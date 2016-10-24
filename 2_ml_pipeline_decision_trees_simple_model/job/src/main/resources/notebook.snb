@@ -1,0 +1,630 @@
+{
+  "metadata" : {
+    "id" : "bbe7efb6-db5f-483f-abe7-341e536f0b34",
+    "name" : "2_ml_pipeline_decision_trees_simple_model",
+    "user_save_timestamp" : "2016-10-11T07:49:59.180Z",
+    "auto_save_timestamp" : "2016-10-06T10:19:30.013Z",
+    "language_info" : {
+      "name" : "scala",
+      "file_extension" : "scala",
+      "codemirror_mode" : "text/x-scala"
+    },
+    "trusted" : true,
+    "sparkNotebook" : {
+      "xSparkVersion" : "1.6.1",
+      "xWithParquet" : "true",
+      "buildTime" : "Mon Aug 08 17:38:15 CEST 2016",
+      "sparkNotebookVersion" : "0.7.0-SNAPSHOT",
+      "xJlineDef" : "(org.scala-lang,2.10.5)",
+      "scalaVersion" : "2.10.5",
+      "sbtVersion" : "0.13.9",
+      "formattedShaVersion" : "Some(8395c2e6a7b313bfb33e349e16012c10d52ec13e-SNAPSHOT)",
+      "xJets3tVersion" : "0.9.4",
+      "xWithHive" : "true",
+      "xHadoopVersion" : "2.7.2"
+    },
+    "customLocalRepo" : "/tmp/localrepo",
+    "customRepos" : null,
+    "customDeps" : [ "com.databricks % spark-csv_2.10 % 1.5.0" ],
+    "customImports" : null,
+    "customArgs" : null,
+    "customSparkConf" : {
+      "spark.cores.max" : "4",
+      "spark.executor.memory" : "2G",
+      "spark.mesos.coarse" : "true",
+      "spark.default.parallelism" : "24",
+      "spark.sql.parquet.compression.codec" : "snappy",
+      "spark.sql.shuffle.partitions" : "64"
+    },
+    "customVars" : null
+  },
+  "cells" : [ {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "C35F6EC713D449979E3D06E0DF125A8F"
+    },
+    "cell_type" : "code",
+    "source" : "val sqlContext = new org.apache.spark.sql.SQLContext(sc)\n\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@13b5aa83\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 1
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "ED04F99D331A4028910ADA204ED63917"
+    },
+    "cell_type" : "code",
+    "source" : "val sample =  \"/home/maasg/playground/data/decision_tree.data\"\n\nval matrixDF = sqlContext.read\n                        .format(\"com.databricks.spark.csv\")\n                        .option(\"header\", \"true\")\n.option(\"inferSchema\", \"true\")\n                   \n                   .load(sample)\n                   .persist(org.apache.spark.storage.StorageLevel.MEMORY_AND_DISK_SER)\n                   .repartition(4)\nval schema = matrixDF.schema",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "sample: String = /home/maasg/playground/data/decision_tree.data\nmatrixDF: org.apache.spark.sql.DataFrame = [id: int, any_churn_target: boolean, full_churn_target: boolean, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, Postal_Code: string, cs_k: string, Neighbourhood_Code: string]\nschema: org.apache.spark.sql.types.StructType = StructType(StructField(id,IntegerType,true), StructField(any_churn_target,BooleanType,true), StructField(full_churn_target,BooleanType,true), StructField(A_1_count_last,IntegerType,true), StructField(A_2_count_last,IntegerType,true), StructField(A_3_count_last,IntegerType,true), StructField(Postal_Code,StringType,true), StructField(cs_k,StringType,true), StructField(Neighbourhood_Code,StringType,true))\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 2
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "9A7C4B1B2CC74CC588A355344AD4CFB2"
+    },
+    "cell_type" : "markdown",
+    "source" : "val model_matrix_uri = \"hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/modelMatrix/\"\nval model_matrix_uri_output = \"hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/modelMatrix/\"\n\nval matrixDF = sqlContext.read\n                   .format(\"parquet\")\n                   .load(model_matrix_uri)\n                   .persist(org.apache.spark.storage.StorageLevel.MEMORY_AND_DISK_SER)\n\nval schema = matrixDF.schema"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "466C85782D15432BBAC4CBBB561CF60C"
+    },
+    "cell_type" : "code",
+    "source" : "matrixDF.groupBy(\"any_churn_target\", \"full_churn_target\").count",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "res4: org.apache.spark.sql.DataFrame = [any_churn_target: boolean, full_churn_target: boolean, count: bigint]\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon3039d5efb702354abfd39990eb3495e2&quot;,&quot;partitionIndexId&quot;:&quot;anond2fc20d2b836b0b2800d421b6c07849a&quot;,&quot;numPartitions&quot;:1,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;any_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;full_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;count&quot;,&quot;type&quot;:&quot;long&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 3
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "77E1BBFD352E4F029255E54EA05CF6E8"
+    },
+    "cell_type" : "code",
+    "source" : "val distinctCsk = matrixDF.select(\"cs_k\").distinct.count",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "distinctCsk: Long = 2\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 4
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "CA42CE0CA79744F38A1BB21026D5B025"
+    },
+    "cell_type" : "code",
+    "source" : "val distinctNeighborhoodCodes = matrixDF.select(\"Neighbourhood_Code\").distinct.count",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "distinctNeighborhoodCodes: Long = 4\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 5
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "C01DBEEA03D54C3E8DF6DCC6ADEBF26E"
+    },
+    "cell_type" : "code",
+    "source" : "val dictinctPostalCodes = matrixDF.select(\"Postal_Code\").distinct.count ",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "dictinctPostalCodes: Long = 5\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 6
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "32D320FCD4504224824094B70A3B370B"
+    },
+    "cell_type" : "code",
+    "source" : "val stringedColumns = matrixDF.schema.toSeq.filter(col => (col.dataType == StringType)  && (col.name != \"any_churn_target\") && (col.name != \"full_churn_target\")).map(_.name)   \n\nval categoricals = matrixDF.schema.toSeq.filter(col => (col.dataType == StringType) && (col.name != \"Postal_Code\") && (col.name != \"cs_k\") && (col.name != \"Neighbourhood_Code\")\n                                                             && (col.name != \"any_churn_target\") && (col.name != \"full_churn_target\") )\n                                             .map(_.name)   \n\nval numCols = matrixDF.schema.toSeq.filter(col => ((col.dataType == DoubleType) || (col.dataType == IntegerType)) || (col.dataType == LongType)) \n                               .map (_.name)  \n\n\n(stringedColumns.length + numCols.length)  == (matrixDF.schema.toSeq.length -2)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "stringedColumns: Seq[String] = List(Postal_Code, cs_k, Neighbourhood_Code)\ncategoricals: Seq[String] = List()\nnumCols: Seq[String] = List(id, A_1_count_last, A_2_count_last, A_3_count_last)\nres9: Boolean = true\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "true"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 7
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "503EAE0B270B4AA383A13BC37AB6E508"
+    },
+    "cell_type" : "code",
+    "source" : "val fillStrMap = stringedColumns.map (s => ( s, \"unknown\")).toMap   //Replace empty strings with a full string so Encoders and Indexers don't explode\nval fillNumMap = numCols.map ( s => (s, 0)).toMap                   // TODO ==> compute averages and look how it behaves instead of zeros",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "fillStrMap: scala.collection.immutable.Map[String,String] = Map(Postal_Code -> unknown, cs_k -> unknown, Neighbourhood_Code -> unknown)\nfillNumMap: scala.collection.immutable.Map[String,Int] = Map(id -> 0, A_1_count_last -> 0, A_2_count_last -> 0, A_3_count_last -> 0)\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 8
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "0086E970CFAF4781B2E221A7DBF51CDC"
+    },
+    "cell_type" : "markdown",
+    "source" : "### We prepare the dataframe, by replacing the empty cells, and hashing some columns"
+  }, {
+    "metadata" : {
+      "id" : "0D1F0E67B61E417685210893E8A5EB7F"
+    },
+    "cell_type" : "markdown",
+    "source" : "#### For this first model, we will only try to predict if the user has churned in any case or not. So we will take into account only the target ''any_churn'' . Also columns like neighborhood code, postal_code are categorials with too many dimensions. I hashed them stupidly. \n#### This whole step of hash some columns, filling empty values, etc is bundled into one Single Transformer step to be fed to the whole prediction pipeline."
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "F0709DE78AC34E2C862448C94A644899"
+    },
+    "cell_type" : "code",
+    "source" : "import org.apache.spark.ml.Transformer\nimport org.apache.spark.sql.DataFrame\nimport org.apache.spark.ml.util.Identifiable\nimport org.apache.spark.ml.param.ParamMap\nimport org.apache.spark.sql.types.{StructType, DoubleType}\nimport org.apache.spark.ml.attribute.NominalAttribute\nimport org.apache.spark.sql.functions._\n\n\nclass PrepareTransformer() extends Transformer {\n  \n  val uid: String = Identifiable.randomUID(\"prepareTransformer\")\n\n  override def transformSchema(schema: StructType) = schema.add(\"cs_k_hash\", DoubleType)\n                                                  .add(\"Postal_Code_hash\", DoubleType)\n                                                  .add(\"Neighbourhood_Code_hash\", DoubleType)\n                                                  .add(\"label\", DoubleType)\n  \n  override def transform(df: DataFrame) : DataFrame = {\n                      import sqlContext.implicits._\n    \n                      val meta = NominalAttribute\n                      .defaultAttr\n                      .withName(\"churned\")\n                      .withValues(\"0.0\", \"1.0\")\n                      .toMetadata\n                      \n                      val  hc : String => Double = _.hashCode()\n                      val hash = udf(hc)\n  \n                      df.withColumn(\"churned\", when($\"any_churn_target\" === false , 0.0).otherwise(1.0)) // any_churn_target => churned, not_churned\n                        .na.fill(fillStrMap)\n                        .na.fill(fillNumMap)\n                        .withColumn(\"cs_k_hash\" , hash($\"cs_k\"))  \n                        .withColumn(\"Postal_Code_hash\" , hash($\"Postal_Code\"))\n                        .withColumn(\"Neighbourhood_Code_hash\", hash($\"Neighbourhood_Code\"))\n                        .withColumn(\"label\", $\"churned\".as(\"label\", meta))  \n  } \n    \n  override def copy( extra : ParamMap) = defaultCopy(extra)\n}",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import org.apache.spark.ml.Transformer\nimport org.apache.spark.sql.DataFrame\nimport org.apache.spark.ml.util.Identifiable\nimport org.apache.spark.ml.param.ParamMap\nimport org.apache.spark.sql.types.{StructType, DoubleType}\nimport org.apache.spark.ml.attribute.NominalAttribute\nimport org.apache.spark.sql.functions._\ndefined class PrepareTransformer\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 9
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "92612E5FBA084F7589906D6EE8BAEE65"
+    },
+    "cell_type" : "code",
+    "source" : "import org.apache.spark.ml.feature.{StringIndexer, VectorIndexer, VectorAssembler}\nimport org.apache.spark.ml.{Pipeline, PipelineStage, PipelineModel}\nimport org.apache.spark.ml.classification.DecisionTreeClassifier\nimport org.apache.spark.ml.classification.DecisionTreeClassificationModel\nimport org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import org.apache.spark.ml.feature.{StringIndexer, VectorIndexer, VectorAssembler}\nimport org.apache.spark.ml.{Pipeline, PipelineStage, PipelineModel}\nimport org.apache.spark.ml.classification.DecisionTreeClassifier\nimport org.apache.spark.ml.classification.DecisionTreeClassificationModel\nimport org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 10
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "BAD5EDB2D2A242218532265392267DCF"
+    },
+    "cell_type" : "markdown",
+    "source" : "## Stages for features transformation"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "56BD6B71E1DD4543826A81E51FD73101"
+    },
+    "cell_type" : "code",
+    "source" : "\n// First let's index categoricals features\nval catIndexer: Array[org.apache.spark.ml.PipelineStage] = categoricals.map(\n  cname => new StringIndexer()\n    .setInputCol(cname)\n    .setOutputCol(s\"${cname}_index\")\n    .setHandleInvalid(\"skip\")\n).toArray\n\n//Then we assemble all the features into one Vector that contains the Indexed categoricals and the continuousfeatures\n\nval vectorCols = (categoricals.map(cname => s\"${cname}_index\") ++ numCols ++ Array(\"cs_k_hash\", \"Postal_Code_hash\" , \"Neighbourhood_Code_hash\" )).toArray\n\nval assembler = new VectorAssembler()\n                           .setInputCols(vectorCols)\n                           .setOutputCol(\"features\")\n\n//In order for the decision tree to automatically detect categorical and improve performance, we index the assembled vectors before feeding it to a Decision tree. We set a maximal number\n// categories at 4 so it will consider features with more than 4 categories as continuous features\n\nval vectorIndexer = new VectorIndexer()\n                          .setInputCol(\"features\")\n                          .setOutputCol(\"indexedFeatures\")\n                          .setMaxCategories(1500)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "catIndexer: Array[org.apache.spark.ml.PipelineStage] = Array()\nvectorCols: Array[String] = Array(id, A_1_count_last, A_2_count_last, A_3_count_last, cs_k_hash, Postal_Code_hash, Neighbourhood_Code_hash)\nassembler: org.apache.spark.ml.feature.VectorAssembler = vecAssembler_24e939981897\nvectorIndexer: org.apache.spark.ml.feature.VectorIndexer = vecIdx_33b656180624\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 11
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "B829133ABCA94607877E38F5CC155AA7"
+    },
+    "cell_type" : "code",
+    "source" : "val dt = new DecisionTreeClassifier()\n          .setFeaturesCol(\"features\")\n          .setLabelCol(\"label\")\n          .setPredictionCol(\"predictions\")\n          .setImpurity(\"gini\") //Entropy ??\n          .setMaxDepth(30)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "dt: org.apache.spark.ml.classification.DecisionTreeClassifier = dtc_af5de599959b\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 12
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "E6DE621A739E49A28967A04FF8BB6BF9"
+    },
+    "cell_type" : "code",
+    "source" : "//We assemble all the above stages into one single pipeline \n\nval dtPipeline = new Pipeline().setStages( Array(new PrepareTransformer()) ++ catIndexer ++ Array(assembler, vectorIndexer, dt))",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "dtPipeline: org.apache.spark.ml.Pipeline = pipeline_0e6711c54c81\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 13
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "C8180A0CB4674200B05573B9B6C9037D"
+    },
+    "cell_type" : "code",
+    "source" : "val Array(trainingSet, testSet) = matrixDF.randomSplit(Array(0.8, 0.2))",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "trainingSet: org.apache.spark.sql.DataFrame = [id: int, any_churn_target: boolean, full_churn_target: boolean, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, Postal_Code: string, cs_k: string, Neighbourhood_Code: string]\ntestSet: org.apache.spark.sql.DataFrame = [id: int, any_churn_target: boolean, full_churn_target: boolean, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, Postal_Code: string, cs_k: string, Neighbourhood_Code: string]\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 14
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "9C4AB4C606E64008BAF8DA881668559E"
+    },
+    "cell_type" : "code",
+    "source" : "val model = dtPipeline.fit(trainingSet)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "model: org.apache.spark.ml.PipelineModel = pipeline_0e6711c54c81\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 15
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "5621DC8B58094781AE551AAE314E6011"
+    },
+    "cell_type" : "markdown",
+    "source" : "\"/tmp/models/dt_\"+(System.currentTimeMillis.toString.drop(5).take(5))"
+  }, {
+    "metadata" : {
+      "id" : "5815E899D72F4DC08566252BD2A14982"
+    },
+    "cell_type" : "markdown",
+    "source" : "#### Save the pipeline Model"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "0FBEE70305CB418E82F97243A985F584"
+    },
+    "cell_type" : "code",
+    "source" : "\nval model_output = \"hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/trained_model/dt_pipeline\"\n\n//sparkContext.parallelize(Seq(model), 1).saveAsObjectFile(model_output)\n\n//Note : to reload the model : sparkContext.objectFile[orgapache.spark.ml.PipelineModel](model_output).first ",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "model_output: String = hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/trained_model/dt_pipeline\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 19
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "202CB011520746DA8A2884A5B524732D"
+    },
+    "cell_type" : "code",
+    "source" : "val modelOut = \"/tmp/models/dt_\"+(System.currentTimeMillis.toString.drop(5).take(5))\nsparkContext.parallelize(Seq(model), 1).saveAsObjectFile(modelOut)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "modelOut: String = /tmp/models/dt_03573\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 17
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "7BD45C5BB5E8405E8044B4728FD12D58"
+    },
+    "cell_type" : "markdown",
+    "source" : "##Evalution of Dtrees"
+  }, {
+    "metadata" : {
+      "id" : "5171E353D9AA495197AD1AF3F013DAB5"
+    },
+    "cell_type" : "markdown",
+    "source" : "## Metrics Evaluation"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "presentation" : {
+        "tabs_state" : "{\n  \"tab_id\": \"#tab1977853516-0\"\n}",
+        "pivot_chart_state" : "{\n  \"hiddenAttributes\": [],\n  \"menuLimit\": 200,\n  \"cols\": [],\n  \"rows\": [],\n  \"vals\": [],\n  \"exclusions\": {},\n  \"inclusions\": {},\n  \"unusedAttrsVertical\": 85,\n  \"autoSortUnusedAttrs\": false,\n  \"inclusionsInfo\": {},\n  \"aggregatorName\": \"Count\",\n  \"rendererName\": \"Table\"\n}"
+      },
+      "id" : "5B2F4BD6F9DF4CDE8EBF11D5CE3C3BB3"
+    },
+    "cell_type" : "code",
+    "source" : "// Let's get predictions from the testSet applied to pipelinedModel\n\nval predictionsDF = model.transform(testSet)\n                         .select( $\"rawPrediction\", $\"probability\", $\"predictions\", $\"label\")  ",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "predictionsDF: org.apache.spark.sql.DataFrame = [rawPrediction: vector, probability: vector, predictions: double, label: double]\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 62
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "E76B4CD54FEA4A3C89879984563B8156"
+    },
+    "cell_type" : "markdown",
+    "source" : "### Let's evaluate the model with a BinaryClassificationEvaluator"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "F7305C927E1E4F0688E361B2B1B0F282"
+    },
+    "cell_type" : "code",
+    "source" : "import org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\nval evaluator = new BinaryClassificationEvaluator()\n\nprintln(\"areaUnderPR :\" + evaluator.setMetricName(\"areaUnderPR\").evaluate(predictionsDF))\nprintln(\"areaUnderROC :\" + evaluator.setMetricName(\"areaUnderROC\").evaluate(predictionsDF))",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "areaUnderPR :0.06484743345514482\nareaUnderROC :0.5109031260876511\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\nevaluator: org.apache.spark.ml.evaluation.BinaryClassificationEvaluator = binEval_438ab32fe25b\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 66
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "5696CAE02571469AA95F0534E2FA6B48"
+    },
+    "cell_type" : "markdown",
+    "source" : "### To get more metrics we have to revert to the old MLLib API and use the MultiMetrics class"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "DE8E5BBA7DBB4CBD80CE8D5C49AE8BFC"
+    },
+    "cell_type" : "code",
+    "source" : "// Using MulclassMetrics to assess the model\nimport org.apache.spark.mllib.evaluation.MulticlassMetrics\n\nval predictionsRDD = predictionsDF.select(\"predictions\", \"label\").rdd.map(x => (x.getDouble(0), x.getDouble(1)))\n\nval metrics = new MulticlassMetrics(predictionsRDD)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import org.apache.spark.mllib.evaluation.MulticlassMetrics\npredictionsRDD: org.apache.spark.rdd.RDD[(Double, Double)] = MapPartitionsRDD[375] at map at <console>:109\nmetrics: org.apache.spark.mllib.evaluation.MulticlassMetrics = org.apache.spark.mllib.evaluation.MulticlassMetrics@498f9b01\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 22
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "B1F3136609CA4149AB6ED2993D9F90B2"
+    },
+    "cell_type" : "code",
+    "source" : "println(\"Precision of True : \"+  metrics.precision(1.0))\nprintln(\"Precision of False: \"+ metrics.precision(0.0))\nprintln(\"Recall of True    :\"+ metrics.recall(1.0))\nprintln(\"Recall of False   :\"+ metrics.recall(0.0))\nprintln(\"F-1 Score         :\"+ metrics.fMeasure)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "Precision of True : 0.04251386321626617\nPrecision of False: 0.9689643787372978\nRecall of True    :0.04097165991902834\nRecall of False   :0.9701032063760238\nF-1 Score         :0.9409444817141347\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 23
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "BE15184DEE1145F987DA83136CC5CAE4"
+    },
+    "cell_type" : "code",
+    "source" : "println(\"Confusion Matrix\\n:\"+ metrics.confusionMatrix )",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "Confusion Matrix\n:184891.0  5698.0  \n5922.0    253.0   \n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 24
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "606C572CF1FE49518E560687C938BCCD"
+    },
+    "cell_type" : "markdown",
+    "source" : "# Helper functions for predictions\n### Let's say we want to have the prediction of churn or not for a record or a set of records. The Spark ML API does not give a predict() method,  to get those predictions we need perform a tranformation with the  pipeline model with this data set : dataForPredictionDataframe =>  model.transform(dataForPredictionDataframe) => select (predictions, rawPredictions, probabilities) => toJson or any other desired format"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "7578120C08364817B4A41442FDC9D48A"
+    },
+    "cell_type" : "code",
+    "source" : "import org.apache.spark.sql.DataFrame\nimport org.apache.spark.ml.PipelineModel\n\n// We take the data we want predictions from as dataframe, we featurize the dataframe ( fill Empty records, hash some columns ) by calling prepare() defined above \n//then feed it into the pipelineModel\n// Here make sure that your data has the same schema as ChurnedDF\n\ndef predict ( input : DataFrame, model : PipelineModel) = {\n   model.transform (input).select(\"id\", \"rawPrediction\", \"probability\", \"predictions\")\n}",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import org.apache.spark.sql.DataFrame\nimport org.apache.spark.ml.PipelineModel\npredict: (input: org.apache.spark.sql.DataFrame, model: org.apache.spark.ml.PipelineModel)org.apache.spark.sql.DataFrame\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 72
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "4B6B0F6EDA9041D888C4EE554D820D88"
+    },
+    "cell_type" : "code",
+    "source" : "// Example. we want to predictions for the following record\nval sample = matrixDF.sample(false, 0.00001)\n\n// We Get the following predictions.\npredict (sample, model)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "sample: org.apache.spark.sql.DataFrame = [id: int, any_churn_target: boolean, full_churn_target: boolean, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, A_4_count_last: int, A_5_count_last: int, A_6_count_last: int, A_7_count_last: int, A_8_count_last: int, A_AUM_Amt_last: double, A_Account_FirstContact_Date: int, A_Balance_Amt_last: double, A_Balance_Loan_Amt_last: double, A_Capital_Death_Amt_last: double, A_Capital_Life_Amt_last: double, A_Dubious_Payment_Bank_Ind_last: string, A_Dubious_Payment_PC_Ind_last: string, A_Lpp_Id: int, A_Original_Loan_Amt_last: double, A_Owner_Ind_last: string, A_Point_Of_Sales: int, A_Premium_Amt_last: double, A_Reserve_Amt_last: double, A_Tenant_Ind: string, A_count: int, Apartment_Owner_Nbr_last: int, Apartment_Tenants_Nbr_last: int, Apa..."
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon6c4584c0257827894a00d408f462f4e9&quot;,&quot;partitionIndexId&quot;:&quot;anon98c302743b0e31a9de3458500cc1cf04&quot;,&quot;numPartitions&quot;:1,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;rawPrediction&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;udt&quot;,&quot;class&quot;:&quot;org.apache.spark.mllib.linalg.VectorUDT&quot;,&quot;pyClass&quot;:&quot;pyspark.mllib.linalg.VectorUDT&quot;,&quot;sqlType&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;type&quot;,&quot;type&quot;:&quot;byte&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;size&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;indices&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;array&quot;,&quot;elementType&quot;:&quot;integer&quot;,&quot;containsNull&quot;:false},&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;values&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;array&quot;,&quot;elementType&quot;:&quot;double&quot;,&quot;containsNull&quot;:false},&quot;nullable&quot;:true,&quot;metadata&quot;:{}}]}},&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;probability&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;udt&quot;,&quot;class&quot;:&quot;org.apache.spark.mllib.linalg.VectorUDT&quot;,&quot;pyClass&quot;:&quot;pyspark.mllib.linalg.VectorUDT&quot;,&quot;sqlType&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;type&quot;,&quot;type&quot;:&quot;byte&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;size&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;indices&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;array&quot;,&quot;elementType&quot;:&quot;integer&quot;,&quot;containsNull&quot;:false},&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;values&quot;,&quot;type&quot;:{&quot;type&quot;:&quot;array&quot;,&quot;elementType&quot;:&quot;double&quot;,&quot;containsNull&quot;:false},&quot;nullable&quot;:true,&quot;metadata&quot;:{}}]}},&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;predictions&quot;,&quot;type&quot;:&quot;double&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 73
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "ECB2BF0CE9E64CAE8081844B75867F5A"
+    },
+    "cell_type" : "code",
+    "source" : "",
+    "outputs" : [ ]
+  } ],
+  "nbformat" : 4
+}
