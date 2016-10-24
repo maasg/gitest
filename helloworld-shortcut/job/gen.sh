@@ -31,29 +31,15 @@ cd /home/maasg/testground/sne/projects/helloworld-shortcut/job
 echo "publishing project"
 /home/maasg/testground/sne/projects/helloworld-shortcut/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 publish
 
-#echo "building docker"
-#echo /home/maasg/testground/sne/projects/helloworld-shortcut/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 docker:publishLocal
 echo "building debian"
 /home/maasg/testground/sne/projects/helloworld-shortcut/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 debian:packageBin
 export PKG_NAME=helloworld-shortcut_0.0.1-SNAPSHOT_all.deb
 echo "package: /home/maasg/testground/sne/projects/helloworld-shortcut/job/target/$PKG_NAME"
 
 echo "pushing deb package to Adalog UI"
-# hdfs dfs -fs ${project.urlConfig.hdfs} -put /home/maasg/testground/sne/projects/helloworld-shortcut/job/target/$PKG_NAME /debian_packages/$PKG_NAME
 /bin/mkdir /srv/tmp/debian_packages/
 /bin/cp /home/maasg/testground/sne/projects/helloworld-shortcut/job/target/$PKG_NAME /srv/tmp/debian_packages/
 
-
-#echo 
-
-echo "pushing docker"
-docker push localhost:5000/helloworld-shortcut:0.0.1-SNAPSHOT
-
-
-
-#echo "showing docker images"
-
-#docker images
 
 echo "posting marathon/chronos"
 
