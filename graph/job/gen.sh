@@ -44,7 +44,7 @@ echo "pushing deb package to Adalog UI"
 echo "posting marathon/chronos"
 
 echo 
-curl -X POST -H "Content-type: application/json" http://172.17.0.2:4400/scheduler/iso8601 -d @/home/maasg/testground/sne/projects/graph/job/src/main/resources/chronos.json
+curl -X POST  -H "Content-type: application/json" http://172.17.0.2:4400/scheduler/iso8601 -d @/home/maasg/testground/sne/projects/graph/job/src/main/resources/chronos.json
            
 
 echo "End job/gen.sh"
