@@ -3,52 +3,32 @@
 echo "Start job/gen.sh"
 echo $(date)
 echo "At directory `pwd`"
-if [ ! -d "/tmp/adastyx-new-projects/decisiontreefied/jdk" ]; then
-  echo "Folder /tmp/adastyx-new-projects/decisiontreefied/jdk doesn't exist"
-  cd /tmp/adastyx-new-projects/decisiontreefied
-  wget http://localhost:8000/jdk-7u79-linux-x64.tar.gz
-  tar xvzf jdk-7u79-linux-x64.tar.gz*
-  find . -type d -maxdepth 1 -name "jdk" -exec mv "{}" jdk \;
-  rm jdk-7u79-linux-x64.tar.gz
-fi
 
-if [ ! -d "/tmp/adastyx-new-projects/decisiontreefied/sbt" ]; then
-  echo "Folder /tmp/adastyx-new-projects/decisiontreefied/sbt doesn't exist"
-  cd /tmp/adastyx-new-projects/decisiontreefied
-  wget http://localhost:8000/sbt-0.13.12.tgz
-  tar xvzf sbt-0.13.12.tgz*
-  rm sbt-0.13.12.tgz*
-fi
+export JAVA_HOME=/home/maasg/Dev/java/jdk1.8.0_20
+export JDK_HOME=/home/maasg/Dev/java/jdk1.8.0_20
+export PATH=/home/maasg/Dev/java/sbt/bin:/home/maasg/Dev/java/jdk1.8.0_20/bin:$PATH
 
-export JAVA_HOME=/tmp/adastyx-new-projects/decisiontreefied/jdk
-export JDK_HOME=/tmp/adastyx-new-projects/decisiontreefied/jdk
-export PATH=/tmp/adastyx-new-projects/decisiontreefied/sbt/bin:/tmp/adastyx-new-projects/decisiontreefied/jdk/bin:$PATH
+echo "enter /home/maasg/testground/sne/projects/decisiontreefied/job"
 
-echo "enter /tmp/adastyx-new-projects/decisiontreefied/job"
-
-cd /tmp/adastyx-new-projects/decisiontreefied/job
+cd /home/maasg/testground/sne/projects/decisiontreefied/job
 
 echo "publishing project"
-/tmp/adastyx-new-projects/decisiontreefied/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 publish
+/home/maasg/testground/sne/projects/decisiontreefied/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 publish
 
-echo "building docker"
-/tmp/adastyx-new-projects/decisiontreefied/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 docker:publishLocal
+echo "building debian"
+/home/maasg/testground/sne/projects/decisiontreefied/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 debian:packageBin
+export PKG_NAME=decisiontreefied_0.0.1-SNAPSHOT_all.deb
+echo "package: /home/maasg/testground/sne/projects/decisiontreefied/job/target/$PKG_NAME"
 
-
-
-echo "pushing docker"
-docker push localhost:5000/decisiontreefied:0.0.1-SNAPSHOT
-
-
-
-echo "showing docker images"
-
-docker images
-
-echo "posting marathon"
+echo "pushing deb package to Adalog UI"
+/bin/mkdir /tmp/sne/downloads
+/bin/cp /home/maasg/testground/sne/projects/decisiontreefied/job/target/$PKG_NAME /tmp/sne/downloads
 
 
-curl -X POST -H "Content-type: application/json" http://172.17.0.2:4400/scheduler/iso8601 -d @/tmp/adastyx-new-projects/decisiontreefied/job/src/main/resources/chronos.json
+echo "posting marathon/chronos"
+
+echo 
+curl -X POST  -H "Content-type: application/json" http://172.17.0.2:4400/scheduler/iso8601 -d @/home/maasg/testground/sne/projects/decisiontreefied/job/src/main/resources/chronos.json
            
 
 echo "End job/gen.sh"
