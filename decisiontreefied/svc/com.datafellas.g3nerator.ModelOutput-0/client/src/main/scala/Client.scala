@@ -23,7 +23,7 @@ val config = ConfigFactory.load()
     }
   }
 
-  val adalogUrl: Option[String] = getStringConfig("adalog.url")
+  val adalogUrl: String = getStringConfig("adalog.url").getOrElse(throw new RuntimeException("Adalog config missing"))
   val adalogUser: Option[String] = getStringConfig("adalog.authentication.username")
   val adalogPassword: Option[String] = getStringConfig("adalog.authentication.password")
 
@@ -44,7 +44,7 @@ askDeployedInfoToCatalog()
 
   }
 
-  def from(host:String, port:Int=42885) = {
+  def from(host:String, port:Int=1352) = {
     val transport = new NettyTransceiver(new InetSocketAddress(host, port))
     val client = SpecificRequestor.getClient(classOf[com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.server.Methods], transport)
     transport -> client

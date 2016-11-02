@@ -3,7 +3,20 @@ package com.example
 /**
   Outputs
   -------
-  > 
+  > ModelOutput(CodeCell(CellMetadata(Some(true),Some(false),None,Some(false),None,Some(CE9A12A3A78245DDA03579B66F9D3CCA),Some({"model":"org.apache.spark.ml.PipelineModel","inputs":{"resolved":[],"unresolved":[]}})),output, modelOutput + (System.currentTimeMillis.toString.drop(5)),None,None,Some({"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel"}}),Some(List(ScalaStream(stdout,stream,Model
+Located: /tmp/sne/data/decision_tree_data52771585
+Model:  model (org.apache.spark.ml.PipelineModel)
+{"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel"}}
+None
+output-CE9A12A3A78245DDA03579B66F9D3CCA: String = /tmp/sne/data/decision_tree_data52771585
+res29: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>
+), ScalaExecuteResult(ExecuteResultMetadata(None),Map(text/html -> <div>
+      <script data-this="{&quot;modelVar&quot;:&quot;model&quot;,&quot;inputs&quot;:{&quot;resolved&quot;:[],&quot;unresolved&quot;:[]},&quot;modelName&quot;:&quot;org.apache.spark.ml.PipelineModel&quot;}" type="text/x-scoped-javascript">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/modelOutput'], 
+      function(modelOutput) {
+        modelOutput.call(data, this);
+      }
+    );/*]]>*/</script>
+    </div>),execute_result,23)))), modelOutput + (System.currentTimeMillis.toString.drop(5)), modelOutput + (System.currentTimeMillis.toString.drop(5)),model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@68816daa,0)
 
  */
 object Main {
@@ -278,6 +291,39 @@ val sc = sparkContext
   //sparkContext.parallelize(Seq(model), 1).saveAsObjectFile(model_output)
   
   //Note : to reload the model : sparkContext.objectFile[orgapache.spark.ml.PipelineModel](model_output).first 
+/****************/
+
+
+  /* -- Code Cell: Some(CE9A12A3A78245DDA03579B66F9D3CCA) -- */ 
+
+  
+val `output-CE9A12A3A78245DDA03579B66F9D3CCA` = {
+   modelOutput + (System.currentTimeMillis.toString.drop(5))
+  }
+  
+
+
+  // Save CrossValidation Model
+  org.apache.spark.SparkContext.getOrCreate.parallelize(Seq(model), 1).saveAsObjectFile(`output-CE9A12A3A78245DDA03579B66F9D3CCA`)
+  
+  
+
+
+  {
+    // adding output instance information into catalog
+    import scalaj.http._
+    import  java.net.URL
+    val path = "/adalog/output?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model&location="+`output-CE9A12A3A78245DDA03579B66F9D3CCA`
+    val httpReq = adalogUrl.map(url => Http(new URL(new URL(url), path).toString))
+    val credentials = for (u <-adalogUser; p <- adalogPassword ) yield (u,p)
+    val authReq = credentials.foldLeft(httpReq){case (req, (u,p)) =>  req.map(_.auth(u, p))}
+    val res = authReq.map(_.postForm(Nil).asString.body)
+    println(res)
+  }
+  
+
+
+   // Output without variable
 /****************/
 
 

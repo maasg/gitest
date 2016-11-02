@@ -3,45 +3,45 @@
 echo "Start service/gen.sh"
 echo $(date)
 
-if [ ! -d "/tmp/adastyx-new-projects/decisiontreefied/jdk" ]; then
-  echo "Folder /tmp/adastyx-new-projects/decisiontreefied/jdk doesn't exist"
-  cd /tmp/adastyx-new-projects/decisiontreefied
-  wget http://localhost:8000/jdk-7u79-linux-x64.tar.gz
-  tar xvzf jdk-7u79-linux-x64.tar.gz
-  mv jdk1.7.0_79 jdk
-  rm jdk-7u79-linux-x64.tar.gz
-fi
+export JAVA_HOME=/home/maasg/Dev/java/jdk1.8.0_20
+export JDK_HOME=/home/maasg/Dev/java/jdk1.8.0_20
+export PATH=/home/maasg/Dev/java/sbt/bin:/home/maasg/Dev/java/jdk1.8.0_20/bin:$PATH
 
-if [ ! -d "/tmp/adastyx-new-projects/decisiontreefied/sbt" ]; then
-  echo "Folder /tmp/adastyx-new-projects/decisiontreefied/sbt doesn't exist"
-  cd /tmp/adastyx-new-projects/decisiontreefied
-  wget http://localhost:8000/sbt-0.13.12.tgz
-  tar xvzf sbt-0.13.9.tgz
-  rm sbt-0.13.9.tgz
-fi
+echo "enter /home/maasg/testground/sne/projects/decisiontreefied/svc/com.datafellas.g3nerator.ModelOutput-0"
 
-export JAVA_HOME=/tmp/adastyx-new-projects/decisiontreefied/jdk
-export JDK_HOME=/tmp/adastyx-new-projects/decisiontreefied/jdk
-export PATH=/tmp/adastyx-new-projects/decisiontreefied/sbt/bin:/tmp/adastyx-new-projects/decisiontreefied/jdk/bin:$PATH
-
-echo "enter /tmp/adastyx-new-projects/decisiontreefied/svc/com.datafellas.g3nerator.ModelOutput-0"
-
-cd /tmp/adastyx-new-projects/decisiontreefied/svc/com.datafellas.g3nerator.ModelOutput-0
+cd /home/maasg/testground/sne/projects/decisiontreefied/svc/com.datafellas.g3nerator.ModelOutput-0
 
 echo "building project"
-/tmp/adastyx-new-projects/decisiontreefied/sbt/bin/sbt "common/publish"
-/tmp/adastyx-new-projects/decisiontreefied/sbt/bin/sbt "server/publish"
-/tmp/adastyx-new-projects/decisiontreefied/sbt/bin/sbt "client/publish"
+/home/maasg/testground/sne/projects/decisiontreefied/sbt/bin/sbt "common/publish"
+/home/maasg/testground/sne/projects/decisiontreefied/sbt/bin/sbt "server/publish"
+/home/maasg/testground/sne/projects/decisiontreefied/sbt/bin/sbt "client/publish"
+// tellLibraryToCatalog(groupId, "client_"+scalaVersion.split("\.").take(2).mkString("."), project.config.version)
 
+${loadAdalog}
+// GM Change this!
+val uuid = "1234"
+val tpe ="service"
+val variable = "foo"
+val groupId="com.datafellas"
+val artifactId="fooService"
+val version = "0.0.1"
+val packageRoot = "com.datafellas"
+val projecConfigVersion = "0.0.1"
 
+val auth = for {
+    username <- adalogUser
+    password <- adalogPassword
+    } yield (s"-u $username:$password")
 
-echo "Telling catalog which client library to use (com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0:client:0.0.1-SNAPSHOT)"
-curl -u username:password -X POST "http://localhost:9001/adalog/output/service/library?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model&groupId=com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0&artifactId=client_2.10&version=0.0.1-SNAPSHOT&pck=com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0"
+val credentials = auth.getOrElse("")
+
+echo "Telling catalog which client library to use ($groupId:client:{$projectConfigVersion})"
+curl $credentials -X POST "$adalogUrl/adalog/output/service/library?uuid=$uuid&tpe=$tpe&variable=$variable&groupId=$groupId&artifactId=$artifactId&version=$version&pck=$packageRoot"
 
 
 
 echo "building docker"
-/tmp/adastyx-new-projects/decisiontreefied/sbt/bin/sbt "server/docker:publishLocal"
+/home/maasg/testground/sne/projects/decisiontreefied/sbt/bin/sbt "server/docker:publishLocal"
 
 
 
@@ -57,7 +57,7 @@ docker images
 echo "posting marathon"
 
 
-curl -X POST -H "Content-type: application/json" http://172.17.0.6:8080/v2/apps -d @/tmp/adastyx-new-projects/decisiontreefied/svc/com.datafellas.g3nerator.ModelOutput-0/server/src/main/resources/marathon.json
+curl -X POST -H "Content-type: application/json" http://172.17.0.6:8080/v2/apps -d @/home/maasg/testground/sne/projects/decisiontreefied/svc/com.datafellas.g3nerator.ModelOutput-0/server/src/main/resources/marathon.json
                   
 
 echo "End service/gen.sh"
