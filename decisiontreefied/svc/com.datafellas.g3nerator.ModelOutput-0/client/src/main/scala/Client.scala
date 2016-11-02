@@ -31,7 +31,7 @@ val config = ConfigFactory.load()
   def serviceInfo: String = {
     
 def askServiceToCatalog(): Try[(String, Int)] = {
-
+    
 val ServiceToCatalog : () => Try[String] = () => {
   // asking last added output instance information from catalog
   import scalaj.http._
@@ -51,12 +51,13 @@ val ServiceToCatalog : () => Try[String] = () => {
   }
 }
 
-ServiceToCatalog()
+    ServiceToCatalog()
+}
 
     askServiceToCatalog().get //force failure case
   }
 
-  def from(host:String, port:Int=65045) = {
+  def from(host:String, port:Int=3779) = {
     val transport = new NettyTransceiver(new InetSocketAddress(host, port))
     val client = SpecificRequestor.getClient(classOf[com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.server.Methods], transport)
     transport -> client
