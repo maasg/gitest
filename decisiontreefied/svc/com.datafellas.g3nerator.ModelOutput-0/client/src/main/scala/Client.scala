@@ -14,7 +14,6 @@ val config = ConfigFactory.load()
 
 
   
-
   def getStringConfig(path: String) : Option[String] = {
     if (config.hasPath(path)) {
       Some(config.getString(path))
@@ -35,23 +34,23 @@ def askDeployedInfoToCatalog() = {
   // asking last added output instance information from catalog
   import scalaj.http._
 
-  val h = Http(adalogUrl.get + "/adalog/output/service?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model")
-  val ah = adalogUser.map { _ => h.auth(adalogUser.get, adalogPassword.get) }.getOrElse(h)
-  ah.asString.body
+  val req = Http(adalogUrl + "/adalog/output/service?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model")
+  val authReq = adalogUser.map { case (user, pwd) => req.auth(user, pwd) }.getOrElse(req)
+  authReq.asString.body
 }
 askDeployedInfoToCatalog()
 
 
   }
 
-  def from(host:String, port:Int=16298) = {
+  def from(host:String, port:Int=59498) = {
     val transport = new NettyTransceiver(new InetSocketAddress(host, port))
     val client = SpecificRequestor.getClient(classOf[com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.server.Methods], transport)
     transport -> client
   }
 
   def get() = {
-    val List(host, port) = serviceInfo.split(":").toList
+    val Array(host, port) = serviceInfo.split(":")
     from(host, port.toInt)
   }
 }
