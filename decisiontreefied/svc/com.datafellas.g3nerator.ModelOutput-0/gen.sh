@@ -12,47 +12,28 @@ echo "enter /home/maasg/testground/sne/projects/decisiontreefied/svc/com.datafel
 cd /home/maasg/testground/sne/projects/decisiontreefied/svc/com.datafellas.g3nerator.ModelOutput-0
 
 echo "building project"
-/home/maasg/testground/sne/projects/decisiontreefied/sbt/bin/sbt "common/publish"
-/home/maasg/testground/sne/projects/decisiontreefied/sbt/bin/sbt "server/publish"
-/home/maasg/testground/sne/projects/decisiontreefied/sbt/bin/sbt "client/publish"
-// tellLibraryToCatalog(groupId, "client_"+scalaVersion.split("\.").take(2).mkString("."), project.config.version)
+/home/maasg/Dev/java/sbt/bin/sbt "common/publish"
+/home/maasg/Dev/java/sbt/bin/sbt "server/publish"
+/home/maasg/Dev/java/sbt/bin/sbt "client/publish"
 
-${loadAdalog}
-// GM Change this!
-val uuid = "1234"
-val tpe ="service"
-val variable = "foo"
-val groupId="com.datafellas"
-val artifactId="fooService"
-val version = "0.0.1"
-val packageRoot = "com.datafellas"
-val projecConfigVersion = "0.0.1"
-
-val auth = for {
-    username <- adalogUser
-    password <- adalogPassword
-    } yield (s"-u $username:$password")
-
-val credentials = auth.getOrElse("")
-
-echo "Telling catalog which client library to use ($groupId:client:{$projectConfigVersion})"
-curl $credentials -X POST "$adalogUrl/adalog/output/service/library?uuid=$uuid&tpe=$tpe&variable=$variable&groupId=$groupId&artifactId=$artifactId&version=$version&pck=$packageRoot"
+echo "Telling catalog which client library to use (com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0:client:0.0.1-SNAPSHOT})"
+curl -u 'username:password' -X POST "http://localhost:9001//adalog/output/service/library?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model&groupId=com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0&artifactId=client_2.10&version=0.0.1-SNAPSHOT&pck=com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0"
 
 
 
 echo "building docker"
-/home/maasg/testground/sne/projects/decisiontreefied/sbt/bin/sbt "server/docker:publishLocal"
+/home/maasg/Dev/java/sbt/bin/sbt "server/docker:publishLocal"
 
-
+## 
 
 echo "pushing docker"
 docker push localhost:5000/decisiontreefied-com.datafellas.g3nerator.modeloutput-0:0.0.1-SNAPSHOT
 
-
+ ## Not needed now -> Replace by Canister
 
 echo "showing docker images"
 
-docker images
+## docker images
 
 echo "posting marathon"
 

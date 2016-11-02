@@ -14,7 +14,7 @@ import com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.serve
 object Server extends Methods {
   private [this] val _ipc = new NettyServer(
                                              new SpecificResponder(classOf[Methods], this),
-                                             new InetSocketAddress(59498)
+                                             new InetSocketAddress(50835)
                                            )
   
 import com.typesafe.config._
@@ -65,7 +65,7 @@ def tellCatalog():Unit = new Thread { override def run:Unit = {
   h match {
     case Some(host) =>
       // publishing current host and port to adalog
-      val ch = Http(adalogUrl.get + s"/adalog/output/service?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model&host=${host}&port=59498")
+      val ch = Http(adalogUrl.get + s"/adalog/output/service?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model&host=${host}&port=50835")
       val ach = adalogUser.map { _ => ch.auth(adalogUser.get, adalogPassword.get) }.getOrElse(ch)
       ach.postForm(Nil).asString.body
       catalogTold = true
@@ -98,7 +98,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "decisiontreefie
 val libDir = new java.io.File(".", "lib")
 val currentProjectJars = Array[String]( "com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.common-0.0.1-SNAPSHOT.jar" , "com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.server-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(".", "spark-lib")
-val fromProjectJars = Array[String]( "commons-collections-3.2.1.jar" , "netty-3.4.0.Final.jar" , "paranamer-2.3.jar" , "avro-compiler-1.7.7.jar" , "jackson-mapper-asl-1.9.13.jar" , "commons-lang-2.6.jar" , "slf4j-api-1.6.4.jar" , "avro-1.7.7.jar" , "snappy-java-1.0.5.jar" , "commons-compress-1.4.1.jar" , "jackson-core-asl-1.9.13.jar" , "avro-ipc-1.7.7.jar" , "xz-1.0.jar" , "velocity-1.7.jar" ).map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
+val fromProjectJars = Array[String]( "commons-collections-3.2.1.jar" , "netty-3.4.0.Final.jar" , "xz-1.0.jar" , "snappy-java-1.0.5.jar" , "slf4j-api-1.6.4.jar" , "commons-lang-2.6.jar" , "jackson-mapper-asl-1.9.13.jar" , "velocity-1.7.jar" , "avro-compiler-1.7.7.jar" , "avro-1.7.7.jar" , "commons-compress-1.4.1.jar" , "jackson-core-asl-1.9.13.jar" , "paranamer-2.3.jar" , "avro-ipc-1.7.7.jar" ).map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
 println("Add Jars: \n" + jarsArray.mkString("\n"))
 sparkConf.setJars(jarsArray)
@@ -112,20 +112,8 @@ import sqlContext.implicits._
   def predict(@transient request:ServiceRequest):ServiceResponse = {
     
 {
-  val modelPath = {
-    
-def askOutputToCatalog() = {
-  // asking last added output instance information from catalog
-  import scalaj.http._
+  val modelPath = askOutputToCatalog().get
 
-  val h = Http(adalogUrl.get + "/adalog/output?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model")
-  val ah = adalogUser.map { _ => h.auth(adalogUser.get, adalogPassword.get) }.getOrElse(h)
-  ah.asString.body
-}
-askOutputToCatalog()
-
-
-  }
   
 // Load Model
 val ctx = org.apache.spark.SparkContext.getOrCreate
