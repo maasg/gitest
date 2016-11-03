@@ -30,7 +30,7 @@ val config = ConfigFactory.load()
 
 
 
-  def serviceInfo: String = {
+  def serviceInfo: (String,Int) = {
     
 def askServiceToCatalog(): Try[(String, Int)] = {
     
@@ -64,14 +64,14 @@ val ServiceToCatalog : () => Try[String] = () => {
     askServiceToCatalog().get //force failure case
   }
 
-  def from(host:String, port:Int=60328) = {
+  def from(host:String, port:Int=8882) = {
     val transport = new NettyTransceiver(new InetSocketAddress(host, port))
     val client = SpecificRequestor.getClient(classOf[com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.server.Methods], transport)
     transport -> client
   }
 
   def get() = {
-    val Array(host, port) = serviceInfo.split(":")
-    from(host, port.toInt)
+    val (host, port) = serviceInfo
+    from(host, port)
   }
 }
