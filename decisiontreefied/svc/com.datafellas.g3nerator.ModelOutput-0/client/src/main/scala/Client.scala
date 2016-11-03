@@ -45,11 +45,13 @@ val ServiceToCatalog : () => Try[String] = () => {
                 } yield req.auth(user, pwd)
 
   val authReq = optAuthReq.getOrElse(req)
-  val content = authReq.asString.body
-  if (authReq.code == 200) {
-     Success(content)
+  val response = authReq.asString
+  val responseCode = response.code
+  val responseContent = response.body
+  if (responseCode == 200) {
+     Success(responseContent)
   } else {
-    Failure(new RuntimeException(s"Could not contact Adalog. Reason:" + content))
+    Failure(new RuntimeException(s"Could not contact Adalog. Reason: HTTP/$responseCode [$responseContent]"))
   }
 }
 
@@ -59,7 +61,7 @@ val ServiceToCatalog : () => Try[String] = () => {
     askServiceToCatalog().get //force failure case
   }
 
-  def from(host:String, port:Int=35061) = {
+  def from(host:String, port:Int=29250) = {
     val transport = new NettyTransceiver(new InetSocketAddress(host, port))
     val client = SpecificRequestor.getClient(classOf[com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.server.Methods], transport)
     transport -> client
