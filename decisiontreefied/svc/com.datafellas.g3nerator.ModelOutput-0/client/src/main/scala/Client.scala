@@ -8,9 +8,11 @@ object Client {
   
 import com.typesafe.config._
 import scala.collection.JavaConverters._
+import scala.util.{Try, Success, Failure}
+     
 
+  
 val config = ConfigFactory.load()
-
 
 
   
@@ -57,7 +59,7 @@ val ServiceToCatalog : () => Try[String] = () => {
     askServiceToCatalog().get //force failure case
   }
 
-  def from(host:String, port:Int=55471) = {
+  def from(host:String, port:Int=35061) = {
     val transport = new NettyTransceiver(new InetSocketAddress(host, port))
     val client = SpecificRequestor.getClient(classOf[com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.server.Methods], transport)
     transport -> client
