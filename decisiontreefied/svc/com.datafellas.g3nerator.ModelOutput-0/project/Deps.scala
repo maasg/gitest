@@ -9,7 +9,7 @@ object deps {
     libraryDependencies += "com.google.guava" % "guava" % "16.0.1" force(),
     version := "0.0.1-SNAPSHOT",
     publishMavenStyle := true,
-    resolvers += "Adastyx Artifactory" at "http://artifactory-node:8082/artifactory/list/remote-repos/",credentials += Credentials("Artifactory Realm", "artifactory-node", "adastyx", "artifactory-password"),// no assembly deployed for service ATM
+    resolvers += "Adastyx Artifactory" at "http://artifactory-node:8082/artifactory/list/remote-repos/",credentials += Credentials("Artifactory Realm", "artifactory-node", "adastyx", "artifactory-password"),// no assembly deployed for serice ATM
 // addArtifact(artifact in (Compile, assembly), assembly).settings
 
 publishTo := Some("Artifactory Realm" at "http://artifactory-node:8082/artifactory/datafellas-jobs/")

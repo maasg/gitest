@@ -177,3 +177,8 @@ assemblyMergeStrategy in assembly := {
     val oldStrategy = (assemblyMergeStrategy in assembly).value
     oldStrategy(x)
 }
+
+aggregate in update := false
+
+updateOptions := updateOptions.value.withCachedResolution(true)
+

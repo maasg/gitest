@@ -2,6 +2,7 @@ package com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.serv
 
 import java.net.InetSocketAddress
 
+import scala.collection.JavaConversions._
 import scala.collection.JavaConverters._
 
 import org.apache.avro.AvroRemoteException
@@ -9,23 +10,23 @@ import org.apache.avro.AvroRemoteException
 import org.apache.avro.ipc.NettyServer
 import org.apache.avro.ipc.specific.SpecificResponder
 
-import com.typesafe.config._
-import java.net.URL
-import scala.collection.JavaConverters._
-import scala.util.{Try, Success, Failure}
-import scalaj.http._
-     
-
 import com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.server._
 
 object Server extends Methods {
   private [this] val _ipc = new NettyServer(
                                              new SpecificResponder(classOf[Methods], this),
-                                             new InetSocketAddress(46360)
+                                             new InetSocketAddress(34770)
                                            )
+  
+import com.typesafe.config._
+import scala.collection.JavaConverters._
+
+val config = ConfigFactory.load()
+
+
 
   
-  val config = ConfigFactory.load()
+
   def getStringConfig(path: String) : Option[String] = {
     if (config.hasPath(path)) {
       Some(config.getString(path))
@@ -34,40 +35,10 @@ object Server extends Methods {
     }
   }
 
-
-  
-
-  val adalogHost: URL = getStringConfig("adalog.url").map(s => new URL(s)).getOrElse(throw new RuntimeException("Adalog config missing"))
+  val adalogUrl: String = getStringConfig("adalog.url").getOrElse(throw new RuntimeException("Adalog config missing"))
   val adalogUser: Option[String] = getStringConfig("adalog.authentication.username")
   val adalogPassword: Option[String] = getStringConfig("adalog.authentication.password")
-  def adalogGet(path:String) : Try[String] = adalogRequest(path, None)
-  def postFunc: HttpRequest => HttpRequest = req.postForm
-  def adalogPost(path:String) : Try[String] = adalogRequest(path, Some(postFunc)
-  def adalogRequest(path:String, func: Option[HttpRequest => HttpRequest]) : Try[String] = {
-      val url = new URL(adalogHost, path).toString
-      val req = Http(url)
-      val optAuthReq = for {
-                         user <- adalogUser
-                         pwd <- adalogPassword
-                       } yield req.auth(user, pwd)
-      val authReq = optAuthReq.getOrElse(req)
-      val authReqProc = func.map(f => f(authReq)).getOrElse(authReq)
-      val response = authReqProc.asString
-      val responseCode = response.code
-      val responseContent = response.body
-      if (responseCode == 200) {
-         Success(responseContent)
-      } else {
-        Failure(new RuntimeException(s"Could not contact Adalog. Reason: HTTP/$responseCode [$responseContent]"))
-      }
-  }
 
-
-  
-def askOutputToCatalog(): Try[String] = {
-  val path = "/adalog/output?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model")
-  adalogGet(path)
-}
 
 
   
@@ -96,16 +67,10 @@ def tellCatalog():Unit = new Thread { override def run:Unit = {
   h match {
     case Some(host) =>
       // publishing current host and port to adalog
-      val url = "/adalog/output/service?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model&host=${host}&port=46360"
-      val res = adalogPost(url)
-      val msg = "Adalog response on service update: "
-      res match {
-        case Success(result) => println(msg + result)
-            catalogTold = true
-        case Failure(ex) => println(msg + ex.getMessage)
-          ex.printStackTrace
-          catalogTold = false
-      cd }
+      val ch = Http(adalogUrl.get + s"/adalog/output/service?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model&host=${host}&port=34770")
+      val ach = adalogUser.map { _ => ch.auth(adalogUser.get, adalogPassword.get) }.getOrElse(ch)
+      ach.postForm(Nil).asString.body
+      catalogTold = true
     case None =>
       Thread.sleep(1000)
       tellCatalog()
@@ -135,7 +100,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "decisiontreefie
 val libDir = new java.io.File(".", "lib")
 val currentProjectJars = Array[String]( "com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.common-0.0.1-SNAPSHOT.jar" , "com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.server-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(".", "spark-lib")
-val fromProjectJars = Array[String]( "avro-compiler-1.7.7.jar" , "commons-collections-3.2.1.jar" , "commons-compress-1.4.1.jar" , "jackson-mapper-asl-1.9.13.jar" , "avro-1.7.7.jar" , "commons-lang-2.6.jar" , "xz-1.0.jar" , "jackson-core-asl-1.9.13.jar" , "snappy-java-1.0.5.jar" , "velocity-1.7.jar" , "paranamer-2.3.jar" , "slf4j-api-1.6.4.jar" , "netty-3.4.0.Final.jar" , "avro-ipc-1.7.7.jar" ).map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
+val fromProjectJars = Array[String]( "commons-collections-3.2.1.jar" , "velocity-1.7.jar" , "slf4j-api-1.6.4.jar" , "commons-lang-2.6.jar" , "avro-ipc-1.7.7.jar" , "commons-compress-1.4.1.jar" , "netty-3.4.0.Final.jar" , "xz-1.0.jar" , "avro-compiler-1.7.7.jar" , "avro-1.7.7.jar" , "snappy-java-1.0.5.jar" , "paranamer-2.3.jar" , "jackson-mapper-asl-1.9.13.jar" , "jackson-core-asl-1.9.13.jar" ).map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
 println("Add Jars: \n" + jarsArray.mkString("\n"))
 sparkConf.setJars(jarsArray)
@@ -149,8 +114,20 @@ import sqlContext.implicits._
   def predict(@transient request:ServiceRequest):ServiceResponse = {
     
 {
-  val modelPath = askOutputToCatalog().get
+  val modelPath = {
+    
+def askOutputToCatalog() = {
+  // asking last added output instance information from catalog
+  import scalaj.http._
 
+  val h = Http(adalogUrl.get + "/adalog/output?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model")
+  val ah = adalogUser.map { _ => h.auth(adalogUser.get, adalogPassword.get) }.getOrElse(h)
+  ah.asString.body
+}
+askOutputToCatalog()
+
+
+  }
   
 // Load Model
 val ctx = org.apache.spark.SparkContext.getOrCreate
