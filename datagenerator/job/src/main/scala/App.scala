@@ -3,7 +3,7 @@ package com.example
 /**
   Outputs
   -------
-  > ParquetOutput(CodeCell(CellMetadata(Some(true),Some(false),None,Some(false),None,Some(251A626CFF1844A485288DFE95BE81A7),Some({"schema":{"type":"struct","fields":[{"name":"id","type":"integer","nullable":false,"metadata":{}},{"name":"category","type":"string","nullable":true,"metadata":{}},{"name":"impressions","type":"long","nullable":false,"metadata":{}},{"name":"rate","type":"double","nullable":false,"metadata":{}}]},"inputs":{"resolved":[],"unresolved":[]},"saveMode":"org.apache.spark.sql.SaveMode.ErrorIfExists"})),output,"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),None,None,Some({"type":"parquet","var":"dataset","extra":{"value":"\"\"","source":null}}),Some(List(ScalaStream(stdout,stream,Parquet
+  > ParquetOutput(CodeCell(CellMetadata(Some(true),Some(false),None,Some(false),None,Some(251A626CFF1844A485288DFE95BE81A7),Some({"schema":{"type":"struct","fields":[{"name":"id","type":"integer","nullable":false,"metadata":{}},{"name":"category","type":"string","nullable":true,"metadata":{}},{"name":"impressions","type":"long","nullable":false,"metadata":{}},{"name":"rate","type":"double","nullable":false,"metadata":{}}]},"inputs":{"resolved":[],"unresolved":[]},"saveMode":"org.apache.spark.sql.SaveMode.ErrorIfExists"})),output,"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),None,None,Some({"type":"parquet","var":"dataset","extra":{"value":"Overwrite","source":null}}),Some(List(ScalaStream(stdout,stream,Parquet
 Located: /tmp/df/data/sample2841
 DataFrame: dataset
 output-251A626CFF1844A485288DFE95BE81A7: String = /tmp/df/data/sample2841
@@ -14,7 +14,7 @@ res11: notebook.front.widgets.adst.ParquetOutputWidget = <ParquetOutputWidget wi
         parquetOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,11)))),"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),dataset,org.apache.spark.sql.SaveMode."",List(),0)
+    </div>),execute_result,11)))),"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),dataset,org.apache.spark.sql.SaveMode.Overwrite,List(),0)
 
  */
 object Main {
@@ -129,7 +129,7 @@ val `output-251A626CFF1844A485288DFE95BE81A7` = {
   }
   
 
-dataset.write.mode(org.apache.spark.sql.SaveMode."").parquet(`output-251A626CFF1844A485288DFE95BE81A7`)
+dataset.write.mode(org.apache.spark.sql.SaveMode.Overwrite).parquet(`output-251A626CFF1844A485288DFE95BE81A7`)
 
 
   {
