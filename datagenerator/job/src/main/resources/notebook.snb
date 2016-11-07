@@ -1,0 +1,171 @@
+{
+  "metadata" : {
+    "id" : "dd625b10-8710-4325-b946-bb65ffde51b2",
+    "name" : "datagenerator",
+    "user_save_timestamp" : "2016-11-07T13:38:40.305Z",
+    "auto_save_timestamp" : "2016-11-07T13:38:40.305Z",
+    "language_info" : {
+      "name" : "scala",
+      "file_extension" : "scala",
+      "codemirror_mode" : "text/x-scala"
+    },
+    "trusted" : true,
+    "sparkNotebook" : {
+      "xSparkVersion" : "1.6.1",
+      "xWithParquet" : "false",
+      "buildTime" : "Sat Nov 05 15:54:50 CET 2016",
+      "sparkNotebookVersion" : "0.7.0-SNAPSHOT",
+      "xJlineDef" : "(org.scala-lang,2.10.5)",
+      "scalaVersion" : "2.10.5",
+      "sbtVersion" : "0.13.9",
+      "formattedShaVersion" : "Some(26ded56ad728de05205a2861fe2d3815625a3356-SNAPSHOT)",
+      "xJets3tVersion" : "0.7.1",
+      "xWithHive" : "false",
+      "xHadoopVersion" : "2.2.0"
+    },
+    "customLocalRepo" : "/tmp/localrepo",
+    "customRepos" : null,
+    "customDeps" : null,
+    "customImports" : null,
+    "customArgs" : null,
+    "customSparkConf" : {
+      "spark.executor.memory" : "4G"
+    },
+    "customVars" : null
+  },
+  "cells" : [ {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "0D920AFE13674E669B190122F9C0338D"
+    },
+    "cell_type" : "code",
+    "source" : "case class Schema(id:Int, category:String, impressions: Long, rate: Double)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "defined class Schema\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 5
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "D3D3D5FAE276451F9292235007FA2391"
+    },
+    "cell_type" : "code",
+    "source" : "val ids = (9999 to 19999)\nval categories = Seq(\"horror\", \"drama\", \"comic\", \"docu\",\"humor\")\ndef impressions = Seq(scala.util.Random.nextInt(99999))\ndef rates = Seq(scala.util.Random.nextDouble)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "ids: scala.collection.immutable.Range.Inclusive = Range(9999, 10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013, 10014, 10015, 10016, 10017, 10018, 10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034, 10035, 10036, 10037, 10038, 10039, 10040, 10041, 10042, 10043, 10044, 10045, 10046, 10047, 10048, 10049, 10050, 10051, 10052, 10053, 10054, 10055, 10056, 10057, 10058, 10059, 10060, 10061, 10062, 10063, 10064, 10065, 10066, 10067, 10068, 10069, 10070, 10071, 10072, 10073, 10074, 10075, 10076, 10077, 10078, 10079, 10080, 10081, 10082, 10083, 10084, 10085, 10086, 10087, 10088, 10089, 10090, 10091, 10092, 10093, 10094, 10095, 10096, 10097, 10098, 10099, 10100, 10101, 10102, 10103, 10104, ..."
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 6
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "2867C3A65F884FD8864AF314E25AF521"
+    },
+    "cell_type" : "code",
+    "source" : "val sample = for {\n  id <- ids\n  category <- categories\n  impression <- impressions\n  rate <- rates\n} yield Schema(id,category, impression, rate)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "sample: scala.collection.immutable.IndexedSeq[Schema] = Vector(Schema(9999,horror,49160,0.030092456183034688), Schema(9999,drama,19293,0.9670804917513862), Schema(9999,comic,38895,0.2343399791282641), Schema(9999,docu,26403,0.6077037927680394), Schema(9999,humor,96465,0.5642038724257397), Schema(10000,horror,92607,0.35999728838604217), Schema(10000,drama,36501,0.9958007461138644), Schema(10000,comic,78368,0.2785356208379809), Schema(10000,docu,82624,0.413147052027923), Schema(10000,humor,9336,0.13234726950256204), Schema(10001,horror,49982,0.24142254606492086), Schema(10001,drama,42181,0.7671453634532793), Schema(10001,comic,20947,0.57077775520331), Schema(10001,docu,16158,0.35589135835978736), Schema(10001,humor,48132,0.3475853130943617), Schema(10002,horror,53226,0.275261853003274), S..."
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 7
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "85BC45E7FB494CCC826043DF4402EA5B"
+    },
+    "cell_type" : "code",
+    "source" : "val sqlContext = new org.apache.spark.sql.SQLContext(sc)\n\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@10dee639\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 8
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "1C0BA39B45CA4AA78226D70F1699EA4A"
+    },
+    "cell_type" : "code",
+    "source" : "val dataset = sqlContext.createDataFrame(sample)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "dataset: org.apache.spark.sql.DataFrame = [id: int, category: string, impressions: bigint, rate: double]\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 9
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "251A626CFF1844A485288DFE95BE81A7"
+    },
+    "cell_type" : "output",
+    "source" : "\"/tmp/df/data/sample\"+(System.currentTimeMillis.toString.drop(6).take(4))",
+    "output" : {
+      "type" : "parquet",
+      "var" : "dataset",
+      "extra" : {
+        "value" : "",
+        "source" : null
+      }
+    },
+    "outputs" : [ ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "843BE47A55664C7B8E6BFB701FD1518B"
+    },
+    "cell_type" : "code",
+    "source" : "",
+    "outputs" : [ ]
+  } ],
+  "nbformat" : 4
+}
