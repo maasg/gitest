@@ -142,8 +142,39 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
-      "id" : "251A626CFF1844A485288DFE95BE81A7"
+      "collapsed" : false,
+      "id" : "251A626CFF1844A485288DFE95BE81A7",
+      "extra" : {
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "id",
+            "type" : "integer",
+            "nullable" : false,
+            "metadata" : { }
+          }, {
+            "name" : "category",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : { }
+          }, {
+            "name" : "impressions",
+            "type" : "long",
+            "nullable" : false,
+            "metadata" : { }
+          }, {
+            "name" : "rate",
+            "type" : "double",
+            "nullable" : false,
+            "metadata" : { }
+          } ]
+        },
+        "inputs" : {
+          "resolved" : [ ],
+          "unresolved" : [ ]
+        },
+        "saveMode" : "org.apache.spark.sql.SaveMode.ErrorIfExists"
+      }
     },
     "cell_type" : "output",
     "source" : "\"/tmp/df/data/sample\"+(System.currentTimeMillis.toString.drop(6).take(4))",
@@ -151,11 +182,22 @@
       "type" : "parquet",
       "var" : "dataset",
       "extra" : {
-        "value" : "",
+        "value" : "\"\"",
         "source" : null
       }
     },
-    "outputs" : [ ]
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "Parquet\nLocated: /tmp/df/data/sample2841\nDataFrame: dataset\noutput-251A626CFF1844A485288DFE95BE81A7: String = /tmp/df/data/sample2841\nres11: notebook.front.widgets.adst.ParquetOutputWidget = <ParquetOutputWidget widget>\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "<div>\n      <script data-this=\"{&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;category&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;impressions&quot;,&quot;type&quot;:&quot;long&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;rate&quot;,&quot;type&quot;:&quot;double&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]},&quot;dfInputs&quot;:{&quot;resolved&quot;:[],&quot;unresolved&quot;:[]},&quot;saveMode&quot;:&quot;org.apache.spark.sql.SaveMode.ErrorIfExists&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/parquetOutput'], \n      function(parquetOutput) {\n        parquetOutput.call(data, this);\n      }\n    );/*]]>*/</script>\n    </div>"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 11
+    } ]
   }, {
     "metadata" : {
       "trusted" : true,

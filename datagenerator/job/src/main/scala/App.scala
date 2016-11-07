@@ -3,7 +3,18 @@ package com.example
 /**
   Outputs
   -------
-  > ParquetOutput(CodeCell(CellMetadata(Some(true),Some(false),None,Some(true),None,Some(251A626CFF1844A485288DFE95BE81A7),None),output,"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),None,None,Some({"type":"parquet","var":"dataset","extra":{"value":"","source":null}}),Some(List())),"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),dataset,org.apache.spark.sql.SaveMode.ErrorIfExists,List(),0)
+  > ParquetOutput(CodeCell(CellMetadata(Some(true),Some(false),None,Some(false),None,Some(251A626CFF1844A485288DFE95BE81A7),Some({"schema":{"type":"struct","fields":[{"name":"id","type":"integer","nullable":false,"metadata":{}},{"name":"category","type":"string","nullable":true,"metadata":{}},{"name":"impressions","type":"long","nullable":false,"metadata":{}},{"name":"rate","type":"double","nullable":false,"metadata":{}}]},"inputs":{"resolved":[],"unresolved":[]},"saveMode":"org.apache.spark.sql.SaveMode.ErrorIfExists"})),output,"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),None,None,Some({"type":"parquet","var":"dataset","extra":{"value":"\"\"","source":null}}),Some(List(ScalaStream(stdout,stream,Parquet
+Located: /tmp/df/data/sample2841
+DataFrame: dataset
+output-251A626CFF1844A485288DFE95BE81A7: String = /tmp/df/data/sample2841
+res11: notebook.front.widgets.adst.ParquetOutputWidget = <ParquetOutputWidget widget>
+), ScalaExecuteResult(ExecuteResultMetadata(None),Map(text/html -> <div>
+      <script data-this="{&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;category&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;impressions&quot;,&quot;type&quot;:&quot;long&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;rate&quot;,&quot;type&quot;:&quot;double&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]},&quot;dfInputs&quot;:{&quot;resolved&quot;:[],&quot;unresolved&quot;:[]},&quot;saveMode&quot;:&quot;org.apache.spark.sql.SaveMode.ErrorIfExists&quot;}" type="text/x-scoped-javascript">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/parquetOutput'], 
+      function(parquetOutput) {
+        parquetOutput.call(data, this);
+      }
+    );/*]]>*/</script>
+    </div>),execute_result,11)))),"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),dataset,org.apache.spark.sql.SaveMode."",List(),0)
 
  */
 object Main {
@@ -118,7 +129,7 @@ val `output-251A626CFF1844A485288DFE95BE81A7` = {
   }
   
 
-dataset.write.mode(org.apache.spark.sql.SaveMode.ErrorIfExists).parquet(`output-251A626CFF1844A485288DFE95BE81A7`)
+dataset.write.mode(org.apache.spark.sql.SaveMode."").parquet(`output-251A626CFF1844A485288DFE95BE81A7`)
 
 
   {
