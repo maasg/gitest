@@ -38,27 +38,6 @@
       "trusted" : true,
       "input_collapsed" : false,
       "collapsed" : false,
-      "id" : "0D920AFE13674E669B190122F9C0338D"
-    },
-    "cell_type" : "code",
-    "source" : "case class Schema(id:Int, category:String, impressions: Long, rate: Double)",
-    "outputs" : [ {
-      "name" : "stdout",
-      "output_type" : "stream",
-      "text" : "defined class Schema\n"
-    }, {
-      "metadata" : { },
-      "data" : {
-        "text/html" : ""
-      },
-      "output_type" : "execute_result",
-      "execution_count" : 5
-    } ]
-  }, {
-    "metadata" : {
-      "trusted" : true,
-      "input_collapsed" : false,
-      "collapsed" : false,
       "id" : "D3D3D5FAE276451F9292235007FA2391"
     },
     "cell_type" : "code",
@@ -73,7 +52,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 6
+      "execution_count" : 1
     } ]
   }, {
     "metadata" : {
@@ -83,18 +62,18 @@
       "id" : "2867C3A65F884FD8864AF314E25AF521"
     },
     "cell_type" : "code",
-    "source" : "val sample = for {\n  id <- ids\n  category <- categories\n  impression <- impressions\n  rate <- rates\n} yield Schema(id,category, impression, rate)",
+    "source" : "val sample = for {\n  id <- ids\n  category <- categories\n  impression <- impressions\n  rate <- rates\n} yield ((id,category, impression, rate))",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "sample: scala.collection.immutable.IndexedSeq[Schema] = Vector(Schema(9999,horror,49160,0.030092456183034688), Schema(9999,drama,19293,0.9670804917513862), Schema(9999,comic,38895,0.2343399791282641), Schema(9999,docu,26403,0.6077037927680394), Schema(9999,humor,96465,0.5642038724257397), Schema(10000,horror,92607,0.35999728838604217), Schema(10000,drama,36501,0.9958007461138644), Schema(10000,comic,78368,0.2785356208379809), Schema(10000,docu,82624,0.413147052027923), Schema(10000,humor,9336,0.13234726950256204), Schema(10001,horror,49982,0.24142254606492086), Schema(10001,drama,42181,0.7671453634532793), Schema(10001,comic,20947,0.57077775520331), Schema(10001,docu,16158,0.35589135835978736), Schema(10001,humor,48132,0.3475853130943617), Schema(10002,horror,53226,0.275261853003274), S..."
+      "text" : "sample: scala.collection.immutable.IndexedSeq[(Int, String, Int, Double)] = Vector((9999,horror,58403,0.9217097994036871), (9999,drama,97367,0.10793093034107082), (9999,comic,21302,0.9727504870534776), (9999,docu,20600,0.3141774854206132), (9999,humor,64785,0.9845649323388376), (10000,horror,40343,0.3271492997685733), (10000,drama,65569,0.9819984947075417), (10000,comic,26345,0.5799720936009028), (10000,docu,91910,0.4659785757764321), (10000,humor,69432,0.5106133934466162), (10001,horror,16449,0.28593852963075395), (10001,drama,1957,0.0024631122770346625), (10001,comic,30013,0.5665847640412089), (10001,docu,94063,0.478949520429125), (10001,humor,51536,0.15662544459773708), (10002,horror,76114,0.5411230955071715), (10002,drama,68626,0.4792945012653368), (10002,comic,70963,0.3006899020758..."
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 7
+      "execution_count" : 2
     } ]
   }, {
     "metadata" : {
@@ -108,14 +87,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@10dee639\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame\n"
+      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@53e2f000\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 8
+      "execution_count" : 3
     } ]
   }, {
     "metadata" : {
@@ -125,18 +104,18 @@
       "id" : "1C0BA39B45CA4AA78226D70F1699EA4A"
     },
     "cell_type" : "code",
-    "source" : "val dataset = sqlContext.createDataFrame(sample)",
+    "source" : "val dataset = sqlContext.createDataFrame(sample).toDF(\"id\", \"category\", \"impressions\", \"rate\")",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dataset: org.apache.spark.sql.DataFrame = [id: int, category: string, impressions: bigint, rate: double]\n"
+      "text" : "dataset: org.apache.spark.sql.DataFrame = [id: int, category: string, impressions: int, rate: double]\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 9
+      "execution_count" : 6
     } ]
   }, {
     "metadata" : {
@@ -159,7 +138,7 @@
             "metadata" : { }
           }, {
             "name" : "impressions",
-            "type" : "long",
+            "type" : "integer",
             "nullable" : false,
             "metadata" : { }
           }, {
@@ -173,7 +152,7 @@
           "resolved" : [ ],
           "unresolved" : [ ]
         },
-        "saveMode" : "org.apache.spark.sql.SaveMode.ErrorIfExists"
+        "saveMode" : "org.apache.spark.sql.SaveMode.Overwrite"
       }
     },
     "cell_type" : "output",
@@ -189,14 +168,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "Parquet\nLocated: /tmp/df/data/sample2841\nDataFrame: dataset\noutput-251A626CFF1844A485288DFE95BE81A7: String = /tmp/df/data/sample2841\nres11: notebook.front.widgets.adst.ParquetOutputWidget = <ParquetOutputWidget widget>\n"
+      "text" : "Parquet\nLocated: /tmp/df/data/sample0414\nDataFrame: dataset\noutput-251A626CFF1844A485288DFE95BE81A7: String = /tmp/df/data/sample0414\nres8: notebook.front.widgets.adst.ParquetOutputWidget = <ParquetOutputWidget widget>\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<div>\n      <script data-this=\"{&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;category&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;impressions&quot;,&quot;type&quot;:&quot;long&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;rate&quot;,&quot;type&quot;:&quot;double&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]},&quot;dfInputs&quot;:{&quot;resolved&quot;:[],&quot;unresolved&quot;:[]},&quot;saveMode&quot;:&quot;org.apache.spark.sql.SaveMode.ErrorIfExists&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/parquetOutput'], \n      function(parquetOutput) {\n        parquetOutput.call(data, this);\n      }\n    );/*]]>*/</script>\n    </div>"
+        "text/html" : "<div>\n      <script data-this=\"{&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;category&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;impressions&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;rate&quot;,&quot;type&quot;:&quot;double&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]},&quot;dfInputs&quot;:{&quot;resolved&quot;:[],&quot;unresolved&quot;:[]},&quot;saveMode&quot;:&quot;org.apache.spark.sql.SaveMode.Overwrite&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/parquetOutput'], \n      function(parquetOutput) {\n        parquetOutput.call(data, this);\n      }\n    );/*]]>*/</script>\n    </div>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 11
+      "execution_count" : 7
     } ]
   }, {
     "metadata" : {

@@ -3,18 +3,18 @@ package com.example
 /**
   Outputs
   -------
-  > ParquetOutput(CodeCell(CellMetadata(Some(true),Some(false),None,Some(false),None,Some(251A626CFF1844A485288DFE95BE81A7),Some({"schema":{"type":"struct","fields":[{"name":"id","type":"integer","nullable":false,"metadata":{}},{"name":"category","type":"string","nullable":true,"metadata":{}},{"name":"impressions","type":"long","nullable":false,"metadata":{}},{"name":"rate","type":"double","nullable":false,"metadata":{}}]},"inputs":{"resolved":[],"unresolved":[]},"saveMode":"org.apache.spark.sql.SaveMode.ErrorIfExists"})),output,"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),None,None,Some({"type":"parquet","var":"dataset","extra":{"value":"Overwrite","source":null}}),Some(List(ScalaStream(stdout,stream,Parquet
-Located: /tmp/df/data/sample2841
+  > ParquetOutput(CodeCell(CellMetadata(Some(true),Some(false),None,Some(false),None,Some(251A626CFF1844A485288DFE95BE81A7),Some({"schema":{"type":"struct","fields":[{"name":"id","type":"integer","nullable":false,"metadata":{}},{"name":"category","type":"string","nullable":true,"metadata":{}},{"name":"impressions","type":"integer","nullable":false,"metadata":{}},{"name":"rate","type":"double","nullable":false,"metadata":{}}]},"inputs":{"resolved":[],"unresolved":[]},"saveMode":"org.apache.spark.sql.SaveMode.Overwrite"})),output,"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),None,None,Some({"type":"parquet","var":"dataset","extra":{"value":"Overwrite","source":null}}),Some(List(ScalaStream(stdout,stream,Parquet
+Located: /tmp/df/data/sample0414
 DataFrame: dataset
-output-251A626CFF1844A485288DFE95BE81A7: String = /tmp/df/data/sample2841
-res11: notebook.front.widgets.adst.ParquetOutputWidget = <ParquetOutputWidget widget>
+output-251A626CFF1844A485288DFE95BE81A7: String = /tmp/df/data/sample0414
+res8: notebook.front.widgets.adst.ParquetOutputWidget = <ParquetOutputWidget widget>
 ), ScalaExecuteResult(ExecuteResultMetadata(None),Map(text/html -> <div>
-      <script data-this="{&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;category&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;impressions&quot;,&quot;type&quot;:&quot;long&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;rate&quot;,&quot;type&quot;:&quot;double&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]},&quot;dfInputs&quot;:{&quot;resolved&quot;:[],&quot;unresolved&quot;:[]},&quot;saveMode&quot;:&quot;org.apache.spark.sql.SaveMode.ErrorIfExists&quot;}" type="text/x-scoped-javascript">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/parquetOutput'], 
+      <script data-this="{&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;category&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;impressions&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;rate&quot;,&quot;type&quot;:&quot;double&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]},&quot;dfInputs&quot;:{&quot;resolved&quot;:[],&quot;unresolved&quot;:[]},&quot;saveMode&quot;:&quot;org.apache.spark.sql.SaveMode.Overwrite&quot;}" type="text/x-scoped-javascript">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/parquetOutput'], 
       function(parquetOutput) {
         parquetOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,11)))),"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),dataset,org.apache.spark.sql.SaveMode.Overwrite,List(),0)
+    </div>),execute_result,7)))),"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),"/tmp/df/data/sample"+(System.currentTimeMillis.toString.drop(6).take(4)),dataset,org.apache.spark.sql.SaveMode.Overwrite,List(),0)
 
  */
 object Main {
@@ -78,13 +78,7 @@ val sc = sparkContext
 
 
 // no custom variables 
-/* -- Code Cell: Some(0D920AFE13674E669B190122F9C0338D) -- */ 
-
-  case class Schema(id:Int, category:String, impressions: Long, rate: Double)
-/****************/
-
-
-  /* -- Code Cell: Some(D3D3D5FAE276451F9292235007FA2391) -- */ 
+/* -- Code Cell: Some(D3D3D5FAE276451F9292235007FA2391) -- */ 
 
   val ids = (9999 to 19999)
   val categories = Seq("horror", "drama", "comic", "docu","humor")
@@ -100,7 +94,7 @@ val sc = sparkContext
     category <- categories
     impression <- impressions
     rate <- rates
-  } yield Schema(id,category, impression, rate)
+  } yield ((id,category, impression, rate))
 /****************/
 
 
@@ -117,7 +111,7 @@ val sc = sparkContext
 
   /* -- Code Cell: Some(1C0BA39B45CA4AA78226D70F1699EA4A) -- */ 
 
-  val dataset = sqlContext.createDataFrame(sample)
+  val dataset = sqlContext.createDataFrame(sample).toDF("id", "category", "impressions", "rate")
 /****************/
 
 
