@@ -104,7 +104,8 @@ libraryDependencies += "org.apache.spark" %% "spark-mllib" % sparkVersion exclud
   )
 
 libraryDependencies += "org.apache.spark" %% "spark-sql" % sparkVersion excludeAll(
-  ExclusionRule("org.apache.hadoop")
+  ExclusionRule("org.apache.hadoop"),
+  ExclusionRule("org.apache.ivy", "ivy")
 )
 
 libraryDependencies += "org.apache.spark" %% "spark-yarn" % sparkVersion excludeAll(
@@ -155,6 +156,7 @@ credentials += Credentials("Artifactory Realm", "artifactory-node", "adastyx", "
 
 // merging files... specially application.conf!
 assemblyMergeStrategy in assembly := {
+  
   case PathList("javax", "servlet",          xs @ _*) => MergeStrategy.first
   case PathList("org",   "apache",           xs @ _*) => MergeStrategy.first
   case PathList("org",   "fusesource",       xs @ _*) => MergeStrategy.first

@@ -109,19 +109,22 @@ libraryDependencies += "org.apache.spark" %% "spark-sql" % sparkVersion excludeA
 
 libraryDependencies += "org.apache.spark" %% "spark-yarn" % sparkVersion excludeAll(
   ExclusionRule("org.apache.hadoop"),
-  ExclusionRule("org.apache.ivy", "ivy")
+  ExclusionRule("org.apache.ivy", "ivy"),
+  ExclusionRule(organization = "javax.servlet")
   )
 
 libraryDependencies += "org.apache.hadoop" % "hadoop-client" % hadoopVersion excludeAll(
     ExclusionRule("org.apache.commons", "commons-exec"),
     ExclusionRule("commons-codec", "commons-codec"),
-    ExclusionRule("com.google.guava", "guava")
+    ExclusionRule("com.google.guava", "guava"),
+    ExclusionRule(organization = "javax.servlet")
   )
 
 libraryDependencies += "org.apache.hadoop" % "hadoop-yarn-server-web-proxy" % hadoopVersion excludeAll(
       ExclusionRule("org.apache.commons", "commons-exec"),
       ExclusionRule("commons-codec", "commons-codec"),
-      ExclusionRule("com.google.guava", "guava")
+      ExclusionRule("com.google.guava", "guava"),
+      ExclusionRule(organization = "javax.servlet")
   )
 
 
@@ -171,7 +174,7 @@ assemblyMergeStrategy in assembly := {
   case PathList("javax", "xml",              xs @ _*) => MergeStrategy.first
   case PathList("com",   "esotericsoftware", xs @ _*) => MergeStrategy.first
   case PathList("xsbt",                      xs @ _*) => MergeStrategy.first
-  case PathList("module.properties",         xs @ _*) => MergeStrategy.first
+  //case PathList("module.properties",         xs @ _*) => MergeStrategy.first
   case PathList("META-INF", "MANIFEST.MF"           ) => MergeStrategy.discard
   case PathList("META-INF",                  xs @ _*) => MergeStrategy.first
   case "application.conf"                             => MergeStrategy.concat

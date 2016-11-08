@@ -97,7 +97,9 @@ def tellCatalog():Unit = new Thread { override def run:Unit = {
       // publishing current host and port to adalog
       val ch = Http(adalogUrl + s"/adalog/output/service?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model&host=${host}&port=33810")
       val ach = adalogUser.map { _ => ch.auth(adalogUser.get, adalogPassword.get) }.getOrElse(ch)
-      ach.postForm(Nil).asString.body
+      val res = ach.postForm(Nil).asString
+      println ("Code: "+ res.code)
+      println(" result: "+res.body)
       catalogTold = true
     case None =>
       Thread.sleep(1000)
