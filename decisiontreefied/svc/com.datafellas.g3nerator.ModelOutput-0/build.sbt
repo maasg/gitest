@@ -13,7 +13,7 @@ credentials += Credentials(Path.userHome / ".bintray" / ".credentials")
 
 resolvers += Resolver.url("bintray-data-fellas-maven", url("http://dl.bintray.com/data-fellas/maven"))(Resolver.ivyStylePatterns)
 
-version := "0.0.1-SNAPSHOT"
+version := "0.0.2-SNAPSHOT"
 
 lazy val svc = Project(id="svc", base = file("."))
   .aggregate(common, server, client)
@@ -69,7 +69,7 @@ lazy val server = Project(id="server", base = file("server"))
   )
   .settings(
     dockerBaseImage := "data-fellas-docker-public.bintray.io/base-adst:0.0.1",
-    dockerExposedPorts := Seq(34770),
+    dockerExposedPorts := Seq(33810),
     daemonUser in Docker := "root",
     mappings in Docker ++= directory("spark-lib"),
     mappings in Universal ++= directory("spark-lib"),

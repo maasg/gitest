@@ -3,7 +3,7 @@ organization := "com.example-decisiontreefied"
 
 name := "decisiontreefied"
 
-version := "0.0.1-SNAPSHOT"
+version := "0.0.2-SNAPSHOT"
 
 scalaVersion := "2.10.5"
 
@@ -163,6 +163,7 @@ credentials += Credentials("Artifactory Realm", "artifactory-node", "adastyx", "
 assemblyMergeStrategy in assembly := {
   case PathList("javax", "servlet",          xs @ _*) => MergeStrategy.first
   case PathList("org",   "apache",           xs @ _*) => MergeStrategy.first
+  case PathList("org",   "apache",           xs @ _*) => MergeStrategy.first
   case PathList("org",   "fusesource",       xs @ _*) => MergeStrategy.first
   case PathList("org",   "slf4j",            xs @ _*) => MergeStrategy.first
   case PathList("com",   "google",           xs @ _*) => MergeStrategy.first
@@ -170,6 +171,7 @@ assemblyMergeStrategy in assembly := {
   case PathList("javax", "xml",              xs @ _*) => MergeStrategy.first
   case PathList("com",   "esotericsoftware", xs @ _*) => MergeStrategy.first
   case PathList("xsbt",                      xs @ _*) => MergeStrategy.first
+  case PathList("module.properties",         xs @ _*) => MergeStrategy.first
   case PathList("META-INF", "MANIFEST.MF"           ) => MergeStrategy.discard
   case PathList("META-INF",                  xs @ _*) => MergeStrategy.first
   case "application.conf"                             => MergeStrategy.concat

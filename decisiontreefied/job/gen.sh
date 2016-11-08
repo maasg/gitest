@@ -17,12 +17,11 @@ echo "publishing project"
 
 echo "building debian"
 /home/maasg/Dev/java/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 debian:packageBin
-export PKG_NAME=decisiontreefied_0.0.1-SNAPSHOT_all.deb
-echo "package: /home/maasg/testground/sne/projects/decisiontreefied/job/target/decisiontreefied_0.0.1-SNAPSHOT_all.deb
+echo "package: /home/maasg/testground/sne/projects/decisiontreefied/job/target/decisiontreefied_0.0.2-SNAPSHOT_all.deb "
 
 echo "pushing deb package to Adalog UI"
-/bin/mkdir -p /tmp/sne/downloads
-[[ -f /home/maasg/testground/sne/projects/decisiontreefied/job/target/decisiontreefied_0.0.1-SNAPSHOT_all.deb ]] && /bin/cp /home/maasg/testground/sne/projects/decisiontreefied/job/target/decisiontreefied_0.0.1-SNAPSHOT_all.deb /tmp/sne/downloads || echo "package file not found !!"
+[[ -d /tmp/sne/downloads ]] || /bin/mkdir -p /tmp/sne/downloads
+[[ -f /home/maasg/testground/sne/projects/decisiontreefied/job/target/decisiontreefied_0.0.2-SNAPSHOT_all.deb ]] && /bin/cp /home/maasg/testground/sne/projects/decisiontreefied/job/target/decisiontreefied_0.0.2-SNAPSHOT_all.deb /tmp/sne/downloads || echo "package file not found !!"
 
 echo "Submitting Job"
 

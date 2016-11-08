@@ -8,13 +8,14 @@ object Client {
   
 import com.typesafe.config._
 import scala.collection.JavaConverters._
+import scala.util.{Try, Success, Failure}
+     
 
+  
 val config = ConfigFactory.load()
 
 
-
   
-
   def getStringConfig(path: String) : Option[String] = {
     if (config.hasPath(path)) {
       Some(config.getString(path))
@@ -29,29 +30,48 @@ val config = ConfigFactory.load()
 
 
 
-  def serviceInfo = {
+  def serviceInfo: (String,Int) = {
     
-def askDeployedInfoToCatalog() = {
+def askServiceToCatalog(): Try[(String, Int)] = {
+    
+val ServiceToCatalog : () => Try[String] = () => {
   // asking last added output instance information from catalog
   import scalaj.http._
 
-  val h = Http(adalogUrl.get + "/adalog/output/service?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model")
-  val ah = adalogUser.map { _ => h.auth(adalogUser.get, adalogPassword.get) }.getOrElse(h)
-  ah.asString.body
+  val req = Http(adalogUrl + "/adalog/service?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model")
+  val optAuthReq = for {
+                     user <- adalogUser
+                     pwd <- adalogPassword
+                } yield req.auth(user, pwd)
+
+  val authReq = optAuthReq.getOrElse(req)
+  val response = authReq.asString
+  val responseCode = response.code
+  val responseContent = response.body
+  if (responseCode == 200) {
+     Success(responseContent)
+  } else {
+    Failure(new RuntimeException(s"Could not contact Adalog. Reason: HTTP/$responseCode [$responseContent]"))
+  }
 }
-askDeployedInfoToCatalog()
 
+    ServiceToCatalog().map{ content =>
+           val Array(host,strPort) = content.split(":")
+           (host, strPort.toInt)
+     }
+}
 
+    askServiceToCatalog().get //force failure case
   }
 
-  def from(host:String, port:Int=34770) = {
+  def from(host:String, port:Int=33810) = {
     val transport = new NettyTransceiver(new InetSocketAddress(host, port))
     val client = SpecificRequestor.getClient(classOf[com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.server.Methods], transport)
     transport -> client
   }
 
   def get() = {
-    val List(host, port) = serviceInfo.split(":").toList
-    from(host, port.toInt)
+    val (host, port) = serviceInfo
+    from(host, port)
   }
 }
