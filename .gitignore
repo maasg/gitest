@@ -1,0 +1,6 @@
+**/target
+*/jdk
+*/jdk-*
+*/sbt
+*/job/out
+*/svc/*/out
