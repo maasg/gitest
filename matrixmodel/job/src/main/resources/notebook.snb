@@ -1,0 +1,209 @@
+{
+  "metadata" : {
+    "id" : "fa0e94a3-88f5-45e4-8334-7a15953a0ea3",
+    "name" : "matrixmodel",
+    "user_save_timestamp" : "2016-11-08T11:48:11.354Z",
+    "auto_save_timestamp" : "2016-11-08T11:48:11.354Z",
+    "language_info" : {
+      "name" : "scala",
+      "file_extension" : "scala",
+      "codemirror_mode" : "text/x-scala"
+    },
+    "trusted" : true,
+    "sparkNotebook" : {
+      "xSparkVersion" : "1.6.1",
+      "xWithParquet" : "false",
+      "buildTime" : "Tue Nov 08 10:14:18 CET 2016",
+      "sparkNotebookVersion" : "0.7.0-SNAPSHOT",
+      "xJlineDef" : "(org.scala-lang,2.10.5)",
+      "scalaVersion" : "2.10.5",
+      "sbtVersion" : "0.13.9",
+      "formattedShaVersion" : "Some(519fa6bc4ce0bac487a91b48b3912809bc7f2b36-SNAPSHOT)",
+      "xJets3tVersion" : "0.7.1",
+      "xWithHive" : "false",
+      "xHadoopVersion" : "2.2.0"
+    },
+    "customLocalRepo" : "/tmp/localrepo",
+    "customRepos" : null,
+    "customDeps" : [ "com.databricks % spark-csv_2.10 % 1.5.0" ],
+    "customImports" : null,
+    "customArgs" : null,
+    "customSparkConf" : {
+      "spark.cores.max" : "1",
+      "spark.executor.memory" : "500MB"
+    },
+    "customVars" : null
+  },
+  "cells" : [ {
+    "metadata" : {
+      "id" : "5207D501D09146ACA83A45479D0AB49B"
+    },
+    "cell_type" : "markdown",
+    "source" : "# (Re)Creates a Parquet Data Sample for the Churn Decision Tree Model"
+  }, {
+    "metadata" : {
+      "id" : "B7A79BF6EF9841648A09FFEC647E2CAD"
+    },
+    "cell_type" : "markdown",
+    "source" : "## Import SQL context and functions"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "AD1BF54A1C6948AD8A510C7D51C8F40F"
+    },
+    "cell_type" : "code",
+    "source" : "val sqlContext = new org.apache.spark.sql.SQLContext(sc)\n\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@6e8604f4\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 1
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "4EE2C215F2CB42E880D6B3A6DB70ED3B"
+    },
+    "cell_type" : "code",
+    "source" : "val folder = \"/home/maasg/playground/data/\"\nval csvFile =  folder + \"decision_tree.csv\"\n\nval matrixDF = sqlContext.read\n                        .format(\"com.databricks.spark.csv\")\n                        .option(\"header\", \"true\")\n                        .option(\"inferSchema\", \"true\")\n                        .load(csvFile)\n                        .persist(org.apache.spark.storage.StorageLevel.MEMORY_AND_DISK_SER)\n                        .repartition(2)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "folder: String = /home/maasg/playground/data/\ncsvFile: String = /home/maasg/playground/data/decision_tree.csv\nmatrixDF: org.apache.spark.sql.DataFrame = [id: int, any_churn_target: boolean, full_churn_target: boolean, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, Postal_Code: string, cs_k: string, Neighbourhood_Code: string]\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 2
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "D9BA002C3CF14B4887E0AD78FADC6581"
+    },
+    "cell_type" : "code",
+    "source" : "val parquetFile = folder + \"decision_tree.parquet\"\n//matrixDF.write.format(\"parquet\").saveMode(SaveMode.Overwrite).save(\"namesAndAges.parquet\")",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "parquetFile: String = /home/maasg/playground/data/decision_tree.parquet\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 3
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "BC42BE58D98940C389B7712F417423AA",
+      "extra" : {
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "id",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : { }
+          }, {
+            "name" : "any_churn_target",
+            "type" : "boolean",
+            "nullable" : true,
+            "metadata" : { }
+          }, {
+            "name" : "full_churn_target",
+            "type" : "boolean",
+            "nullable" : true,
+            "metadata" : { }
+          }, {
+            "name" : "A_1_count_last",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : { }
+          }, {
+            "name" : "A_2_count_last",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : { }
+          }, {
+            "name" : "A_3_count_last",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : { }
+          }, {
+            "name" : "Postal_Code",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : { }
+          }, {
+            "name" : "cs_k",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : { }
+          }, {
+            "name" : "Neighbourhood_Code",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : { }
+          } ]
+        },
+        "inputs" : {
+          "resolved" : [ "/home/maasg/playground/data/decision_tree.csv" ],
+          "unresolved" : [ ]
+        },
+        "saveMode" : "org.apache.spark.sql.SaveMode.Overwrite"
+      }
+    },
+    "cell_type" : "output",
+    "source" : "parquetFile",
+    "output" : {
+      "type" : "parquet",
+      "var" : "matrixDF",
+      "extra" : {
+        "value" : "Overwrite",
+        "source" : null
+      }
+    },
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "Parquet\nLocated: /home/maasg/playground/data/decision_tree.parquet\nDataFrame: matrixDF\noutput-BC42BE58D98940C389B7712F417423AA: String = /home/maasg/playground/data/decision_tree.parquet\nres5: notebook.front.widgets.adst.ParquetOutputWidget = <ParquetOutputWidget widget>\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "<div>\n      <script data-this=\"{&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;any_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;full_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;A_1_count_last&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;A_2_count_last&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;A_3_count_last&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;Postal_Code&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;cs_k&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;Neighbourhood_Code&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}}]},&quot;dfInputs&quot;:{&quot;resolved&quot;:[&quot;/home/maasg/playground/data/decision_tree.csv&quot;],&quot;unresolved&quot;:[]},&quot;saveMode&quot;:&quot;org.apache.spark.sql.SaveMode.Overwrite&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/parquetOutput'], \n      function(parquetOutput) {\n        parquetOutput.call(data, this);\n      }\n    );/*]]>*/</script>\n    </div>"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 4
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "67A6F29D372642CC8F6DCE1EBBFB54C5"
+    },
+    "cell_type" : "code",
+    "source" : "",
+    "outputs" : [ ]
+  } ],
+  "nbformat" : 4
+}
