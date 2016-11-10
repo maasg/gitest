@@ -3,11 +3,11 @@ organization := "com.example-matrixmodel"
 
 name := "matrixmodel"
 
-version := "0.0.1-SNAPSHOT"
+version := "0.0.2-SNAPSHOT"
 
 scalaVersion := "2.10.5"
 
-maintainer := "DF" //Docker
+maintainer := "gm" //Docker
 
 resolvers ++= Seq( "Maven2 Local" at "file:/home/maasg/.m2/repository/" ,
  "public" at "https://repo1.maven.org/maven2/" ,
