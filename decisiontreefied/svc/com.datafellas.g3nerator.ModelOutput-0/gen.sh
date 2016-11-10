@@ -3,9 +3,9 @@
 echo "Start service/gen.sh"
 echo $(date)
 
-export JAVA_HOME=/home/maasg/Dev/java/jdk1.7.0_79
-export JDK_HOME=/home/maasg/Dev/java/jdk1.7.0_79
-export PATH=/home/maasg/Dev/java/sbt/bin:/home/maasg/Dev/java/jdk1.7.0_79/bin:$PATH
+export JAVA_HOME=/home/maasg/Dev/java/jdk1.8.0_20
+export JDK_HOME=/home/maasg/Dev/java/jdk1.8.0_20
+export PATH=/home/maasg/Dev/java/sbt/bin:/home/maasg/Dev/java/jdk1.8.0_20/bin:$PATH
 
 echo "enter /home/maasg/testground/sne/projects/decisiontreefied/svc/com.datafellas.g3nerator.ModelOutput-0"
 
@@ -16,8 +16,8 @@ echo "building project"
 /home/maasg/Dev/java/sbt/bin/sbt "server/publish"
 /home/maasg/Dev/java/sbt/bin/sbt "client/publish"
 
-echo "Telling catalog which client library to use (com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0:client:0.0.2-SNAPSHOT})"
-curl -i -u 'username:password' -X POST "http://localhost:9001//adalog/output/service/library?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model&groupId=com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0&artifactId=client_2.10&version=0.0.2-SNAPSHOT&pck=com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0"
+echo "Telling catalog which client library to use (com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0:client:0.0.1-SNAPSHOT})"
+curl -u 'username:password' -X POST "http://localhost:9001//adalog/output/service/library?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model&groupId=com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0&artifactId=client_2.10&version=0.0.1-SNAPSHOT&pck=com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0"
 
 
 
@@ -27,7 +27,7 @@ echo "building docker"
 ## 
 
 echo "pushing docker"
-docker push localhost:5000/decisiontreefied-com.datafellas.g3nerator.modeloutput-0:0.0.2-SNAPSHOT
+docker push localhost:5000/decisiontreefied-com.datafellas.g3nerator.modeloutput-0:0.0.1-SNAPSHOT
 
  ## Not needed now -> Replace by Canister
 
