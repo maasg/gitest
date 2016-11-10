@@ -5,7 +5,7 @@ object deps {
 
   lazy val common = Seq(
     scalaVersion := "2.10.5",
-    organization := "com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0",
+    organization := "io.kensu.decisiontreefied_com.datafellas.g3nerator.modeloutput_0",
     libraryDependencies += "com.google.guava" % "guava" % "16.0.1" force(),
     version := "0.0.1-SNAPSHOT",
     publishMavenStyle := true,

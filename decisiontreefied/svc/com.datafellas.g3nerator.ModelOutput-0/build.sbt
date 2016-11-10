@@ -61,7 +61,7 @@ lazy val server = Project(id="server", base = file("server"))
     packageArchetype.java_server: _*
   )
   .settings(
-    mainClass in Compile := Some("com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.Main")
+    mainClass in Compile := Some("io.kensu.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.Main")
   )
   .settings(
     bashScriptExtraDefines += "addJava \"-Dsun.io.serialization.extendedDebugInfo=true\"",
@@ -69,7 +69,7 @@ lazy val server = Project(id="server", base = file("server"))
   )
   .settings(
     dockerBaseImage := "data-fellas-docker-public.bintray.io/base-adst:0.0.1",
-    dockerExposedPorts := Seq(56520),
+    dockerExposedPorts := Seq(58903),
     daemonUser in Docker := "root",
     mappings in Docker ++= directory("spark-lib"),
     mappings in Universal ++= directory("spark-lib"),

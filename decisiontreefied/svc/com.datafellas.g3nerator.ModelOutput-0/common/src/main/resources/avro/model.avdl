@@ -1,4 +1,4 @@
-@namespace("com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.model")
+@namespace("io.kensu.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.model")
 
 protocol Model {
 

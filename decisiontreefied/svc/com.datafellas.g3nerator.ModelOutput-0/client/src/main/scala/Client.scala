@@ -1,4 +1,4 @@
-package com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.client
+package io.kensu.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.client
 import org.apache.avro.ipc.NettyTransceiver
 import java.net.InetSocketAddress
 
@@ -65,9 +65,9 @@ def askServiceToCatalog(): Try[(String, Int)] = {
     askServiceToCatalog().get //force failure case
   }
 
-  def from(host:String, port:Int=56520) = {
+  def from(host:String, port:Int=58903) = {
     val transport = new NettyTransceiver(new InetSocketAddress(host, port))
-    val client = SpecificRequestor.getClient(classOf[com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.server.Methods], transport)
+    val client = SpecificRequestor.getClient(classOf[io.kensu.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.server.Methods], transport)
     transport -> client
   }
 

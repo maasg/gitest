@@ -16,8 +16,8 @@ echo "building project"
 /home/maasg/Dev/java/sbt/bin/sbt "server/publish"
 /home/maasg/Dev/java/sbt/bin/sbt "client/publish"
 
-echo "Telling catalog which client library to use (com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0:client:0.0.1-SNAPSHOT})"
-curl -u 'username:password' -X POST "http://localhost:9001//adalog/output/service/library?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model&groupId=com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0&artifactId=client_2.10&version=0.0.1-SNAPSHOT&pck=com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0"
+echo "Telling catalog which client library to use (io.kensu.decisiontreefied_com.datafellas.g3nerator.modeloutput_0:client:0.0.1-SNAPSHOT})"
+curl -u 'username:password' -X POST "http://localhost:9001//adalog/output/service/library?uuid=fdeed9c0-3bed-4fc5-b923-ef788b8b7d80&tpe=model&variable=model&groupId=io.kensu.decisiontreefied_com.datafellas.g3nerator.modeloutput_0&artifactId=client_2.10&version=0.0.1-SNAPSHOT&pck=io.kensu.decisiontreefied_com.datafellas.g3nerator.modeloutput_0"
 
 
 

@@ -1,14 +1,14 @@
 
-package com.example
+package io.kensu
 /**
   Outputs
   -------
   > ModelOutput(CodeCell(CellMetadata(Some(true),Some(false),None,Some(false),None,Some(CE9A12A3A78245DDA03579B66F9D3CCA),Some({"model":"org.apache.spark.ml.PipelineModel","inputs":{"resolved":["/home/maasg/playground/data/decision_tree.parquet"],"unresolved":[]}})),output, modelOutput + (System.currentTimeMillis.toString.drop(5)),None,None,Some({"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel"}}),Some(List(ScalaStream(stdout,stream,Model
-Located: /tmp/sne/data/decision_tree_data46865040
+Located: /tmp/sne/data/decision_tree_data47941266
 Model:  model (org.apache.spark.ml.PipelineModel)
 {"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel"}}
 None
-output-CE9A12A3A78245DDA03579B66F9D3CCA: String = /tmp/sne/data/decision_tree_data46865040
+output-CE9A12A3A78245DDA03579B66F9D3CCA: String = /tmp/sne/data/decision_tree_data47941266
 res30: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>
 ), ScalaExecuteResult(ExecuteResultMetadata(None),Map(text/html -> <div>
       <script data-this="{&quot;modelVar&quot;:&quot;model&quot;,&quot;inputs&quot;:{&quot;resolved&quot;:[],&quot;unresolved&quot;:[]},&quot;modelName&quot;:&quot;org.apache.spark.ml.PipelineModel&quot;}" type="text/x-scoped-javascript">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/modelOutput'], 
@@ -45,7 +45,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "decisiontreefie
 // Set project Jars
 
 val libDir = new java.io.File(s"/usr/share/decisiontreefied", "lib")
-val currentProjectJars = Array[String]( "com.example-decisiontreefied.decisiontreefied-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array[String]( "io.kensu-decisiontreefied.decisiontreefied-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(s"/usr/share/decisiontreefied", "spark-lib")
 val fromProjectJars = Array[String]( "spark-csv_2.10-1.5.0.jar" , "scala-library-2.10.5.jar" , "commons-csv-1.1.jar" , "univocity-parsers-1.5.1.jar" ).map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)

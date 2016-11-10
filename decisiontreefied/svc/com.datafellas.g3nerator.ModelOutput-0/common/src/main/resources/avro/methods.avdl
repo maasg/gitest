@@ -1,4 +1,4 @@
-@namespace("com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.server")
+@namespace("io.kensu.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.server")
 protocol Methods {
 
   import idl "error.avdl";
@@ -13,7 +13,7 @@ protocol Methods {
   }
 
   record ServiceResponse {
-    com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.model.Domain domain;
+    io.kensu.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.model.Domain domain;
   }
 
   record MetadataRequest {
@@ -24,8 +24,8 @@ protocol Methods {
     string notebook;
   }
 
-  ServiceResponse predict(ServiceRequest request) throws com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.rpc.ServiceException;
+  ServiceResponse predict(ServiceRequest request) throws io.kensu.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.rpc.ServiceException;
 
-  MetadataResponse notebook(MetadataRequest request) throws com.example.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.rpc.ServiceException;
+  MetadataResponse notebook(MetadataRequest request) throws io.kensu.decisiontreefied_com.datafellas.g3nerator.modeloutput_0.rpc.ServiceException;
 
 }

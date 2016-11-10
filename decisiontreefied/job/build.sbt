@@ -1,5 +1,5 @@
 
-organization := "com.example-decisiontreefied"
+organization := "io.kensu-decisiontreefied"
 
 name := "decisiontreefied"
 
@@ -146,7 +146,7 @@ libraryDependencies += "com.databricks" % "spark-csv_2.10" % "1.5.0" excludeAll(
 test in assembly := {}
 
 //main class
-mainClass in assembly := Some("com.example.Main")
+mainClass in assembly := Some("io.kensu.Main")
 
 artifact in (Compile, assembly) ~= { art =>
   art.copy(`classifier` = Some("assembly"))

@@ -50,7 +50,7 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@5ba2e9b9\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame\n"
+      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@5c047af\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame\n"
     }, {
       "metadata" : { },
       "data" : {
@@ -110,14 +110,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "res8: org.apache.spark.sql.DataFrame = [id: int, any_churn_target: boolean, full_churn_target: boolean, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, Postal_Code: string, cs_k: string, Neighbourhood_Code: string]\n"
+      "text" : "res4: org.apache.spark.sql.DataFrame = [id: int, any_churn_target: boolean, full_churn_target: boolean, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, Postal_Code: string, cs_k: string, Neighbourhood_Code: string]\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anondbfeb6adf44dc9a302acebe591dcb43a&quot;,&quot;partitionIndexId&quot;:&quot;anon83cdd60468081af6851e91193cb43577&quot;,&quot;numPartitions&quot;:2,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;any_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;full_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;A_1_count_last&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;A_2_count_last&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;A_3_count_last&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;Postal_Code&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;cs_k&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;Neighbourhood_Code&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
+        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anonc7e2aef3f83e295be6c5496ea6cee926&quot;,&quot;partitionIndexId&quot;:&quot;anon440ffdf246459199fe7fce1db4559767&quot;,&quot;numPartitions&quot;:2,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;any_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;full_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;A_1_count_last&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;A_2_count_last&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;A_3_count_last&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;Postal_Code&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;cs_k&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;Neighbourhood_Code&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 5
+      "execution_count" : 3
     } ]
   }, {
     "metadata" : {
@@ -131,14 +131,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "res10: org.apache.spark.sql.DataFrame = [any_churn_target: boolean, full_churn_target: boolean, count: bigint]\n"
+      "text" : "res6: org.apache.spark.sql.DataFrame = [any_churn_target: boolean, full_churn_target: boolean, count: bigint]\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anonb44aa0f7fe855db6f6f4c4a43b87bd1b&quot;,&quot;partitionIndexId&quot;:&quot;anonbd89ca58246529b18252818688abe826&quot;,&quot;numPartitions&quot;:1,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;any_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;full_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;count&quot;,&quot;type&quot;:&quot;long&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
+        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon0658d0e28746742f32b9f4b041f5419d&quot;,&quot;partitionIndexId&quot;:&quot;anon3c9f9d9a17ed5ac04aaf4b7dd4dc17f2&quot;,&quot;numPartitions&quot;:1,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;any_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;full_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;count&quot;,&quot;type&quot;:&quot;long&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 6
+      "execution_count" : 4
     } ]
   }, {
     "metadata" : {
@@ -159,7 +159,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 7
+      "execution_count" : 5
     } ]
   }, {
     "metadata" : {
@@ -180,7 +180,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 8
+      "execution_count" : 6
     } ]
   }, {
     "metadata" : {
@@ -201,7 +201,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 9
+      "execution_count" : 7
     } ]
   }, {
     "metadata" : {
@@ -215,14 +215,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "stringedColumns: Seq[String] = List(Postal_Code, cs_k, Neighbourhood_Code)\ncategoricals: Seq[String] = List()\nnumCols: Seq[String] = List(id, A_1_count_last, A_2_count_last, A_3_count_last)\nres15: Boolean = true\n"
+      "text" : "stringedColumns: Seq[String] = List(Postal_Code, cs_k, Neighbourhood_Code)\ncategoricals: Seq[String] = List()\nnumCols: Seq[String] = List(id, A_1_count_last, A_2_count_last, A_3_count_last)\nres11: Boolean = true\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : "true"
       },
       "output_type" : "execute_result",
-      "execution_count" : 10
+      "execution_count" : 8
     } ]
   }, {
     "metadata" : {
@@ -243,7 +243,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 11
+      "execution_count" : 9
     } ]
   }, {
     "metadata" : {
@@ -264,7 +264,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 12
+      "execution_count" : 10
     } ]
   }, {
     "metadata" : {
@@ -297,7 +297,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 13
+      "execution_count" : 11
     } ]
   }, {
     "metadata" : {
@@ -318,7 +318,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 14
+      "execution_count" : 12
     } ]
   }, {
     "metadata" : {
@@ -332,14 +332,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "res21: org.apache.spark.sql.DataFrame = [id: int, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, Postal_Code: string, cs_k: string, Neighbourhood_Code: string, cs_k_hash: int, Postal_Code_hash: int, Neighbourhood_Code_hash: int, label: double]\n"
+      "text" : "res17: org.apache.spark.sql.DataFrame = [id: int, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, Postal_Code: string, cs_k: string, Neighbourhood_Code: string, cs_k_hash: int, Postal_Code_hash: int, Neighbourhood_Code_hash: int, label: double]\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon6f39d0be0d31776560baab85ae94aa08&quot;,&quot;partitionIndexId&quot;:&quot;anon401b6ca3459fac0d9bf97e0a1348a892&quot;,&quot;numPartitions&quot;:2,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;A_1_count_last&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;A_2_count_last&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;A_3_count_last&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;Postal_Code&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;cs_k&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;Neighbourhood_Code&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;cs_k_hash&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;Postal_Code_hash&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;Neighbourhood_Code_hash&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;label&quot;,&quot;type&quot;:&quot;double&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{&quot;ml_attr&quot;:{&quot;vals&quot;:[&quot;0.0&quot;,&quot;1.0&quot;],&quot;type&quot;:&quot;nominal&quot;,&quot;name&quot;:&quot;churned&quot;}}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
+        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon6d66cf8545b7a098d0fbe70b66103b7a&quot;,&quot;partitionIndexId&quot;:&quot;anon5926666990609696908b0bb713edd8e3&quot;,&quot;numPartitions&quot;:2,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;A_1_count_last&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;A_2_count_last&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;A_3_count_last&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;Postal_Code&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;cs_k&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;Neighbourhood_Code&quot;,&quot;type&quot;:&quot;string&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;cs_k_hash&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;Postal_Code_hash&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;Neighbourhood_Code_hash&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;label&quot;,&quot;type&quot;:&quot;double&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{&quot;ml_attr&quot;:{&quot;vals&quot;:[&quot;0.0&quot;,&quot;1.0&quot;],&quot;type&quot;:&quot;nominal&quot;,&quot;name&quot;:&quot;churned&quot;}}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 15
+      "execution_count" : 13
     } ]
   }, {
     "metadata" : {
@@ -353,14 +353,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "res23: org.apache.spark.sql.DataFrame = [label: double, count: bigint]\n"
+      "text" : "res19: org.apache.spark.sql.DataFrame = [label: double, count: bigint]\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anona2d039765d72735dbf6b0545a10f6011&quot;,&quot;partitionIndexId&quot;:&quot;anon20d577140e60675312b3083e441cff99&quot;,&quot;numPartitions&quot;:1,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;label&quot;,&quot;type&quot;:&quot;double&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{&quot;ml_attr&quot;:{&quot;vals&quot;:[&quot;0.0&quot;,&quot;1.0&quot;],&quot;type&quot;:&quot;nominal&quot;,&quot;name&quot;:&quot;churned&quot;}}},{&quot;name&quot;:&quot;count&quot;,&quot;type&quot;:&quot;long&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
+        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon448d5c2106e1005edd133eb522bee0c9&quot;,&quot;partitionIndexId&quot;:&quot;anon805df4e40cd9ef1ddcaeb9b53c7d3d14&quot;,&quot;numPartitions&quot;:1,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;label&quot;,&quot;type&quot;:&quot;double&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{&quot;ml_attr&quot;:{&quot;vals&quot;:[&quot;0.0&quot;,&quot;1.0&quot;],&quot;type&quot;:&quot;nominal&quot;,&quot;name&quot;:&quot;churned&quot;}}},{&quot;name&quot;:&quot;count&quot;,&quot;type&quot;:&quot;long&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 16
+      "execution_count" : 14
     } ]
   }, {
     "metadata" : {
@@ -381,7 +381,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 17
+      "execution_count" : 15
     } ]
   }, {
     "metadata" : {
@@ -401,14 +401,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "catIndexer: Array[org.apache.spark.ml.PipelineStage] = Array()\nvectorCols: Array[String] = Array(id, A_1_count_last, A_2_count_last, A_3_count_last, cs_k_hash, Postal_Code_hash, Neighbourhood_Code_hash)\nassembler: org.apache.spark.ml.feature.VectorAssembler = vecAssembler_45cd779b1a21\nvectorIndexer: org.apache.spark.ml.feature.VectorIndexer = vecIdx_de9dc4a7fef1\n"
+      "text" : "catIndexer: Array[org.apache.spark.ml.PipelineStage] = Array()\nvectorCols: Array[String] = Array(id, A_1_count_last, A_2_count_last, A_3_count_last, cs_k_hash, Postal_Code_hash, Neighbourhood_Code_hash)\nassembler: org.apache.spark.ml.feature.VectorAssembler = vecAssembler_45b35be8eb92\nvectorIndexer: org.apache.spark.ml.feature.VectorIndexer = vecIdx_12cc609456a3\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 18
+      "execution_count" : 16
     } ]
   }, {
     "metadata" : {
@@ -422,14 +422,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dt: org.apache.spark.ml.classification.DecisionTreeClassifier = dtc_a1688f344804\n"
+      "text" : "dt: org.apache.spark.ml.classification.DecisionTreeClassifier = dtc_450779141c36\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 19
+      "execution_count" : 17
     } ]
   }, {
     "metadata" : {
@@ -443,14 +443,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dtPipeline: org.apache.spark.ml.Pipeline = pipeline_bb5e976566c4\n"
+      "text" : "dtPipeline: org.apache.spark.ml.Pipeline = pipeline_897487dae2ac\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 20
+      "execution_count" : 18
     } ]
   }, {
     "metadata" : {
@@ -471,7 +471,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 21
+      "execution_count" : 19
     } ]
   }, {
     "metadata" : {
@@ -485,14 +485,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "model: org.apache.spark.ml.PipelineModel = pipeline_bb5e976566c4\n"
+      "text" : "model: org.apache.spark.ml.PipelineModel = pipeline_897487dae2ac\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 22
+      "execution_count" : 20
     } ]
   }, {
     "metadata" : {
@@ -528,7 +528,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 23
+      "execution_count" : 21
     } ]
   }, {
     "metadata" : {
@@ -539,7 +539,7 @@
       "extra" : {
         "model" : "org.apache.spark.ml.PipelineModel",
         "inputs" : {
-          "resolved" : [ ],
+          "resolved" : [ "/home/maasg/playground/data/decision_tree.parquet" ],
           "unresolved" : [ ]
         }
       }
@@ -556,14 +556,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "Model\nLocated: /tmp/sne/data/decision_tree_data07358346\nModel:  model (org.apache.spark.ml.PipelineModel)\n{\"type\":\"model\",\"var\":\"model\",\"extra\":{\"value\":\"org.apache.spark.ml.PipelineModel\"}}\nNone\noutput-CE9A12A3A78245DDA03579B66F9D3CCA: String = /tmp/sne/data/decision_tree_data07358346\nres32: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>\n"
+      "text" : "Model\nLocated: /tmp/sne/data/decision_tree_data47941266\nModel:  model (org.apache.spark.ml.PipelineModel)\n{\"type\":\"model\",\"var\":\"model\",\"extra\":{\"value\":\"org.apache.spark.ml.PipelineModel\"}}\nNone\noutput-CE9A12A3A78245DDA03579B66F9D3CCA: String = /tmp/sne/data/decision_tree_data47941266\nres30: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : "<div>\n      <script data-this=\"{&quot;modelVar&quot;:&quot;model&quot;,&quot;inputs&quot;:{&quot;resolved&quot;:[],&quot;unresolved&quot;:[]},&quot;modelName&quot;:&quot;org.apache.spark.ml.PipelineModel&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/modelOutput'], \n      function(modelOutput) {\n        modelOutput.call(data, this);\n      }\n    );/*]]>*/</script>\n    </div>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 24
+      "execution_count" : 23
     } ]
   }, {
     "metadata" : {
