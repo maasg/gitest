@@ -7,7 +7,7 @@ version := "0.0.1-SNAPSHOT"
 
 scalaVersion := "2.10.5"
 
-maintainer := "kensu" //Docker
+maintainer := "GM" //Docker
 
 resolvers ++= Seq( "Maven2 Local" at "file:/home/maasg/.m2/repository/" ,
  "public" at "https://repo1.maven.org/maven2/" ,
@@ -115,15 +115,16 @@ libraryDependencies += "org.apache.spark" %% "spark-yarn" % sparkVersion exclude
 libraryDependencies += "org.apache.hadoop" % "hadoop-client" % hadoopVersion excludeAll(
     ExclusionRule("org.apache.commons", "commons-exec"),
     ExclusionRule("commons-codec", "commons-codec"),
-    ExclusionRule("com.google.guava", "guava")
+    ExclusionRule("com.google.guava", "guava"),
+    ExclusionRule("javax.servlet")
   )
 
 libraryDependencies += "org.apache.hadoop" % "hadoop-yarn-server-web-proxy" % hadoopVersion excludeAll(
       ExclusionRule("org.apache.commons", "commons-exec"),
       ExclusionRule("commons-codec", "commons-codec"),
-      ExclusionRule("com.google.guava", "guava")
+      ExclusionRule("com.google.guava", "guava"),
+      ExclusionRule("javax.servlet")
   )
-
 
 libraryDependencies += "net.java.dev.jets3t" % "jets3t" % "0.9.0" force()
 
@@ -163,7 +164,6 @@ credentials += Credentials("Artifactory Realm", "artifactory-node", "adastyx", "
 assemblyMergeStrategy in assembly := {
   case PathList("javax", "servlet",          xs @ _*) => MergeStrategy.first
   case PathList("org",   "apache",           xs @ _*) => MergeStrategy.first
-  case PathList("org",   "apache",           xs @ _*) => MergeStrategy.first
   case PathList("org",   "fusesource",       xs @ _*) => MergeStrategy.first
   case PathList("org",   "slf4j",            xs @ _*) => MergeStrategy.first
   case PathList("com",   "google",           xs @ _*) => MergeStrategy.first
@@ -171,7 +171,6 @@ assemblyMergeStrategy in assembly := {
   case PathList("javax", "xml",              xs @ _*) => MergeStrategy.first
   case PathList("com",   "esotericsoftware", xs @ _*) => MergeStrategy.first
   case PathList("xsbt",                      xs @ _*) => MergeStrategy.first
-  case PathList("module.properties",         xs @ _*) => MergeStrategy.first
   case PathList("META-INF", "MANIFEST.MF"           ) => MergeStrategy.discard
   case PathList("META-INF",                  xs @ _*) => MergeStrategy.first
   case "application.conf"                             => MergeStrategy.concat
@@ -179,8 +178,3 @@ assemblyMergeStrategy in assembly := {
     val oldStrategy = (assemblyMergeStrategy in assembly).value
     oldStrategy(x)
 }
-
-aggregate in update := false
-
-updateOptions := updateOptions.value.withCachedResolution(true)
-
