@@ -1,5 +1,5 @@
 
-organization := "com.example-datagenerator"
+organization := "com.kensu-datagenerator"
 
 name := "datagenerator"
 
@@ -7,7 +7,7 @@ version := "0.0.1-SNAPSHOT"
 
 scalaVersion := "2.10.5"
 
-maintainer := "DF" //Docker
+maintainer := "kensu" //Docker
 
 resolvers ++= Seq( "Maven2 Local" at "file:/home/maasg/.m2/repository/" ,
  "public" at "https://repo1.maven.org/maven2/" ,
@@ -104,8 +104,7 @@ libraryDependencies += "org.apache.spark" %% "spark-mllib" % sparkVersion exclud
   )
 
 libraryDependencies += "org.apache.spark" %% "spark-sql" % sparkVersion excludeAll(
-  ExclusionRule("org.apache.hadoop"),
-  ExclusionRule("org.apache.ivy", "ivy")
+  ExclusionRule("org.apache.hadoop")
 )
 
 libraryDependencies += "org.apache.spark" %% "spark-yarn" % sparkVersion excludeAll(
@@ -140,7 +139,7 @@ libraryDependencies +=  "org.scalaj" %% "scalaj-http" % "2.3.0"
 test in assembly := {}
 
 //main class
-mainClass in assembly := Some("com.example.Main")
+mainClass in assembly := Some("com.kensu.Main")
 
 artifact in (Compile, assembly) ~= { art =>
   art.copy(`classifier` = Some("assembly"))
@@ -156,8 +155,8 @@ credentials += Credentials("Artifactory Realm", "artifactory-node", "adastyx", "
 
 // merging files... specially application.conf!
 assemblyMergeStrategy in assembly := {
-  
   case PathList("javax", "servlet",          xs @ _*) => MergeStrategy.first
+  case PathList("org",   "apache",           xs @ _*) => MergeStrategy.first
   case PathList("org",   "apache",           xs @ _*) => MergeStrategy.first
   case PathList("org",   "fusesource",       xs @ _*) => MergeStrategy.first
   case PathList("org",   "slf4j",            xs @ _*) => MergeStrategy.first
@@ -166,6 +165,7 @@ assemblyMergeStrategy in assembly := {
   case PathList("javax", "xml",              xs @ _*) => MergeStrategy.first
   case PathList("com",   "esotericsoftware", xs @ _*) => MergeStrategy.first
   case PathList("xsbt",                      xs @ _*) => MergeStrategy.first
+  case PathList("module.properties",         xs @ _*) => MergeStrategy.first
   case PathList("META-INF", "MANIFEST.MF"           ) => MergeStrategy.discard
   case PathList("META-INF",                  xs @ _*) => MergeStrategy.first
   case "application.conf"                             => MergeStrategy.concat

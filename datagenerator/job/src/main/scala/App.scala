@@ -1,5 +1,5 @@
 
-package com.example
+package com.kensu
 /**
   Outputs
   -------
@@ -43,7 +43,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "datagenerator")
 // Set project Jars
 
 val libDir = new java.io.File(s"/usr/share/datagenerator", "lib")
-val currentProjectJars = Array[String]( "com.example-datagenerator.datagenerator-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array[String]( "com.kensu-datagenerator.datagenerator-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(s"/usr/share/datagenerator", "spark-lib")
 val fromProjectJars = Array[String]().map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
