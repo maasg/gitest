@@ -1,5 +1,5 @@
 
-organization := "io.kensu-matrixmodel"
+organization := "com.example-matrixmodel"
 
 name := "matrixmodel"
 
@@ -7,7 +7,7 @@ version := "0.0.1-SNAPSHOT"
 
 scalaVersion := "2.10.5"
 
-maintainer := "GM" //Docker
+maintainer := "DF" //Docker
 
 resolvers ++= Seq( "Maven2 Local" at "file:/home/maasg/.m2/repository/" ,
  "public" at "https://repo1.maven.org/maven2/" ,
@@ -146,7 +146,7 @@ libraryDependencies += "com.databricks" % "spark-csv_2.10" % "1.5.0" excludeAll(
 test in assembly := {}
 
 //main class
-mainClass in assembly := Some("io.kensu.Main")
+mainClass in assembly := Some("com.example.Main")
 
 artifact in (Compile, assembly) ~= { art =>
   art.copy(`classifier` = Some("assembly"))
