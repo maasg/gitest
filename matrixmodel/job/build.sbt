@@ -1,5 +1,5 @@
 
-organization := "com.example-matrixmodel"
+organization := "io.kensu-matrixmodel"
 
 name := "matrixmodel"
 
@@ -7,7 +7,7 @@ version := "0.0.1-SNAPSHOT"
 
 scalaVersion := "2.10.5"
 
-maintainer := "DF" //Docker
+maintainer := "kensu" //Docker
 
 resolvers ++= Seq( "Maven2 Local" at "file:/home/maasg/.m2/repository/" ,
  "public" at "https://repo1.maven.org/maven2/" ,
@@ -109,22 +109,19 @@ libraryDependencies += "org.apache.spark" %% "spark-sql" % sparkVersion excludeA
 
 libraryDependencies += "org.apache.spark" %% "spark-yarn" % sparkVersion excludeAll(
   ExclusionRule("org.apache.hadoop"),
-  ExclusionRule("org.apache.ivy", "ivy"),
-  ExclusionRule(organization = "javax.servlet")
+  ExclusionRule("org.apache.ivy", "ivy")
   )
 
 libraryDependencies += "org.apache.hadoop" % "hadoop-client" % hadoopVersion excludeAll(
     ExclusionRule("org.apache.commons", "commons-exec"),
     ExclusionRule("commons-codec", "commons-codec"),
-    ExclusionRule("com.google.guava", "guava"),
-    ExclusionRule(organization = "javax.servlet")
+    ExclusionRule("com.google.guava", "guava")
   )
 
 libraryDependencies += "org.apache.hadoop" % "hadoop-yarn-server-web-proxy" % hadoopVersion excludeAll(
       ExclusionRule("org.apache.commons", "commons-exec"),
       ExclusionRule("commons-codec", "commons-codec"),
-      ExclusionRule("com.google.guava", "guava"),
-      ExclusionRule(organization = "javax.servlet")
+      ExclusionRule("com.google.guava", "guava")
   )
 
 
@@ -148,7 +145,7 @@ libraryDependencies += "com.databricks" % "spark-csv_2.10" % "1.5.0" excludeAll(
 test in assembly := {}
 
 //main class
-mainClass in assembly := Some("com.example.Main")
+mainClass in assembly := Some("io.kensu.Main")
 
 artifact in (Compile, assembly) ~= { art =>
   art.copy(`classifier` = Some("assembly"))
@@ -174,7 +171,7 @@ assemblyMergeStrategy in assembly := {
   case PathList("javax", "xml",              xs @ _*) => MergeStrategy.first
   case PathList("com",   "esotericsoftware", xs @ _*) => MergeStrategy.first
   case PathList("xsbt",                      xs @ _*) => MergeStrategy.first
-  //case PathList("module.properties",         xs @ _*) => MergeStrategy.first
+  case PathList("module.properties",         xs @ _*) => MergeStrategy.first
   case PathList("META-INF", "MANIFEST.MF"           ) => MergeStrategy.discard
   case PathList("META-INF",                  xs @ _*) => MergeStrategy.first
   case "application.conf"                             => MergeStrategy.concat
