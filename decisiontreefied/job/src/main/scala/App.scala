@@ -3,20 +3,20 @@ package com.example
 /**
   Outputs
   -------
-  > ModelOutput(CodeCell(CellMetadata(Some(true),Some(false),None,Some(false),None,Some(CE9A12A3A78245DDA03579B66F9D3CCA),Some({"model":"org.apache.spark.ml.PipelineModel","inputs":{"resolved":[],"unresolved":[]}})),output, modelOutput + (System.currentTimeMillis.toString.drop(5)),None,None,Some({"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel"}}),Some(List(ScalaStream(stdout,stream,Model
-Located: /tmp/sne/data/decision_tree_data07358346
+  > ModelOutput(CodeCell(CellMetadata(Some(true),Some(false),None,Some(false),None,Some(CE9A12A3A78245DDA03579B66F9D3CCA),Some({"model":"org.apache.spark.ml.PipelineModel","inputs":{"resolved":["/home/maasg/playground/data/decision_tree.parquet"],"unresolved":[]}})),output, modelOutput + (System.currentTimeMillis.toString.drop(5)),None,None,Some({"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel"}}),Some(List(ScalaStream(stdout,stream,Model
+Located: /tmp/sne/data/decision_tree_data46865040
 Model:  model (org.apache.spark.ml.PipelineModel)
 {"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel"}}
 None
-output-CE9A12A3A78245DDA03579B66F9D3CCA: String = /tmp/sne/data/decision_tree_data07358346
-res32: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>
+output-CE9A12A3A78245DDA03579B66F9D3CCA: String = /tmp/sne/data/decision_tree_data46865040
+res30: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>
 ), ScalaExecuteResult(ExecuteResultMetadata(None),Map(text/html -> <div>
       <script data-this="{&quot;modelVar&quot;:&quot;model&quot;,&quot;inputs&quot;:{&quot;resolved&quot;:[],&quot;unresolved&quot;:[]},&quot;modelName&quot;:&quot;org.apache.spark.ml.PipelineModel&quot;}" type="text/x-scoped-javascript">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/modelOutput'], 
       function(modelOutput) {
         modelOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,24)))), modelOutput + (System.currentTimeMillis.toString.drop(5)), modelOutput + (System.currentTimeMillis.toString.drop(5)),model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@353f8277,0)
+    </div>),execute_result,23)))), modelOutput + (System.currentTimeMillis.toString.drop(5)), modelOutput + (System.currentTimeMillis.toString.drop(5)),model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@353f8277,0)
 
  */
 object Main {
