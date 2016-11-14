@@ -3,7 +3,20 @@ package io.kensu
 /**
   Outputs
   -------
-  > 
+  > ModelOutput(CodeCell(CellMetadata(Some(true),Some(false),None,Some(false),None,Some(788B32E15F6D44A096E0D574EC29707B),Some({"model":"org.apache.spark.ml.PipelineModel","inputs":{"resolved":["file:/home/maasg/playground/data/decision_tree.parquet"],"unresolved":[]}})),output,model_output,None,None,Some({"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel","source":"trainingSet"}}),Some(List(ScalaStream(stdout,stream,Model
+Located: /tmp/pipeline/df-final
+Model:  model (org.apache.spark.ml.PipelineModel)
+{"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel","source":"trainingSet"}}
+Some(trainingSet)
+output-788B32E15F6D44A096E0D574EC29707B: String = /tmp/pipeline/df-final
+res21: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>
+), ScalaExecuteResult(ExecuteResultMetadata(None),Map(text/html -> <div>
+      <script data-this="{&quot;modelVar&quot;:&quot;model&quot;,&quot;inputs&quot;:{&quot;resolved&quot;:[&quot;file:/home/maasg/playground/data/decision_tree.parquet&quot;],&quot;unresolved&quot;:[]},&quot;modelName&quot;:&quot;org.apache.spark.ml.PipelineModel&quot;}" type="text/x-scoped-javascript">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/modelOutput'], 
+      function(modelOutput) {
+        modelOutput.call(data, this);
+      }
+    );/*]]>*/</script>
+    </div>),execute_result,19)))),model_output,model_output,model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@abafbcd,0)
 
  */
 object Main {
@@ -80,14 +93,12 @@ val sc = sparkContext
 
   /* -- Code Cell: Some(9A7C4B1B2CC74CC588A355344AD4CFB2) -- */ 
 
-  val model_matrix_uri = "hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/modelMatrix/"
-  val model_matrix_uri_output = "hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/modelMatrix/"
+  val sample =  "/home/maasg/playground/data/decision_tree.parquet"
   
   val matrixDF = sqlContext.read
-                     .format("parquet")
-                     .load(model_matrix_uri)
-                     .persist(org.apache.spark.storage.StorageLevel.MEMORY_AND_DISK_SER)
-  
+                           .load(sample)
+                           .persist(org.apache.spark.storage.StorageLevel.MEMORY_AND_DISK_SER)
+                           .repartition(2)
   val schema = matrixDF.schema
 /****************/
 
@@ -258,11 +269,44 @@ val sc = sparkContext
   /* -- Code Cell: Some(0FBEE70305CB418E82F97243A985F584) -- */ 
 
   
-  val model_output = "hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/trained_model/dt_pipeline"
+  val model_output = "/tmp/pipeline/df-final"
   
   //sparkContext.parallelize(Seq(model), 1).saveAsObjectFile(model_output)
   
   //Note : to reload the model : sparkContext.objectFile[orgapache.spark.ml.PipelineModel](model_output).first 
+/****************/
+
+
+  /* -- Code Cell: Some(788B32E15F6D44A096E0D574EC29707B) -- */ 
+
+  
+val `output-788B32E15F6D44A096E0D574EC29707B` = {
+  model_output
+  }
+  
+
+
+  // Save CrossValidation Model
+  org.apache.spark.SparkContext.getOrCreate.parallelize(Seq(model), 1).saveAsObjectFile(`output-788B32E15F6D44A096E0D574EC29707B`)
+  
+  
+
+
+  {
+    // adding output instance information into catalog
+    import scalaj.http._
+    import  java.net.URL
+    val path = "/adalog/output?uuid=bbe7efb6-db5f-483f-abe7-341e536f0b34&tpe=model&variable=model&location="+`output-788B32E15F6D44A096E0D574EC29707B`
+    val httpReq = adalogUrl.map(url => Http(new URL(new URL(url), path).toString))
+    val credentials = for (u <-adalogUser; p <- adalogPassword ) yield (u,p)
+    val authReq = credentials.foldLeft(httpReq){case (req, (u,p)) =>  req.map(_.auth(u, p))}
+    val res = authReq.map(_.postForm(Nil).asString.body)
+    println(res)
+  }
+  
+
+
+   // Output without variable
 /****************/
 
 

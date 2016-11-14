@@ -50,7 +50,28 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@42104ad5\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame\n"
+      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@6e478594\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 1
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "9A7C4B1B2CC74CC588A355344AD4CFB2"
+    },
+    "cell_type" : "code",
+    "source" : "val sample =  \"/home/maasg/playground/data/decision_tree.parquet\"\n\nval matrixDF = sqlContext.read\n                         .load(sample)\n                         .persist(org.apache.spark.storage.StorageLevel.MEMORY_AND_DISK_SER)\n                         .repartition(2)\nval schema = matrixDF.schema",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "sample: String = /home/maasg/playground/data/decision_tree.parquet\nmatrixDF: org.apache.spark.sql.DataFrame = [id: int, any_churn_target: boolean, full_churn_target: boolean, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, Postal_Code: string, cs_k: string, Neighbourhood_Code: string]\nschema: org.apache.spark.sql.types.StructType = StructType(StructField(id,IntegerType,true), StructField(any_churn_target,BooleanType,true), StructField(full_churn_target,BooleanType,true), StructField(A_1_count_last,IntegerType,true), StructField(A_2_count_last,IntegerType,true), StructField(A_3_count_last,IntegerType,true), StructField(Postal_Code,StringType,true), StructField(cs_k,StringType,true), StructField(Neighbourhood_Code,StringType,true))\n"
     }, {
       "metadata" : { },
       "data" : {
@@ -64,27 +85,6 @@
       "trusted" : true,
       "input_collapsed" : false,
       "collapsed" : false,
-      "id" : "9A7C4B1B2CC74CC588A355344AD4CFB2"
-    },
-    "cell_type" : "code",
-    "source" : "val model_matrix_uri = \"hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/modelMatrix/\"\nval model_matrix_uri_output = \"hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/modelMatrix/\"\n\nval matrixDF = sqlContext.read\n                   .format(\"parquet\")\n                   .load(model_matrix_uri)\n                   .persist(org.apache.spark.storage.StorageLevel.MEMORY_AND_DISK_SER)\n\nval schema = matrixDF.schema",
-    "outputs" : [ {
-      "name" : "stdout",
-      "output_type" : "stream",
-      "text" : "model_matrix_uri: String = hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/modelMatrix/\nmodel_matrix_uri_output: String = hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/modelMatrix/\nmatrixDF: org.apache.spark.sql.DataFrame = [id: int, any_churn_target: boolean, full_churn_target: boolean, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, A_4_count_last: int, A_5_count_last: int, A_6_count_last: int, A_7_count_last: int, A_8_count_last: int, A_AUM_Amt_last: double, A_Account_FirstContact_Date: int, A_Balance_Amt_last: double, A_Balance_Loan_Amt_last: double, A_Capital_Death_Amt_last: double, A_Capital_Life_Amt_last: double, A_Dubious_Payment_Bank_Ind_last: string, A_Dubious_Payment_PC_Ind_last: string, A_Lpp_Id: int, A_Original_..."
-    }, {
-      "metadata" : { },
-      "data" : {
-        "text/html" : ""
-      },
-      "output_type" : "execute_result",
-      "execution_count" : 3
-    } ]
-  }, {
-    "metadata" : {
-      "trusted" : true,
-      "input_collapsed" : false,
-      "collapsed" : false,
       "id" : "466C85782D15432BBAC4CBBB561CF60C"
     },
     "cell_type" : "code",
@@ -92,14 +92,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "res5: org.apache.spark.sql.DataFrame = [any_churn_target: boolean, full_churn_target: boolean, count: bigint]\n"
+      "text" : "res4: org.apache.spark.sql.DataFrame = [any_churn_target: boolean, full_churn_target: boolean, count: bigint]\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon1d7bdedf0fcc727cd7eba481c12a8e6d&quot;,&quot;partitionIndexId&quot;:&quot;anonb5755095eefd8decf0c13fb3f28239d0&quot;,&quot;numPartitions&quot;:1,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;any_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;full_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;count&quot;,&quot;type&quot;:&quot;long&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
+        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon7896ba826d35ccc727b0edbe784feb69&quot;,&quot;partitionIndexId&quot;:&quot;anon19afa43542f74b7d3068c179fecbd0f4&quot;,&quot;numPartitions&quot;:1,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;any_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;full_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;count&quot;,&quot;type&quot;:&quot;long&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 4
+      "execution_count" : 3
     } ]
   }, {
     "metadata" : {
@@ -113,14 +113,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "distinctCsk: Long = 845582\n"
+      "text" : "distinctCsk: Long = 2\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 5
+      "execution_count" : 4
     } ]
   }, {
     "metadata" : {
@@ -134,14 +134,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "distinctNeighborhoodCodes: Long = 19000\n"
+      "text" : "distinctNeighborhoodCodes: Long = 4\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 6
+      "execution_count" : 5
     } ]
   }, {
     "metadata" : {
@@ -155,14 +155,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dictinctPostalCodes: Long = 1404\n"
+      "text" : "dictinctPostalCodes: Long = 5\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 7
+      "execution_count" : 6
     } ]
   }, {
     "metadata" : {
@@ -176,14 +176,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "stringedColumns: Seq[String] = List(A_Dubious_Payment_Bank_Ind_last, A_Dubious_Payment_PC_Ind_last, A_Owner_Ind_last, A_Tenant_Ind, Bank_Insurance_Ind, Convinced_Client_Ind, CreditCard_Ind, DebetCard_Ind, Deceased_Liquidated_Ind, Gender, Individual_Organization_Code, Neighbourhood_Code, Postal_Code, Snapshot_Date, Social_Class_Code, cs_k, EVO_A_Dubious_Payment_Bank_Ind_last, EVO_A_Dubious_Payment_PC_Ind_last, EVO_A_Owner_Ind_last)\ncategoricals: Seq[String] = List(A_Dubious_Payment_Bank_Ind_last, A_Dubious_Payment_PC_Ind_last, A_Owner_Ind_last, A_Tenant_Ind, Bank_Insurance_Ind, Convinced_Client_Ind, CreditCard_Ind, DebetCard_Ind, Deceased_Liquidated_Ind, Gender, Individual_Organization_Code, Snapshot_Date, Social_Class_Code, EVO_A_Dubious_Payment_Bank_Ind_last, EVO_A_Dubious_Payment_PC_I..."
+      "text" : "stringedColumns: Seq[String] = List(Postal_Code, cs_k, Neighbourhood_Code)\ncategoricals: Seq[String] = List()\nnumCols: Seq[String] = List(id, A_1_count_last, A_2_count_last, A_3_count_last)\nres9: Boolean = true\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : "true"
       },
       "output_type" : "execute_result",
-      "execution_count" : 8
+      "execution_count" : 7
     } ]
   }, {
     "metadata" : {
@@ -197,14 +197,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "fillStrMap: scala.collection.immutable.Map[String,String] = Map(Deceased_Liquidated_Ind -> unknown, Snapshot_Date -> unknown, Neighbourhood_Code -> unknown, DebetCard_Ind -> unknown, EVO_A_Dubious_Payment_Bank_Ind_last -> unknown, Postal_Code -> unknown, A_Owner_Ind_last -> unknown, A_Dubious_Payment_Bank_Ind_last -> unknown, Bank_Insurance_Ind -> unknown, cs_k -> unknown, Social_Class_Code -> unknown, EVO_A_Owner_Ind_last -> unknown, A_Dubious_Payment_PC_Ind_last -> unknown, EVO_A_Dubious_Payment_PC_Ind_last -> unknown, Individual_Organization_Code -> unknown, Gender -> unknown, CreditCard_Ind -> unknown, Convinced_Client_Ind -> unknown, A_Tenant_Ind -> unknown)\nfillNumMap: scala.collection.immutable.Map[String,Int] = Map(EVO_A_Capital_Death_Amt_last -> 0, A_Balance_Loan_Amt_last -> 0,..."
+      "text" : "fillStrMap: scala.collection.immutable.Map[String,String] = Map(Postal_Code -> unknown, cs_k -> unknown, Neighbourhood_Code -> unknown)\nfillNumMap: scala.collection.immutable.Map[String,Int] = Map(id -> 0, A_1_count_last -> 0, A_2_count_last -> 0, A_3_count_last -> 0)\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 11
+      "execution_count" : 8
     } ]
   }, {
     "metadata" : {
@@ -237,7 +237,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 53
+      "execution_count" : 9
     } ]
   }, {
     "metadata" : {
@@ -258,7 +258,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 44
+      "execution_count" : 10
     } ]
   }, {
     "metadata" : {
@@ -278,14 +278,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "catIndexer: Array[org.apache.spark.ml.PipelineStage] = Array(strIdx_811ae246d2af, strIdx_b806c23e62a9, strIdx_c7260576b2ed, strIdx_c6f8d846f3fa, strIdx_1156d091bd40, strIdx_a299eb0e9330, strIdx_b22d6baaafa4, strIdx_96ccb1fcb371, strIdx_e3014cd55998, strIdx_4e6e91a6b378, strIdx_699a9f8b791a, strIdx_ddf1eed0c5ae, strIdx_c4b3529aad2f, strIdx_752a5e594b56, strIdx_9f33e19f2d57, strIdx_f6d96b8177f3)\nvectorCols: Array[String] = Array(A_Dubious_Payment_Bank_Ind_last_index, A_Dubious_Payment_PC_Ind_last_index, A_Owner_Ind_last_index, A_Tenant_Ind_index, Bank_Insurance_Ind_index, Convinced_Client_Ind_index, CreditCard_Ind_index, DebetCard_Ind_index, Deceased_Liquidated_Ind_index, Gender_index, Individual_Organization_Code_index, Snapshot_Date_index, Social_Class_Code_index, EVO_A_Dubious_Payment_..."
+      "text" : "catIndexer: Array[org.apache.spark.ml.PipelineStage] = Array()\nvectorCols: Array[String] = Array(id, A_1_count_last, A_2_count_last, A_3_count_last, cs_k_hash, Postal_Code_hash, Neighbourhood_Code_hash)\nassembler: org.apache.spark.ml.feature.VectorAssembler = vecAssembler_3ec654a4ad0e\nvectorIndexer: org.apache.spark.ml.feature.VectorIndexer = vecIdx_9ea97f2aa0a7\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 57
+      "execution_count" : 11
     } ]
   }, {
     "metadata" : {
@@ -299,14 +299,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dt: org.apache.spark.ml.classification.DecisionTreeClassifier = dtc_ccdb58565741\n"
+      "text" : "dt: org.apache.spark.ml.classification.DecisionTreeClassifier = dtc_898642d2a29f\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 58
+      "execution_count" : 12
     } ]
   }, {
     "metadata" : {
@@ -320,14 +320,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dtPipeline: org.apache.spark.ml.Pipeline = pipeline_87dc005f0ac8\n"
+      "text" : "dtPipeline: org.apache.spark.ml.Pipeline = pipeline_d897f6d67751\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 59
+      "execution_count" : 13
     } ]
   }, {
     "metadata" : {
@@ -341,14 +341,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "trainingSet: org.apache.spark.sql.DataFrame = [id: int, any_churn_target: boolean, full_churn_target: boolean, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, A_4_count_last: int, A_5_count_last: int, A_6_count_last: int, A_7_count_last: int, A_8_count_last: int, A_AUM_Amt_last: double, A_Account_FirstContact_Date: int, A_Balance_Amt_last: double, A_Balance_Loan_Amt_last: double, A_Capital_Death_Amt_last: double, A_Capital_Life_Amt_last: double, A_Dubious_Payment_Bank_Ind_last: string, A_Dubious_Payment_PC_Ind_last: string, A_Lpp_Id: int, A_Original_Loan_Amt_last: double, A_Owner_Ind_last: string, A_Point_Of_Sales: int, A_Premium_Amt_last: double, A_Reserve_Amt_last: double, A_Tenant_Ind: string, A_count: int, Apartment_Owner_Nbr_last: int, Apartment_Tenants_Nbr_last: int..."
+      "text" : "trainingSet: org.apache.spark.sql.DataFrame = [id: int, any_churn_target: boolean, full_churn_target: boolean, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, Postal_Code: string, cs_k: string, Neighbourhood_Code: string]\ntestSet: org.apache.spark.sql.DataFrame = [id: int, any_churn_target: boolean, full_churn_target: boolean, A_1_count_last: int, A_2_count_last: int, A_3_count_last: int, Postal_Code: string, cs_k: string, Neighbourhood_Code: string]\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 60
+      "execution_count" : 14
     } ]
   }, {
     "metadata" : {
@@ -362,14 +362,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "model: org.apache.spark.ml.PipelineModel = pipeline_87dc005f0ac8\n"
+      "text" : "model: org.apache.spark.ml.PipelineModel = pipeline_d897f6d67751\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 61
+      "execution_count" : 15
     } ]
   }, {
     "metadata" : {
@@ -385,15 +385,51 @@
       "id" : "0FBEE70305CB418E82F97243A985F584"
     },
     "cell_type" : "code",
-    "source" : "\nval model_output = \"hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/trained_model/dt_pipeline\"\n\n//sparkContext.parallelize(Seq(model), 1).saveAsObjectFile(model_output)\n\n//Note : to reload the model : sparkContext.objectFile[orgapache.spark.ml.PipelineModel](model_output).first ",
+    "source" : "\nval model_output = \"/tmp/pipeline/df-final\"\n\n//sparkContext.parallelize(Seq(model), 1).saveAsObjectFile(model_output)\n\n//Note : to reload the model : sparkContext.objectFile[orgapache.spark.ml.PipelineModel](model_output).first ",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "model_output: String = hdfs://lhvbdab8.axa-be.intraxa:9000/playground/projects/churn_auto/out/trained_model/dt_pipeline\n"
+      "text" : "model_output: String = /tmp/pipeline/df-final\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 18
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "788B32E15F6D44A096E0D574EC29707B",
+      "extra" : {
+        "model" : "org.apache.spark.ml.PipelineModel",
+        "inputs" : {
+          "resolved" : [ "file:/home/maasg/playground/data/decision_tree.parquet" ],
+          "unresolved" : [ ]
+        }
+      }
+    },
+    "cell_type" : "output",
+    "source" : "model_output",
+    "output" : {
+      "type" : "model",
+      "var" : "model",
+      "extra" : {
+        "value" : "org.apache.spark.ml.PipelineModel",
+        "source" : "trainingSet"
+      }
+    },
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "Model\nLocated: /tmp/pipeline/df-final\nModel:  model (org.apache.spark.ml.PipelineModel)\n{\"type\":\"model\",\"var\":\"model\",\"extra\":{\"value\":\"org.apache.spark.ml.PipelineModel\",\"source\":\"trainingSet\"}}\nSome(trainingSet)\noutput-788B32E15F6D44A096E0D574EC29707B: String = /tmp/pipeline/df-final\nres21: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "<div>\n      <script data-this=\"{&quot;modelVar&quot;:&quot;model&quot;,&quot;inputs&quot;:{&quot;resolved&quot;:[&quot;file:/home/maasg/playground/data/decision_tree.parquet&quot;],&quot;unresolved&quot;:[]},&quot;modelName&quot;:&quot;org.apache.spark.ml.PipelineModel&quot;}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/modelOutput'], \n      function(modelOutput) {\n        modelOutput.call(data, this);\n      }\n    );/*]]>*/</script>\n    </div>"
       },
       "output_type" : "execute_result",
       "execution_count" : 19
