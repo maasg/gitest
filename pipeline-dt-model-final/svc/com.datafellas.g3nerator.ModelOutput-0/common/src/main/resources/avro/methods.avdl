@@ -1,0 +1,31 @@
+@namespace("com.example.pipeline_dt_model_final_com.datafellas.g3nerator.modeloutput_0.server")
+protocol Methods {
+
+  import idl "error.avdl";
+  import idl "model.avdl";
+
+  record ServiceRequest {
+    
+    array<double> input;
+
+
+
+  }
+
+  record ServiceResponse {
+    com.example.pipeline_dt_model_final_com.datafellas.g3nerator.modeloutput_0.model.Domain domain;
+  }
+
+  record MetadataRequest {
+    boolean pretty = false;
+  }
+
+  record MetadataResponse {
+    string notebook;
+  }
+
+  ServiceResponse predict(ServiceRequest request) throws com.example.pipeline_dt_model_final_com.datafellas.g3nerator.modeloutput_0.rpc.ServiceException;
+
+  MetadataResponse notebook(MetadataRequest request) throws com.example.pipeline_dt_model_final_com.datafellas.g3nerator.modeloutput_0.rpc.ServiceException;
+
+}

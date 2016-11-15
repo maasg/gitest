@@ -1,0 +1,10 @@
+@namespace("com.example.pipeline_dt_model_final_com.datafellas.g3nerator.modeloutput_0.model")
+
+protocol Model {
+
+  record Domain {
+    double output;
+
+  }
+
+}
