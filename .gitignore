@@ -4,3 +4,4 @@
 */sbt
 */job/out
 */svc/*/out
+*/.idea
