@@ -21,7 +21,7 @@ import com.example.pipeline_decision_trees_simple_model_final.snb_com.datafellas
 object Server extends Methods {
   private [this] val _ipc = new NettyServer(
                                              new SpecificResponder(classOf[Methods], this),
-                                             new InetSocketAddress(59111)
+                                             new InetSocketAddress(35902)
                                            )
 
   
@@ -96,7 +96,7 @@ def tellCatalog():Unit = new Thread { override def run:Unit = {
   h match {
     case Some(host) =>
       // publishing current host and port to adalog
-      val url = "/adalog/output/service?uuid=bbe7efb6-db5f-483f-abe7-341e536f0b34&tpe=model&variable=model&host=${host}&port=59111"
+      val url = "/adalog/output/service?uuid=bbe7efb6-db5f-483f-abe7-341e536f0b34&tpe=model&variable=model&host=${host}&port=35902"
       val res = adalogPost(url)
       val msg = "Adalog response on service update: "
       res match {
@@ -135,7 +135,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "pipeline_decisi
 val libDir = new java.io.File(".", "lib")
 val currentProjectJars = Array[String]( "com.example.pipeline_decision_trees_simple_model_final.snb_com.datafellas.g3nerator.modeloutput_0.common-0.0.1-SNAPSHOT.jar" , "com.example.pipeline_decision_trees_simple_model_final.snb_com.datafellas.g3nerator.modeloutput_0.server-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(".", "spark-lib")
-val fromProjectJars = Array[String]( "commons-collections-3.2.1.jar" , "paranamer-2.3.jar" , "jackson-core-asl-1.9.13.jar" , "avro-ipc-1.7.7.jar" , "avro-1.7.7.jar" , "avro-compiler-1.7.7.jar" , "commons-lang-2.6.jar" , "jackson-mapper-asl-1.9.13.jar" , "xz-1.0.jar" , "slf4j-api-1.6.4.jar" , "snappy-java-1.0.5.jar" , "velocity-1.7.jar" , "netty-3.4.0.Final.jar" , "commons-compress-1.4.1.jar" ).map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
+val fromProjectJars = Array[String]( "commons-collections-3.2.1.jar" , "paranamer-2.3.jar" , "xz-1.0.jar" , "slf4j-api-1.6.4.jar" , "commons-lang-2.6.jar" , "avro-compiler-1.7.7.jar" , "avro-1.7.7.jar" , "commons-compress-1.4.1.jar" , "snappy-java-1.0.5.jar" , "netty-3.4.0.Final.jar" , "jackson-mapper-asl-1.9.13.jar" , "velocity-1.7.jar" , "avro-ipc-1.7.7.jar" , "jackson-core-asl-1.9.13.jar" ).map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
 println("Add Jars: \n" + jarsArray.mkString("\n"))
 sparkConf.setJars(jarsArray)

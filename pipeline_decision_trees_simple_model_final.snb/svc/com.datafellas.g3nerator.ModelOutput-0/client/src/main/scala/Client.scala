@@ -65,7 +65,7 @@ def askServiceToCatalog(): Try[(String, Int)] = {
     askServiceToCatalog().get //force failure case
   }
 
-  def from(host:String, port:Int=59111) = {
+  def from(host:String, port:Int=35902) = {
     val transport = new NettyTransceiver(new InetSocketAddress(host, port))
     val client = SpecificRequestor.getClient(classOf[com.example.pipeline_decision_trees_simple_model_final.snb_com.datafellas.g3nerator.modeloutput_0.server.Methods], transport)
     transport -> client

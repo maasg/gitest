@@ -9,14 +9,14 @@ Model:  model (org.apache.spark.ml.PipelineModel)
 {"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel","source":"trainingSet"}}
 Some(trainingSet)
 output-788B32E15F6D44A096E0D574EC29707B: String = /tmp/pipeline/df-final2
-res44: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>
+res22: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>
 ), ScalaExecuteResult(ExecuteResultMetadata(None),Map(text/html -> <div>
       <script data-this="{&quot;modelVar&quot;:&quot;model&quot;,&quot;inputs&quot;:{&quot;resolved&quot;:[&quot;file:/home/maasg/playground/data/decision_tree.parquet&quot;],&quot;unresolved&quot;:[]},&quot;modelName&quot;:&quot;org.apache.spark.ml.PipelineModel&quot;}" type="text/x-scoped-javascript">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/modelOutput'], 
       function(modelOutput) {
         modelOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,38)))),model_output,model_output,model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@7a5c0cf,0)
+    </div>),execute_result,18)))),model_output,model_output,model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@7a5c0cf,0)
 
  */
 object Main {
@@ -377,37 +377,21 @@ val `output-788B32E15F6D44A096E0D574EC29707B` = {
   // Example. we want to predictions for the following record
   val sample = matrixDF.sample(false, 0.1)
   
-  // We Get the following predictions
-  
+  // We Get the following predictions 
+  // visited
   val prediction = predict (sample, model)
 /****************/
 
 
   /* -- Code Cell: Some(ECB2BF0CE9E64CAE8081844B75867F5A) -- */ 
 
-  prediction.schema
+  println(prediction.schema)
 /****************/
 
 
   /* -- Code Cell: Some(F96649E97AAB49DF88A1DB8273AB5BD9) -- */ 
 
   prediction.collect
-/****************/
-
-
-  /* -- Code Cell: Some(7375ECFB05A84D888BEC0DE9E21BB96E) -- */ 
-
-  val keys = Seq("id","rawPrediction","probability","predictions","label")
-      val prediction = model.transform(sample).select(keys.head, keys.tail: _*)
-      val values = prediction.collect.map{row =>
-        keys.zipWithIndex.map{case (k,i) => (k, row.get(i))}
-      }
-/****************/
-
-
-  /* -- Code Cell: Some(26492DF687D54960864F9494A3FFA0F6) -- */ 
-
-  values
 /****************/
 
 
