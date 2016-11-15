@@ -115,13 +115,15 @@ libraryDependencies += "org.apache.spark" %% "spark-yarn" % sparkVersion exclude
 libraryDependencies += "org.apache.hadoop" % "hadoop-client" % hadoopVersion excludeAll(
     ExclusionRule("org.apache.commons", "commons-exec"),
     ExclusionRule("commons-codec", "commons-codec"),
-    ExclusionRule("com.google.guava", "guava")
+    ExclusionRule("com.google.guava", "guava"),
+    ExclusionRule("javax.servlet")
   )
 
 libraryDependencies += "org.apache.hadoop" % "hadoop-yarn-server-web-proxy" % hadoopVersion excludeAll(
       ExclusionRule("org.apache.commons", "commons-exec"),
       ExclusionRule("commons-codec", "commons-codec"),
-      ExclusionRule("com.google.guava", "guava")
+      ExclusionRule("com.google.guava", "guava"),
+      ExclusionRule("javax.servlet")
   )
 
 

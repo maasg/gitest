@@ -41,12 +41,11 @@
       <file leaf-file-name="Client.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/scala/Client.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="67" column="17" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
+            <state relative-caret-position="210">
+              <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
               <folding>
-                <element signature="e#83#126#0" expanded="false" />
-                <element signature="e#236#264#0" expanded="false" />
-                <marker date="1478607740237" expanded="false" signature="243:305" ph="..." />
+                <element signature="e#80#123#0" expanded="false" />
+                <element signature="e#233#261#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -55,25 +54,36 @@
       <file leaf-file-name="Server.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/scala/Server.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+            <state relative-caret-position="1650">
+              <caret line="129" column="86" selection-start-line="118" selection-start-column="2" selection-end-line="129" selection-end-column="86" />
               <folding>
-                <element signature="e#89#122#0" expanded="false" />
-                <element signature="e#2468#2487#0" expanded="false" />
-                <element signature="e#3421#3470#0" expanded="false" />
-                <marker date="1478608747492" expanded="false" signature="96:158" ph="..." />
-                <marker date="1478608747492" expanded="true" signature="5315:5854" ph="{...}" />
+                <element signature="e#2683#2702#0" expanded="false" />
+                <marker date="1479056514716" expanded="true" signature="6062:6200" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Http.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.sbt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build.sbt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Http.scala" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalaj/scalaj-http_2.10/srcs/scalaj-http_2.10-2.3.0-sources.jar!/scalaj/http/Http.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="6075">
               <caret line="420" column="2" selection-start-line="420" selection-start-column="2" selection-end-line="420" selection-end-column="6" />
-              <folding />
+              <folding>
+                <element signature="e#619#654#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,10 +133,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1855" />
-    <option name="height" value="1056" />
+    <option name="x" value="3915" />
+    <option name="y" value="82" />
+    <option name="width" value="1845" />
+    <option name="height" value="998" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -153,8 +163,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -165,12 +176,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="format&#9;ACTION&#9;ReformatCode" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="SearchEverywhereHistoryKey" value="indent&#9;ACTION&#9;AutoIndentLines&#10;format&#9;ACTION&#9;ReformatCode" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -522,7 +532,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+    <frame x="3915" y="82" width="1845" height="998" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -535,7 +545,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18921833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1902439" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -571,26 +581,32 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/client/src/main/scala/Client.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="67" column="17" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
+        <state relative-caret-position="210">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
           <folding>
-            <element signature="e#83#126#0" expanded="false" />
-            <element signature="e#236#264#0" expanded="false" />
-            <marker date="1478607740237" expanded="false" signature="243:305" ph="..." />
+            <element signature="e#80#123#0" expanded="false" />
+            <element signature="e#233#261#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/scala/Server.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+        <state relative-caret-position="1650">
+          <caret line="129" column="86" selection-start-line="118" selection-start-column="2" selection-end-line="129" selection-end-column="86" />
           <folding>
-            <element signature="e#89#122#0" expanded="false" />
-            <element signature="e#2468#2487#0" expanded="false" />
-            <element signature="e#3421#3470#0" expanded="false" />
-            <marker date="1478608747492" expanded="false" signature="96:158" ph="..." />
-            <marker date="1478608747492" expanded="true" signature="5315:5854" ph="{...}" />
+            <element signature="e#2683#2702#0" expanded="false" />
+            <marker date="1479056514716" expanded="true" signature="6062:6200" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -599,7 +615,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6075">
           <caret line="420" column="2" selection-start-line="420" selection-start-column="2" selection-end-line="420" selection-end-column="6" />
-          <folding />
+          <folding>
+            <element signature="e#619#654#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -624,9 +642,8 @@
         <state relative-caret-position="930">
           <caret line="67" column="17" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
           <folding>
-            <element signature="e#83#126#0" expanded="false" />
-            <element signature="e#236#264#0" expanded="false" />
-            <marker date="1478607740237" expanded="false" signature="243:305" ph="..." />
+            <element signature="e#80#123#0" expanded="false" />
+            <element signature="e#233#261#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -636,11 +653,8 @@
         <state relative-caret-position="1275">
           <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
           <folding>
-            <element signature="e#89#122#0" expanded="false" />
-            <element signature="e#2468#2487#0" expanded="false" />
-            <element signature="e#3421#3470#0" expanded="false" />
-            <marker date="1478608747492" expanded="false" signature="96:158" ph="..." />
-            <marker date="1478608747492" expanded="true" signature="5315:5854" ph="{...}" />
+            <element signature="e#2683#2702#0" expanded="false" />
+            <marker date="1479056514716" expanded="true" signature="6062:6200" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -649,7 +663,105 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#619#654#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/resources/marathon.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/scala/Client.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="67" column="17" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
+          <folding>
+            <element signature="e#80#123#0" expanded="false" />
+            <element signature="e#233#261#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/scala/Server.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+          <folding>
+            <element signature="e#2683#2702#0" expanded="false" />
+            <marker date="1479056514716" expanded="true" signature="6062:6200" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalaj/scalaj-http_2.10/srcs/scalaj-http_2.10-2.3.0-sources.jar!/scalaj/http/Http.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6075">
+          <caret line="420" column="2" selection-start-line="420" selection-start-column="2" selection-end-line="420" selection-end-column="6" />
+          <folding>
+            <element signature="e#619#654#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/resources/marathon.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/scala/Client.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="67" column="17" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
+          <folding>
+            <element signature="e#80#123#0" expanded="false" />
+            <element signature="e#233#261#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/scala/Server.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+          <folding>
+            <element signature="e#2683#2702#0" expanded="false" />
+            <marker date="1479056514716" expanded="true" signature="6062:6200" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalaj/scalaj-http_2.10/srcs/scalaj-http_2.10-2.3.0-sources.jar!/scalaj/http/Http.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#619#654#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -674,9 +786,8 @@
         <state relative-caret-position="645">
           <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
           <folding>
-            <element signature="e#83#126#0" expanded="false" />
-            <element signature="e#236#264#0" expanded="false" />
-            <marker date="1478607740237" expanded="false" signature="243:305" ph="..." />
+            <element signature="e#80#123#0" expanded="false" />
+            <element signature="e#233#261#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -686,11 +797,8 @@
         <state relative-caret-position="870">
           <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
           <folding>
-            <element signature="e#89#122#0" expanded="false" />
-            <element signature="e#2468#2487#0" expanded="false" />
-            <element signature="e#3421#3470#0" expanded="false" />
-            <marker date="1478608747492" expanded="false" signature="96:158" ph="..." />
-            <marker date="1478608747492" expanded="true" signature="5315:5854" ph="{...}" />
+            <element signature="e#2683#2702#0" expanded="false" />
+            <marker date="1479056514716" expanded="true" signature="6062:6200" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -699,7 +807,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#619#654#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -724,9 +834,8 @@
         <state relative-caret-position="645">
           <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
           <folding>
-            <element signature="e#83#126#0" expanded="false" />
-            <element signature="e#236#264#0" expanded="false" />
-            <marker date="1478607740237" expanded="false" signature="243:305" ph="..." />
+            <element signature="e#80#123#0" expanded="false" />
+            <element signature="e#233#261#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -736,11 +845,8 @@
         <state relative-caret-position="870">
           <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
           <folding>
-            <element signature="e#89#122#0" expanded="false" />
-            <element signature="e#2468#2487#0" expanded="false" />
-            <element signature="e#3421#3470#0" expanded="false" />
-            <marker date="1478608747492" expanded="false" signature="96:158" ph="..." />
-            <marker date="1478608747492" expanded="true" signature="5315:5854" ph="{...}" />
+            <element signature="e#2683#2702#0" expanded="false" />
+            <marker date="1479056514716" expanded="true" signature="6062:6200" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -749,7 +855,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#619#654#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -774,9 +882,8 @@
         <state relative-caret-position="525">
           <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
           <folding>
-            <element signature="e#83#126#0" expanded="false" />
-            <element signature="e#236#264#0" expanded="false" />
-            <marker date="1478607740237" expanded="false" signature="243:305" ph="..." />
+            <element signature="e#80#123#0" expanded="false" />
+            <element signature="e#233#261#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -786,11 +893,8 @@
         <state relative-caret-position="1080">
           <caret line="86" column="42" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="42" />
           <folding>
-            <element signature="e#89#122#0" expanded="false" />
-            <element signature="e#2468#2487#0" expanded="false" />
-            <element signature="e#3421#3470#0" expanded="false" />
-            <marker date="1478608747492" expanded="false" signature="96:158" ph="..." />
-            <marker date="1478608747492" expanded="true" signature="5315:5854" ph="{...}" />
+            <element signature="e#2683#2702#0" expanded="false" />
+            <marker date="1479056514716" expanded="true" signature="6062:6200" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -829,37 +933,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalaj/scalaj-http_2.10/srcs/scalaj-http_2.10-2.3.0-sources.jar!/scalaj/http/Http.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6075">
+          <caret line="420" column="2" selection-start-line="420" selection-start-column="2" selection-end-line="420" selection-end-column="6" />
+          <folding>
+            <element signature="e#619#654#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/scala/Client.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="67" column="17" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
+        <state relative-caret-position="210">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
           <folding>
-            <element signature="e#83#126#0" expanded="false" />
-            <element signature="e#236#264#0" expanded="false" />
-            <marker date="1478607740237" expanded="false" signature="243:305" ph="..." />
+            <element signature="e#80#123#0" expanded="false" />
+            <element signature="e#233#261#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/scala/Server.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+        <state relative-caret-position="1650">
+          <caret line="129" column="86" selection-start-line="118" selection-start-column="2" selection-end-line="129" selection-end-column="86" />
           <folding>
-            <element signature="e#89#122#0" expanded="false" />
-            <element signature="e#2468#2487#0" expanded="false" />
-            <element signature="e#3421#3470#0" expanded="false" />
-            <marker date="1478608747492" expanded="false" signature="96:158" ph="..." />
-            <marker date="1478608747492" expanded="true" signature="5315:5854" ph="{...}" />
+            <element signature="e#2683#2702#0" expanded="false" />
+            <marker date="1479056514716" expanded="true" signature="6062:6200" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalaj/scalaj-http_2.10/srcs/scalaj-http_2.10-2.3.0-sources.jar!/scalaj/http/Http.scala">
+    <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="420" column="2" selection-start-line="420" selection-start-column="2" selection-end-line="420" selection-end-column="6" />
-          <folding />
+        <state relative-caret-position="435">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
