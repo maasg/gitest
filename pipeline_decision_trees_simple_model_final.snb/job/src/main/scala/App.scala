@@ -1,22 +1,22 @@
 
-package io.kensu
+package com.example
 /**
   Outputs
   -------
   > ModelOutput(CodeCell(CellMetadata(Some(true),Some(false),None,Some(false),None,Some(788B32E15F6D44A096E0D574EC29707B),Some({"model":"org.apache.spark.ml.PipelineModel","inputs":{"resolved":["file:/home/maasg/playground/data/decision_tree.parquet"],"unresolved":[]}})),output,model_output,None,None,Some({"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel","source":"trainingSet"}}),Some(List(ScalaStream(stdout,stream,Model
-Located: /tmp/pipeline/df-final
+Located: /tmp/pipeline/df-final2
 Model:  model (org.apache.spark.ml.PipelineModel)
 {"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel","source":"trainingSet"}}
 Some(trainingSet)
-output-788B32E15F6D44A096E0D574EC29707B: String = /tmp/pipeline/df-final
-res21: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>
+output-788B32E15F6D44A096E0D574EC29707B: String = /tmp/pipeline/df-final2
+res44: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>
 ), ScalaExecuteResult(ExecuteResultMetadata(None),Map(text/html -> <div>
       <script data-this="{&quot;modelVar&quot;:&quot;model&quot;,&quot;inputs&quot;:{&quot;resolved&quot;:[&quot;file:/home/maasg/playground/data/decision_tree.parquet&quot;],&quot;unresolved&quot;:[]},&quot;modelName&quot;:&quot;org.apache.spark.ml.PipelineModel&quot;}" type="text/x-scoped-javascript">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/modelOutput'], 
       function(modelOutput) {
         modelOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,19)))),model_output,model_output,model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@abafbcd,0)
+    </div>),execute_result,38)))),model_output,model_output,model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@7a5c0cf,0)
 
  */
 object Main {
@@ -45,7 +45,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "pipeline_decisi
 // Set project Jars
 
 val libDir = new java.io.File(s"/usr/share/pipeline_decision_trees_simple_model_final.snb", "lib")
-val currentProjectJars = Array[String]( "io.kensu-pipeline_decision_trees_simple_model_final.snb.pipeline_decision_trees_simple_model_final.snb-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array[String]( "com.example-pipeline_decision_trees_simple_model_final.snb.pipeline_decision_trees_simple_model_final.snb-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(s"/usr/share/pipeline_decision_trees_simple_model_final.snb", "spark-lib")
 val fromProjectJars = Array[String]().map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
@@ -93,10 +93,10 @@ val sc = sparkContext
 
   /* -- Code Cell: Some(9A7C4B1B2CC74CC588A355344AD4CFB2) -- */ 
 
-  val sample =  "/home/maasg/playground/data/decision_tree.parquet"
+  val dataSample =  "/home/maasg/playground/data/decision_tree.parquet"
   
   val matrixDF = sqlContext.read
-                           .load(sample)
+                           .load(dataSample)
                            .persist(org.apache.spark.storage.StorageLevel.MEMORY_AND_DISK_SER)
                            .repartition(2)
   val schema = matrixDF.schema
@@ -269,7 +269,7 @@ val sc = sparkContext
   /* -- Code Cell: Some(0FBEE70305CB418E82F97243A985F584) -- */ 
 
   
-  val model_output = "/tmp/pipeline/df-final"
+  val model_output = "/tmp/pipeline/df-final2"
   
   //sparkContext.parallelize(Seq(model), 1).saveAsObjectFile(model_output)
   
@@ -367,7 +367,7 @@ val `output-788B32E15F6D44A096E0D574EC29707B` = {
   // Here make sure that your data has the same schema as ChurnedDF
   
   def predict ( input : DataFrame, model : PipelineModel) = {
-     model.transform (input).select("id", "rawPrediction", "probability", "predictions")
+     model.transform (input).select("id", "rawPrediction", "probability", "predictions", "label")
   }
 /****************/
 
@@ -375,14 +375,43 @@ val `output-788B32E15F6D44A096E0D574EC29707B` = {
   /* -- Code Cell: Some(4B6B0F6EDA9041D888C4EE554D820D88) -- */ 
 
   // Example. we want to predictions for the following record
-  val sample = matrixDF.sample(false, 0.00001)
+  val sample = matrixDF.sample(false, 0.1)
   
-  // We Get the following predictions.
-  predict (sample, model)
+  // We Get the following predictions
+  
+  val prediction = predict (sample, model)
 /****************/
 
 
-  /* -- Code Cell: Some(ECB2BF0CE9E64CAE8081844B75867F5A) -- */
+  /* -- Code Cell: Some(ECB2BF0CE9E64CAE8081844B75867F5A) -- */ 
+
+  prediction.schema
+/****************/
+
+
+  /* -- Code Cell: Some(F96649E97AAB49DF88A1DB8273AB5BD9) -- */ 
+
+  prediction.collect
+/****************/
+
+
+  /* -- Code Cell: Some(7375ECFB05A84D888BEC0DE9E21BB96E) -- */ 
+
+  val keys = Seq("id","rawPrediction","probability","predictions","label")
+      val prediction = model.transform(sample).select(keys.head, keys.tail: _*)
+      val values = prediction.collect.map{row =>
+        keys.zipWithIndex.map{case (k,i) => (k, row.get(i))}
+      }
+/****************/
+
+
+  /* -- Code Cell: Some(26492DF687D54960864F9494A3FFA0F6) -- */ 
+
+  values
+/****************/
+
+
+  /* -- Code Cell: Some(186F5C86F8ED4C16886C33B3E1364869) -- */
 
 sparkContext.stop
 

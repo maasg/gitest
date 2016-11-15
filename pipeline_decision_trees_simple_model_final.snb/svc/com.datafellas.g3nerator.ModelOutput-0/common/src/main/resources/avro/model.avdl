@@ -1,0 +1,10 @@
+@namespace("com.example.pipeline_decision_trees_simple_model_final.snb_com.datafellas.g3nerator.modeloutput_0.model")
+
+protocol Model {
+
+  record Domain {
+    double output;
+
+  }
+
+}

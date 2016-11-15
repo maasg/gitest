@@ -1,5 +1,5 @@
 
-organization := "io.kensu-pipeline_decision_trees_simple_model_final.snb"
+organization := "com.example-pipeline_decision_trees_simple_model_final.snb"
 
 name := "pipeline_decision_trees_simple_model_final.snb"
 
@@ -140,7 +140,7 @@ libraryDependencies +=  "org.scalaj" %% "scalaj-http" % "2.3.0"
 test in assembly := {}
 
 //main class
-mainClass in assembly := Some("io.kensu.Main")
+mainClass in assembly := Some("com.example.Main")
 
 artifact in (Compile, assembly) ~= { art =>
   art.copy(`classifier` = Some("assembly"))
