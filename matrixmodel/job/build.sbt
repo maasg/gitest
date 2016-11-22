@@ -1,5 +1,5 @@
 
-organization := "com.example-matrixmodel"
+organization := "io.kensu-matrixmodel"
 
 name := "matrixmodel"
 
@@ -126,6 +126,13 @@ libraryDependencies += "org.apache.hadoop" % "hadoop-yarn-server-web-proxy" % ha
       ExclusionRule("javax.servlet")
   )
 
+libraryDependencies += "org.apache.spark" %% "spark-hive" % sparkVersion excludeAll(
+    ExclusionRule("org.apache.hadoop"),
+    ExclusionRule("org.apache.ivy", "ivy"),
+    ExclusionRule("javax.servlet", "servlet-api"),
+    ExclusionRule("org.mortbay.jetty", "servlet-api")
+  )
+
 libraryDependencies += "net.java.dev.jets3t" % "jets3t" % "0.9.0" force()
 
 libraryDependencies += "com.google.guava" % "guava" % "16.0.1" force()
@@ -146,7 +153,7 @@ libraryDependencies += "com.databricks" % "spark-csv_2.10" % "1.5.0" excludeAll(
 test in assembly := {}
 
 //main class
-mainClass in assembly := Some("com.example.Main")
+mainClass in assembly := Some("io.kensu.Main")
 
 artifact in (Compile, assembly) ~= { art =>
   art.copy(`classifier` = Some("assembly"))
@@ -178,3 +185,8 @@ assemblyMergeStrategy in assembly := {
     val oldStrategy = (assemblyMergeStrategy in assembly).value
     oldStrategy(x)
 }
+
+aggregate in update := false
+
+updateOptions := updateOptions.value.withCachedResolution(true)
+

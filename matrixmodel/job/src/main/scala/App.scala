@@ -1,5 +1,5 @@
 
-package com.example
+package io.kensu
 /**
   Outputs
   -------
@@ -14,7 +14,7 @@ res5: notebook.front.widgets.adst.ParquetOutputWidget = <ParquetOutputWidget wid
         parquetOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,4)))),parquetFile,parquetFile,matrixDF,org.apache.spark.sql.SaveMode.Overwrite,List(),0)
+    </div>),execute_result,4)))),parquetFile,parquetFile,matrixDF,org.apache.spark.sql.SaveMode.Overwrite,List(ParquetMappingElement(id,integer), ParquetMappingElement(any_churn_target,boolean), ParquetMappingElement(full_churn_target,boolean), ParquetMappingElement(A_1_count_last,integer), ParquetMappingElement(A_2_count_last,integer), ParquetMappingElement(A_3_count_last,integer), ParquetMappingElement(Postal_Code,string), ParquetMappingElement(cs_k,string), ParquetMappingElement(Neighbourhood_Code,string)),0)
 
  */
 object Main {
@@ -43,7 +43,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "matrixmodel"))
 // Set project Jars
 
 val libDir = new java.io.File(s"/usr/share/matrixmodel", "lib")
-val currentProjectJars = Array[String]( "com.example-matrixmodel.matrixmodel-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array[String]( "io.kensu-matrixmodel.matrixmodel-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(s"/usr/share/matrixmodel", "spark-lib")
 val fromProjectJars = Array[String]( "spark-csv_2.10-1.5.0.jar" , "scala-library-2.10.5.jar" , "commons-csv-1.1.jar" , "univocity-parsers-1.5.1.jar" ).map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
