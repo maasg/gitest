@@ -50,14 +50,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@57c82dc5\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame\n"
+      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@3f7e9632\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 2
+      "execution_count" : 1
     } ]
   }, {
     "metadata" : {
@@ -78,7 +78,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 3
+      "execution_count" : 2
     } ]
   }, {
     "metadata" : {
@@ -92,14 +92,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "res6: org.apache.spark.sql.DataFrame = [any_churn_target: boolean, full_churn_target: boolean, count: bigint]\n"
+      "text" : "res4: org.apache.spark.sql.DataFrame = [any_churn_target: boolean, full_churn_target: boolean, count: bigint]\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon22101552456f588509e1faef1951dc0e&quot;,&quot;partitionIndexId&quot;:&quot;anonecf7666f0eb2725ce4fa542979d3276e&quot;,&quot;numPartitions&quot;:1,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;any_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;full_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;count&quot;,&quot;type&quot;:&quot;long&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
+        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon4dc4ebf9b3b8df0e0e95a519291041ab&quot;,&quot;partitionIndexId&quot;:&quot;anon917d1db5dcdd1f1a0f0717998fb244fd&quot;,&quot;numPartitions&quot;:1,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;any_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;full_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;count&quot;,&quot;type&quot;:&quot;long&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
       },
       "output_type" : "execute_result",
-      "execution_count" : 4
+      "execution_count" : 3
     } ]
   }, {
     "metadata" : {
@@ -120,7 +120,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 5
+      "execution_count" : 4
     } ]
   }, {
     "metadata" : {
@@ -141,7 +141,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 6
+      "execution_count" : 5
     } ]
   }, {
     "metadata" : {
@@ -162,7 +162,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 7
+      "execution_count" : 6
     } ]
   }, {
     "metadata" : {
@@ -176,14 +176,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "stringedColumns: Seq[String] = List(Postal_Code, cs_k, Neighbourhood_Code)\ncategoricals: Seq[String] = List()\nnumCols: Seq[String] = List(id, A_1_count_last, A_2_count_last, A_3_count_last)\nres11: Boolean = true\n"
+      "text" : "stringedColumns: Seq[String] = List(Postal_Code, cs_k, Neighbourhood_Code)\ncategoricals: Seq[String] = List()\nnumCols: Seq[String] = List(id, A_1_count_last, A_2_count_last, A_3_count_last)\nres9: Boolean = true\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : "true"
       },
       "output_type" : "execute_result",
-      "execution_count" : 8
+      "execution_count" : 7
     } ]
   }, {
     "metadata" : {
@@ -204,7 +204,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 9
+      "execution_count" : 8
     } ]
   }, {
     "metadata" : {
@@ -237,7 +237,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 10
+      "execution_count" : 9
     } ]
   }, {
     "metadata" : {
@@ -258,7 +258,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 11
+      "execution_count" : 10
     } ]
   }, {
     "metadata" : {
@@ -278,14 +278,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "catIndexer: Array[org.apache.spark.ml.PipelineStage] = Array()\nvectorCols: Array[String] = Array(id, A_1_count_last, A_2_count_last, A_3_count_last, cs_k_hash, Postal_Code_hash, Neighbourhood_Code_hash)\nassembler: org.apache.spark.ml.feature.VectorAssembler = vecAssembler_90f1c952ac70\nvectorIndexer: org.apache.spark.ml.feature.VectorIndexer = vecIdx_f38c1504ef6d\n"
+      "text" : "catIndexer: Array[org.apache.spark.ml.PipelineStage] = Array()\nvectorCols: Array[String] = Array(id, A_1_count_last, A_2_count_last, A_3_count_last, cs_k_hash, Postal_Code_hash, Neighbourhood_Code_hash)\nassembler: org.apache.spark.ml.feature.VectorAssembler = vecAssembler_87da45e05df3\nvectorIndexer: org.apache.spark.ml.feature.VectorIndexer = vecIdx_f58e99924aed\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 12
+      "execution_count" : 11
     } ]
   }, {
     "metadata" : {
@@ -299,14 +299,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dt: org.apache.spark.ml.classification.DecisionTreeClassifier = dtc_c3a64d82a61e\n"
+      "text" : "dt: org.apache.spark.ml.classification.DecisionTreeClassifier = dtc_d66dc9b8e96b\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 13
+      "execution_count" : 12
     } ]
   }, {
     "metadata" : {
@@ -320,14 +320,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dtPipeline: org.apache.spark.ml.Pipeline = pipeline_bd54e8b66344\n"
+      "text" : "dtPipeline: org.apache.spark.ml.Pipeline = pipeline_383104877564\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 14
+      "execution_count" : 13
     } ]
   }, {
     "metadata" : {
@@ -348,7 +348,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 15
+      "execution_count" : 14
     } ]
   }, {
     "metadata" : {
@@ -362,14 +362,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "model: org.apache.spark.ml.PipelineModel = pipeline_bd54e8b66344\n"
+      "text" : "model: org.apache.spark.ml.PipelineModel = pipeline_383104877564\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 16
+      "execution_count" : 15
     } ]
   }, {
     "metadata" : {
@@ -425,7 +425,7 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "Model\nLocated: /tmp/pipeline/df-final2\nModel:  model (org.apache.spark.ml.PipelineModel)\n{\"type\":\"model\",\"var\":\"model\",\"extra\":{\"value\":\"org.apache.spark.ml.PipelineModel\",\"source\":\"trainingSet\"}}\nSome(trainingSet)\noutput-788B32E15F6D44A096E0D574EC29707B: String = /tmp/pipeline/df-final2\nres22: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>\n"
+      "text" : "Model\nLocated: /tmp/pipeline/df-final2\nModel:  model (org.apache.spark.ml.PipelineModel)\n{\"type\":\"model\",\"var\":\"model\",\"extra\":{\"value\":\"org.apache.spark.ml.PipelineModel\",\"source\":\"trainingSet\"}}\nSome(trainingSet)\noutput-788B32E15F6D44A096E0D574EC29707B: String = /tmp/pipeline/df-final2\nres21: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>\n"
     }, {
       "metadata" : { },
       "data" : {

@@ -5,11 +5,15 @@ protocol Methods {
   import idl "model.avdl";
 
   record ServiceRequest {
-    
-    array<double> input;
-
-
-
+    int id;
+    boolean any_churn_target;
+    boolean full_churn_target;
+    int A_1_count_last;
+    int A_2_count_last;
+    int A_3_count_last;
+    string Postal_Code;
+    string cs_k;
+    string Neighbourhood_Code;
   }
 
   record ServiceResponse {

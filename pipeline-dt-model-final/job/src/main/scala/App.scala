@@ -1,5 +1,5 @@
 
-package com.example
+package io.kensu
 /**
   Outputs
   -------
@@ -9,14 +9,14 @@ Model:  model (org.apache.spark.ml.PipelineModel)
 {"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel","source":"trainingSet"}}
 Some(trainingSet)
 output-788B32E15F6D44A096E0D574EC29707B: String = /tmp/pipeline/df-final2
-res22: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>
+res21: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>
 ), ScalaExecuteResult(ExecuteResultMetadata(None),Map(text/html -> <div>
       <script data-this="{&quot;modelVar&quot;:&quot;model&quot;,&quot;inputs&quot;:{&quot;resolved&quot;:[&quot;file:/home/maasg/playground/data/decision_tree.parquet&quot;],&quot;unresolved&quot;:[]},&quot;modelName&quot;:&quot;org.apache.spark.ml.PipelineModel&quot;}" type="text/x-scoped-javascript">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/modelOutput'], 
       function(modelOutput) {
         modelOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,18)))),model_output,model_output,model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@664111fe,0)
+    </div>),execute_result,18)))),model_output,model_output,model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@210e52f0,0)
 
  */
 object Main {
@@ -45,7 +45,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "pipeline-dt-mod
 // Set project Jars
 
 val libDir = new java.io.File(s"/usr/share/pipeline-dt-model-final", "lib")
-val currentProjectJars = Array[String]( "com.example-pipeline-dt-model-final.pipeline-dt-model-final-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array[String]( "io.kensu-pipeline-dt-model-final.pipeline-dt-model-final-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(s"/usr/share/pipeline-dt-model-final", "spark-lib")
 val fromProjectJars = Array[String]().map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
