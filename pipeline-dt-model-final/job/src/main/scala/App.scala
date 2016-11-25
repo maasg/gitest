@@ -16,7 +16,7 @@ res21: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget
         modelOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,18)))),model_output,model_output,model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@210e52f0,0)
+    </div>),execute_result,18)))),model_output,model_output,model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@27dde56f,0)
 
  */
 object Main {
@@ -147,52 +147,6 @@ val sc = sparkContext
 
   val fillStrMap = stringedColumns.map (s => ( s, "unknown")).toMap   //Replace empty strings with a full string so Encoders and Indexers don't explode
   val fillNumMap = numCols.map ( s => (s, 0)).toMap                   // TODO ==> compute averages and look how it behaves instead of zeros
-/****************/
-
-
-  /* -- Code Cell: Some(F0709DE78AC34E2C862448C94A644899) -- */ 
-
-  import org.apache.spark.ml.Transformer
-  import org.apache.spark.sql.DataFrame
-  import org.apache.spark.ml.util.Identifiable
-  import org.apache.spark.ml.param.ParamMap
-  import org.apache.spark.sql.types.{StructType, DoubleType}
-  import org.apache.spark.ml.attribute.NominalAttribute
-  import org.apache.spark.sql.functions._
-  
-  
-  class PrepareTransformer() extends Transformer {
-    
-    val uid: String = Identifiable.randomUID("prepareTransformer")
-  
-    override def transformSchema(schema: StructType) = schema.add("cs_k_hash", DoubleType)
-                                                    .add("Postal_Code_hash", DoubleType)
-                                                    .add("Neighbourhood_Code_hash", DoubleType)
-                                                    .add("label", DoubleType)
-    
-    override def transform(df: DataFrame) : DataFrame = {
-                        import sqlContext.implicits._
-      
-                        val meta = NominalAttribute
-                        .defaultAttr
-                        .withName("churned")
-                        .withValues("0.0", "1.0")
-                        .toMetadata
-                        
-                        val  hc : String => Double = _.hashCode()
-                        val hash = udf(hc)
-    
-                        df.withColumn("churned", when($"any_churn_target" === false , 0.0).otherwise(1.0)) // any_churn_target => churned, not_churned
-                          .na.fill(fillStrMap)
-                          .na.fill(fillNumMap)
-                          .withColumn("cs_k_hash" , hash($"cs_k"))  
-                          .withColumn("Postal_Code_hash" , hash($"Postal_Code"))
-                          .withColumn("Neighbourhood_Code_hash", hash($"Neighbourhood_Code"))
-                          .withColumn("label", $"churned".as("label", meta))  
-    } 
-      
-    override def copy( extra : ParamMap) = defaultCopy(extra)
-  }
 /****************/
 
 
