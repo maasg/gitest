@@ -1,5 +1,5 @@
 
-package io.kensu
+package com.example
 
 
 // no custom variables 
@@ -24,8 +24,7 @@ package io.kensu
                                                     .add("label", DoubleType)
     
     override def transform(df: DataFrame) : DataFrame = {
-                        import sqlContext.implicits._
-      
+                            
                         val meta = NominalAttribute
                         .defaultAttr
                         .withName("churned")
@@ -35,13 +34,13 @@ package io.kensu
                         val  hc : String => Double = _.hashCode()
                         val hash = udf(hc)
     
-                        df.withColumn("churned", when($"any_churn_target" === false , 0.0).otherwise(1.0)) // any_churn_target => churned, not_churned
+                        df.withColumn("churned", when(df("any_churn_target") === false , 0.0).otherwise(1.0)) // any_churn_target => churned, not_churned
                           .na.fill(fillStrMap)
                           .na.fill(fillNumMap)
-                          .withColumn("cs_k_hash" , hash($"cs_k"))  
-                          .withColumn("Postal_Code_hash" , hash($"Postal_Code"))
-                          .withColumn("Neighbourhood_Code_hash", hash($"Neighbourhood_Code"))
-                          .withColumn("label", $"churned".as("label", meta))  
+                          .withColumn("cs_k_hash" , hash(df("cs_k")))  
+                          .withColumn("Postal_Code_hash" , hash(df("Postal_Code")))
+                          .withColumn("Neighbourhood_Code_hash", hash(df("Neighbourhood_Code")))
+                          .withColumn("label", df("churned").as("label", meta))  
     } 
       
     override def copy( extra : ParamMap) = defaultCopy(extra)
