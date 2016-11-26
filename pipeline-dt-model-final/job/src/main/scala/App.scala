@@ -16,7 +16,7 @@ res21: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget
         modelOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,18)))),model_output,model_output,model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@27dde56f,0)
+    </div>),execute_result,18)))),model_output,model_output,model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@35507b71,0)
 
  */
 object Main {
@@ -204,7 +204,7 @@ val sc = sparkContext
 
   //We assemble all the above stages into one single pipeline 
   
-  val dtPipeline = new Pipeline().setStages( Array(new PrepareTransformer()) ++ catIndexer ++ Array(assembler, vectorIndexer, dt))
+  val dtPipeline = new Pipeline().setStages( Array(new PrepareTransformer(fillStrMap, fillNumMap)) ++ catIndexer ++ Array(assembler, vectorIndexer, dt))
 /****************/
 
 

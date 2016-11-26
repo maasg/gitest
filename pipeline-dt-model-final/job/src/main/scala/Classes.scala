@@ -14,7 +14,7 @@ package io.kensu
   import org.apache.spark.sql.functions._
   
   
-  class PrepareTransformer() extends Transformer {
+  class PrepareTransformer(fillStrMap: Map[String,String], fillNumMap: Map[String,Int]) extends Transformer {
     
     val uid: String = Identifiable.randomUID("prepareTransformer")
   
@@ -47,4 +47,4 @@ package io.kensu
     override def copy( extra : ParamMap) = defaultCopy(extra)
   }()
 
-}
+
