@@ -50,7 +50,7 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@5f806fa2\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame\n"
+      "text" : "sqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@c195b26\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql.functions._\nimport sqlContext.implicits._\nimport org.apache.spark.sql.DataFrame\n"
     }, {
       "metadata" : { },
       "data" : {
@@ -96,7 +96,7 @@
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anone94b63f961f68eaa038dc13d75419cf4&quot;,&quot;partitionIndexId&quot;:&quot;anon0a31caf2477f128ae611222c70dad1f7&quot;,&quot;numPartitions&quot;:1,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;any_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;full_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;count&quot;,&quot;type&quot;:&quot;long&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
+        "text/html" : "<div class=\"df-canvas\">\n      <script data-this=\"{&quot;dataId&quot;:&quot;anon77e2d039f46a024111fe7a41877288ac&quot;,&quot;partitionIndexId&quot;:&quot;anon6045e52bc6d1083a8f1dae6aae8d5be2&quot;,&quot;numPartitions&quot;:1,&quot;dfSchema&quot;:{&quot;type&quot;:&quot;struct&quot;,&quot;fields&quot;:[{&quot;name&quot;:&quot;any_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;full_churn_target&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;nullable&quot;:true,&quot;metadata&quot;:{}},{&quot;name&quot;:&quot;count&quot;,&quot;type&quot;:&quot;long&quot;,&quot;nullable&quot;:false,&quot;metadata&quot;:{}}]}}\" type=\"text/x-scoped-javascript\">/*<![CDATA[*/req(['../javascripts/notebook/dataframe','../javascripts/notebook/consoleDir'], \n      function(dataframe, extension) {\n        dataframe.call(data, this, extension);\n      }\n    );/*]]>*/</script>\n      <link rel=\"stylesheet\" href=\"/assets/stylesheets/ipython/css/dataframe.css\" type=\"text/css\"/>\n    </div>"
       },
       "output_type" : "execute_result",
       "execution_count" : 3
@@ -226,18 +226,18 @@
       "id" : "F0709DE78AC34E2C862448C94A644899"
     },
     "cell_type" : "code",
-    "source" : "import org.apache.spark.ml.Transformer\nimport org.apache.spark.sql.DataFrame\nimport org.apache.spark.ml.util.Identifiable\nimport org.apache.spark.ml.param.ParamMap\nimport org.apache.spark.sql.types.{StructType, DoubleType}\nimport org.apache.spark.ml.attribute.NominalAttribute\nimport org.apache.spark.sql.functions._\n\n\nclass PrepareTransformer(fillStrMap: Map[String,String], fillNumMap: Map[String,Int]) extends Transformer {\n  \n  val uid: String = Identifiable.randomUID(\"prepareTransformer\")\n\n  override def transformSchema(schema: StructType) = schema.add(\"cs_k_hash\", DoubleType)\n                                                  .add(\"Postal_Code_hash\", DoubleType)\n                                                  .add(\"Neighbourhood_Code_hash\", DoubleType)\n                                                  .add(\"label\", DoubleType)\n  \n  override def transform(df: DataFrame) : DataFrame = {\n                          \n                      val meta = NominalAttribute\n                      .defaultAttr\n                      .withName(\"churned\")\n                      .withValues(\"0.0\", \"1.0\")\n                      .toMetadata\n                      \n                      val  hc : String => Double = _.hashCode()\n                      val hash = udf(hc)\n  \n                      df.withColumn(\"churned\", when(df(\"any_churn_target\") === false , 0.0).otherwise(1.0)) // any_churn_target => churned, not_churned\n                        .na.fill(fillStrMap)\n                        .na.fill(fillNumMap)\n                        .withColumn(\"cs_k_hash\" , hash(df(\"cs_k\")))  \n                        .withColumn(\"Postal_Code_hash\" , hash(df(\"Postal_Code\")))\n                        .withColumn(\"Neighbourhood_Code_hash\", hash(df(\"Neighbourhood_Code\")))\n                        .withColumn(\"label\", df(\"churned\").as(\"label\", meta))  \n  } \n    \n  override def copy( extra : ParamMap) = defaultCopy(extra)\n}",
+    "source" : "import org.apache.spark.ml.Transformer\nimport org.apache.spark.sql.DataFrame\nimport org.apache.spark.ml.util.Identifiable\nimport org.apache.spark.ml.param.ParamMap\nimport org.apache.spark.sql.types.{StructType, DoubleType}\nimport org.apache.spark.ml.attribute.NominalAttribute\nimport org.apache.spark.sql.functions._\n\nval sqlContext = new org.apache.spark.sql.SQLContext(SparkContext.getOrCreate())\nimport sqlContext.implicits._\n\n\nclass PrepareTransformer(fillStr: Map[String,String], fillNum: Map[String,Int]) extends Transformer {\n  \n  val uid: String = Identifiable.randomUID(\"prepareTransformer\")\n\n  override def transformSchema(schema: StructType) = schema.add(\"cs_k_hash\", DoubleType)\n                                                  .add(\"Postal_Code_hash\", DoubleType)\n                                                  .add(\"Neighbourhood_Code_hash\", DoubleType)\n                                                  .add(\"label\", DoubleType)\n  \n  override def transform(dfm: DataFrame) : DataFrame = {\n                          \n                      val meta = NominalAttribute\n                      .defaultAttr\n                      .withName(\"churned\")\n                      .withValues(\"0.0\", \"1.0\")\n                      .toMetadata\n    \n                      \n                      val  hc : String => Double = _.hashCode()\n                      val hash = udf(hc)\n  \n                      dfm.withColumn(\"churned\", when($\"any_churn_target\" === false , 0.0).otherwise(1.0)) // any_churn_target => churned, not_churned\n                        .na.fill(fillStr)\n                        .na.fill(fillNum)\n                        .withColumn(\"cs_k_hash\" , hash($\"cs_k\"))  \n                        .withColumn(\"Postal_Code_hash\" , hash($\"Postal_Code\"))\n                        .withColumn(\"Neighbourhood_Code_hash\", hash($\"Neighbourhood_Code\"))\n                        .withColumn(\"label\", $\"churned\".as(\"label\", meta))\n                        //.drop(df(\"cs_k\"))\n                        //.drop(df(\"Postal_Code\"))\n                        //.drop(df(\"Neighbourhood_Code\"))\n                         \n  } \n    \n  override def copy( extra : ParamMap) = defaultCopy(extra)\n}",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "import org.apache.spark.ml.Transformer\nimport org.apache.spark.sql.DataFrame\nimport org.apache.spark.ml.util.Identifiable\nimport org.apache.spark.ml.param.ParamMap\nimport org.apache.spark.sql.types.{StructType, DoubleType}\nimport org.apache.spark.ml.attribute.NominalAttribute\nimport org.apache.spark.sql.functions._\ndefined class PrepareTransformer\n"
+      "text" : "import org.apache.spark.ml.Transformer\nimport org.apache.spark.sql.DataFrame\nimport org.apache.spark.ml.util.Identifiable\nimport org.apache.spark.ml.param.ParamMap\nimport org.apache.spark.sql.types.{StructType, DoubleType}\nimport org.apache.spark.ml.attribute.NominalAttribute\nimport org.apache.spark.sql.functions._\nsqlContext: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@587db3e8\nimport sqlContext.implicits._\ndefined class PrepareTransformer\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 13
+      "execution_count" : 32
     } ]
   }, {
     "metadata" : {
@@ -258,7 +258,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 10
+      "execution_count" : 33
     } ]
   }, {
     "metadata" : {
@@ -278,14 +278,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "catIndexer: Array[org.apache.spark.ml.PipelineStage] = Array()\nvectorCols: Array[String] = Array(id, A_1_count_last, A_2_count_last, A_3_count_last, cs_k_hash, Postal_Code_hash, Neighbourhood_Code_hash)\nassembler: org.apache.spark.ml.feature.VectorAssembler = vecAssembler_87da45e05df3\nvectorIndexer: org.apache.spark.ml.feature.VectorIndexer = vecIdx_f58e99924aed\n"
+      "text" : "catIndexer: Array[org.apache.spark.ml.PipelineStage] = Array()\nvectorCols: Array[String] = Array(id, A_1_count_last, A_2_count_last, A_3_count_last, cs_k_hash, Postal_Code_hash, Neighbourhood_Code_hash)\nassembler: org.apache.spark.ml.feature.VectorAssembler = vecAssembler_e72868cd4f1c\nvectorIndexer: org.apache.spark.ml.feature.VectorIndexer = vecIdx_3a944221b64e\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 11
+      "execution_count" : 34
     } ]
   }, {
     "metadata" : {
@@ -299,14 +299,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dt: org.apache.spark.ml.classification.DecisionTreeClassifier = dtc_d66dc9b8e96b\n"
+      "text" : "dt: org.apache.spark.ml.classification.DecisionTreeClassifier = dtc_8f4262051b85\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 12
+      "execution_count" : 35
     } ]
   }, {
     "metadata" : {
@@ -320,14 +320,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "dtPipeline: org.apache.spark.ml.Pipeline = pipeline_383104877564\n"
+      "text" : "dtPipeline: org.apache.spark.ml.Pipeline = pipeline_59ab3b0e29e2\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 13
+      "execution_count" : 36
     } ]
   }, {
     "metadata" : {
@@ -348,7 +348,7 @@
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 14
+      "execution_count" : 37
     } ]
   }, {
     "metadata" : {
@@ -362,14 +362,14 @@
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "model: org.apache.spark.ml.PipelineModel = pipeline_383104877564\n"
+      "text" : "model: org.apache.spark.ml.PipelineModel = pipeline_59ab3b0e29e2\n"
     }, {
       "metadata" : { },
       "data" : {
         "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 15
+      "execution_count" : 38
     } ]
   }, {
     "metadata" : {

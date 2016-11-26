@@ -1,5 +1,5 @@
 
-package com.example
+package io.kensu
 
 
 // no custom variables 
@@ -13,8 +13,11 @@ package com.example
   import org.apache.spark.ml.attribute.NominalAttribute
   import org.apache.spark.sql.functions._
   
+  val sqlContext = new org.apache.spark.sql.SQLContext(SparkContext.getOrCreate())
+  import sqlContext.implicits._
   
-  class PrepareTransformer(fillStrMap: Map[String,String], fillNumMap: Map[String,Int]) extends Transformer {
+  
+  class PrepareTransformer(fillStr: Map[String,String], fillNum: Map[String,Int]) extends Transformer {
     
     val uid: String = Identifiable.randomUID("prepareTransformer")
   
@@ -23,24 +26,29 @@ package com.example
                                                     .add("Neighbourhood_Code_hash", DoubleType)
                                                     .add("label", DoubleType)
     
-    override def transform(df: DataFrame) : DataFrame = {
+    override def transform(dfm: DataFrame) : DataFrame = {
                             
                         val meta = NominalAttribute
                         .defaultAttr
                         .withName("churned")
                         .withValues("0.0", "1.0")
                         .toMetadata
+      
                         
                         val  hc : String => Double = _.hashCode()
                         val hash = udf(hc)
     
-                        df.withColumn("churned", when(df("any_churn_target") === false , 0.0).otherwise(1.0)) // any_churn_target => churned, not_churned
-                          .na.fill(fillStrMap)
-                          .na.fill(fillNumMap)
-                          .withColumn("cs_k_hash" , hash(df("cs_k")))  
-                          .withColumn("Postal_Code_hash" , hash(df("Postal_Code")))
-                          .withColumn("Neighbourhood_Code_hash", hash(df("Neighbourhood_Code")))
-                          .withColumn("label", df("churned").as("label", meta))  
+                        dfm.withColumn("churned", when($"any_churn_target" === false , 0.0).otherwise(1.0)) // any_churn_target => churned, not_churned
+                          .na.fill(fillStr)
+                          .na.fill(fillNum)
+                          .withColumn("cs_k_hash" , hash($"cs_k"))  
+                          .withColumn("Postal_Code_hash" , hash($"Postal_Code"))
+                          .withColumn("Neighbourhood_Code_hash", hash($"Neighbourhood_Code"))
+                          .withColumn("label", $"churned".as("label", meta))
+                          //.drop(df("cs_k"))
+                          //.drop(df("Postal_Code"))
+                          //.drop(df("Neighbourhood_Code"))
+                           
     } 
       
     override def copy( extra : ParamMap) = defaultCopy(extra)
