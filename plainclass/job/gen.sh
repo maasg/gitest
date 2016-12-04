@@ -16,8 +16,8 @@ echo "publishing project"
 /home/maasg/Dev/java/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 publish
 
 
-echo "Telling catalog which client library to use (io.kensu:client:0.0.1-SNAPSHOT})"
-curl -u 'username:password' -X POST "http://localhost:9001//adalog/8d5c6be9-b6c7-4605-8655-b229e18ced8e/library?uuid=8d5c6be9-b6c7-4605-8655-b229e18ced8e&groupId=io.kensu&artifactId=plainclass_2.10&version=0.0.1-SNAPSHOT&pkg=io.kensu"
+echo "Telling catalog which notebok library (io.kensu:plainclass_2.10:0.0.1-SNAPSHOT})"
+curl -u 'username:password' -X POST "http://localhost:9001/adalog/8d5c6be9-b6c7-4605-8655-b229e18ced8e/library?uuid=8d5c6be9-b6c7-4605-8655-b229e18ced8e&groupId=io.kensu&artifactId=plainclass_2.10&version=0.0.1-SNAPSHOT&pkg=io.kensu"
 
 
 
