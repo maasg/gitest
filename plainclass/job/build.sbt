@@ -1,5 +1,5 @@
 
-organization := "io.kensu-plainclass"
+organization := "io.kensu"
 
 name := "plainclass"
 
@@ -159,7 +159,7 @@ publishTo := Some("Artifactory PUSH Realm" at "http://localhost:8081/artifactory
 
 publishMavenStyle := true
 
-credentials += Credentials("Artifactory Realm", "localhost", "", "./")
+credentials += Credentials("Artifactory Realm", "localhost", "admin ", "password")
 
 // merging files... specially application.conf!
 assemblyMergeStrategy in assembly := {
@@ -175,6 +175,9 @@ assemblyMergeStrategy in assembly := {
   case PathList("META-INF", "MANIFEST.MF"           ) => MergeStrategy.discard
   case PathList("META-INF",                  xs @ _*) => MergeStrategy.first
   case "application.conf"                             => MergeStrategy.concat
+  case PathList(ps @ _*) if ps.last endsWith ".html"  => MergeStrategy.discard
+  case PathList(ps @ _*) if ps.last endsWith ".thrift"  =>  MergeStrategy.first
+  case PathList(ps @ _*) if ps.last endsWith ".xml"  =>  MergeStrategy.first
   case x =>
     val oldStrategy = (assemblyMergeStrategy in assembly).value
     oldStrategy(x)
