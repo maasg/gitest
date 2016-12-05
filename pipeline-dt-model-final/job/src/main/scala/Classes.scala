@@ -12,10 +12,12 @@ package io.kensu
   import org.apache.spark.sql.types.{StructType, DoubleType}
   import org.apache.spark.ml.attribute.NominalAttribute
   import org.apache.spark.sql.functions._
+  import org.apache.spark.SparkContext
+  import org.apache.spark.sql.SQLContext
   
   class PrepareTransformer(fillStr: Map[String,String], fillNum: Map[String,Int]) extends Transformer {
   
-    val sqlContext = new org.apache.spark.sql.SQLContext(SparkContext.getOrCreate())
+    val sqlContext = new SQLContext(SparkContext.getOrCreate())
     import sqlContext.implicits._
   
     val uid: String = Identifiable.randomUID("prepareTransformer")
