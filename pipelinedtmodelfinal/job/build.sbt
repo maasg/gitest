@@ -1,9 +1,9 @@
 
-organization := "io.kensu.dtpipeline"
+organization := "io.kensu.churnpipeline"
 
 name := "pipelinedtmodelfinal"
 
-version := "0.0.1-SNAPSHOT"
+version := "0.0.1"
 
 scalaVersion := "2.10.5"
 
@@ -147,7 +147,7 @@ libraryDependencies +=  "org.scalaj" %% "scalaj-http" % "2.3.0"
 test in assembly := {}
 
 //main class
-mainClass in assembly := Some("io.kensu.dtpipeline.Main")
+mainClass in assembly := Some("io.kensu.churnpipeline.Main")
 
 artifact in (Compile, assembly) ~= { art =>
   art.copy(`classifier` = Some("assembly"))

@@ -1,5 +1,5 @@
 
-package io.kensu.dtpipeline
+package io.kensu.churnpipeline
 
 
 // no custom variables 

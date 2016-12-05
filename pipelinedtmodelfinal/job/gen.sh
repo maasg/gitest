@@ -16,18 +16,18 @@ echo "publishing project"
 /home/maasg/Dev/java/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 publish
 
 
-echo "Telling catalog which notebok library (io.kensu.dtpipeline:pipelinedtmodelfinal_2.10:0.0.1-SNAPSHOT})"
-curl -u 'username:password' -X POST "http://localhost:9002/adalog/bbe7efb6-db5f-483f-abe7-341e536f0b34/library?uuid=bbe7efb6-db5f-483f-abe7-341e536f0b34&groupId=io.kensu.dtpipeline&artifactId=pipelinedtmodelfinal_2.10&version=0.0.1-SNAPSHOT&pkg=io.kensu.dtpipeline"
+echo "Telling catalog which notebok library (io.kensu.churnpipeline:pipelinedtmodelfinal_2.10:0.0.1})"
+curl -u 'username:password' -X POST "http://localhost:9002/adalog/bbe7efb6-db5f-483f-abe7-341e536f0b34/library?uuid=bbe7efb6-db5f-483f-abe7-341e536f0b34&groupId=io.kensu.churnpipeline&artifactId=pipelinedtmodelfinal_2.10&version=0.0.1&pkg=io.kensu.churnpipeline"
 
 
 
 echo "building debian"
 /home/maasg/Dev/java/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 debian:packageBin
-echo "package: /home/maasg/testground/sne/projects/pipelinedtmodelfinal/job/target/pipelinedtmodelfinal_0.0.1-SNAPSHOT_all.deb "
+echo "package: /home/maasg/testground/sne/projects/pipelinedtmodelfinal/job/target/pipelinedtmodelfinal_0.0.1_all.deb "
 
 echo "pushing deb package to Adalog UI"
 [[ -d /tmp/sne/downloads ]] || /bin/mkdir -p /tmp/sne/downloads
-[[ -f /home/maasg/testground/sne/projects/pipelinedtmodelfinal/job/target/pipelinedtmodelfinal_0.0.1-SNAPSHOT_all.deb ]] && /bin/cp /home/maasg/testground/sne/projects/pipelinedtmodelfinal/job/target/pipelinedtmodelfinal_0.0.1-SNAPSHOT_all.deb /tmp/sne/downloads || echo "package file not found !!"
+[[ -f /home/maasg/testground/sne/projects/pipelinedtmodelfinal/job/target/pipelinedtmodelfinal_0.0.1_all.deb ]] && /bin/cp /home/maasg/testground/sne/projects/pipelinedtmodelfinal/job/target/pipelinedtmodelfinal_0.0.1_all.deb /tmp/sne/downloads || echo "package file not found !!"
 
 echo "Submitting Job"
 

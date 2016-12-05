@@ -1,5 +1,5 @@
 
-package io.kensu.dtpipeline
+package io.kensu.churnpipeline
 /**
   Outputs
   -------
@@ -45,7 +45,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "pipelinedtmodel
 // Set project Jars
 
 val libDir = new java.io.File(s"/usr/share/pipelinedtmodelfinal", "lib")
-val currentProjectJars = Array[String]( "io.kensu.dtpipeline-pipelinedtmodelfinal.pipelinedtmodelfinal-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array[String]( "io.kensu.churnpipeline-pipelinedtmodelfinal.pipelinedtmodelfinal-0.0.1.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(s"/usr/share/pipelinedtmodelfinal", "spark-lib")
 val fromProjectJars = Array[String]().map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
