@@ -3,20 +3,20 @@ package io.kensu
 /**
   Outputs
   -------
-  > ModelOutput(CodeCell(CellMetadata(Some(true),Some(false),None,Some(false),None,Some(788B32E15F6D44A096E0D574EC29707B),Some({"model":"org.apache.spark.ml.PipelineModel","inputs":{"resolved":["file:/home/maasg/playground/data/decision_tree.parquet"],"unresolved":[]}})),output,model_output,None,None,Some({"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel","source":"trainingSet"}}),Some(List(ScalaStream(stdout,stream,Model
-Located: /tmp/pipeline/df-final2
+  > ModelOutput(CodeCell(CellMetadata(Some(true),Some(false),None,Some(false),None,Some(788B32E15F6D44A096E0D574EC29707B),Some({"model":"org.apache.spark.ml.PipelineModel","inputs":{"resolved":["file:/home/maasg/playground/data/decision_tree.parquet"],"unresolved":[]}})),output,model_output +  System.currentTimeMillis.toString.drop(5).take(5),None,None,Some({"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel","source":"trainingSet"}}),Some(List(ScalaStream(stdout,stream,Model
+Located: /tmp/pipeline/df-final247256
 Model:  model (org.apache.spark.ml.PipelineModel)
 {"type":"model","var":"model","extra":{"value":"org.apache.spark.ml.PipelineModel","source":"trainingSet"}}
 Some(trainingSet)
-output-788B32E15F6D44A096E0D574EC29707B: String = /tmp/pipeline/df-final2
-res21: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>
+output-788B32E15F6D44A096E0D574EC29707B: String = /tmp/pipeline/df-final247256
+res25: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget>
 ), ScalaExecuteResult(ExecuteResultMetadata(None),Map(text/html -> <div>
       <script data-this="{&quot;modelVar&quot;:&quot;model&quot;,&quot;inputs&quot;:{&quot;resolved&quot;:[&quot;file:/home/maasg/playground/data/decision_tree.parquet&quot;],&quot;unresolved&quot;:[]},&quot;modelName&quot;:&quot;org.apache.spark.ml.PipelineModel&quot;}" type="text/x-scoped-javascript">/*<![CDATA[*/req(['../javascripts/notebook/adst/output/modelOutput'], 
       function(modelOutput) {
         modelOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,18)))),model_output,model_output,model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@2c3b9e0f,0)
+    </div>),execute_result,20)))),model_output +  System.currentTimeMillis.toString.drop(5).take(5),model_output +  System.currentTimeMillis.toString.drop(5).take(5),model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@2c3b9e0f,0)
 
  */
 object Main {
@@ -235,7 +235,7 @@ val sc = sparkContext
 
   
 val `output-788B32E15F6D44A096E0D574EC29707B` = {
-  model_output
+  model_output +  System.currentTimeMillis.toString.drop(5).take(5)
   }
   
 

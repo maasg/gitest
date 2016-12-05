@@ -13,12 +13,11 @@ package io.kensu
   import org.apache.spark.ml.attribute.NominalAttribute
   import org.apache.spark.sql.functions._
   
-  val sqlContext = new org.apache.spark.sql.SQLContext(SparkContext.getOrCreate())
-  import sqlContext.implicits._
-  
-  
   class PrepareTransformer(fillStr: Map[String,String], fillNum: Map[String,Int]) extends Transformer {
-    
+  
+    val sqlContext = new org.apache.spark.sql.SQLContext(SparkContext.getOrCreate())
+    import sqlContext.implicits._
+  
     val uid: String = Identifiable.randomUID("prepareTransformer")
   
     override def transformSchema(schema: StructType) = schema.add("cs_k_hash", DoubleType)
