@@ -15,6 +15,12 @@ cd /home/maasg/testground/sne/projects/pipeline-dt-model-final/job
 echo "publishing project"
 /home/maasg/Dev/java/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 publish
 
+
+echo "Telling catalog which notebok library (io.kensu:pipeline-dt-model-final_2.10:0.0.1-SNAPSHOT})"
+curl -u 'username:password' -X POST "http://localhost:9002/adalog/bbe7efb6-db5f-483f-abe7-341e536f0b34/library?uuid=bbe7efb6-db5f-483f-abe7-341e536f0b34&groupId=io.kensu&artifactId=pipeline-dt-model-final_2.10&version=0.0.1-SNAPSHOT&pkg=io.kensu"
+
+
+
 echo "building debian"
 /home/maasg/Dev/java/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 debian:packageBin
 echo "package: /home/maasg/testground/sne/projects/pipeline-dt-model-final/job/target/pipeline-dt-model-final_0.0.1-SNAPSHOT_all.deb "

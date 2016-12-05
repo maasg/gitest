@@ -16,7 +16,7 @@ res21: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget
         modelOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,18)))),model_output,model_output,model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@35507b71,0)
+    </div>),execute_result,18)))),model_output,model_output,model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@70e86a20,0)
 
  */
 object Main {

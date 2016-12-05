@@ -201,7 +201,7 @@ val model =  ctx.objectFile[org.apache.spark.ml.PipelineModel](modelPath).first
 
   val datapoint = (id, any_churn_target, full_churn_target, A_1_count_last, A_2_count_last, A_3_count_last, Postal_Code, cs_k, Neighbourhood_Code)
 
-  val df = sqlContext.createDataFrame(Seq(datapoint))
+  val df = sqlContext.createDataFrame(Seq(datapoint)).toDF("id", "any_churn_target", "full_churn_target", "A_1_count_last", "A_2_count_last", "A_3_count_last", "Postal_Code", "cs_k", "Neighbourhood_Code")
 
 
 // ## wrong val ds = request.input.asScala.toArray.map(_.toDouble)
@@ -210,13 +210,14 @@ val model =  ctx.objectFile[org.apache.spark.ml.PipelineModel](modelPath).first
 
   
  // Implement here the correct estimation function
- val output = model.transform(df)
-           
+ val output = model.transform(df).select( $"rawPrediction", $"probability", $"predictions", $"label")  
+ import org.apache.spark.sql.Row
+ import org.apache.spark.mllib.linalg.DenseVector
+ val Row(rawPrediction:DenseVector, probability:DenseVector, predictions:Double,label:Double) = output.head
 
-  val d = new com.example.pipeline_dt_model_final_com.datafellas.g3nerator.modeloutput_0.model.Domain()
-   // d.setOutput(output)
-
-  new ServiceResponse(d)
+ val d = new com.example.pipeline_dt_model_final_com.datafellas.g3nerator.modeloutput_0.model.Domain(predictions)
+  
+ new ServiceResponse(d)
 }
 
   }

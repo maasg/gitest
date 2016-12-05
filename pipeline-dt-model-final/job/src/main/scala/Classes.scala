@@ -52,6 +52,6 @@ package io.kensu
     } 
       
     override def copy( extra : ParamMap) = defaultCopy(extra)
-  }()
+  }
 
 
