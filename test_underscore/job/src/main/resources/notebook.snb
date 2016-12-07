@@ -1,0 +1,75 @@
+{
+  "metadata" : {
+    "id" : "dbd68f8e-89b9-400a-9fc7-2f3dc379d8c2",
+    "name" : "test_underscore",
+    "user_save_timestamp" : "2016-12-07T14:50:09.076Z",
+    "auto_save_timestamp" : "2016-12-07T14:50:09.076Z",
+    "language_info" : {
+      "name" : "scala",
+      "file_extension" : "scala",
+      "codemirror_mode" : "text/x-scala"
+    },
+    "trusted" : true,
+    "sparkNotebook" : {
+      "xSparkVersion" : "1.6.1",
+      "xWithParquet" : "false",
+      "buildTime" : "Mon Dec 05 01:15:50 CET 2016",
+      "sparkNotebookVersion" : "0.7.0-SNAPSHOT",
+      "xJlineDef" : "(org.scala-lang,2.10.5)",
+      "scalaVersion" : "2.10.5",
+      "sbtVersion" : "0.13.9",
+      "formattedShaVersion" : "Some(a8c031174481166674ce509f6c036e6a396195d6)",
+      "xJets3tVersion" : "0.7.1",
+      "xWithHive" : "false",
+      "xHadoopVersion" : "2.2.0"
+    },
+    "customLocalRepo" : "/tmp/localrepo",
+    "customRepos" : null,
+    "customDeps" : null,
+    "customImports" : null,
+    "customArgs" : null,
+    "customSparkConf" : {
+      "spark.executor.memory" : "4G"
+    },
+    "customVars" : null
+  },
+  "cells" : [ {
+    "metadata" : {
+      "id" : "0203D829B2D14CBB851138464B3909FE"
+    },
+    "cell_type" : "markdown",
+    "source" : "#Test Underscore in the notebook name"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "021D2B4E5166430F8CE4729564C8D349"
+    },
+    "cell_type" : "code",
+    "source" : "println(1 to 100 by 2)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "Range(1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99)\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 2
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "F7CA1E29017A40219BA0A57DC3AE562F"
+    },
+    "cell_type" : "code",
+    "source" : "",
+    "outputs" : [ ]
+  } ],
+  "nbformat" : 4
+}
