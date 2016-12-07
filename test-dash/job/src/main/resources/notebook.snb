@@ -1,0 +1,75 @@
+{
+  "metadata" : {
+    "id" : "12408da4-3763-480b-841a-4d4b7d3eeb13",
+    "name" : "test-dash",
+    "user_save_timestamp" : "2016-12-07T14:44:43.266Z",
+    "auto_save_timestamp" : "2016-12-07T14:44:43.266Z",
+    "language_info" : {
+      "name" : "scala",
+      "file_extension" : "scala",
+      "codemirror_mode" : "text/x-scala"
+    },
+    "trusted" : true,
+    "sparkNotebook" : {
+      "xSparkVersion" : "1.6.1",
+      "xWithParquet" : "false",
+      "buildTime" : "Mon Dec 05 01:15:50 CET 2016",
+      "sparkNotebookVersion" : "0.7.0-SNAPSHOT",
+      "xJlineDef" : "(org.scala-lang,2.10.5)",
+      "scalaVersion" : "2.10.5",
+      "sbtVersion" : "0.13.9",
+      "formattedShaVersion" : "Some(a8c031174481166674ce509f6c036e6a396195d6)",
+      "xJets3tVersion" : "0.7.1",
+      "xWithHive" : "false",
+      "xHadoopVersion" : "2.2.0"
+    },
+    "customLocalRepo" : "/tmp/localrepo",
+    "customRepos" : null,
+    "customDeps" : null,
+    "customImports" : null,
+    "customArgs" : null,
+    "customSparkConf" : {
+      "spark.executor.memory" : "4G"
+    },
+    "customVars" : null
+  },
+  "cells" : [ {
+    "metadata" : {
+      "id" : "99152119D69A43F88A7F8F6B78C5249D"
+    },
+    "cell_type" : "markdown",
+    "source" : "# Use Dash in the notebook name for deployment"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "DA127C236725455A8C0BCD108BA70123"
+    },
+    "cell_type" : "code",
+    "source" : "println(1 to 100)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "Range(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100)\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 2
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "6559727CE4D44896BFC00A885E4114CD"
+    },
+    "cell_type" : "code",
+    "source" : "",
+    "outputs" : [ ]
+  } ],
+  "nbformat" : 4
+}
