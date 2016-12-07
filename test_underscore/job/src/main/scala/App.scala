@@ -31,9 +31,9 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "test_underscore
 
 // Set project Jars
 
-val libDir = new java.io.File(s"/usr/share/test_underscore", "lib")
-val currentProjectJars = Array[String]( "io.kensu-test_underscore.test_underscore-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
-val sparkLibDir = new java.io.File(s"/usr/share/test_underscore", "spark-lib")
+val libDir = new java.io.File(s"/usr/share/test-underscore", "lib")
+val currentProjectJars = Array("io.kensu.testunderscore.test-underscore-0.0.1-SNAPSHOT.jar").map{j => new java.io.File(libDir, j).getAbsolutePath}
+val sparkLibDir = new java.io.File(s"/usr/share/test-underscore", "spark-lib")
 val fromProjectJars = Array[String]().map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
 println("Add Jars: \n" + jarsArray.mkString("\n"))

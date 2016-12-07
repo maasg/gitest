@@ -1,7 +1,7 @@
 
 organization := "io.kensu"
 
-name := "test_underscore"
+name := "test-underscore"
 
 version := "0.0.1-SNAPSHOT"
 
@@ -39,7 +39,7 @@ dockerExposedPorts := Seq(9000, 9443)
 
 daemonUser in Docker := "root"
 
-packageName in Docker := "test_underscore"
+packageName in Docker := "io.kensu.testunderscore"
 
 mappings in Docker ++= directory("spark-lib")
 
@@ -63,7 +63,7 @@ dockerRepository := Some("localhost:5000") //Docker
 
 enablePlugins(DebianPlugin)
 
-name in Debian := "test_underscore"
+name in Debian := "test-underscore"
 
 maintainer in Debian := "Data Fellas"
 
