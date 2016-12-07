@@ -1,5 +1,5 @@
 
-package io.kensu
+package io.kensu.testdash
 /**
   Outputs
   -------
@@ -9,6 +9,7 @@ package io.kensu
 object Main {
 
 def main(args:Array[String]):Unit = {
+// spark context
 
 import org.apache.spark.{SparkContext, SparkConf}
 import org.apache.spark.SparkContext._
@@ -32,7 +33,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "test-dash"))
 // Set project Jars
 
 val libDir = new java.io.File(s"/usr/share/test-dash", "lib")
-val currentProjectJars = Array("io.kensu.testdash.test-dash-0.0.1-SNAPSHOT.jar").map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array("test-dash_2.10-0.0.3-SNAPSHOT.jar").map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(s"/usr/share/test-dash", "spark-lib")
 val fromProjectJars = Array[String]().map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
@@ -50,6 +51,7 @@ val sc = sparkContext
 
 
 
+// main code
 
 
 
