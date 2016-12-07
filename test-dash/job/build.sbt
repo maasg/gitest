@@ -39,7 +39,7 @@ dockerExposedPorts := Seq(9000, 9443)
 
 daemonUser in Docker := "root"
 
-packageName in Docker := "test-dash"
+packageName in Docker := "io.kensu.testdash"
 
 mappings in Docker ++= directory("spark-lib")
 

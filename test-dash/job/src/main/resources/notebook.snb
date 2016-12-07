@@ -64,8 +64,33 @@
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
-      "collapsed" : true,
+      "collapsed" : false,
+      "presentation" : {
+        "tabs_state" : "{\n  \"tab_id\": \"#tab1905129638-0\"\n}",
+        "pivot_chart_state" : "{\n  \"hiddenAttributes\": [],\n  \"menuLimit\": 200,\n  \"cols\": [],\n  \"rows\": [],\n  \"vals\": [],\n  \"exclusions\": {},\n  \"inclusions\": {},\n  \"unusedAttrsVertical\": 85,\n  \"autoSortUnusedAttrs\": false,\n  \"inclusionsInfo\": {},\n  \"aggregatorName\": \"Count\",\n  \"rendererName\": \"Table\"\n}"
+      },
       "id" : "6559727CE4D44896BFC00A885E4114CD"
+    },
+    "cell_type" : "code",
+    "source" : "\"my____notebook\".toLowerCase.split(\"[\\\\W_]+\").map(_.capitalize).mkString(\"\")",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "res14: String = MyNotebook\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "MyNotebook"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 5
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "EFB96FCC9F1B471FA8A694C7F4D57649"
     },
     "cell_type" : "code",
     "source" : "",

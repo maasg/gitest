@@ -32,7 +32,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "test-dash"))
 // Set project Jars
 
 val libDir = new java.io.File(s"/usr/share/test-dash", "lib")
-val currentProjectJars = Array[String]( "io.kensu-test-dash.test-dash-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array("io.kensu.testdash.test-dash-0.0.1-SNAPSHOT.jar").map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(s"/usr/share/test-dash", "spark-lib")
 val fromProjectJars = Array[String]().map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
@@ -73,7 +73,13 @@ val sc = sparkContext
 /****************/
 
 
-  /* -- Code Cell: Some(6559727CE4D44896BFC00A885E4114CD) -- */
+  /* -- Code Cell: Some(6559727CE4D44896BFC00A885E4114CD) -- */ 
+
+  "my____notebook".toLowerCase.split("[\\W_]+").map(_.capitalize).mkString("")
+/****************/
+
+
+  /* -- Code Cell: Some(EFB96FCC9F1B471FA8A694C7F4D57649) -- */
 
 sparkContext.stop
 
