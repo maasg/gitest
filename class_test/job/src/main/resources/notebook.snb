@@ -1,0 +1,237 @@
+{
+  "metadata" : {
+    "id" : "771eefac-4105-4213-9486-1bab3c31045a",
+    "name" : "Class_test",
+    "user_save_timestamp" : "2016-12-08T10:11:46.399Z",
+    "auto_save_timestamp" : "2016-12-08T10:11:46.399Z",
+    "language_info" : {
+      "name" : "scala",
+      "file_extension" : "scala",
+      "codemirror_mode" : "text/x-scala"
+    },
+    "trusted" : true,
+    "sparkNotebook" : {
+      "xSparkVersion" : "1.6.1",
+      "xWithParquet" : "false",
+      "buildTime" : "Thu Dec 08 09:55:34 CET 2016",
+      "sparkNotebookVersion" : "0.7.0-SNAPSHOT",
+      "xJlineDef" : "(org.scala-lang,2.10.5)",
+      "scalaVersion" : "2.10.5",
+      "sbtVersion" : "0.13.9",
+      "formattedShaVersion" : "Some(a8c031174481166674ce509f6c036e6a396195d6)",
+      "xJets3tVersion" : "0.7.1",
+      "xWithHive" : "false",
+      "xHadoopVersion" : "2.2.0"
+    },
+    "customLocalRepo" : "/tmp/localrepo",
+    "customRepos" : null,
+    "customDeps" : null,
+    "customImports" : null,
+    "customArgs" : null,
+    "customSparkConf" : {
+      "spark.executor.memory" : "4G"
+    },
+    "customVars" : null
+  },
+  "cells" : [ {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "FE083EA8CE864AB58ABF0BA243647204"
+    },
+    "cell_type" : "code",
+    "source" : "case class Genre(name: String)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "defined class Genre\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 2
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "6934889F1B9B4D96B498FB9D68B08B77"
+    },
+    "cell_type" : "code",
+    "source" : "case class Movie(genre:Genre, name: String)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "defined class Movie\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 3
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "D7C3019AC2054904A36B549CD872D3B8"
+    },
+    "cell_type" : "code",
+    "source" : "val genres = Seq(\"horror\", \"drama\", \"western\").map(Genre(_))",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "genres: Seq[Genre] = List(Genre(horror), Genre(drama), Genre(western))\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 4
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "F92966D76F8E4432BFDA2B0424171822"
+    },
+    "cell_type" : "code",
+    "source" : "val movies = Seq(\"rain\", \"murder\", \"killing\", \"humpy jumpy\", \"boem boem\").map(m => Movie(genres(scala.util.Random.nextInt(genres.size)), m))",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "movies: Seq[Movie] = List(Movie(Genre(horror),rain), Movie(Genre(western),murder), Movie(Genre(horror),killing), Movie(Genre(horror),humpy jumpy), Movie(Genre(horror),boem boem))\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 7
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "0B56D7FDF0FB4AD38C4A185AA4C45376"
+    },
+    "cell_type" : "code",
+    "source" : "import org.apache.spark.sql.SQLContext",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import org.apache.spark.sql.SQLContext\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 8
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "F5D1E62E668045678087AFE488C10BE8"
+    },
+    "cell_type" : "code",
+    "source" : "val sqlCtx = new SQLContext(sc)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "sqlCtx: org.apache.spark.sql.SQLContext = org.apache.spark.sql.SQLContext@2e37b3d6\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 9
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "ECC37B415E504865AB2A11FD776805D7"
+    },
+    "cell_type" : "code",
+    "source" : "import sqlCtx.implicits._\n",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "import sqlCtx.implicits._\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 10
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "924FE0CD9CD94963ACF8CBA6E6708980"
+    },
+    "cell_type" : "code",
+    "source" : "val movieDF = sqlCtx.createDataFrame(movies)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "movieDF: org.apache.spark.sql.DataFrame = [genre: struct<name:string>, name: string]\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 12
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "7787A0DA5E7E41DE8A6EB3968C570F8E"
+    },
+    "cell_type" : "code",
+    "source" : "movieDF.show()",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "+---------+-----------+\n|    genre|       name|\n+---------+-----------+\n| [horror]|       rain|\n|[western]|     murder|\n| [horror]|    killing|\n| [horror]|humpy jumpy|\n| [horror]|  boem boem|\n+---------+-----------+\n\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 13
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : true,
+      "id" : "F7B662D74FEF4A368B77E682BC519FBE"
+    },
+    "cell_type" : "code",
+    "source" : "",
+    "outputs" : [ ]
+  } ],
+  "nbformat" : 4
+}
