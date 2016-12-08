@@ -33,7 +33,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "test-dash"))
 // Set project Jars
 
 val libDir = new java.io.File(s"/usr/share/test-dash", "lib")
-val currentProjectJars = Array("io.kensu.test-dash-0.0.5.jar").map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array("io.kensu.test-dash-0.0.1-SNAPSHOT.jar").map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(s"/usr/share/test-dash", "spark-lib")
 val fromProjectJars = Array[String]().map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
