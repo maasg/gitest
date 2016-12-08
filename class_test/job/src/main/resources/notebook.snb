@@ -31,7 +31,9 @@
     "customSparkConf" : {
       "spark.executor.memory" : "4G"
     },
-    "customVars" : null
+    "customVars" : {
+      "HomeTown" : "edegem"
+    }
   },
   "cells" : [ {
     "metadata" : {
@@ -230,7 +232,7 @@
       "id" : "F7B662D74FEF4A368B77E682BC519FBE"
     },
     "cell_type" : "code",
-    "source" : "",
+    "source" : "println(HomeTown)",
     "outputs" : [ ]
   } ],
   "nbformat" : 4

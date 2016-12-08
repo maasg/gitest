@@ -68,7 +68,12 @@ val sc = sparkContext
   val adalogPassword: Option[String] = getStringConfig("adalog.authentication.password")
 
 
-// no custom variables 
+
+val customVars = config.getConfig("notebook.custom.vars")
+// custom variables
+  val HomeTown = customVars.getString("HomeTown") 
+
+     
 /* -- Code Cell: Some(D7C3019AC2054904A36B549CD872D3B8) -- */ 
 
   val genres = Seq("horror", "drama", "western").map(Genre(_))
@@ -111,7 +116,9 @@ val sc = sparkContext
 /****************/
 
 
-  /* -- Code Cell: Some(F7B662D74FEF4A368B77E682BC519FBE) -- */
+  /* -- Code Cell: Some(F7B662D74FEF4A368B77E682BC519FBE) -- */ 
+
+  println(HomeTown)
 
 sparkContext.stop
 
