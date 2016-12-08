@@ -3,7 +3,7 @@ organization := "io.kensu"
 
 name := "test-dash"
 
-version := "0.0.3-SNAPSHOT"
+version := "0.0.5"
 
 scalaVersion := "2.10.5"
 

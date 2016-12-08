@@ -33,7 +33,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "test-dash"))
 // Set project Jars
 
 val libDir = new java.io.File(s"/usr/share/test-dash", "lib")
-val currentProjectJars = Array("test-dash_2.10-0.0.3-SNAPSHOT.jar").map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array("io.kensu.test-dash-0.0.5.jar").map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(s"/usr/share/test-dash", "spark-lib")
 val fromProjectJars = Array[String]().map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
@@ -68,7 +68,12 @@ val sc = sparkContext
   val adalogPassword: Option[String] = getStringConfig("adalog.authentication.password")
 
 
-// no custom variables 
+
+val customVars = config.getConfig("notebook.custom.vars")
+// custom variables
+  val rootDir = customVars.getString("rootDir") 
+
+     
 /* -- Code Cell: Some(DA127C236725455A8C0BCD108BA70123) -- */ 
 
   println(1 to 100)
@@ -77,11 +82,11 @@ val sc = sparkContext
 
   /* -- Code Cell: Some(6559727CE4D44896BFC00A885E4114CD) -- */ 
 
-  "my____notebook".toLowerCase.split("[\\W_]+").map(_.capitalize).mkString("")
+  println("my____notebook".toLowerCase.split("[\\W_]+").map(_.capitalize).mkString(""))
 /****************/
 
 
-  /* -- Code Cell: Some(EFB96FCC9F1B471FA8A694C7F4D57649) -- */
+  /* -- Code Cell: Some(0F641608E7F54C3381CAEECA4776D8AC) -- */
 
 sparkContext.stop
 

@@ -31,7 +31,9 @@
     "customSparkConf" : {
       "spark.executor.memory" : "4G"
     },
-    "customVars" : null
+    "customVars" : {
+      "rootDir" : "/tmp"
+    }
   },
   "cells" : [ {
     "metadata" : {
@@ -72,25 +74,46 @@
       "id" : "6559727CE4D44896BFC00A885E4114CD"
     },
     "cell_type" : "code",
-    "source" : "\"my____notebook\".toLowerCase.split(\"[\\\\W_]+\").map(_.capitalize).mkString(\"\")",
+    "source" : "println(\"my____notebook\".toLowerCase.split(\"[\\\\W_]+\").map(_.capitalize).mkString(\"\"))",
     "outputs" : [ {
       "name" : "stdout",
       "output_type" : "stream",
-      "text" : "res14: String = MyNotebook\n"
+      "text" : "MyNotebook\n"
     }, {
       "metadata" : { },
       "data" : {
-        "text/html" : "MyNotebook"
+        "text/html" : ""
       },
       "output_type" : "execute_result",
-      "execution_count" : 5
+      "execution_count" : 1
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "EFB96FCC9F1B471FA8A694C7F4D57649"
+    },
+    "cell_type" : "code",
+    "source" : "case class ModelDefinitionVersion(version: Int)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "defined class ModelDefinitionVersion\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 1
     } ]
   }, {
     "metadata" : {
       "trusted" : true,
       "input_collapsed" : false,
       "collapsed" : true,
-      "id" : "EFB96FCC9F1B471FA8A694C7F4D57649"
+      "id" : "0F641608E7F54C3381CAEECA4776D8AC"
     },
     "cell_type" : "code",
     "source" : "",
