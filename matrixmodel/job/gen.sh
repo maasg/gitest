@@ -15,13 +15,19 @@ cd /home/maasg/testground/sne/projects/matrixmodel/job
 echo "publishing project"
 /home/maasg/Dev/java/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 publish
 
+
+echo "Telling catalog which notebok library (io.kensu:matrixmodel_2.10:0.0.4})"
+curl -u 'username:password' -X POST "http://localhost:9002/adalog/fa0e94a3-88f5-45e4-8334-7a15953a0ea3/library?uuid=fa0e94a3-88f5-45e4-8334-7a15953a0ea3&groupId=io.kensu&artifactId=matrixmodel_2.10&version=0.0.4&pkg=io.kensu"
+
+
+
 echo "building debian"
 /home/maasg/Dev/java/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 debian:packageBin
-echo "package: /home/maasg/testground/sne/projects/matrixmodel/job/target/matrixmodel_0.0.1-SNAPSHOT_all.deb "
+echo "package: /home/maasg/testground/sne/projects/matrixmodel/job/target/matrixmodel_0.0.4_all.deb "
 
 echo "pushing deb package to Adalog UI"
 [[ -d /tmp/sne/downloads ]] || /bin/mkdir -p /tmp/sne/downloads
-[[ -f /home/maasg/testground/sne/projects/matrixmodel/job/target/matrixmodel_0.0.1-SNAPSHOT_all.deb ]] && /bin/cp /home/maasg/testground/sne/projects/matrixmodel/job/target/matrixmodel_0.0.1-SNAPSHOT_all.deb /tmp/sne/downloads || echo "package file not found !!"
+[[ -f /home/maasg/testground/sne/projects/matrixmodel/job/target/matrixmodel_0.0.4_all.deb ]] && /bin/cp /home/maasg/testground/sne/projects/matrixmodel/job/target/matrixmodel_0.0.4_all.deb /tmp/sne/downloads || echo "package file not found !!"
 
 echo "Submitting Job"
 

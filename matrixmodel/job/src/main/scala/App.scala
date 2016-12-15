@@ -1,5 +1,5 @@
 
-package io.kensu
+package io.kensu.matrixmodel
 /**
   Outputs
   -------
@@ -20,6 +20,7 @@ res5: notebook.front.widgets.adst.ParquetOutputWidget = <ParquetOutputWidget wid
 object Main {
 
 def main(args:Array[String]):Unit = {
+// spark context
 
 import org.apache.spark.{SparkContext, SparkConf}
 import org.apache.spark.SparkContext._
@@ -43,7 +44,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "matrixmodel"))
 // Set project Jars
 
 val libDir = new java.io.File(s"/usr/share/matrixmodel", "lib")
-val currentProjectJars = Array[String]( "io.kensu-matrixmodel.matrixmodel-0.0.1-SNAPSHOT.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array("io.kensu.matrixmodel-0.0.4.jar").map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(s"/usr/share/matrixmodel", "spark-lib")
 val fromProjectJars = Array[String]( "spark-csv_2.10-1.5.0.jar" , "scala-library-2.10.5.jar" , "commons-csv-1.1.jar" , "univocity-parsers-1.5.1.jar" ).map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
@@ -61,6 +62,7 @@ val sc = sparkContext
 
 
 
+// main code
 
 
 

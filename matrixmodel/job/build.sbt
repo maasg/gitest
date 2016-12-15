@@ -1,13 +1,13 @@
 
-organization := "io.kensu-matrixmodel"
+organization := "io.kensu"
 
 name := "matrixmodel"
 
-version := "0.0.1-SNAPSHOT"
+version := "0.0.4"
 
 scalaVersion := "2.10.5"
 
-maintainer := "DF" //Docker
+maintainer := "GM" //Docker
 
 resolvers ++= Seq( "Maven2 Local" at "file:/home/maasg/.m2/repository/" ,
  "public" at "https://repo1.maven.org/maven2/" ,
@@ -39,7 +39,7 @@ dockerExposedPorts := Seq(9000, 9443)
 
 daemonUser in Docker := "root"
 
-packageName in Docker := "matrixmodel"
+packageName in Docker := "io.kensu.matrixmodel"
 
 mappings in Docker ++= directory("spark-lib")
 
@@ -51,7 +51,7 @@ resolvers += Resolver.typesafeRepo("releases")
 
 resolvers += "cloudera" at "https://repository.cloudera.com/artifactory/cloudera-repos"
 
-resolvers += "Adastyx PULL Artifactory" at "http://artifactory-node:8082/artifactory/list/remote-repos/"
+resolvers += "Adastyx PULL Artifactory" at "http://localhost:8081/artifactory/list/remote-repos/"
 
 credentials += Credentials(Path.userHome / ".bintray" / ".credentials")
 
@@ -59,7 +59,7 @@ resolvers += Resolver.url("bintray-data-fellas-maven", url("http://dl.bintray.co
 
 dockerCommands ++= Seq(Cmd("ENV", "SPARK_HOME \"\""))
 
-dockerRepository := Some("localhost:5000") //Docker
+dockerRepository := Some("canister:latest") //Docker
 
 enablePlugins(DebianPlugin)
 
@@ -161,11 +161,11 @@ artifact in (Compile, assembly) ~= { art =>
 
 addArtifact(artifact in (Compile, assembly), assembly).settings
 
-publishTo := Some("Artifactory PUSH Realm" at "http://artifactory-node:8082/artifactory/datafellas-jobs/")
+publishTo := Some("Artifactory PUSH Realm" at "http://localhost:8081/artifactory/kensu-jobs/")
 
 publishMavenStyle := true
 
-credentials += Credentials("Artifactory Realm", "artifactory-node", "adastyx", "artifactory-password")
+credentials += Credentials("Artifactory Realm", "localhost", "admin ", "password")
 
 // merging files... specially application.conf!
 assemblyMergeStrategy in assembly := {
@@ -181,6 +181,10 @@ assemblyMergeStrategy in assembly := {
   case PathList("META-INF", "MANIFEST.MF"           ) => MergeStrategy.discard
   case PathList("META-INF",                  xs @ _*) => MergeStrategy.first
   case "application.conf"                             => MergeStrategy.concat
+  case "module.properties"                             => MergeStrategy.first
+  case PathList(ps @ _*) if ps.last endsWith ".html"  => MergeStrategy.discard
+  case PathList(ps @ _*) if ps.last endsWith ".thrift"  =>  MergeStrategy.first
+  case PathList(ps @ _*) if ps.last endsWith ".xml"  =>  MergeStrategy.first
   case x =>
     val oldStrategy = (assemblyMergeStrategy in assembly).value
     oldStrategy(x)
