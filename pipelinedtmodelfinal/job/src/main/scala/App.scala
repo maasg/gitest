@@ -1,5 +1,5 @@
 
-package com.kensu.churnpipeline
+package io.kensu.pipelinedtmodelfinal
 /**
   Outputs
   -------
@@ -16,12 +16,13 @@ res25: notebook.front.widgets.adst.ModelOutputWidget = <ModelOutputWidget widget
         modelOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,20)))),model_output +  System.currentTimeMillis.toString.drop(5).take(5),model_output +  System.currentTimeMillis.toString.drop(5).take(5),model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@2c3b9e0f,0)
+    </div>),execute_result,20)))),model_output +  System.currentTimeMillis.toString.drop(5).take(5),model_output +  System.currentTimeMillis.toString.drop(5).take(5),model,com.datafellas.DefaultModelHandlers$ML$Classification$$anon$4@50a65a42,0)
 
  */
 object Main {
 
 def main(args:Array[String]):Unit = {
+// spark context
 
 import org.apache.spark.{SparkContext, SparkConf}
 import org.apache.spark.SparkContext._
@@ -45,7 +46,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "pipelinedtmodel
 // Set project Jars
 
 val libDir = new java.io.File(s"/usr/share/pipelinedtmodelfinal", "lib")
-val currentProjectJars = Array[String]( "com.kensu.churnpipeline-pipelinedtmodelfinal.pipelinedtmodelfinal-0.0.2.jar" ).map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array("io.kensu.pipelinedtmodelfinal-0.0.4.jar").map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(s"/usr/share/pipelinedtmodelfinal", "spark-lib")
 val fromProjectJars = Array[String]().map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
@@ -63,6 +64,7 @@ val sc = sparkContext
 
 
 
+// main code
 
 
 

@@ -1,8 +1,8 @@
 
-package com.kensu.churnpipeline
+package io.kensu.pipelinedtmodelfinal
 
 
-// no custom variables 
+  //---//
 /* -- Code Cell: Some(F0709DE78AC34E2C862448C94A644899) -- */ 
 
   import org.apache.spark.ml.Transformer
@@ -54,5 +54,4 @@ package com.kensu.churnpipeline
       
     override def copy( extra : ParamMap) = defaultCopy(extra)
   }
-
 

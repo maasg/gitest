@@ -1,9 +1,9 @@
 
-organization := "com.kensu.churnpipeline"
+organization := "io.kensu"
 
 name := "pipelinedtmodelfinal"
 
-version := "0.0.2"
+version := "0.0.4"
 
 scalaVersion := "2.10.5"
 
@@ -39,7 +39,7 @@ dockerExposedPorts := Seq(9000, 9443)
 
 daemonUser in Docker := "root"
 
-packageName in Docker := "pipelinedtmodelfinal"
+packageName in Docker := "io.kensu.pipelinedtmodelfinal"
 
 mappings in Docker ++= directory("spark-lib")
 
@@ -59,7 +59,7 @@ resolvers += Resolver.url("bintray-data-fellas-maven", url("http://dl.bintray.co
 
 dockerCommands ++= Seq(Cmd("ENV", "SPARK_HOME \"\""))
 
-dockerRepository := Some("localhost:5000") //Docker
+dockerRepository := Some("canister:latest") //Docker
 
 enablePlugins(DebianPlugin)
 
@@ -147,7 +147,7 @@ libraryDependencies +=  "org.scalaj" %% "scalaj-http" % "2.3.0"
 test in assembly := {}
 
 //main class
-mainClass in assembly := Some("com.kensu.churnpipeline.Main")
+mainClass in assembly := Some("io.kensu.Main")
 
 artifact in (Compile, assembly) ~= { art =>
   art.copy(`classifier` = Some("assembly"))
