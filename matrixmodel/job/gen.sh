@@ -13,7 +13,7 @@ echo "enter /home/maasg/testground/sne/projects/matrixmodel/job"
 cd /home/maasg/testground/sne/projects/matrixmodel/job
 
 echo "publishing project"
-/home/maasg/Dev/java/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 publish
+/home/maasg/Dev/java/sbt/bin/sbt -Dspark.version=1.6.3 -Dhadoop.version=2.6.0 publish
 
 
 echo "Telling catalog which notebok library (io.kensu:matrixmodel_2.10:0.0.1-SNAPSHOT})"
@@ -22,7 +22,7 @@ curl -u 'username:password' -X POST "http://localhost:9002/adalog/fa0e94a3-88f5-
 
 
 echo "building debian"
-/home/maasg/Dev/java/sbt/bin/sbt -Dspark.version=1.6.1 -Dhadoop.version=2.6.0 debian:packageBin
+/home/maasg/Dev/java/sbt/bin/sbt -Dspark.version=1.6.3 -Dhadoop.version=2.6.0 debian:packageBin
 echo "package: /home/maasg/testground/sne/projects/matrixmodel/job/target/matrixmodel_0.0.1-SNAPSHOT_all.deb "
 
 echo "pushing deb package to Adalog UI"
