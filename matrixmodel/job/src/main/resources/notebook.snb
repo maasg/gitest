@@ -27,9 +27,12 @@
     "customRepos" : null,
     "customDeps" : [ "com.databricks % spark-csv_2.10 % 1.5.0" ],
     "customImports" : null,
-    "customArgs" : null,
+    "customArgs" : [ "-Djava.io.tmpdir=/tmp/" ],
     "customSparkConf" : {
+      "spark.executorEnv.SPARK_LOCAL_DIRS" : "/tmp/",
       "spark.cores.max" : "1",
+      "spark.mesos.coarse" : "true",
+      "spark.master" : "local[4]",
       "spark.executor.memory" : "500MB"
     },
     "customVars" : null

@@ -14,7 +14,7 @@ res5: notebook.front.widgets.adst.ParquetOutputWidget = <ParquetOutputWidget wid
         parquetOutput.call(data, this);
       }
     );/*]]>*/</script>
-    </div>),execute_result,4)))),parquetFile,parquetFile,matrixDF,org.apache.spark.sql.SaveMode.Overwrite,List(ParquetMappingElement(id,integer), ParquetMappingElement(any_churn_target,boolean), ParquetMappingElement(full_churn_target,boolean), ParquetMappingElement(A_1_count_last,integer), ParquetMappingElement(A_2_count_last,integer), ParquetMappingElement(A_3_count_last,integer), ParquetMappingElement(Postal_Code,string), ParquetMappingElement(cs_k,string), ParquetMappingElement(Neighbourhood_Code,string)),0)
+    </div>),None,execute_result,4,None)))),parquetFile,parquetFile,matrixDF,org.apache.spark.sql.SaveMode.Overwrite,List(ParquetMappingElement(id,integer), ParquetMappingElement(any_churn_target,boolean), ParquetMappingElement(full_churn_target,boolean), ParquetMappingElement(A_1_count_last,integer), ParquetMappingElement(A_2_count_last,integer), ParquetMappingElement(A_3_count_last,integer), ParquetMappingElement(Postal_Code,string), ParquetMappingElement(cs_k,string), ParquetMappingElement(Neighbourhood_Code,string)),0)
 
  */
 object Main {
@@ -44,7 +44,7 @@ sparkConf.set("spark.app.name", sparkConf.get("spark.app.name", "matrixmodel"))
 // Set project Jars
 
 val libDir = new java.io.File(s"/usr/share/matrixmodel", "lib")
-val currentProjectJars = Array("io.kensu.matrixmodel-0.0.4.jar").map{j => new java.io.File(libDir, j).getAbsolutePath}
+val currentProjectJars = Array("io.kensu.matrixmodel-0.0.1-SNAPSHOT.jar").map{j => new java.io.File(libDir, j).getAbsolutePath}
 val sparkLibDir = new java.io.File(s"/usr/share/matrixmodel", "spark-lib")
 val fromProjectJars = Array[String]( "spark-csv_2.10-1.5.0.jar" , "scala-library-2.10.5.jar" , "commons-csv-1.1.jar" , "univocity-parsers-1.5.1.jar" ).map{j => new java.io.File(sparkLibDir, j).getAbsolutePath}
 val jarsArray = (sparkConf.get("spark.jars", "").split(",").toArray ++ currentProjectJars ++ fromProjectJars).distinct.filter(!_.isEmpty)
@@ -120,10 +120,12 @@ val `output-BC42BE58D98940C389B7712F417423AA` = {
   parquetFile
   }
   
-
-matrixDF.write.mode(org.apache.spark.sql.SaveMode.Overwrite).parquet(`output-BC42BE58D98940C389B7712F417423AA`)
-
-
+{
+  matrixDF.write.mode(org.apache.spark.sql.SaveMode.Overwrite).parquet(`output-BC42BE58D98940C389B7712F417423AA`)
+  val ps = matrixDF.rdd.partitions.size
+  val desc = scala.util.Try(matrixDF.describe().toJSON.collect.mkString("[", ",", "]")).toOption.getOrElse("null")
+  val json = s""" { "partitions": $ps , "description": $desc} """
+  
   {
     // adding output instance information into catalog
     import scalaj.http._
@@ -132,10 +134,12 @@ matrixDF.write.mode(org.apache.spark.sql.SaveMode.Overwrite).parquet(`output-BC4
     val httpReq = adalogUrl.map(url => Http(new URL(new URL(url), path).toString))
     val credentials = for (u <-adalogUser; p <- adalogPassword ) yield (u,p)
     val authReq = credentials.foldLeft(httpReq){case (req, (u,p)) =>  req.map(_.auth(u, p))}
-    val res = authReq.map(_.postForm(Nil).asString.body)
+    val data = json
+    val res = authReq.map(_.postData(data).header("content-type", "application/json").asString.body)
     println(res)
   }
   
+}
 
    // Output without variable
 /****************/
